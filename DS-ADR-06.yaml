@@ -1,0 +1,15 @@
+topic_id: DS-ADR-06
+title: "ADR: Zero-State Telemetry & Live Cryptography"
+tier: Tier-6-System
+category: Design-Architecture
+tags: [telemetry, privacy, ccpa, gdpr, cryptography, sha-256]
+abstract: |
+  Establish the Cookieless Intelligence Loop and Live Cryptographic Verification. Bypass legacy cookie banners via IP Masking and execute security mathematical proofs locally.
+details:
+  live_cryptography:
+    mandate: "Reject animated hashing theater. Utilize the native browser crypto.subtle API to calculate a real-time SHA-256 hash of the exact visible DOM text. Execute instantaneously upon language toggle to prove untampered delivery."
+  zero_state_telemetry:
+    mandate: "Prohibit tracking cookies, local storage identifiers, and third-party analytics. Eliminate the requirement for GDPR/CCPA cookie banners."
+    ip_masking: "Execute intelligence gathering exclusively via First-Party Pings. The receiving server must instantly drop the final octet of the incoming IP address, converting Personally Identifiable Information (PII) into anonymized geospatial data."
+    public_posture: "Append the standard 'Digital Infrastructure & Privacy Posture' declaration to all continuous disclosure legal blocks."
+links: [DS-ADR-01]

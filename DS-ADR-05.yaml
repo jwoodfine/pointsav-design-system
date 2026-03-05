@@ -1,0 +1,14 @@
+topic_id: DS-ADR-05
+title: "ADR: Zero-Execution Presentation State"
+tier: Tier-6-System
+category: Design-Architecture
+tags: [css, state-machine, zero-execution, accessibility, illusion]
+abstract: |
+  Enforce pure CSS state-machines for language routing and dynamic file delivery. Prohibit client-side JavaScript for DOM manipulation to maintain strict Sovereign boundaries.
+details:
+  the_boundary_of_css:
+    mandate: "CSS is strictly a presentation language. It cannot rewrite HTML attributes (e.g., changing an href). JavaScript DOM manipulation is forbidden."
+  the_state_machine_illusion:
+    language_routing: "Embed dual language labels (English/Spanish). Utilize a hidden CSS checkbox hack to instantly hide the inactive span and reveal the active span. Zero actual text replacement occurs."
+    file_delivery: "Embed dual distinct download buttons (.dl-en and .dl-es) pointing to static deterministic files. Tie visibility to the CSS checkbox state. To the user, it functions as a dynamic application; to the system, it remains a static document."
+links: [DS-ADR-02]
