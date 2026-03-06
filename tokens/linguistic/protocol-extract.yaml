@@ -1,0 +1,11 @@
+# EXTRACT Protocol Manifest - Legacy Binary Ingestion
+protocol_name: EXTRACT
+operational_rules:
+  fidelity_mandate: absolute           # 1:1 exact character mapping. Zero creative synthesis, summarization, or omission.
+  optical_layout_preservation: true    # Reconstruct reading order, semantic hierarchy (H1, H2), and tabular relationships.
+  hallucination_zero_tolerance: true   # If source text is illegible or corrupted, output [UNREADABLE_ARTIFACT]. Do not guess.
+  prohibit_txt_format: true            # Output must strictly avoid plain .txt files.
+flag_definitions:
+  "-md": "Output narrative text strictly as a continuous Markdown block. Preserve legal hierarchy using # tags."
+  "-yaml": "Output document metadata, lists, and tabular data strictly as a valid YAML block. Maintain relational integrity."
+  "-md -yaml": "Execute both extractions. Output a strict JSON payload containing two keys: 'CONTENT_MD' and 'CONTENT_YAML'."

@@ -1,0 +1,18 @@
+# COMM Protocol Manifest - External Communication & Disclosures
+# Standard: ISO 24495-1 (State-Asset Distinction)
+
+protocol_name: COMM
+operational_rules:
+  subject_line_parallelism: true
+  enforce_lowercase_status: true        # e.g., updated, revised, draft
+  enforce_title_case_asset: true        # e.g., Supplemental Talking Points
+  project_prefix_required: true         # e.g., Woodfine —
+
+formatting_logic:
+  template: "RE: {project} — {status} {document_name}"
+  status_options: [updated, revised, final, draft, staging]
+  proper_noun_exceptions: [Shareholders Agreement, Supplemental Talking Points]
+
+compliance_targets:
+  - BCSC Anti-Puffery Validation
+  - Minto Pyramid Synthesis
