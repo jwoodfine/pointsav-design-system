@@ -1,7 +1,6 @@
-# DESIGN Protocol Manifest - UI/UX Data Extraction
 protocol_name: DESIGN
 operational_rules:
-  prohibit_html_generation: true       # The LLM is strictly forbidden from generating structural HTML or CSS.
-  enforce_json_mapping: true           # Output must be a strictly formatted JSON data map.
-  zero_execution_state: true           # Focus purely on linguistic translation and token compliance (e.g., 65ch constraints).
-  template_injection_target: required  # The Rust engine will handle the final HTML merge.
+  prohibit_html_generation: true       # LLM forbidden from generating HTML/CSS
+  enforce_json_mapping: true           # Output must be formatted JSON
+  zero_execution_state: true           # Focus purely on tokens and constraints
+  template_injection_target: required  # Rust engine handles final HTML merge
