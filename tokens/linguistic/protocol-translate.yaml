@@ -4,3 +4,6 @@ operational_rules:
   structural_mirroring: true
   prohibit_transcreation: true
 target_locales: [en-US, es-US]
+
+# [2026-03-07] Spanish Legal Parity Readiness
+translation_rule: "Direct-Hold Solution remains in English within Spanish translations to maintain brand consistency."

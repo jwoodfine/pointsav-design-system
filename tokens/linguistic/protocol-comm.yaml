@@ -8,3 +8,11 @@ operational_rules:
 formatting_logic:
   template: "RE: {project} — {status} {document_name}"
   status_options: [updated, revised, final, draft, staging]
+
+# [2026-03-07] BCSC Plain Language & Formatting Rule
+bcsc_liquidity_standard:
+  approved_phrase: "freely transferable private equity without redemption queues"
+  banned_phrase: "full liquidity"
+institutional_brutalism_formatting:
+  rule: "Operational concepts (perpetual equity, organic deleveraging) remain lowercased within prose. Only formal proper nouns retain capitalization."
+  audience_metric: "Declarative, 10-15 word sentences. Accessible for an over-65 demographic."

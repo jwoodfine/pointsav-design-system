@@ -7,3 +7,5 @@ operational_rules:
 flag_definitions:
   "-md": "Output narrative text strictly as Markdown block."
   "-yaml": "Output metadata strictly as valid YAML block."
+
+# [2026-03-07] Structural Alignment Confirmed.

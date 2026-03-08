@@ -6,3 +6,7 @@ operational_rules:
 formatting_logic:
   enforce_numbered_sections: true
   citation_style: "PointSav Standard [ID-YEAR-SEC]"
+
+# [2026-03-07] Continuous Disclosure Standard
+bcsc_compliance_boundary:
+  rule: "Public disclosures must be written in plain language without puffery. Use targeted compression instead of exact un-audited percentages (e.g., 30%)."
