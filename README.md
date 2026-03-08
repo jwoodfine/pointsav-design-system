@@ -1,17 +1,14 @@
-# pointsav-design-system
-### *Sovereign Structural Anchor | Master Design Architecture*
+# PointSav Design System
+### *Single Source of Truth | Mathematical Architecture*
 
-**Status: Active Engineering** | **Taxonomy: Tier-6-System**
+**Status: Active Standard** | **Taxonomy: Tier-6-System**
 
-## ⚙️ Execution Mechanics
-This repository operates as the single source of truth for all mathematical design parameters across the PointSav and Woodfine fleets. It enforces strict accessibility standards, Zero-Execution routing, and intrinsic fluid design. It holds zero corporate media assets.
+## 📜 Operational Mandate
+This repository operates as the single source of truth for all mathematical design parameters and linguistic protocols across the PointSav and Woodfine fleets.
 
-### 📚 Directory Index
-| Directory | Contents | Mandate |
-| :--- | :--- | :--- |
-| **`/guidelines`** | MEMO-01 to MEMO-03 | Architectural rules for Zero-Execution, Telemetry, and Neurodiversity. |
-| **`/tokens`** | YAML token definitions | Machine-readable math for `color`, `typography`, and `spacing`. |
-| **`/themes`** | Entity Color Matrices | Specific visual mappings for PointSav and Woodfine. |
-| **`/components`** | HTML/CSS blueprints | Standardized code blocks for user interfaces. |
-
-*Execute all design generation strictly from the `/tokens` variables.*
+> **Directory Nomenclature Ledger**
+> All files committed to this directory MUST adhere to the following strict prefix taxonomy:
+> * `TOKEN-*`: Mathematical variables (e.g., TOKEN-COLOR-Woodfine.yaml).
+> * `COMP-*`: Structural blueprints (e.g., COMP-NAV-TopBar.html).
+> * `PROTOCOL-*`: Single source of truth for language (e.g., PROTOCOL-COMM.yaml).
+> Any file lacking an approved prefix will be rejected by the Figma ingestion engine.
