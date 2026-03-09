@@ -1,0 +1,16 @@
+protocol_name: INDEXING
+standard: JSON-LD (JavaScript Object Notation for Linked Data)
+compliance_anchor: Google Search Central Structured Data Guidelines
+
+operational_rules:
+prohibit_meta_keywords: true
+enforce_schema_org: true
+
+schema_mandate:
+type: "NewsArticle"
+required_fields:
+- "headline: Exact title of the disclosure."
+- "datePublished: ISO 8601 format (e.g., 2026-03-02T08:00:00-08:00)."
+- "publisher: The legally issuing entity (e.g., Woodfine Capital Projects Inc.)."
+
+rationale: "Ensures automated compliance crawlers and hyperscaler search engines (Google, Bing) algorithmically recognize the document as an official corporate disclosure, rather than standard web marketing copy."

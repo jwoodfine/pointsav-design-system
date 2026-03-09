@@ -1,0 +1,14 @@
+token_id: UI-PHYSICS
+standard: WCAG 2.2 AAA & Neurodivergent Accessibility
+
+physics:
+  touch_targets:
+    minimum_height: "44px"
+    minimum_width: "44px"
+    rationale: "Eliminates precision-tap frustration on mobile capacitive screens."
+  viewports:
+    mobile_breakpoint: "600px"
+    tablet_breakpoint: "900px"
+  behavior:
+    stacking: "Buttons expand to 100% width on screens < 600px."
+    contrast: "Ensure high-contrast boundaries between interactive elements and passive canvas."

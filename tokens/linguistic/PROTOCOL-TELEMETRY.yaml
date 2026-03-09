@@ -1,0 +1,23 @@
+protocol_name: TELEMETRY
+standard: Zero-State Cookieless Ingestion (DS-ADR-06)
+compliance_anchors: [GDPR, BCSC Plain Language, SOC 3]
+
+operational_rules:
+  prohibit_cookies: true
+  prohibit_third_party_analytics: true
+  prohibit_local_storage: true
+  enforce_beacon_api: true
+
+execution_mechanics:
+  event_trigger: "window.addEventListener('pagehide')"
+  transmission_method: "navigator.sendBeacon('/telemetry-endpoint', payload)"
+  rationale: "Guarantees asynchronous payload delivery during document unload without blocking the main browser thread or relying on stateful tracking."
+
+approved_payload_matrix:
+  uri: "window.location.pathname"
+  timestamp: "Date.now()"
+  ua: "navigator.userAgent"
+  viewport: "window.innerWidth + 'x' + window.innerHeight"
+  lang: "navigator.language"
+  tz: "Intl.DateTimeFormat().resolvedOptions().timeZone"
+  scroll_depth: "Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) || 0"

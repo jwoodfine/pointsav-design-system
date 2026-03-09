@@ -1,0 +1,12 @@
+protocol_name: TEXT-HINTS
+standard: Institutional Professionalism
+compliance_anchor: BCSC National Instrument 51-102
+
+rules:
+  trademark_density:
+    mandate: "Restrict ™ to primary navigation or initial document header wordmarks only."
+    prohibited: "Do not use ™ symbols within narrative body paragraphs to prevent visual clutter."
+  plain_language:
+    mandate: "Enforce declarative, high-signal language. Eliminate marketing puffery."
+    target_demographic: "Direct-Hold Multi-Generational Capital."
+    formatting: "Do not use horizontal rules (<hr>) within regulatory text blocks. Use whitespace for visual hierarchy to maintain Institutional Brutalism."
