@@ -1,8 +1,11 @@
 protocol_name: DESIGN
-operational_rules:
-  prohibit_html_generation: true
-  enforce_json_mapping: true
-  zero_execution_state: true
-  template_injection_target: required
+standard: Universal Sovereign Disclosure
+description: The instruction set for user interfaces. It enforces optical layout preservation and Institutional Brutalism.
 
-# [2026-03-07] Structural Alignment Confirmed.
+operational_rules:
+  optical_preservation:
+    enforcement_rule: "Render UI strictly using HTML-aligned tables and native alert blocks."
+  
+  typography_mandate:
+    enforcement_rule: "Use strictly monospace or highly legible sans-serif for data rendering."
+    prohibit_animations: true

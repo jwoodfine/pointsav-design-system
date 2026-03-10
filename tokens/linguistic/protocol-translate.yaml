@@ -1,9 +1,11 @@
 protocol_name: TRANSLATE
-operational_rules:
-  glossary_lock_spanish: true
-  structural_mirroring: true
-  prohibit_transcreation: true
-target_locales: [en-US, es-US]
+standard: Universal Sovereign Disclosure
+description: The instruction set for bilingual crossover. It prohibits cultural transcreation.
 
-# [2026-03-07] Spanish Legal Parity Readiness
-translation_rule: "Direct-Hold Solution remains in English within Spanish translations to maintain brand consistency."
+operational_rules:
+  bilingual_boundary:
+    enforcement_rule: "Translate <H1> and <H2> headers only. Operational tables remain in the primary language."
+  
+  proper_noun_lock:
+    enforcement_rule: "Never translate proprietary architectural terms."
+    locked_terms: ["Direct-Hold", "PointSav OS", "Totebox", "Moonshot", "Capability-Based Manager"]

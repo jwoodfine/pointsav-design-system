@@ -1,18 +1,15 @@
 protocol_name: COMM
-standard: ISO 24495-1 (State-Asset Distinction)
-operational_rules:
-  subject_line_parallelism: true
-  enforce_lowercase_status: true
-  enforce_title_case_asset: true
-  project_prefix_required: true
-formatting_logic:
-  template: "RE: {project} — {status} {document_name}"
-  status_options: [updated, revised, final, draft, staging]
+standard: Universal Sovereign Disclosure
+description: The instruction set for internal dispatch. It mathematically separates digital actions from physical assets.
 
-# [2026-03-07] BCSC Plain Language & Formatting Rule
-bcsc_liquidity_standard:
-  approved_phrase: "freely transferable private equity without redemption queues"
-  banned_phrase: "full liquidity"
-institutional_brutalism_formatting:
-  rule: "Operational concepts (perpetual equity, organic deleveraging) remain lowercased within prose. Only formal proper nouns retain capitalization."
-  audience_metric: "Declarative, 10-15 word sentences. Accessible for an over-65 demographic."
+operational_rules:
+  state_asset_distinction:
+    enforcement_rule: "Explicitly separate the operational State (action) from the physical Asset (target)."
+  
+  hierarchy_standard:
+    executive_tone: "State the strategic mandate and fiduciary objective."
+    manager_tone: "State the daily operational workflow required to execute the mandate."
+
+  zero_emotion_mandate:
+    prohibit_urgency_markers: ["ASAP", "Urgent", "Critical"]
+    allowed_modifiers: ["active", "provisioning", "quarantined", "verified"]

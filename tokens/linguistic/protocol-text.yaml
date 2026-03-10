@@ -1,7 +1,17 @@
 protocol_name: TEXT
-operational_rules:
-  imperative_mood: true
-  plain_language_standard: true
-  prohibit_emojis: true
+standard: Universal Sovereign Disclosure
+description: The root instruction set for generating corporate documentation. It enforces Institutional Brutalism.
 
-# [2026-03-07] Structural Alignment Confirmed.
+operational_rules:
+  sentence_structure:
+    max_word_count: 15
+    mood_mandate: "Imperative and declarative facts only."
+    prohibit_complex_clauses: true
+
+  zero_puffery_mandate:
+    enforcement_rule: "If an adjective does not describe a mathematical or physical state, purge it."
+    banned_adjectives: ["seamless", "revolutionary", "best-in-class", "innovative"]
+
+  objective_identity:
+    prohibit_first_person: true
+    allowed_roles: ["The Executive", "The Manager", "The Contributor", "The System Vendor", "The Customer"]

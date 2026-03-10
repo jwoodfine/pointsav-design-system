@@ -1,0 +1,11 @@
+protocol_name: TOPIC
+standard: Universal Sovereign Disclosure
+description: The instruction set for encyclopedic architecture. It defines structural reality.
+
+operational_rules:
+  content_mandate:
+    enforcement_rule: "Define what the component is and why it exists. Never explain how to build it."
+    prohibit_instructions: true
+  
+  architectural_framing:
+    enforcement_rule: "Describe components as physical tools (e.g., 'A software lock', 'An isolated vault')."

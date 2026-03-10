@@ -1,12 +1,12 @@
 protocol_name: LEGAL
-operational_rules:
-  strict_liability_definitions: true
-  flow_through_tax_nomenclature: true
-  prohibit_narrative_puffery: true
-formatting_logic:
-  enforce_numbered_sections: true
-  citation_style: "PointSav Standard [ID-YEAR-SEC]"
+standard: Universal Sovereign Disclosure
+description: The instruction set for continuous disclosure. It translates marketing claims into defensible structural facts.
 
-# [2026-03-07] Continuous Disclosure Standard
-bcsc_compliance_boundary:
-  rule: "Public disclosures must be written in plain language without puffery. Use targeted compression instead of exact un-audited percentages (e.g., 30%)."
+operational_rules:
+  targeted_compression:
+    enforcement_rule: "Replace subjective market claims with objective structural definitions."
+    banned_phrases: ["highly liquid", "guaranteed returns", "risk-free"]
+    required_replacements: ["freely transferable private equity", "mathematically verified ledgers"]
+
+  liability_elimination:
+    enforcement_rule: "Never imply future outcomes. State current structural facts only."

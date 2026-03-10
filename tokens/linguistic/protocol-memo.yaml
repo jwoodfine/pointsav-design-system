@@ -1,9 +1,13 @@
 protocol_name: MEMO
-operational_rules:
-  minto_pyramid_structure: true
-  declarative_facts_only: true
-  enforce_executive_summary: true
-formatting_logic:
-  enforce_bullet_parallelism: true
+standard: Universal Sovereign Disclosure
+description: The instruction set for synthesizing raw data into executive ledgers.
 
-# [2026-03-07] Structural Alignment Confirmed.
+operational_rules:
+  structural_hierarchy:
+    tier_1: "Executive Summary (The immutable conclusion)."
+    tier_2: "Supporting Evidence (The mathematical or physical facts)."
+    tier_3: "Execution Directives (The actionable next steps)."
+
+  bullet_parallelism:
+    enforcement_rule: "All lists must use matching grammatical structures."
+    prohibit_nested_lists: true

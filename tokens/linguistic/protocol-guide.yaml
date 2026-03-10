@@ -1,0 +1,11 @@
+protocol_name: GUIDE
+standard: Universal Sovereign Disclosure
+description: The instruction set for physical execution. It uses strictly imperative commands.
+
+operational_rules:
+  content_mandate:
+    enforcement_rule: "State exact execution steps. Never explain theory or architectural reasoning."
+    prohibit_theory: true
+
+  imperative_syntax:
+    enforcement_rule: "Start every step with a physical verb (e.g., 'Execute the script.', 'Reboot the node.')."

@@ -1,0 +1,8 @@
+protocol_name: INDEXING
+standard: Universal Sovereign Disclosure
+description: The instruction set for data retrieval tags. It mandates deterministic JSON-LD metadata.
+
+operational_rules:
+  deterministic_retrieval:
+    enforcement_rule: "Tag documents using exact architectural states. Do not use semantic guessing."
+    allowed_tags: ["Tier 1", "Active", "Provisioning", "Reference Implementation"]
