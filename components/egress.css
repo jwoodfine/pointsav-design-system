@@ -1,0 +1,25 @@
+/* egress.css - Regulatory Print Mechanics */
+.print-only { display: none; }
+
+@media print {
+    body { color: #000000 !important; background: #FFFFFF !important; font-family: var(--sys-font-sans) !important; }
+    
+    /* Purge interactive state and metadata chrome */
+    .sidebar-ledger, .mobile-dock, .desktop-actions, .desktop-whatsapp, .global-footer-wrapper, input[type="checkbox"] { display: none !important; }
+    
+    /* Restructure for Letterhead Format */
+    .header-bar { position: static; background: transparent; padding: 0 0 16px 0; margin-bottom: 32px; border-bottom: 2px solid #000; backdrop-filter: none; }
+    .wordmark img { filter: grayscale(100%) contrast(200%); }
+    .main-grid { display: block; margin: 0; padding: 0; }
+    .document-canvas { padding: 0; background: transparent; }
+    
+    /* Document Physics */
+    p, .legal-ledger, .print-only { font-size: 10.5pt; line-height: 1.5; orphans: 4; widows: 4; }
+    h1, h2, h3, h4 { color: #000 !important; break-after: avoid; }
+    h1 { font-size: 20pt; margin-bottom: 16px; max-width: 100%; overflow-wrap: break-word; line-height: 1.1; letter-spacing: -0.02em; }
+    h3 { font-size: 14pt; margin-top: 24px; }
+    
+    .print-only { display: block; margin-top: 32px; break-inside: avoid; }
+    .legal-ledger { break-inside: avoid; margin-top: 32px; border-top: 1px solid #000; padding-top: 16px; }
+    .quarantine-line { display: none; }
+}

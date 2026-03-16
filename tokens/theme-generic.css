@@ -1,0 +1,28 @@
+/* * ==========================================================================
+ * POINTSAV DESIGN SYSTEM: GENERIC THEME (THE VENDOR BASELINE)
+ * ==========================================================================
+ * Defines the Tier-2 Semantic System Tokens and generic structural primitives.
+ * Default variables represent the PointSav System Monolith aesthetic.
+ */
+
+:root {
+    /* 1. TYPOGRAPHIC PHYSICS */
+    --sys-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --sys-font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+
+    /* 2. SYSTEM COLOR TOKENS (PointSav Defaults) */
+    --sys-canvas: #F9FAFB; 
+    --sys-card: #FFFFFF; 
+    --sys-text: #09090B; 
+    --sys-muted: #6B7280; 
+    --sys-border: #E5E7EB; 
+    --sys-hairline: transparent; /* Null by default */
+    --sys-accent: #869FB9; 
+
+    /* 3. STRUCTURAL GEOMETRY */
+    --sys-grid-max: 1024px;
+    --sys-sidebar-width: 300px;
+    --sys-gap-desktop: 64px;
+    --sys-gap-mobile: 40px;
+    --sys-touch-target: 44px;
+}

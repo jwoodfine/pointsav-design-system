@@ -1,0 +1,10 @@
+/* controls.css - Zero-JS CSS State Machines */
+.lang-es, .btn-es { display: none !important; }
+#lang-toggle:checked ~ .app-wrapper .lang-en, #lang-toggle:checked ~ .app-wrapper .btn-en { display: none !important; }
+#lang-toggle:checked ~ .app-wrapper .lang-es { display: block !important; }
+#lang-toggle:checked ~ .app-wrapper .btn-es { display: inline-flex !important; }
+#lang-toggle { display: none; }
+
+@media (max-width: 1024px) {
+    #lang-toggle:checked ~ .app-wrapper .hide-on-mobile { display: none !important; }
+}

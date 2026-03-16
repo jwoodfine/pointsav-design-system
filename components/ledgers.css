@@ -1,0 +1,22 @@
+/* ledgers.css - Fiduciary and Metadata Blocks */
+.quarantine-line { border: none; border-top: 1px solid var(--sys-hairline); margin: 64px 0 32px 0; }
+
+.legal-ledger { font-family: var(--sys-font-mono); font-size: 0.75rem; color: var(--sys-muted); }
+.legal-ledger h4 { font-size: 0.875rem; color: var(--sys-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
+.legal-ledger p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
+
+.sidebar-ledger { position: sticky; top: max(100px, calc(env(safe-area-inset-top) + 80px)); display: flex; flex-direction: column; gap: 24px; font-family: var(--sys-font-mono); font-size: 0.875rem; will-change: transform; transform: translateZ(0); min-width: 0; }
+.trust-badge { font-weight: 700; letter-spacing: 0.05em; text-align: center; padding: 12px; border-radius: 2px; background: var(--sys-text); color: var(--sys-canvas); }
+.meta-block { border-left: 1px solid var(--sys-hairline); padding-left: 16px; }
+.meta-label { font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px; color: var(--sys-muted); display: block; }
+#hash-display { font-variant-numeric: tabular-nums; display: block; overflow-wrap: anywhere; word-break: break-all; }
+
+.global-footer-wrapper { border-top: 1px solid var(--sys-hairline); background: var(--sys-canvas); margin-top: 64px; }
+.global-footer { width: 100%; max-width: var(--sys-grid-max); margin: 0 auto; padding: 48px 24px max(48px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 1fr; gap: var(--sys-gap-desktop); font-family: var(--sys-font-mono); font-size: 0.75rem; color: var(--sys-muted); }
+.global-footer h4 { font-size: 0.875rem; color: var(--sys-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
+.global-footer p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
+
+@media (max-width: 1024px) {
+    .sidebar-ledger { position: relative; top: 0; transform: none; }
+    .global-footer { grid-template-columns: 1fr; gap: 24px; padding-bottom: calc(100px + env(safe-area-inset-bottom)); } 
+}

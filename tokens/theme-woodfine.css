@@ -1,0 +1,17 @@
+/* * ==========================================================================
+ * POINTSAV DESIGN SYSTEM: WOODFINE THEME (THE CUSTOMER OVERRIDE)
+ * ==========================================================================
+ * Maps Woodfine institutional branding onto the Tier-2 Semantic System Tokens.
+ * Must be linked *after* theme-generic.css in the document <head>.
+ */
+
+:root {
+    /* SYSTEM COLOR OVERRIDES (Woodfine Institutional) */
+    --sys-canvas: #F7F9FA; /* Unified monochrome canvas */
+    --sys-card: #F7F9FA;   /* Unified monochrome card */
+    --sys-text: #111827;   /* Deep Slate */
+    --sys-muted: #6B7280; 
+    --sys-border: #111827; /* Brutalist contrast */
+    --sys-hairline: rgba(17, 24, 39, 0.15); /* Structural anchor */
+    --sys-accent: #164679; /* Woodfine Blue Base */
+}

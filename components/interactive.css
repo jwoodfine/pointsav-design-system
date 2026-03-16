@@ -1,0 +1,13 @@
+/* interactive.css - Touch Primitives & Interactions */
+.btn { height: var(--sys-touch-target); padding: 0 20px; border: 1px solid var(--sys-hairline); background: var(--sys-card); color: var(--sys-text); font-family: var(--sys-font-mono); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 2px; transition: background 0.2s, border-color 0.2s; touch-action: manipulation; }
+.btn svg { display: block; flex-shrink: 0; width: 18px; height: 18px; }
+.btn span { display: block; line-height: 1; transform: translateY(1px); }
+.btn:hover { background: #e9ecef; border-color: var(--sys-text); }
+.btn-primary { background: var(--sys-text); color: var(--sys-canvas); border-color: var(--sys-text); }
+.btn-primary:hover { background: #000; }
+
+@media (max-width: 1024px) {
+    .desktop-actions .btn:not(.hide-on-mobile) { flex: 1 1 0; padding: 0 8px; }
+    .hide-on-mobile { display: none !important; }
+    .desktop-whatsapp { display: none !important; }
+}
