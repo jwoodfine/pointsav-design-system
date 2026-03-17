@@ -1,9 +1,0 @@
-token_id: TYPOGRAPHY-RENDER
-standard: Institutional Brutalism
-tier: Tier-6-System
-
-css_payload:
--webkit-font-smoothing: "antialiased"
--moz-osx-font-smoothing: "grayscale"
-
-rationale: "System fonts (San Francisco, Segoe UI, Ubuntu) render inconsistently across operating systems. Enforcing antialiased and grayscale parameters overrides sub-pixel rendering, preventing the text from appearing bloated or blurry on Linux and Firefox environments."

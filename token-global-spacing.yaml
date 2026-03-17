@@ -1,0 +1,17 @@
+# GLOBAL TOKENS: Spacing & Sizing Physics
+# Extracted directly from Woodfine index.html production layout.
+spacing:
+  scale-01: "8px"
+  scale-02: "12px"
+  scale-03: "16px"
+  scale-04: "20px"
+  scale-05: "24px"
+  scale-06: "32px"
+  scale-07: "40px"
+  scale-08: "48px"
+  scale-09: "64px"
+  scale-10: "100px"
+
+layout:
+  max-width-desktop: "1024px"
+  breakpoint-mobile: "1024px"

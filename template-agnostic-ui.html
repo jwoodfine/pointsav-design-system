@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="{{COLOR_CANVAS}}">
+    <meta name="color-scheme" content="{{COLOR_SCHEME}}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>{{SEO_TITLE}}</title>
+    <meta name="description" content="Direct-Hold Solutions for Regional Real Estate. Zero redundant fees. Absolute custodial control.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22{{COLOR_ACCENT}}%22/></svg>">
+    
+    <style>
+        /* TOKENS: INJECTED BY THEME PIPELINE */
+        :root { 
+            --color-canvas-base: {{COLOR_CANVAS}}; 
+            --color-surface-card: {{COLOR_CARD}}; 
+            --color-text-primary: {{COLOR_TEXT}}; 
+            --color-text-muted: {{COLOR_MUTED}}; 
+            --color-border-heavy: {{COLOR_BORDER_HEAVY}}; 
+            --color-border-hairline: {{COLOR_BORDER_HAIRLINE}};
+            --color-action-primary: {{COLOR_ACCENT}}; 
+            --color-action-hover: {{COLOR_ACCENT_HOVER}}; 
+            
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; 
+            
+            --physics-touch-target-min: 44px;
+            --physics-touch-target-dock: 48px;
+            --physics-border-radius: 2px;
+            --physics-prose-width: 65ch;
+            
+            --elevation-nav-header: 100;
+            --elevation-mobile-dock: 999;
+            --elevation-dock-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+            
+            --print-body-text: 10.5pt;
+            --print-header-title: 20pt;
+            --print-orphan-control: 4;
+            --print-header-anchor: 2px solid #000000;
+        }
+
+        /* RESET & PHYSICS */
+        * { box-sizing: border-box; margin: 0; padding: 0; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        html { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+        body { font-family: var(--font-sans); background: var(--color-canvas-base); color: var(--color-text-primary); line-height: 1.5; overflow-x: hidden; }
+        
+        /* LAYOUT ARCHITECTURE */
+        .header-bar { position: sticky; top: 0; background: var(--color-canvas-base); border-bottom: 1px solid var(--color-border-hairline); padding: max(16px, env(safe-area-inset-top)) 24px 16px 24px; z-index: var(--elevation-nav-header); will-change: transform; transform: translateZ(0); }
+        .nav-container { width: 100%; max-width: 1024px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .wordmark { font-weight: 800; font-size: 1.125rem; letter-spacing: -0.03em; text-transform: uppercase; white-space: nowrap; }
+        .desktop-actions { display: flex; gap: 8px; align-items: center; }
+        
+        .main-grid { width: 100%; max-width: 1024px; margin: 48px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
+        
+        /* CONTENT STYLING */
+        .document-canvas { background: transparent; padding: 0; border: none; min-width: 0; }
+        .release-flag { color: var(--color-action-primary); font-weight: 700; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 16px; display: block; }
+        h1 { font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.02em; font-weight: 800; }
+        h3 { font-size: 1.25rem; margin: 32px 0 16px 0; letter-spacing: -0.01em; font-weight: 700; }
+        p { margin-bottom: 16px; max-width: var(--physics-prose-width); font-size: 1.0625rem; }
+        strong { font-weight: 700; }
+
+        /* LEGAL LEDGER */
+        .quarantine-line { border: none; border-top: 1px solid var(--color-border-hairline); margin: 64px 0 32px 0; }
+        .legal-ledger { font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); }
+        .legal-ledger h4 { font-size: 0.875rem; color: var(--color-text-primary); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
+        .legal-ledger p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
+
+        /* SIDEBAR LEDGER */
+        .sidebar-ledger { position: sticky; top: max(100px, calc(env(safe-area-inset-top) + 80px)); display: flex; flex-direction: column; gap: 24px; font-family: var(--font-mono); font-size: 0.875rem; will-change: transform; transform: translateZ(0); min-width: 0; }
+        .trust-badge { background: var(--color-text-primary); color: var(--color-canvas-base); padding: 12px; text-align: center; font-weight: 700; letter-spacing: 0.05em; border-radius: var(--physics-border-radius); }
+        .meta-block { border-left: 1px solid var(--color-border-hairline); padding-left: 16px; }
+        .meta-label { display: block; color: var(--color-text-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px; }
+        #hash-display { font-variant-numeric: tabular-nums; display: block; overflow-wrap: anywhere; word-break: break-all; }
+        
+        /* GLOBAL FOOTER */
+        .global-footer-wrapper { border-top: 1px solid var(--color-border-hairline); background: var(--color-canvas-base); margin-top: 64px; }
+        .global-footer { width: 100%; max-width: 1024px; margin: 0 auto; padding: 48px 24px max(48px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); }
+        .global-footer h4 { font-size: 0.875rem; color: var(--color-text-primary); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
+        .global-footer p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
+
+        /* INTERACTIVE PRIMITIVES */
+        .btn { height: var(--physics-touch-target-min); padding: 0 20px; border: 1px solid var(--color-border-hairline); background: var(--color-surface-card); color: var(--color-text-primary); font-family: var(--font-mono); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--physics-border-radius); transition: background 0.2s, border-color 0.2s; touch-action: manipulation; }
+        .btn svg { display: block; flex-shrink: 0; width: 18px; height: 18px; }
+        .btn span { display: block; line-height: 1; transform: translateY(1px); }
+        .btn:hover { background: var(--color-action-hover); border-color: var(--color-text-primary); }
+        .btn-primary { background: var(--color-text-primary); color: var(--color-canvas-base); border-color: var(--color-text-primary); }
+        .btn-primary:hover { background: var(--color-action-hover); color: var(--color-text-primary); }
+        
+        /* MOBILE ACTION BAR */
+        .mobile-dock { display: none; }
+
+        /* RESPONSIVE DOMINANCE */
+        @media (max-width: 1024px) {
+            .nav-container { flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+            .desktop-actions { justify-content: center; width: 100%; gap: 8px; }
+            .desktop-actions .btn:not(.hide-on-mobile) { flex: 1 1 0; justify-content: center; padding: 0 8px; }
+            .hide-on-mobile { display: none !important; }
+            .main-grid { grid-template-columns: 1fr; gap: 40px; margin: 32px auto; padding: 0 16px; }
+            .sidebar-ledger { position: relative; top: 0; transform: none; }
+            .global-footer { grid-template-columns: 1fr; gap: 24px; padding-bottom: calc(100px + env(safe-area-inset-bottom)); } 
+            .desktop-whatsapp { display: none !important; } 
+            .mobile-dock { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-canvas-base); border-top: 1px solid var(--color-border-hairline); padding: 12px 16px max(12px, env(safe-area-inset-bottom)) 16px; z-index: var(--elevation-mobile-dock); box-shadow: var(--elevation-dock-shadow); will-change: transform; transform: translateZ(0); }
+            .mobile-dock .btn { flex: 1; height: var(--physics-touch-target-dock); background: var(--color-surface-card); }
+        }
+
+        /* REGULATORY PRINT EGRESS */
+        @media print {
+            body { color: #000000 !important; background: #FFFFFF !important; font-family: var(--font-sans) !important; }
+            .sidebar-ledger, .mobile-dock, .desktop-actions, .desktop-whatsapp, .global-footer-wrapper { display: none !important; }
+            .header-bar { position: static; background: transparent; padding: 0 0 16px 0; margin-bottom: 32px; border-bottom: var(--print-header-anchor); backdrop-filter: none; }
+            .wordmark { color: #000; font-size: var(--print-wordmark-title); }
+            .main-grid { display: block; margin: 0; padding: 0; }
+            .document-canvas { padding: 0; background: transparent; }
+            p, .legal-ledger { font-size: var(--print-body-text); line-height: 1.5; orphans: var(--print-orphan-control); widows: var(--print-orphan-control); }
+            h1, h2, h3, h4 { color: #000 !important; break-after: avoid; }
+            h1 { font-size: var(--print-header-title); margin-bottom: 16px; max-width: 100%; overflow-wrap: break-word; line-height: 1.1; letter-spacing: -0.02em; }
+            .legal-ledger { break-inside: avoid; margin-top: 32px; border-top: 1px solid #000; padding-top: 16px; }
+            .quarantine-line { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-wrapper">
+    <header class="header-bar">
+        <div class="nav-container">
+            <div class="wordmark">{{WORDMARK_TEXT}}</div>
+            <nav class="desktop-actions">
+                <a href="{{GITHUB_URL}}" target="_blank" class="btn">
+                    {{ICON_GITHUB}}
+                    <span>MANIFEST</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-grid">
+        <article class="document-canvas">
+            <time class="release-flag" datetime="2026-03-02">FOR IMMEDIATE RELEASE</time>
+            <h1>{{H1_TITLE}}</h1>
+            <p><strong>Vancouver, British Columbia - March 2, 2026 -</strong> System operational and mathematically verified.</p>
+            <p>This is a structurally perfected node executing within the Sovereign Network. The interface is operating completely independently of hardcoded physical variables, drawing its layout and optical physics entirely from dynamic Semantic Aliases.</p>
+            
+            <hr class="quarantine-line">
+            <section class="legal-ledger">
+                <h4>Continuous Disclosure and Forward-Looking Statements</h4>
+                <p>This release serves as an engineering proof of the PointSav Digital Systems Token Architecture. This payload is mathematically immutable.</p>
+            </section>
+        </article>
+
+        <aside class="sidebar-ledger">
+            <div class="trust-badge">[ ∅ ZERO COOKIES ]</div>
+            
+            <div class="meta-block">
+                <span class="meta-label">Cryptographic State Hash</span>
+                <span id="hash-display" style="font-size:0.75rem;">CALCULATING...</span>
+            </div>
+
+            <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action desktop-whatsapp" style="align-self: stretch; border-color: var(--color-border-hairline);">
+                {{ICON_WHATSAPP}} <span>WHATSAPP</span>
+            </a>
+        </aside>
+    </main>
+
+    <div class="global-footer-wrapper">
+        <footer class="global-footer">
+            <div class="copyright-disclaimer">
+                <h4>Trademarks & Copyright</h4>
+                <p>&copy; 2026 Woodfine Capital Projects Inc. All rights reserved.</p>
+            </div>
+            <div class="digital-disclaimer">
+                <h4>Digital Infrastructure & Privacy Posture</h4>
+                <p>This interface operates on a Zero-Cookie and Zero-State Telemetry architecture. System interactions are routed explicitly to our self-hosted infrastructure.</p>
+            </div>
+        </footer>
+    </div>
+
+    <nav class="mobile-dock">
+        <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action" style="border-color: var(--color-border-hairline);">
+            {{ICON_WHATSAPP}} <span>WHATSAPP</span>
+        </a>
+    </nav>
+</div>
+
+<script>
+    (function() {
+        let maxScroll = 0;
+        let clickTargets = [];
+        const startTime = Date.now();
+        
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) maxScroll = scrollPercent;
+        }, { passive: true });
+
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('.btn, a');
+            if (target) clickTargets.push(target.innerText.trim().substring(0, 20) || 'link_click');
+        }, { passive: true });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') {
+                const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                const payload = {
+                    uri: window.location.href,
+                    timestamp: new Date().toISOString(),
+                    user_agent: navigator.userAgent,
+                    referrer: document.referrer || "direct",
+                    viewport: `${window.innerWidth}x${window.innerHeight}`,
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "unknown",
+                    device_memory: navigator.deviceMemory || "unknown",
+                    hardware_cores: navigator.hardwareConcurrency || "unknown",
+                    dwell_seconds: Math.round((Date.now() - startTime) / 1000),
+                    scroll_depth: maxScroll,
+                    intent_clicks: clickTargets.length > 0 ? clickTargets.join(' | ') : "none",
+                    lang_browser: navigator.language || "unknown",
+                    network: conn ? conn.effectiveType : "unknown"
+                };
+                const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+                navigator.sendBeacon("{{TELEMETRY_ENDPOINT}}", blob);
+            }
+        });
+    })();
+
+    async function calculateHash(){
+        const text = document.querySelector('.document-canvas').innerText;
+        const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        const hashEl = document.getElementById('hash-display');
+        if(hashEl) hashEl.innerText = hashHex;
+    }
+    
+    window.addEventListener('DOMContentLoaded', calculateHash);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# ALIAS TOKENS: Sovereign Telemetry Engine (V1.2)
+# Standard: DS-ADR-06 (Zero-Cookie Architecture)
+
+aliases:
+  telemetry:
+    # The empty slot to be injected by the Customer Media Assets
+    transmission_endpoint: "{theme.telemetry_endpoint}"
+    
+    # The mathematical payload contract required by the Rust Daemon
+    payload_schema:
+      - uri
+      - timestamp
+      - user_agent
+      - referrer
+      - viewport
+      - timezone
+      - device_memory
+      - hardware_cores
+      - dwell_seconds
+      - scroll_depth
+      - intent_clicks
+      - lang_browser
+      - network
