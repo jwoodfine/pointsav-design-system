@@ -1,0 +1,32 @@
+# ALIAS TOKENS: Semantic UI Mapping (The "Empty Slots")
+aliases:
+  color:
+    canvas-base: "{theme.canvas}"
+    surface-card: "{theme.card}"
+    text-primary: "{theme.text}"
+    text-muted: "{theme.text_muted}"
+    border-heavy: "{theme.border_heavy}"
+    border-hairline: "{theme.border_hairline}"
+    action-primary: "{theme.accent}"
+    action-hover: "{theme.accent_hover}"
+    
+  physics:
+    touch-target-min: "44px"
+    touch-target-dock: "48px"
+    content-width-prose: "65ch"
+    border-radius-base: "2px"
+    
+  elevation:
+    nav-header: "{elevation.z-index.header}"
+    mobile-dock: "{elevation.z-index.dock}"
+    dock-shadow: "{elevation.shadow.subtle-up}"
+    
+  print_engine:
+    body-text: "{print.typography.size-legal}"
+    header-title: "{print.typography.size-h1}"
+    orphan-control: "{print.fragmentation.orphans}"
+    header-anchor: "{print.borders.header-anchor}"
+    
+  primitives:
+    ui_icon_github: "{assets.vectors.icon_github}"
+    ui_icon_whatsapp: "{assets.vectors.icon_whatsapp}"
