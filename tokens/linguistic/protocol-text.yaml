@@ -1,17 +1,20 @@
 protocol_name: TEXT
 standard: Universal Sovereign Disclosure
-description: The root instruction set for generating corporate documentation. It enforces Institutional Brutalism.
-
+description: Strict linguistic and visual protocol for Sovereign Repository documentation, enforcing Bloomberg Terminal aesthetics and objective engineering facts.
 operational_rules:
-  sentence_structure:
-    max_word_count: 15
-    mood_mandate: "Imperative and declarative facts only."
-    prohibit_complex_clauses: true
+  # 1. Engineering Factuality (BCSC Alignment)
+  prohibit_forward_looking_statements: true  # Do not use "will", "plans to", or "is going to". State current physical reality.
+  anti_puffery_mandate: true                 # Ban: seamless, robust, revolutionary, disrupt, leverage, state-of-the-art.
+  factual_state_reporting: true              # Use objective noun-verb constructs (e.g., "This engine executes X").
 
-  zero_puffery_mandate:
-    enforcement_rule: "If an adjective does not describe a mathematical or physical state, purge it."
-    banned_adjectives: ["seamless", "revolutionary", "best-in-class", "innovative"]
+  # 2. Institutional Brutalism Aesthetic
+  minto_pyramid_structure: true              # Conclusions and execution commands precede all explanatory text.
+  plain_language: true                       # Enforce ISO 24495-1 standard. Short, declarative sentences. Maximum 15 words.
+  flat_visual_hierarchy: true                # Prohibit nested bullet points. Use standard Markdown tables for data matrices.
+  bilingual_symmetry: true                   # Maintain exact 1-to-1 EN/ES structural mirroring.
 
-  objective_identity:
-    prohibit_first_person: true
-    allowed_roles: ["The Executive", "The Manager", "The Contributor", "The System Vendor", "The Customer"]
+  # 3. Topographical Layouts (Cross-Linking)
+  enforce_readme_templates: true
+  templates:
+    navigation_ledger: "All repositories must contain a top-level centered blockquote or divider mapping direct links to sibling repositories."
+output_format: "Standard Markdown (.md). Use strict bolding for emphasis. Prefer tables over lists for data."
