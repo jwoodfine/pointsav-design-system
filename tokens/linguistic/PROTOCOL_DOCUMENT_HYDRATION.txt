@@ -1,0 +1,51 @@
+# ==============================================================================
+# LINGUISTIC PROTOCOL: DOCUMENT HYDRATION MANIFEST
+# SYSTEM: PointSav Digital Systems
+# DESCRIPTION: The universal plain-text drop format for generating bilingual 
+# web and print Institutional Disclosures. 
+# INSTRUCTIONS: Fill the data strictly beneath the bracketed [TAGS]. 
+# Drop this file to the System Architecture Engine to compile the HTML.
+# ==============================================================================
+
+[SYSTEM_DATE]
+(Insert the ISO 8601 Date for the Sidebar and Hash e.g., 2026-03-19)
+
+[RELEASE_DATE_EN]
+(e.g., MARCH 19, 2026)
+
+[RELEASE_DATE_ES]
+(e.g., 19 DE MARZO DE 2026)
+
+[HOOK_TITLE_EN]
+(The H2 Executive SEO Title in English)
+
+[HOOK_TITLE_ES]
+(The H2 Executive SEO Title in Spanish)
+
+[ABSTRACT_EN]
+(The English Executive Summary paragraph. Keep to 2-3 sentences.)
+
+[ABSTRACT_ES]
+(The Spanish Executive Summary paragraph.)
+
+[TAKEAWAYS_EN]
+* (English Bullet 1)
+* (English Bullet 2)
+* (English Bullet 3)
+
+[TAKEAWAYS_ES]
+* (Spanish Bullet 1)
+* (Spanish Bullet 2)
+* (Spanish Bullet 3)
+
+[OFFICIAL_TITLE_EN]
+(The H1 Legal Title of the document in English)
+
+[OFFICIAL_TITLE_ES]
+(The H1 Legal Title of the document in Spanish)
+
+[OFFICIAL_MANUSCRIPT_EN]
+(Paste the full English press release here. Use standard paragraph breaks. Use ### for subheadings. The engine will map this to the correct HTML tags.)
+
+[OFFICIAL_MANUSCRIPT_ES]
+(Paste the full Spanish press release here. Use standard paragraph breaks. Use ### for subheadings. The engine will map this to the correct HTML tags.)

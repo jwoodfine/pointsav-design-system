@@ -1,0 +1,24 @@
+# ==============================================================================
+# LINGUISTIC PROTOCOL: TEXT INGESTION (NEWS RELEASES)
+# SYSTEM: PointSav Digital Systems
+# APPLICATION: woodfine-media-assets / Document Canvas
+# DESCRIPTION: Standardized plain-text structure for parsing and hydrating 
+# generic media releases into the HTML DOM. 
+# ==============================================================================
+
+[TITLE]
+(Insert full institutional headline here. No markdown required.)
+
+[DATE]
+(Insert publication date. Format: Month DD, YYYY)
+
+[OPENER]
+(Insert the single opening abstract paragraph here. This establishes the immediate thesis prior to the takeaways.)
+
+[TAKEAWAYS]
+* (Insert bullet point 1 - Executive summary data)
+* (Insert bullet point 2 - Structural or financial data)
+* (Insert bullet point 3 - Strategic objective)
+
+[BODY]
+(Insert the main manuscript text here. Standard paragraph breaks apply. Subheadings should be denoted by standard capitalization or preceded by '###' if strictly necessary. Rely on raw text structure to feed the DOM.)
