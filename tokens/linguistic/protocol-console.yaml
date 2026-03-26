@@ -1,0 +1,19 @@
+protocol_name: CONSOLE
+standard: Universal Sovereign Disclosure
+description: The instruction set for the Sovereign Command Ledger interface. It legally defines the F-Key Taxonomy and prohibits Web 2.0 SaaS paradigms.
+
+operational_rules:
+  fiduciary_mandate:
+    enforcement_rule: "The UI must act as a 'Fiduciary Triage Deck'. It must present extracted facts for human verification, never asking the operator for manual data entry or file naming."
+    banned_terms: ["Dashboard", "Control Panel", "Settings", "User Profile"]
+    required_replacements: ["Command Ledger", "Switchboard", "Machine-Based Authorization"]
+
+  f_key_taxonomy:
+    enforcement_rule: "Navigation is strictly bound to physical hardware keys representing universal business pillars."
+    F1: "Help (Protocol & Glossary)"
+    F2: "People (Identity Ledger)"
+    F3: "Email (Comm Diode)"
+    F4: "Content (Knowledge Synthesis)"
+    F5: "Minutebook (Deep Records)"
+    F6: "Bookkeeper (Financial Ledger)"
+    F12: "Input Machine (Secure Gateway)"
