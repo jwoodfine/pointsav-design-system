@@ -1,59 +1,54 @@
 <div align="center">
 
-# PointSav Design System
-### *Institutional Brutalism & Optical Physics*
+# PointSav Digital Systems
+### *Design System: Linguistic Protocols & Optical Physics | Sistema de Diseño: Protocolos Lingüísticos y Física Óptica*
+**Vancouver | New York | Berlin**
 
-[ **System Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Documentation Wiki** ](https://github.com/pointsav/content-wiki-documentation) | [ **Main Profile** ](https://github.com/pointsav)
-
-*Operational Deployment:* [ **Woodfine Management Corp.** ](https://github.com/woodfine)
-
-[ 🇪🇸 Leer este documento en Español ](./README.es.md)
+[ **Documentation Wiki** ](https://github.com/pointsav/content-wiki-documentation) | [ **System Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Reference Deployment (Woodfine Fleet)** ](https://github.com/woodfine/woodfine-fleet-deployment)
 
 </div>
 
 ---
 
-> [!WARNING]
-> **AGNOSTIC INFRASTRUCTURE MANDATE**
-> This repository defines universal physics and semantic aliases. **It contains zero proprietary brand colors.** Customer themes must be injected at runtime via independent Media Asset repositories.
+## 1. EXECUTIVE OVERVIEW | VISIÓN GENERAL EJECUTIVA
 
-### I. THE PHILOSOPHY OF TOKEN TIERING
-To achieve true enterprise scalability, a design system must divorce **physical reality** from **semantic intent**. If a developer hardcodes a specific hex color (`#164679`) into a button component, the infrastructure becomes brittle and impossible to theme.
+**[ EN ]** To achieve institutional scalability, a design system must divorce physical reality from semantic intent. This repository defines the strict Two-Tier Token Architecture, built for the Leapfrog 2030 standard and constrained by our Institutional Brutalism mandate. It contains the operational laws for typography, component architecture, and the machine-readable linguistic protocols utilized by the Small Language Model (SLM) engines.
 
-We solve this using a strict Two-Tier Token Architecture, built for the Leapfrog 2030 standard and constrained by our Institutional Brutalism mandate:
-
-1. **Global Tokens (`tokens/global/`):** Unopinionated mathematical realities. They define a specific pixel grid, font stack, or depth shadow.
-2. **Semantic Aliases (`tokens/semantic/`):** Contextual slots assigned to UI components (e.g., `color-action-primary`). 
-
-By forcing the HTML/CSS to exclusively consume Semantic Aliases, we allow the Customer (Woodfine) or the Vendor (PointSav) to dynamically inject their proprietary Global Tokens into the empty Alias slots at compile time.
-
-### II. SYSTEM TOPOGRAPHY & MASTER INDEX
-
-#### 📐 `tokens/global/` (Optical Physics)
-*Raw physical properties and absolute mathematical values.*
-* **`token-global-assets.yaml`**: Raw SVG paths (GitHub, WhatsApp) abstracted from HTML payloads.
-* **`token-global-color.yaml`**: The master structural palette. Base colors and algorithmic shades.
-* **`token-global-elevation.yaml`**: Z-Index architecture and dimensional drop-shadows.
-* **`token-global-print.yaml`**: Exact point-sizes and physics for regulatory PDF egress.
-* **`token-global-spacing.yaml`**: The 8px Swiss Baseline Grid and layout breakpoints.
-* **`token-global-typography.yaml`**: Fluid scale clamping, tracking, and core font families.
-
-#### 🧩 `tokens/semantic/` (Intent & Aliasing)
-*Semantic slots that bridge physical values to component applications.*
-* **`token-alias-telemetry.yaml`**: Defines the transmission diode and JSON payload contract.
-* **`token-alias-ui.yaml`**: Semantic mapping for interactive states, backgrounds, text hierarchies, and structural borders.
-
-#### ⚖️ `tokens/linguistic/` (The Law)
-*Institutional Brutalism writing rules and corporate protocols.*
-* **`protocol-comm.yaml`**: Internal dispatch & external messaging logic.
-* **`protocol-legal.yaml`**: Translation of market claims into structural, defensible facts.
-* **`protocol-text.yaml`**: Institutional Brutalism core writing rules (ISO 24495-1).
-* **`ps-protocol-telemetry-web.yaml`**: Digital Infrastructure & Privacy Posture.
-* **`ps-protocol-trademark-web.yaml`**: PointSav Trademark & Copyright Defensibility.
-
-#### 🏛️ `architecture-decisions/` (ADRs)
-*Historical, immutable logs of why the system is designed this way.*
-* **`DS-ADR-01` to `DS-ADR-04`**: Core decisions governing cryptography, footprint transparency, and GitHub integration.
+**[ ES ]** Para lograr escalabilidad institucional, un sistema de diseño debe separar la realidad física de la intención semántica. Este repositorio define la Arquitectura de Tokens de Dos Niveles, construida para el estándar Leapfrog 2030. Contiene las leyes operativas para tipografía, arquitectura de componentes y los protocolos lingüísticos legibles por máquina utilizados por los motores de Modelos de Lenguaje Pequeño (SLM).
 
 ---
-*© 2026 PointSav Digital Systems™*
+
+## 2. OPTICAL PHYSICS (GLOBAL TOKENS)
+Raw physical properties and absolute mathematical values. These define the agnostic geometry of the interface.
+
+| File Index | Mechanical Function |
+| :--- | :--- |
+| `token-global-color.yaml` | The master structural palette. Base colors and algorithmic shades. |
+| `token-global-spacing.yaml` | The 8px Swiss Baseline Grid and layout breakpoints. |
+| `token-global-typography.yaml` | Fluid scale clamping, tracking, and core font families. |
+| `token-global-print.yaml` | Exact point-sizes and physics for regulatory PDF egress. |
+
+---
+
+## 3. INTENT & ALIASING (SEMANTIC TOKENS)
+Semantic slots that bridge physical values to component applications.
+
+| File Index | Mechanical Function |
+| :--- | :--- |
+| `token-alias-ui.yaml` | Semantic mapping for interactive states, backgrounds, and structural borders. |
+| `token-alias-telemetry.yaml` | Defines the transmission diode and JSON payload contract. |
+
+---
+
+## 4. THE LAW (LINGUISTIC PROTOCOLS)
+Strict structural writing rules and corporate protocols enforced by the `service-content` compiler.
+
+| File Index | Mechanical Function |
+| :--- | :--- |
+| `protocol-comm.yaml` | Internal dispatch & external messaging logic. |
+| `protocol-legal.yaml` | Translation of market claims into structural, defensible facts. |
+| `protocol-text.yaml` | Core writing rules adhering to the ISO 24495-1 Plain Language standard. |
+| `protocol-memo.yaml` | Minto Pyramid structure for internal executive ledgers. |
+
+---
+*© 2026 PointSav Digital Systems. Public Architectural Blueprint.*
