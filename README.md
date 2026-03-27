@@ -25,16 +25,6 @@ To achieve institutional scalability, a design system must divorce physical real
 ## 📐 The Optical Physics Pipeline
 Our design system enforces a strict hierarchy, separating the raw physics of the interface from the specific intent of a given UI component.
 
-```mermaid
-graph LR;
-    A(Global Tokens<br/>Raw Physics) -->|Alias Mapping| B(Semantic Tokens<br/>Component Intent);
-    B -->|Theme Injection| C[Customer UI];
-    
-    style A fill:#111827,stroke:#869FB9,stroke-width:1px,color:#fff
-    style B fill:#111827,stroke:#869FB9,stroke-width:1px,color:#fff
-    style C fill:#164679,stroke:#111827,stroke-width:2px,color:#fff
-```
-
 ### 1. Optical Physics (Global Tokens)
 Raw physical properties and absolute mathematical values. These define the agnostic geometry of the interface.
 
