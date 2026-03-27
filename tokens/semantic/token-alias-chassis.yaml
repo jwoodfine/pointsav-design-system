@@ -1,0 +1,21 @@
+# ALIAS TOKENS: Sovereign Command Ledger (The Chassis)
+# Standard: DS-ADR-08 (Institutional Brutalism)
+
+aliases:
+  chassis_geometry:
+    # Hardware Ribbon (Visual F-Keys)
+    ribbon_height: "48px"
+    ribbon_padding: "12px 24px"
+    f_key_radius: "2px"
+    f_key_shadow_idle: "0 2px 0 {theme.border_heavy}"
+    f_key_shadow_active: "0 0 0 {theme.accent}"
+    f_key_press_transform: "translateY(2px)"
+    
+    # Split Viewport
+    tui_matrix_width: "50%"
+    gui_viewport_width: "50%"
+    
+    # Omnibar (CLI)
+    omnibar_border_top: "2px solid {theme.text}"
+    omnibar_padding: "16px 24px"
+    prompt_font_size: "15px"
