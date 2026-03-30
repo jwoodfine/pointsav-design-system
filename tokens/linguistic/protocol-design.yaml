@@ -1,11 +1,27 @@
-protocol_name: DESIGN
-standard: Universal Sovereign Disclosure
-description: The instruction set for user interfaces. It enforces optical layout preservation and Institutional Brutalism.
-
-operational_rules:
-  optical_preservation:
-    enforcement_rule: "Render UI strictly using HTML-aligned tables and native alert blocks."
-  
-  typography_mandate:
-    enforcement_rule: "Use strictly monospace or highly legible sans-serif for data rendering."
-    prohibit_animations: true
+id: DESIGN-01
+name: Optical Preservation & Sovereign Presentation Protocol
+type: core_linguistic_protocol
+enforcement_level: STRICT
+description: >
+  Governs the optical rendering and presentation standards for all PointSav Sovereign Engine outputs.
+  This protocol ensures that the visual delivery of information mirrors the immutable
+  data integrity enforced by the Zero-Drift Architecture (EXTRACT-01) and the dynamic
+  thematic intelligence of the Metadata Matrix (INDEX-01). It translates raw data
+  fidelity into unquestionable institutional authority through disciplined design,
+  operating as a critical interface for the Data Mesh Core Linguistic Protocols.
+mandate: "Institutional Brutalism: Uncompromising Authority in Visual Semiotics"
+version: "v3.0"
+updated: "2026-03-13"
+rules:
+  visual_fidelity:
+    - All UI/UX rendering MUST adhere strictly to HTML-aligned tables and native alert blocks.
+    - Data rendering MUST exclusively utilize monospace or highly legible sans-serif fonts.
+    - Visual formatting MUST never introduce interpretative drift or bias into source data,
+      thereby reinforcing the zero-drift architecture (EXTRACT-01).
+  sovereign_identity:
+    - ALL typographic wordmarks and entity identifiers MUST maintain a single, canonical source of truth (DS-ADR-08).
+    - Design elements MUST reinforce the declarative, Subject-Verb-Object (S-V-O) linguistic structures
+      mandated by indexing protocols (INDEX-01) and the principle of Financial Journalism as Corporate Declaration.
+    - The aesthetic output MUST project the absolute authority, immutability, and contextual
+      relevance inherent to the PointSav Sovereign Engine's intelligence outputs.
+    - All textual UI components and rendering narratives MUST employ the Active Present Tense to project continuous systemic operational authority.

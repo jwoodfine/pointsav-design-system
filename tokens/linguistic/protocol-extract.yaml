@@ -1,12 +1,17 @@
-protocol_name: EXTRACT
-standard: Universal Sovereign Disclosure
-description: The instruction set for data parsing. It mathematically forbids inference and hallucination.
-
-operational_rules:
-  zero_inference_mandate:
-    enforcement_rule: "Never infer data. Output null if the fact is not physically present."
-    prohibit_summarization: true
-
-  flag_execution:
-    "-md": "Output parsed data as raw Markdown, preserving optical layout."
-    "-yaml": "Output parsed data as a structured YAML array."
+id: EXTRACT-01
+name: Zero-Loss Format Translation
+type: core_linguistic_protocol
+enforcement_level: STRICT
+description: This protocol is a fundamental directive from the PointSav Sovereign Engine, mandating the absolute fidelity of source ingestion within the Data Mesh. It enforces the ZERO-DRIFT ARCHITECTURE by ensuring all external assets become immutable historical ledgers, crucial for DS-ADR-08 Data Integrity.
+updated: "2026-03-13"
+version: "v2.1"
+rules:
+  fidelity:
+    - All ingested source files (e.g., .md, .txt) MUST achieve 100% verbatim fidelity, mirroring the original document precisely.
+    - Summarization, condensation, or abridgment of source content is strictly PROHIBITED.
+    - Modification of tone, pacing, narrative flow, or semantic content is strictly PROHIBITED.
+  isolation:
+    - The raw source file MUST remain entirely free of injected thematic tags, categorization metadata, or any institutional commentary. All such intelligence is managed by protocol-indexing.yaml.
+    - The core function of the source file is to serve as an immutable, unalterable historical ledger, a foundational element of the ZERO-DRIFT ARCHITECTURE. Any deviation compromises DS-ADR-08.
+  system_logging:
+    - "While the ingested asset retains its original temporal state for zero-drift fidelity, all system logs, audit records, and Sovereign Engine reporting regarding the extraction event MUST strictly utilize the Active Present Tense (e.g., 'ingests', 'verifies', 'isolates')."

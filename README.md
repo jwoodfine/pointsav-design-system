@@ -1,31 +1,24 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/pointsav/pointsav-media-assets/main/ASSET-SIGNET-MASTER.svg" width="80" alt="PointSav Signet">
-
 # PointSav Design System
 ### *Linguistic Protocols & Optical Physics | Protocolos Lingüísticos y Física Óptica*
+**Vancouver | New York | Berlin**
 
-[![Standard](https://img.shields.io/badge/Standard-Leapfrog_2030-111827?style=flat-square)](#)
-[![Rendering](https://img.shields.io/badge/Rendering-Zero_JS-111827?style=flat-square)](#)
-[![Status](https://img.shields.io/badge/Status-Active-54924E?style=flat-square)](#)
-
-[ **Documentation Wiki** ](https://github.com/pointsav/content-wiki-documentation) | [ **System Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Reference Fleet** ](https://github.com/woodfine)
+[ **Documentation Wiki** ](https://github.com/pointsav/content-wiki-documentation) | [ **System Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Reference Deployment (Woodfine Fleet)** ](https://github.com/woodfine/woodfine-fleet-deployment)
 
 </div>
 
 ---
 
-<details>
-<summary><b>🛡️ VIEW EXECUTIVE OVERVIEW & ARCHITECTURAL INTENT</b></summary>
-<br>
-To achieve institutional scalability, a design system must divorce physical reality from semantic intent. This repository defines the strict Two-Tier Token Architecture, built for the Leapfrog 2030 standard and constrained by our Institutional Brutalism mandate. It contains the operational laws for typography, component architecture, and the machine-readable linguistic protocols utilized by the Small Language Model (SLM) engines.
-<br><br>
-</details>
+## 1. EXECUTIVE OVERVIEW | VISIÓN GENERAL EJECUTIVA
 
-## 📐 The Optical Physics Pipeline
-Our design system enforces a strict hierarchy, separating the raw physics of the interface from the specific intent of a given UI component.
+**[ EN ]** To achieve institutional scalability, a design system must divorce physical reality from semantic intent. This repository defines the strict Two-Tier Token Architecture, built for the Leapfrog 2030 standard and constrained by our Institutional Brutalism mandate. 
 
-### 1. Optical Physics (Global Tokens)
+Because the underlying data within PointSav architectures is strictly composed of **Machine-Readable Primitives** (`.md`, `.yaml`, `.csv`), this Design System serves as the "Lens" for **State Projection**. It contains the operational laws for typography, component architecture, and the machine-readable linguistic protocols utilized by the Semantic ALUs to render raw math into authoritative, human-readable interfaces.
+
+---
+
+## 2. OPTICAL PHYSICS (GLOBAL TOKENS)
 Raw physical properties and absolute mathematical values. These define the agnostic geometry of the interface.
 
 | File Index | Mechanical Function |
@@ -33,17 +26,21 @@ Raw physical properties and absolute mathematical values. These define the agnos
 | `token-global-color.yaml` | The master structural palette. Base colors and algorithmic shades. |
 | `token-global-spacing.yaml` | The 8px Swiss Baseline Grid and layout breakpoints. |
 | `token-global-typography.yaml` | Fluid scale clamping, tracking, and core font families. |
-| `token-global-print.yaml` | Exact point-sizes and physics for regulatory PDF egress. |
+| `token-global-print.yaml` | Exact point-sizes and physics for regulatory Analog Exhaust (PDFs). |
 
-### 2. Intent & Aliasing (Semantic Tokens)
+---
+
+## 3. INTENT & ALIASING (SEMANTIC TOKENS)
 Semantic slots that bridge physical values to component applications.
 
 | File Index | Mechanical Function |
 | :--- | :--- |
-| `token-alias-ui.yaml` | Semantic mapping for interactive states, backgrounds, and borders. |
+| `token-alias-ui.yaml` | Semantic mapping for interactive states, backgrounds, and structural borders. |
 | `token-alias-telemetry.yaml` | Defines the transmission diode and JSON payload contract. |
 
-### 3. The Law (Linguistic Protocols)
+---
+
+## 4. THE LAW (LINGUISTIC PROTOCOLS)
 Strict structural writing rules and corporate protocols enforced by the `service-content` compiler.
 
 | File Index | Mechanical Function |
@@ -54,4 +51,4 @@ Strict structural writing rules and corporate protocols enforced by the `service
 | `protocol-memo.yaml` | Minto Pyramid structure for internal executive ledgers. |
 
 ---
-*© 2026 PointSav Digital Systems™*
+*© 2026 PointSav Digital Systems. Public Architectural Blueprint.*

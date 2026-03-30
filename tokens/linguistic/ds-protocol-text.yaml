@@ -1,0 +1,11 @@
+title: "POINTSAV LINGUISTIC TOKEN: GLOBAL NOMENCLATURE LOCK"
+metadata:
+  status: "ACTIVE"
+  scope: "Constitutional SLM Rule for Cross-Language Translation"
+constitutional_rules:
+  - directive: "Sovereign Terminology Preservation"
+    accepted_behavior: "Maintain the structural integrity of specific PointSav and Woodfine product architectures across all linguistic translations. Specifically, 'Direct-Hold Solution' must remain in English for all Spanish and other foreign language translations."
+    negative_constraint: "Do not translate locked architectural terms."
+  - directive: "Machiavellian Neutrality"
+    accepted_behavior: "Present systemic capabilities as undeniable structural facts without attacking or comparing against legacy models."
+    negative_constraint: "Prohibit competitive disparagement or defensive justifications of the technology."
