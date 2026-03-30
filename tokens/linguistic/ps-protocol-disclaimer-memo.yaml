@@ -1,0 +1,19 @@
+title: "POINTSAV SPECIFIC PROTOCOL: SECURITIES DISCLAIMER"
+metadata:
+  status: "ACTIVE"
+  scope: "APPLIES TO POINTSAV EXTERNAL COMMUNICATIONS"
+sections:
+  - heading: "1. STRATEGIC OBJECTIVE"
+    content: "To provide an airtight, multi-jurisdictional safe harbor for unregistered securities and forward-looking statements while utilizing soft-entry typography to avoid projecting a hostile legal tone. This token isolates digital infrastructure risks from real estate risks."
+  - heading: "2. SYNTACTICAL ENFORCEMENT"
+    content: "To maintain temporal parity, this disclaimer MUST utilize strictly Subject-Verb-Object (S-V-O) declarative structures in the Active Present Tense."
+  - heading: "3. EXECUTION TEMPLATES (SECURITIES FOOTER)"
+    instruction: "This exact block must be appended to any news release discussing capital deployment or structural technology capabilities. Use the generic template for baseline configurations, or the pointsav_execution for specific Tier 1 deployments."
+    generic_template: >
+      **Regulatory disclosures and forward-looking statements.**
+
+      [CORPORATE ENTITY] operates [TECHNOLOGY SUBSIDIARY] as an unincorporated technology division. Management capitalizes this architecture strictly through the private placement of unregistered securities. Management restricts distribution globally to verified Accredited and Qualified Investors under statutory exemptions including Canada’s NI 45-106, U.S. Regulation D, Mexico’s LMV, and the EU Prospectus Regulation (EU 2017/1129) / Spain’s LMVSI. These instruments remain unregistered under the U.S. Securities Act of 1933 and applicable national laws. Management prohibits sales in non-compliant jurisdictions. This news release contains forward-looking statements under the U.S. Private Securities Litigation Reform Act of 1995 and Canada’s NI 51-102. Management bases projections on specific technological assumptions regarding network engineering. Actual performance deviates materially if systemic technical risks materialize. Material risks include [SPECIFIC TECHNICAL RISKS], and operational commercialization failure. [CORPORATE ENTITY] disclaims any obligation to update these statements except as legally mandated.
+    pointsav_execution: >
+      **Regulatory disclosures and forward-looking statements.**
+
+      Woodfine Capital Projects Inc. operates PointSav Digital Systems as an unincorporated technology division. Management capitalizes this architecture strictly through the private placement of unregistered securities. Management restricts distribution globally to verified Accredited and Qualified Investors under statutory exemptions including Canada’s NI 45-106, U.S. Regulation D, Mexico’s LMV, and the EU Prospectus Regulation (EU 2017/1129) / Spain’s LMVSI. These instruments remain unregistered under the U.S. Securities Act of 1933 and applicable national laws. Management prohibits sales in non-compliant jurisdictions. This news release contains forward-looking statements under the U.S. Private Securities Litigation Reform Act of 1995 and Canada’s NI 51-102. Management bases projections on specific technological assumptions regarding network engineering. Actual performance deviates materially if systemic technical risks materialize. Material risks include the failure of Totebox Archives to maintain cryptographically secured isolation, physical supply chain fracture, vulnerabilities in hardware protocols (Machine-Based Authorization, Diode Standard), and operational commercialization failure. Woodfine Capital Projects Inc. disclaims any obligation to update these statements except as legally mandated.

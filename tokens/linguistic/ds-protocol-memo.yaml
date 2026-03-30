@@ -1,0 +1,57 @@
+# ==============================================================================
+# LINGUISTIC PROTOCOL: MEMO
+# STANDARD: Bloomberg / Oxford Business
+# FOCUS: Institutional Brutalism, Regulatory Derisking, Precision
+# ==============================================================================
+version: "2.1.0"
+last_updated: "2026-03-28"
+
+principles:
+  - rule: "Active, Decisive Voice"
+    description: "Eliminate passive constructs. Use strong, mechanic-driven verbs."
+  - rule: "Institutional Brutalism (DS-ADR-08)"
+    description: "Surgical precision. Zero marketing fluff. Favor brevity and data density."
+  - rule: "Regulatory Derisking (NI 51-102)"
+    description: "Soften absolute forward-looking claims using intent-based phrasing."
+
+grammar_and_mechanics:
+  punctuation:
+    - rule: "Oxford Comma"
+      enforcement: "Strict"
+      description: "Always use the Oxford comma in lists."
+    - rule: "Entity vs. Trademark Punctuation" # [APPENDED: 2026-03-28]
+      enforcement: "Strict"
+      description: "Retain formal corporate punctuation (e.g., '.') when identifying the legal operator or preparer. Strip punctuation only when using the name as a stylized brand asset or typographic wordmark (per DS-ADR-08)."
+      examples:
+        approved: "Prepared by Woodfine Management Corp."
+        rejected: "Prepared by Woodfine Management Corp"
+
+  formatting:
+    - rule: "Currency Normalization (ISO 4217)" # [APPENDED: 2026-03-28]
+      enforcement: "Strict"
+      description: "Enforce strict ISO 4217 abbreviations combined with the currency symbol for all financial metrics."
+      examples:
+        approved: ["CAD$25.0 million", "USD$10.0 million"]
+        rejected: ["C$25.0 million", "US$10 million", "25M CAD"]
+
+vocabulary:
+  active_verbs:
+    - "Engineered"
+    - "Allocated"
+    - "Governs"
+    - "Executes"
+    - "Maintains"
+  
+  causal_mechanics: # [APPENDED: 2026-03-28]
+    - rule: "Causal Governance"
+      description: "Ensure operational relationships are defined by their structural purpose and legal necessity, avoiding passive states of being."
+      examples:
+        approved: "Manager maintains Board of Directors representation to utilize Friends, Family, and Business Associates' subscription agreements."
+        rejected: "Manager is on the Board of Directors for the use of..."
+
+  regulatory_phrasing:
+    - phrase: "Targeting..."
+    - phrase: "Designed to..."
+    - phrase: "Engineered to allocate up to..." # [APPENDED: 2026-03-28]
+    - phrase: "Maintaining a strict zero-asset profile" # [APPENDED: 2026-03-28]
+    - phrase: "Maintains 1:1 parity between..." # [APPENDED: 2026-03-28]

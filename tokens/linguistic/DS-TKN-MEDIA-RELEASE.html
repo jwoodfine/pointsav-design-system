@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Release - [COMPANY_NAME]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* FLUID PRINT GEOMETRY - ORGANIC PACKING */
+        @media print {
+            body { width: 100%; margin: 0; padding: 0; }
+            /* Prevent awkward splits on headers and paragraphs */
+            h1, h2, h3, .executive-title { page-break-after: avoid; }
+            p, ul, li { page-break-inside: avoid; }
+        }
+        @page { margin: 1in; }
+
+        /* STRUCTURAL ARCHITECTURE */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1A1A1A;
+            text-align: left;
+            max-width: 6.5in; 
+            margin: 0 auto;
+            background-color: #FFFFFF;
+        }
+
+        .brand-wordmark {
+            width: 9.5cm;
+            max-width: 100%;
+            margin: 0 auto 24pt auto;
+            display: block;
+        }
+
+        /* UNIVERSAL COMPRESSION (1.15 line-height / 11pt margins) */
+        p { font-weight: 400; font-size: 11pt; line-height: 1.15; margin-top: 0; margin-bottom: 11pt; }
+        .executive-title { font-weight: 600; font-size: 14pt; line-height: 1.15; color: #1A1A1A; margin-top: 0; margin-bottom: 11pt; }
+        h1 { font-weight: 600; font-size: 18pt; line-height: 1.1; color: #1A1A1A; margin-top: 24pt; margin-bottom: 11pt; }
+        h3 { font-weight: 500; font-size: 10pt; line-height: 1.1; color: #595959; margin-top: 18pt; margin-bottom: 4pt; }
+        .legal-text { font-weight: 400; font-size: 9pt; line-height: 1.15; color: #595959; margin-top: 0; margin-bottom: 8pt; }
+        
+        ul { margin-top: 0; margin-bottom: 11pt; padding-left: 0.25in; list-style-type: disc; }
+        li { font-weight: 400; font-size: 11pt; line-height: 1.15; margin-bottom: 6pt; padding-left: 0.1in; }
+        hr { border: 0; border-top: 1px solid #1A1A1A; margin-top: 20pt; margin-bottom: 20pt; }
+        
+        /* TERMINAL MARKER */
+        .terminal-marker { text-align: left; font-weight: 600; font-size: 11pt; margin-top: 0; margin-bottom: 24pt; }
+        
+        /* BULLETPROOF PAGE BREAKS (Combines margin and forced break natively) */
+        .page-start { page-break-before: always; padding-top: 0.6in; display: block; }
+    </style>
+</head>
+<body>
+
+    <img src="ps-logo-master_V3.svg" alt="[ALT_TEXT_LOGO]" class="brand-wordmark">
+
+    <div class="executive-title">[EXECUTIVE_SUMMARY_STANDFIRST_SENTENCE]</div>
+
+    <p>[EXECUTIVE_SUMMARY_PARAGRAPH_1]</p>
+
+    <ul>
+        <li>[BULLET_POINT_TAKEAWAY_1]</li>
+        <li>[BULLET_POINT_TAKEAWAY_2]</li>
+        <li>[BULLET_POINT_TAKEAWAY_3]</li>
+    </ul>
+
+    <hr>
+
+    <p><strong>For Immediate Release</strong></p>
+
+    <h1>[PRIMARY_HEADLINE_TITLE]</h1>
+
+    <p><strong>[CITY], [PROVINCE/STATE] &mdash; [MONTH DD, YYYY] &mdash;</strong> [OPENING_PARAGRAPH_TEXT]</p>
+
+    <p>[SECONDARY_PARAGRAPH_TEXT]</p>
+
+    <p class="page-start"><strong>[RUN_IN_HEADING_1.]</strong> [BODY_PARAGRAPH_TEXT_1]</p>
+
+    <p><strong>[RUN_IN_HEADING_2.]</strong> [BODY_PARAGRAPH_TEXT_2]</p>
+    
+    <p><strong>[RUN_IN_HEADING_3.]</strong> [BODY_PARAGRAPH_TEXT_3]</p>
+
+    <div class="page-start terminal-marker">###</div>
+
+    <h3>For further information, please contact:</h3>
+    <p class="legal-text">
+        [COMPANY_NAME]<br>
+        [CONTACT_PERSON_NAME], [TITLE]<br>
+        [STREET_ADDRESS]<br>
+        [CITY_STATE_ZIP]<br>
+        [PHONE_NUMBER]<br>
+        [EMAIL_ADDRESS]<br>
+        [WEBSITE_URL_1] | [WEBSITE_URL_2]
+    </p>
+
+    <h3>Important notice regarding intellectual property and trademarks</h3>
+    <p class="legal-text">[STANDARD_IP_TRADEMARK_DISCLOSURE_TEXT]</p>
+
+    <h3>Regulatory disclosures and forward-looking statements</h3>
+    <p class="legal-text">[STANDARD_REGULATORY_FORWARD_LOOKING_DISCLOSURE_TEXT]</p>
+
+</body>
+</html>

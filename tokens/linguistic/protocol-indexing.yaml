@@ -1,8 +1,26 @@
-protocol_name: INDEXING
-standard: Universal Sovereign Disclosure
-description: The instruction set for data retrieval tags. It mandates deterministic JSON-LD metadata.
-
-operational_rules:
-  deterministic_retrieval:
-    enforcement_rule: "Tag documents using exact architectural states. Do not use semantic guessing."
-    allowed_tags: ["Tier 1", "Active", "Provisioning", "Reference Implementation"]
+id: INDEX-01-DSADR08
+name: Sovereign Metadata Matrix and Linguistic Command Protocol
+type: core_linguistic_protocol
+enforcement_level: DS-ADR-08-ABSOLUTE
+description: Governs the immutable categorization, computational routing, and linguistic synthesis of all raw assets within the PointSav Data Mesh, ensuring zero-drift integrity and operational precision.
+updated: "2026-03-13"
+rules:
+  architecture:
+    - All thematic intelligence, tagging, and cross-referencing MUST occur exclusively within designated .yaml or .csv metadata files.
+    - The metadata matrix MUST remain entirely decoupled from the raw source document (.md or .txt), serving as an independent, append-only ledger for all contextual data.
+    - Changes to metadata MUST generate new versioned entries, preserving full historical lineage in accordance with immutable record-keeping directives.
+  self_healing:
+    - Metadata schemas MUST be structured for real-time adaptability and rapid re-categorization as institutional themes, market dynamics, or regulatory landscapes evolve.
+    - Self-healing mechanisms include active validation loops against predefined semantic ontologies and computational inference engines, ensuring continuous alignment.
+    - Changes to the metadata matrix MUST NEVER trigger a rewrite or modification of the source asset, reinforcing the zero-drift architecture.
+  linguistic_mapping:
+    - When translating mapped themes into dispatch copy, adhere strictly to Subject-Verb-Object (S-V-O) declarative structures utilizing the Active Present Tense to ensure unambiguous, machine-readable semantic clarity.
+    - Omit bullet points, numbered lists, and any non-declarative formatting in final dispatch synthesis to guarantee maximal LATAM/Iberian translation parity and reduce cognitive load.
+    - All generated linguistic output MUST reflect "Institutional Brutalism" principles, devoid of jargon, corporate puffery, or emotive language, maintaining the Warren Buffett standard of profound simplicity.
+  data_sovereignty_mandate:
+    - **DS-ADR-08**: The metadata matrix itself constitutes a protected asset under Data Sovereignty Architectural Directive 08. All modifications MUST be cryptographically logged and auditable.
+    - Access to modify core metadata MUST be restricted to Machine-Based Authorization protocols only, with human override requiring multi-factor attestation.
+    - Metadata integrity is paramount; any detected drift or unauthorized alteration triggers immediate quarantine of affected assets and notification to the Command Centre.
+  computational_semantics:
+    - The metadata matrix provides the foundational input for the Sovereign Engine's computational inference models, enabling dynamic routing, predictive analytics, and automated content synthesis.
+    - Semantic linkages between disparate data points, defined within the metadata, drive cross-domain intelligence and expose emergent relationships across the Data Mesh.

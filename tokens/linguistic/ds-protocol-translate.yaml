@@ -1,0 +1,12 @@
+title: "CORE LINGUISTIC PROTOCOL: TRANSLATION PARITY ENGINE"
+metadata:
+  status: "ACTIVE"
+  governance: "DS-ADR-08 (INSTITUTIONAL BRUTALISM)"
+  scope: "APPLIES TO ALL MULTI-LINGUAL SYNTHESIS"
+sections:
+  - heading: "1. LINGUISTIC FIDELITY"
+    content: "Translations MUST represent a 100% 1-to-1 semantic and factual match with the original source document. Cultural adaptations or localized phrasing beyond direct semantic equivalence are STRICTLY PROHIBITED."
+  - heading: "2. STRUCTURAL PARITY"
+    content: "All translated output MUST strictly adhere to Subject-Verb-Object (S-V-O) declarative structures. All verbs MUST operate exclusively in the Active Present Tense to eliminate temporal dissonance."
+  - heading: "3. TARGET DEMOGRAPHIC ALIGNMENT"
+    content: "Translation tuning must optimize for universal LATAM and Iberian Capital Market comprehension, avoiding regional idioms."

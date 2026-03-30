@@ -1,8 +1,22 @@
-protocol_name: TELEMETRY
-standard: Universal Sovereign Disclosure
-description: The instruction set for network emissions. It enforces absolute mathematical privacy.
-
-operational_rules:
-  zero_tracking_mandate:
-    enforcement_rule: "Emit required operational state headers only. Drop all third-party analytics."
-    banned_payloads: ["cookies", "session trackers", "behavioral metrics"]
+protocol: "Telemetry & Observability"
+ds_adr_reference: "DS-ADR-08: Zero-Drift Telemetry Architecture"
+updated: "2026-03-13"
+version: "v3.1"
+mandate: "Establish and enforce a zero-drift telemetry architecture, ensuring immutable, localized, and contextually isolated data streams for all cyber-physical operations. Telemetry serves as the foundational, unadulterated historical record."
+rules:
+  data_fidelity:
+    - "All raw telemetry data streams MUST be ingested and stored with 100% fidelity to the source event, mirroring `protocol-extract.yaml`'s zero-loss principle."
+    - "Zero summarization, alteration, or thematic injection is permitted at the point of ingestion or within the raw telemetry record itself."
+  data_sovereignty:
+    - "All edge computing telemetry, sensor data, and operational logs MUST remain localized within PointSav Private Networks to prevent algorithmic scraping by public cloud networks."
+    - "Egress of raw telemetry data is strictly prohibited unless explicitly mandated by Regulated Reporting Entities and routed via Totebox Orchestration™ with an immutable Audit Record."
+  contextual_isolation:
+    - "Thematic intelligence, categorization, and cross-referencing of telemetry data MUST occur exclusively within decoupled metadata layers, adhering to `protocol-indexing.yaml`'s self-healing matrix."
+    - "Raw telemetry data acts strictly as an immutable historical ledger; all analytical or reporting contexts are external overlays."
+  internal_orchestration:
+    - "Data aggregation from telemetry streams is strictly for internal structural integrity, system diagnostics, and Totebox Orchestration™ operations."
+    - "Automated anomaly detection and system health monitoring operate on processed metadata derived from raw telemetry, never modifying the raw streams."
+  compliance_logging:
+    - "Maintain perfect, immutable, and append-only logs of all telemetry data to satisfy the continuous disclosure and audibility requirements of Regulated Reporting Entities, aligned with `Audit_Record_Contract`."
+  reporting_syntax:
+    - "While raw telemetry remains an unadulterated ledger, any human-readable reporting, alerts, or system logs synthesized from this data MUST employ the Active Present Tense exclusively (e.g., 'detects', 'routes', 'isolates') to reflect real-time sovereign authority."
