@@ -1,0 +1,31 @@
+---
+protocol: "Institutional News Release Protocol"
+id: RELEASE-01
+status: ACTIVE
+version: "v1.1.DS-ADR-08"
+updated: "2026-03-13"
+authority: DS-ADR-08
+
+description: >
+  This protocol governs the explicit typographical topography, structural boundaries, and
+  formatting standards for all external-facing corporate news releases.
+  It ensures algorithmic wirehouse compatibility while enforcing the Trojan Horse Editorial Protocol.
+
+rules:
+  header_matrix:
+    headline_mandate: "Headlines MUST be written in Title Case. The Master Mark ™ MUST be applied to the first prominent use of the core brand (e.g., Woodfine Capital Projects™) as dictated by TRM-01."
+    dateline_and_entity_mandate: "The opening dateline and introductory sentence MUST use strict corporate filing entities (e.g., Woodfine Management Corp., Woodfine Capital Projects Inc.). NO ™ symbols are permitted on corporate entities in this section. Format MUST be: [City, Province] – [Date] – [Entity] announces..."
+
+  typographical_topography:
+    narrative_body:
+      mandate: "Run-In Headings"
+      execution: "All thematic subsection titles within the body prose MUST be formatted as Run-In Headings. They must be aggressively lowercased, bolded, inline with the paragraph text, and terminated with a period."
+    corporate_boilerplate:
+      mandate: "Standalone Heading"
+      execution: "The corporate definition section MUST use a traditional Standalone Heading in Title Case, preceded by an H3 markdown tag (e.g., '### About Woodfine Capital Projects')."
+
+  translation_parity_override:
+    direct_hold_solutions_mandate: "When executing translations for LATAM or Iberian markets, the term 'Direct-Hold Solutions' (or 'direct-hold solutions') MUST remain strictly in English. It is a structural identifier that must not be translated into Spanish."
+
+  legal_defensibility:
+    universal_footers: "All public news releases MUST append the Universal Trademark Footer (TRM-01) and the Universal Securities Footer (if discussing capital/investment) immediately preceding the final terminator."
