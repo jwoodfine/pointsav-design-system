@@ -13,11 +13,11 @@
 
 ---
 
-## 1. INSTITUTIONAL BRUTALISM
+## 1. INSTITUTIONAL BRUTALISM & FILE TYPOLOGY
 
-**[ EN ]** Linguistic and visual formatting are established as engineering tolerances. The Institutional Brutalism standard requires flat typography, defined lexicons, and machine-readable grammar to support statutory auditing of business administration processes.
+**[ EN ]** Linguistic protocols and visual layouts are established as non-negotiable engineering tolerances. The architecture mandates pure Machine-Readable Files (`.yaml` for deterministic logic, `.md` for semantic flesh). Traditional graphical files (such as `.pdf`) are classified as Analog Exhaust—cryptographic polaroids generated strictly for external legacy distribution. 
 
-> **[ ES ]** *El formato lingüístico y visual se establecen como tolerancias de ingeniería. El estándar de Brutalismo Institucional requiere tipografía plana, léxicos definidos y gramática legible por máquina para respaldar la auditoría estatutaria de los procesos de administración empresarial.*
+> **[ ES ]** *Los protocolos lingüísticos y los diseños visuales se establecen como tolerancias de ingeniería no negociables. La arquitectura exige Archivos Legibles por Máquina puros (`.yaml` para lógica determinista, `.md` para cuerpo semántico). Los archivos gráficos tradicionales (como `.pdf`) se clasifican como Desechos Analógicos: polaroids criptográficas generadas estrictamente para distribución heredada externa.*
 
 ---
 
