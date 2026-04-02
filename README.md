@@ -1,54 +1,26 @@
 <div align="center">
 
-# PointSav Design System
-### *Linguistic Protocols & Optical Physics | Protocolos Lingüísticos y Física Óptica*
-**Vancouver | New York | Berlin**
+# PointSav Digital Systems
+### *Design System: Linguistic Protocols & Optical Physics*
 
-[ **Documentation Wiki** ](https://github.com/pointsav/content-wiki-documentation) | [ **System Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Reference Deployment (Woodfine Fleet)** ](https://github.com/woodfine/woodfine-fleet-deployment)
+[![Standard](https://img.shields.io/badge/Standard-Institutional_Brutalism-111827?style=flat-square)](#)
+[![Compliance](https://img.shields.io/badge/Compliance-Statutory_Auditability-111827?style=flat-square)](#)
+
+[ **Organization Profile** ](https://github.com/pointsav) | [ **PointSav Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Design System** ](https://github.com/pointsav/pointsav-design-system) | [ **Documentation Wiki** ](https://github.com/pointsav/content-wiki-documentation) | [ **Media Assets** ](https://github.com/pointsav/pointsav-media-assets) | [ **Fleet Manifest** ](https://github.com/woodfine/woodfine-fleet-deployment)
 
 </div>
 
 ---
 
-## 1. EXECUTIVE OVERVIEW | VISIÓN GENERAL EJECUTIVA
+## 1. INSTITUTIONAL BRUTALISM
 
-**[ EN ]** To achieve institutional scalability, a design system must divorce physical reality from semantic intent. This repository defines the strict Two-Tier Token Architecture, built for the Leapfrog 2030 standard and constrained by our Institutional Brutalism mandate. 
+**[ EN ]** PointSav Digital Systems does not utilize design as a marketing function. For the pristine execution of direct-hold solutions, language and visual layouts are treated as strict engineering tolerances. We enforce a standard of "Institutional Brutalism"—utilizing flat typography, pure machine-readable grammar, and high-contrast environments to eliminate human ambiguity in corporate record keeping.
+<details>
+<summary><b>[ ES ] Traducción al Español</b></summary>
+PointSav Digital Systems no utiliza el diseño como una función de marketing. Para la ejecución impecable de las direct-hold solutions, el lenguaje y los diseños visuales se tratan como tolerancias de ingeniería estrictas. Imponemos un estándar de "Brutalismo Institucional", utilizando tipografía plana, gramática pura legible por máquina y entornos de alto contraste para eliminar la ambigüedad humana en el mantenimiento de registros corporativos.
+</details>
 
-Because the underlying data within PointSav architectures is strictly composed of **Machine-Readable Primitives** (`.md`, `.yaml`, `.csv`), this Design System serves as the "Lens" for **State Projection**. It contains the operational laws for typography, component architecture, and the machine-readable linguistic protocols utilized by the Semantic ALUs to render raw math into authoritative, human-readable interfaces.
-
----
-
-## 2. OPTICAL PHYSICS (GLOBAL TOKENS)
-Raw physical properties and absolute mathematical values. These define the agnostic geometry of the interface.
-
-| File Index | Mechanical Function |
-| :--- | :--- |
-| `token-global-color.yaml` | The master structural palette. Base colors and algorithmic shades. |
-| `token-global-spacing.yaml` | The 8px Swiss Baseline Grid and layout breakpoints. |
-| `token-global-typography.yaml` | Fluid scale clamping, tracking, and core font families. |
-| `token-global-print.yaml` | Exact point-sizes and physics for regulatory Analog Exhaust (PDFs). |
-
----
-
-## 3. INTENT & ALIASING (SEMANTIC TOKENS)
-Semantic slots that bridge physical values to component applications.
-
-| File Index | Mechanical Function |
-| :--- | :--- |
-| `token-alias-ui.yaml` | Semantic mapping for interactive states, backgrounds, and structural borders. |
-| `token-alias-telemetry.yaml` | Defines the transmission diode and JSON payload contract. |
-
----
-
-## 4. THE LAW (LINGUISTIC PROTOCOLS)
-Strict structural writing rules and corporate protocols enforced by the `service-content` compiler.
-
-| File Index | Mechanical Function |
-| :--- | :--- |
-| `protocol-comm.yaml` | Internal dispatch & external messaging logic. |
-| `protocol-legal.yaml` | Translation of market claims into structural, defensible facts. |
-| `protocol-text.yaml` | Core writing rules adhering to the ISO 24495-1 Plain Language standard. |
-| `protocol-memo.yaml` | Minto Pyramid structure for internal executive ledgers. |
-
----
-*© 2026 PointSav Digital Systems. Public Architectural Blueprint.*
+<br>
+<div align="center">
+<sub><em>Woodfine Capital Projects, Woodfine Management Corp., PointSav Digital Systems, Totebox Orchestration, and Totebox Archive are trademarks owned by Woodfine Capital Projects Inc. This notice serves as a formal declaration of intellectual property rights, asserting continuous use in commerce regardless of the omission of the ™ or ® symbols in the accompanying text. All operational and architectural system designations (including but not limited to PointSav Console OS, PointSav Infrastructure OS, PointSav MediaKit OS, PointSav Network OS, PointSav PrivateGit OS, PointSav Workplace OS, Totebox Integration OS, and Totebox OS) are proprietary structural wordmarks utilized exclusively within the PointSav Digital Systems architecture.</em></sub>
+</div>
