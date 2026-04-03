@@ -15,9 +15,9 @@
 
 ## 1. INSTITUTIONAL BRUTALISM & FILE TYPOLOGY
 
-**[ EN ]** Linguistic protocols and visual layouts are established as non-negotiable engineering tolerances. The architecture mandates pure Machine-Readable Files (`.yaml` for deterministic logic, `.md` for semantic flesh). Traditional graphical files (such as `.pdf`) are classified as Analog Exhaust—cryptographic polaroids generated strictly for external legacy distribution. 
+**[ EN ]** Linguistic protocols and visual layouts are established as non-negotiable engineering tolerances. The architecture mandates the use of pure Machine-Readable Files (`.yaml` for deterministic state, `.md` for structural narrative) to ensure precise execution. Traditional graphical files (such as `.pdf`) are classified as Analog Exhaust—cryptographic polaroids generated strictly for external legacy distribution and auditing.
 
-> **[ ES ]** *Los protocolos lingüísticos y los diseños visuales se establecen como tolerancias de ingeniería no negociables. La arquitectura exige Archivos Legibles por Máquina puros (`.yaml` para lógica determinista, `.md` para cuerpo semántico). Los archivos gráficos tradicionales (como `.pdf`) se clasifican como Desechos Analógicos: polaroids criptográficas generadas estrictamente para distribución heredada externa.*
+> **[ ES ]** *Los protocolos lingüísticos y los diseños visuales se establecen como tolerancias de ingeniería no negociables. La arquitectura exige el uso de Archivos Legibles por Máquina puros (`.yaml` para el estado determinista, `.md` para la narrativa estructural) para garantizar una ejecución precisa. Los archivos gráficos tradicionales (como `.pdf`) se clasifican como Desechos Analógicos: polaroids criptográficas generadas estrictamente para la distribución heredada externa y la auditoría.*
 
 ---
 
