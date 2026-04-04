@@ -4,10 +4,6 @@
 ### LINGUISTIC PROTOCOLS & OPTICAL PHYSICS
 *The mathematical single source of truth for the Sovereign Framework.*
 
-[![Status: Incubation](https://img.shields.io/badge/Status-Incubation-yellow.svg)](#)
-[![Compliance: WCAG 2.2 AAA](https://img.shields.io/badge/Compliance-WCAG_2.2_AAA-blue.svg)](#)
-[![Framework: Sovereign OS](https://img.shields.io/badge/Framework-Sovereign_OS-purple.svg)](#)
-
 <br/>
 
 **[ ➔ System Engineering Monorepo ](https://github.com/pointsav/pointsav-monorepo)**<br/>
@@ -24,31 +20,15 @@
 
 ---
 
-## I. THE VENDOR MANDATE (STATE PROJECTION)
+## I. THE VENDOR MANDATE
 
 In the PointSav Vendor/Customer model, this repository acts as the **Single Source of Truth**. 
 
-Because a true Totebox Archive operates strictly on raw, machine-readable files (like `.yaml` and `.json`), it has no inherent visual design. This Design System acts as the definitive "lens" for **State Projection**. It mathematically dictates exactly how the underlying data is safely projected into the clean, human-readable Text User Interface (TUI) and operator consoles. This separation ensures 100% brand parity and legal defensibility across all edge delivery nodes without ever directly editing the sealed analog data.
+PointSav Digital Systems (The Vendor) defines the structural, visual, and linguistic laws herein. Execution environments and Customer Fleets (such as Woodfine Management Corp.) are mathematically required to consume these exact tokens. This separation ensures 100% brand parity and legal defensibility across all edge delivery nodes without duplicating code.
 
 ---
 
-## II. LINGUISTIC PROTOCOLS (ZERO AI MANDATE)
-
-PointSav treats language as a strict structural framework. The tokens within this repository (such as `protocol-extract.yaml`) form the foundation of our **Deterministic Parser**. 
-
-These linguistic protocols provide the exact mathematical routing and extraction rules required to process corporate disclosures and data ingress. By relying on these strict lexical grammars rather than unpredictable external algorithms, PointSav guarantees data processing with **absolute zero generative AI dependencies**.
-
----
-
-## III. OPTICAL PHYSICS (INSTITUTIONAL BRUTALISM)
-
-We do not follow fleeting UI trends; we engineer **Optical Physics**. 
-
-The aesthetic tokens defined here enforce a strict 8px Swiss Grid, fluid sub-pixel typography locks, and high-contrast element structures. These are not mere stylistic choices—they are compliance guarantees. By adhering to the highest global accessibility standards (WCAG 2.2 AAA), we ensure that Woodfine Management Corp.'s corporate disclosures and administrative interfaces remain perfectly readable and legally defensible on any device, for any user, under any conditions.
-
----
-
-## IV. THE TOKEN LEDGERS
+## II. THE TOKEN LEDGERS
 
 Below is the active inventory of machine-readable governance tokens.
 
@@ -84,7 +64,7 @@ Below is the active inventory of machine-readable governance tokens.
 
 ---
 
-## V. USAGE & LICENSING
+## III. USAGE & LICENSING
 The architectural patterns and tokens documented in this Design System are intended for internal compilation and institutional auditing. 
 
 This repository operates strictly under an **Incubation Phase**. Refer to the `LICENSE` file at the root of this directory. All rights to the underlying intellectual property, source code, and deployment patterns are strictly reserved.
