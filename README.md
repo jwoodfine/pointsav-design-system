@@ -1,90 +1,92 @@
 <div align="center">
 
-# 📐 POINTSAV DESIGN SYSTEM
-### LINGUISTIC PROTOCOLS & OPTICAL PHYSICS
-*The mathematical single source of truth for the Sovereign Framework.*
+<img src="https://raw.githubusercontent.com/pointsav/pointsav-media-assets/main/ASSET-SIGNET-MASTER.svg" width="72" alt="PointSav Design System">
 
-[![Status: Incubation](https://img.shields.io/badge/Status-Incubation-yellow.svg)](#)
-[![Compliance: WCAG 2.2 AAA](https://img.shields.io/badge/Compliance-WCAG_2.2_AAA-blue.svg)](#)
-[![Framework: Sovereign OS](https://img.shields.io/badge/Framework-Sovereign_OS-purple.svg)](#)
+# PointSav Design System
+### Linguistic Protocols & Visual Standards
+*The single source of truth for institutional voice and visual identity across every PointSav deployment.*
+
+[![Status: Verified](https://img.shields.io/badge/Status-Verified-22863a.svg?style=flat-square)](#token-ledgers)
+[![WCAG: 2.2 AAA](https://img.shields.io/badge/WCAG-2.2_AAA-0075ca.svg?style=flat-square)](#visual-standards)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-e36209.svg?style=flat-square)](#usage--licensing)
 
 <br/>
 
-**[ ➔ System Engineering Monorepo ](https://github.com/pointsav/pointsav-monorepo)**<br/>
-**[ ➔ System Architecture Wiki ](https://github.com/pointsav/content-wiki-documentation)**<br/>
-**[ ➔ Customer Fleet Deployment ](https://github.com/woodfine/woodfine-fleet-deployment)**
+**[→ Engineering Monorepo](https://github.com/pointsav/pointsav-monorepo)** &nbsp;·&nbsp; **[→ Documentation Wiki](https://github.com/pointsav/content-wiki-documentation)** &nbsp;·&nbsp; **[→ Live Deployment](https://github.com/woodfine/woodfine-fleet-deployment)** &nbsp;·&nbsp; **[→ pointsav.com](https://pointsav.com)**
 
 </div>
 
-<br/>
+---
 
-> [!WARNING]
-> **INSTITUTIONAL BRUTALISM MANDATE (DS-ADR-08)**
-> This repository isolates the "Law" from the application code. It mathematically defines the typographic wordmarks, layout physics, and linguistic protocols required to project absolute institutional stability.
+## What This Repository Is
+
+Most design systems are collections of colours and typefaces. This one is different.
+
+PointSav operates a platform where the same underlying data must be projected accurately across public investor disclosures, internal operator terminals, regulatory filings, and bilingual marketing surfaces. A colour that reads correctly in dark mode must remain legally defensible in a printed regulatory submission. A linguistic protocol that routes structured data deterministically must apply consistently whether the operator is in Vancouver or Madrid.
+
+The design system enforces these constraints as machine-readable tokens — YAML files that are consumed by every deployment surface automatically. A change to a typographic rule propagates everywhere. There is no manual alignment step. There is no version drift. The system is the law.
 
 ---
 
-## I. THE VENDOR MANDATE (STATE PROJECTION)
+## Linguistic Protocols
 
-In the PointSav Vendor/Customer model, this repository acts as the **Single Source of Truth**. 
+Language in an institutional context is not a stylistic preference. It is a structural commitment. The wrong word in an investor disclosure is a regulatory event. The right word, applied inconsistently across jurisdictions, creates legal fracture.
 
-Because a true Totebox Archive operates strictly on raw, machine-readable files (like `.yaml` and `.json`), it has no inherent visual design. This Design System acts as the definitive "lens" for **State Projection**. It mathematically dictates exactly how the underlying data is safely projected into the clean, human-readable Text User Interface (TUI) and operator consoles. This separation ensures 100% brand parity and legal defensibility across all edge delivery nodes without ever directly editing the sealed analog data.
+PointSav treats language as infrastructure. The six linguistic protocol files in this repository encode the rules that govern every piece of text the platform produces:
 
----
+| Token File | What it governs |
+|:---|:---|
+| `protocol-text.yaml` | Core writing rules — tone, register, sentence structure, prohibited vocabulary |
+| `protocol-comm.yaml` | Internal dispatch — asset distinction, routing classification |
+| `protocol-extract.yaml` | Deterministic parsing rules — zero AI inference, strict lexical grammar |
+| `protocol-legal.yaml` | Translation of market claims to structural facts — regulatory language standards |
+| `protocol-memo.yaml` | Executive ledger synthesis — memo structure, chain of authority |
+| `protocol-translate.yaml` | Bilingual boundary rules — proper noun locks, jurisdiction-specific term handling |
 
-## II. LINGUISTIC PROTOCOLS (ZERO AI MANDATE)
-
-PointSav treats language as a strict structural framework. The tokens within this repository (such as `protocol-extract.yaml`) form the foundation of our **Deterministic Parser**. 
-
-These linguistic protocols provide the exact mathematical routing and extraction rules required to process corporate disclosures and data ingress. By relying on these strict lexical grammars rather than unpredictable external algorithms, PointSav guarantees data processing with **absolute zero generative AI dependencies**.
-
----
-
-## III. OPTICAL PHYSICS (INSTITUTIONAL BRUTALISM)
-
-We do not follow fleeting UI trends; we engineer **Optical Physics**. 
-
-The aesthetic tokens defined here enforce a strict 8px Swiss Grid, fluid sub-pixel typography locks, and high-contrast element structures. These are not mere stylistic choices—they are compliance guarantees. By adhering to the highest global accessibility standards (WCAG 2.2 AAA), we ensure that Woodfine Management Corp.'s corporate disclosures and administrative interfaces remain perfectly readable and legally defensible on any device, for any user, under any conditions.
+`protocol-translate.yaml` is worth noting specifically. PointSav operates across Canada, the United States, Spain, and Mexico. The same investment concept — a Direct-Hold Solution — has a different legal designation in each jurisdiction. The protocol file encodes which terms are translatable and which must remain in their source language regardless of the document's target language. This prevents legal fracture from appearing in bilingual documents.
 
 ---
 
-## IV. THE TOKEN LEDGERS
+## Visual Standards
 
-Below is the active inventory of machine-readable governance tokens.
+The visual token system enforces WCAG 2.2 AAA compliance as a structural constraint, not a checklist. The reasoning is institutional rather than philosophical: an investor disclosure that fails accessibility standards in a jurisdiction where those standards carry legal weight is a liability, not an inconvenience.
 
-### 🗣️ Track 1: Linguistic Protocols
-*Defines the operational rules for data extraction, human translation, and corporate disclosure.*
+The five visual token files:
 
-| Token File | System Function | Status |
-| :--- | :--- | :--- |
-| `protocol-comm.yaml` | Internal dispatch & asset distinction | 🟢 Verified |
-| `protocol-extract.yaml` | Zero-inference mathematical data parsing | 🟢 Verified |
-| `protocol-legal.yaml` | Translation of market claims to structural facts | 🟢 Verified |
-| `protocol-memo.yaml` | Executive ledger synthesis rules | 🟢 Verified |
-| `protocol-translate.yaml` | Bilingual boundary & proper noun locks | 🟢 Verified |
-| `protocol-text.yaml` | Institutional Brutalism core writing rules | 🟢 Verified |
-
-### 📐 Track 2: Optical Physics & Aesthetics
-*Defines the visual boundaries, neurodivergent accessibility, and exact CSS values.*
-
-| Token File | System Function | Status |
-| :--- | :--- | :--- |
-| `color.yaml` | Entity aesthetic dichotomy & dark-mode blocks | 🟢 Verified |
-| `spacing.yaml` | 8px Swiss Grid & Touch-Target physics | 🟢 Verified |
-| `typography.yaml` | V3 Swiss Grid & fluid character clamping | 🟢 Verified |
-| `TOKEN-UI-PHYSICS.yaml` | WCAG 2.2 AAA structural definitions | 🟢 Verified |
-| `TOKEN-TYPOGRAPHY-RENDER.yaml` | Sub-pixel anti-aliasing enforcement | 🟢 Verified |
-
-### ⚖️ Track 3: Legal Governance
-*Defines the algorithmic copyright definitions swept across all codebases.*
-
-| Token File | System Function | Status |
-| :--- | :--- | :--- |
-| `LEGAL-incubation-license.txt` | Active proprietary retention protocol | 🟢 Verified |
+| Token File | What it governs |
+|:---|:---|
+| `typography.yaml` | Fluid character clamping, Swiss Grid proportions, sub-pixel rendering rules |
+| `spacing.yaml` | 8px grid system, touch target minimums, accessible density |
+| `color.yaml` | Entity-specific palette, dark mode compliance, contrast ratio enforcement |
+| `TOKEN-UI-PHYSICS.yaml` | WCAG 2.2 AAA structural definitions — contrast ratios, focus indicators, motion |
+| `TOKEN-TYPOGRAPHY-RENDER.yaml` | Sub-pixel anti-aliasing, cross-platform rendering consistency |
 
 ---
 
-## V. USAGE & LICENSING
-The architectural patterns and tokens documented in this Design System are intended for internal compilation and institutional auditing. 
+## Legal Governance
 
-This repository operates strictly under an **Incubation Phase**. Refer to the `LICENSE` file at the root of this directory. All rights to the underlying intellectual property, source code, and deployment patterns are strictly reserved.
+| Token File | What it governs |
+|:---|:---|
+| `LEGAL-incubation-license.txt` | Proprietary retention protocol for incubation-phase components |
+
+---
+
+## How the System Is Used
+
+The PointSav platform does not edit documents. It projects data. A Totebox Archive stores all records as machine-readable flat files. ConsoleOS variants read those files and project them into human-readable interfaces using the tokens in this repository as the rendering law.
+
+This separation matters for institutional reasons. If the rendering layer were embedded in the data layer, a change to a colour token could, in principle, require modifying records. By keeping the design system separate from the archive, visual updates propagate without touching the underlying records. Compliance integrity is preserved.
+
+---
+
+## Usage & Licensing
+
+The token files in this repository are consumed automatically by PointSav deployment environments and Woodfine Management Corp.'s fleet. External use requires a written licensing agreement.
+
+This repository is under an active incubation phase. Refer to the `LICENSE` file for full terms. All underlying intellectual property is strictly reserved by PointSav Digital Systems.
+
+**[→ pointsav.com](https://pointsav.com)** &nbsp;·&nbsp; **[→ github.com/pointsav](https://github.com/pointsav)**
+
+---
+
+*© 2026 PointSav Digital Systems™. All rights reserved.*
