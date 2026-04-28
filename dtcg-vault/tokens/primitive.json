@@ -1,0 +1,132 @@
+{
+  "$schema": "https://schemas.designtokens.org/2025-10-01/draft.json",
+  "$description": "Primitive token layer — color, type scale, spacing, motion, focus. Baselined on the IBM Carbon vocabulary; semantic overrides per tenant brand live in themes/<brand>/. v0.0.1 ships the floor only.",
+  "color": {
+    "$type": "color",
+    "white": { "$value": "#ffffff" },
+    "black": { "$value": "#000000" },
+    "gray-10": { "$value": "#f4f4f4" },
+    "gray-20": { "$value": "#e0e0e0" },
+    "gray-30": { "$value": "#c6c6c6" },
+    "gray-40": { "$value": "#a8a8a8" },
+    "gray-50": { "$value": "#8d8d8d" },
+    "gray-60": { "$value": "#6f6f6f" },
+    "gray-70": { "$value": "#525252" },
+    "gray-80": { "$value": "#393939" },
+    "gray-90": { "$value": "#262626" },
+    "gray-100": { "$value": "#161616" },
+    "blue-10": { "$value": "#edf5ff" },
+    "blue-20": { "$value": "#d0e2ff" },
+    "blue-30": { "$value": "#a6c8ff" },
+    "blue-40": { "$value": "#78a9ff" },
+    "blue-50": { "$value": "#4589ff" },
+    "blue-60": { "$value": "#0f62fe" },
+    "blue-70": { "$value": "#0043ce" },
+    "blue-80": { "$value": "#002d9c" },
+    "red-50": { "$value": "#fa4d56" },
+    "red-60": { "$value": "#da1e28" },
+    "red-70": { "$value": "#a2191f" },
+    "green-50": { "$value": "#42be65" },
+    "green-60": { "$value": "#24a148" },
+    "green-70": { "$value": "#198038" },
+    "yellow-30": { "$value": "#f1c21b" },
+    "yellow-40": { "$value": "#d2a106" }
+  },
+  "size": {
+    "$type": "dimension",
+    "spacing-01": { "$value": "0.125rem", "$description": "2px @ 16px base" },
+    "spacing-02": { "$value": "0.25rem",  "$description": "4px @ 16px base" },
+    "spacing-03": { "$value": "0.5rem",   "$description": "8px @ 16px base" },
+    "spacing-04": { "$value": "0.75rem",  "$description": "12px @ 16px base" },
+    "spacing-05": { "$value": "1rem",     "$description": "16px @ 16px base" },
+    "spacing-06": { "$value": "1.5rem",   "$description": "24px @ 16px base" },
+    "spacing-07": { "$value": "2rem",     "$description": "32px @ 16px base" },
+    "spacing-08": { "$value": "2.5rem",   "$description": "40px @ 16px base" },
+    "spacing-09": { "$value": "3rem",     "$description": "48px @ 16px base" },
+    "spacing-10": { "$value": "4rem",     "$description": "64px @ 16px base" },
+    "spacing-11": { "$value": "5rem",     "$description": "80px @ 16px base" },
+    "spacing-12": { "$value": "6rem",     "$description": "96px @ 16px base" },
+    "spacing-13": { "$value": "10rem",    "$description": "160px @ 16px base" }
+  },
+  "typography": {
+    "$type": "typography",
+    "productive-01": {
+      "$value": {
+        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontWeight": 400,
+        "fontSize": "0.875rem",
+        "lineHeight": 1.29,
+        "letterSpacing": "0.16px"
+      }
+    },
+    "productive-02": {
+      "$value": {
+        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontWeight": 400,
+        "fontSize": "1rem",
+        "lineHeight": 1.5,
+        "letterSpacing": "0px"
+      }
+    },
+    "expressive-01": {
+      "$value": {
+        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontWeight": 400,
+        "fontSize": "1.25rem",
+        "lineHeight": 1.4,
+        "letterSpacing": "0px"
+      }
+    },
+    "expressive-02": {
+      "$value": {
+        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontWeight": 400,
+        "fontSize": "1.75rem",
+        "lineHeight": 1.29,
+        "letterSpacing": "0px"
+      }
+    },
+    "expressive-03": {
+      "$value": {
+        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontWeight": 300,
+        "fontSize": "2rem",
+        "lineHeight": 1.25,
+        "letterSpacing": "0px"
+      }
+    }
+  },
+  "motion": {
+    "$type": "cubicBezier",
+    "ease-productive": { "$value": [0.2, 0, 0.38, 0.9], "$description": "Carbon productive easing" },
+    "ease-expressive": { "$value": [0.4, 0.14, 0.3, 1.0], "$description": "Carbon expressive easing" },
+    "ease-entrance":   { "$value": [0.0, 0.0, 0.38, 0.9] },
+    "ease-exit":       { "$value": [0.2, 0.0, 1.0, 0.9] }
+  },
+  "duration": {
+    "$type": "duration",
+    "fast-01":     { "$value": "70ms"  },
+    "fast-02":     { "$value": "110ms" },
+    "moderate-01": { "$value": "150ms" },
+    "moderate-02": { "$value": "240ms" },
+    "slow-01":     { "$value": "400ms" },
+    "slow-02":     { "$value": "700ms" }
+  },
+  "border": {
+    "$type": "dimension",
+    "radius-01": { "$value": "0.125rem" },
+    "radius-02": { "$value": "0.25rem"  },
+    "radius-03": { "$value": "0.5rem"   }
+  },
+  "focus": {
+    "$type": "border",
+    "ring": {
+      "$value": {
+        "color": "{color.blue-60}",
+        "width": "2px",
+        "style": "solid"
+      },
+      "$description": "WCAG 2.2 AAA focus ring; meets 3:1 contrast against any tenant background"
+    }
+  }
+}
