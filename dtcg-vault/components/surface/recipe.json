@@ -1,0 +1,19 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "surface",
+  "display_name": "Surface",
+  "description": "A container that groups related content. Three elevation levels — subtle, base, elevated — communicate visual hierarchy without coupling to specific use cases.",
+  "category": "components",
+  "registry_type": "component",
+  "variants": [
+    { "name": "subtle",   "css_class": "ps-surface ps-surface--subtle",   "description": "Backgrounded panel, lower visual weight than the page" },
+    { "name": "base",     "css_class": "ps-surface ps-surface--base",     "description": "On-page card, equal weight to surrounding content" },
+    { "name": "elevated", "css_class": "ps-surface ps-surface--elevated", "description": "Layer above the page (modals, popovers, overlays)" }
+  ],
+  "html": "<section class=\"ps-surface ps-surface--{{variant}}\">{{children}}</section>",
+  "css": ".ps-surface{padding:var(--ps-space-6,24px);border-radius:var(--ps-corner-3,8px)}.ps-surface--subtle{background-color:var(--ps-surface-subtle,#f5f6f8);border:1px solid var(--ps-border-subtle,#e6e8ec)}.ps-surface--base{background-color:var(--ps-surface-base,#fff);border:1px solid var(--ps-border-subtle,#e6e8ec)}.ps-surface--elevated{background-color:var(--ps-surface-elevated,#fff);box-shadow:0 4px 16px rgba(14,15,18,.08),0 1px 4px rgba(14,15,18,.04)}",
+  "aria": "A surface is a container — it has no implicit role. Add role='region' with aria-labelledby when the surface contains a labelled section. Modal surfaces add role='dialog' aria-modal='true'.",
+  "wcag": { "target": "2.2 AAA" },
+  "research_links": [],
+  "registry_dependencies": []
+}
