@@ -23,7 +23,7 @@ Woodfine Capital Projects utilizes a high-trust, traditional institutional aesth
 | `--wf-orange` | `#F15F22` | `#FDE8DD` | Highlight / cross-cutting flag (e.g., Financial Officer asterisk, "Consolidation Recognition" callouts). |
 | `--wf-red` | `#ED1B2F` | — | Reserved for alerts / required action. Use sparingly; never as a domain accent. |
 | `--wf-purple` | `#7C468C` | `#EEE6F1` | Cross-border / regional / non-resident entity marker (e.g., MCorp Delaware in a consolidation chart). |
-| `--wf-gold` | `#C89211` | `#FAEFCC` | Investment-vehicle marker (e.g., GP / Administrator, Direct-Hold Solutions container). |
+| `--wf-gold` | `#F57F17` | `#FFFDE7` | Investment-vehicle marker (e.g., GP / Administrator, Direct-Hold Solutions container). The established standard across the legacy chart corpus (Mar 28 – Apr 6 batch); the Apr-6 Canva-rendered Accounting Statements chart drifted to `#C89211` and is corrected on its re-author. |
 | `--wf-black` | `#000000` | — | **Forbidden for typography.** Available only for use where pure black is structurally required (e.g., a hairline rule that must reproduce identically in print). Default to `--ink` (`#111827`) for all body text. |
 | `--wf-grey` | `#E6E7E8` | — | Neutral fill for non-semantic boxes (placeholder TitleCos, undefined entities). |
 
@@ -50,7 +50,7 @@ Each chart binds `--accent` to one of the brand-palette colours according to its
 | Counsel / governance / corporate registration | `--wf-blue` | `#E8EFF7` | Default for counsel / legal / authority charts. |
 | Accounting / finance / operations | `--wf-green` | `#EEF6EC` | Default for accounting / treasury / consolidation charts. |
 | Cross-border / regional notation | `--wf-purple` | `#EEE6F1` | Use as a per-entity marker, not a chart-wide accent. |
-| Investment-vehicle marker | `--wf-gold` | `#FAEFCC` | Use as a per-entity marker, not a chart-wide accent. |
+| Investment-vehicle marker | `--wf-gold` | `#FFFDE7` | Use as a per-entity marker, not a chart-wide accent. |
 | Highlight / cross-cutting callout | `--wf-orange` | `#FDE8DD` | Always paired with the chart's main accent; never the chart-wide accent on its own. |
 | Alert / required action | `--wf-red` | — | Reserved; not used as accent on production charts. |
 
@@ -65,3 +65,5 @@ Tints are deliberately uniform at ~10% wash. Custom tints belong in the chart th
 ## 7. Provenance
 
 Section 2 (surface tokens) is the original 2026 visual doctrine. Sections 3–5 were ratified 2026-04-28 from the Group B canonical chart series authored under the project-orgcharts cluster — specifically the Apr 15 JW14 Accounting / Counsel pair and the Apr 6 JW9 Accounting Statements consolidation chart. Those three charts established the brand palette and the per-chart accent-swap pattern that this MEMO now codifies as the canonical reference for all future Woodfine corporate chart authoring.
+
+The `--wf-gold` value (`#F57F17 / #FFFDE7`) was reconciled against the established 9-chart majority across the legacy corpus: the Apr-6 JW9 Accounting Statements chart used a different gold (`#C89211 / #FAEFCC`) due to its Canva-template origin, while every other chart depicting Direct-Hold pills (JW7 Management Extended, JW9 + JW11 Access Fund Internal/External, JW9 Woodfine-Group, JW10 Mexico, JW13 Canada, JW19 Cross-Border-2, JW21 Cross-Border, JW15/JW18/JW29 Transactions) used `#F57F17 / #FFFDE7`. The 9-chart majority is taken as canon; the JW9 Canva default is corrected on re-author.
