@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.designtokens.org/2025-10-01/draft.json",
+  "$description": "PointSav brand semantic-layer override — maps semantic roles (interactive-primary, surface-elevated, ink-primary) to primitive references. SMB customers fork this file as themes/<their-brand>.json and re-point the references.",
+  "tenant": "pointsav",
+  "semantic": {
+    "$type": "color",
+    "ink-primary":         { "$value": "{color.gray-100}" },
+    "ink-secondary":       { "$value": "{color.gray-70}"  },
+    "ink-on-interactive":  { "$value": "{color.white}"    },
+    "surface-base":        { "$value": "{color.white}"    },
+    "surface-subtle":      { "$value": "{color.gray-10}"  },
+    "surface-elevated":    { "$value": "{color.white}"    },
+    "border-subtle":       { "$value": "{color.gray-20}"  },
+    "border-strong":       { "$value": "{color.gray-40}"  },
+    "interactive-primary":         { "$value": "{color.blue-60}" },
+    "interactive-primary-hover":   { "$value": "{color.blue-70}" },
+    "interactive-primary-pressed": { "$value": "{color.blue-80}" },
+    "interactive-secondary":       { "$value": "{color.gray-80}" },
+    "interactive-danger":          { "$value": "{color.red-60}"  },
+    "interactive-danger-hover":    { "$value": "{color.red-70}"  },
+    "support-success":             { "$value": "{color.green-60}" },
+    "support-warning":             { "$value": "{color.yellow-30}" },
+    "support-error":               { "$value": "{color.red-60}"  },
+    "focus-ring":                  { "$value": "{color.blue-60}" }
+  },
+  "voice": {
+    "tone":     ["confident", "direct", "professional"],
+    "register": "Bloomberg article standard — precise, professional, financially-literate-reader-without-technical-background friendly",
+    "lexicon_avoid": ["mathematically air-gapped", "hyperscale-grade", "industry-leading", "enterprise-class", "world-class", "best-in-class"],
+    "bcsc_posture": "Forward-looking statements carry planned/intended/may/target language with reasonable basis + cautionary language + material assumptions. Sovereign Data Foundation referenced only in planned/intended terms."
+  },
+  "accessibility": {
+    "wcag_target": "2.2 AAA",
+    "contrast_floor_text_to_surface": 7,
+    "contrast_floor_focus_ring_to_surface": 3,
+    "motion_respect": "prefers-reduced-motion honored at all interaction layers"
+  }
+}
