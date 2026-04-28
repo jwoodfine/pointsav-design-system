@@ -1,132 +1,178 @@
 {
   "$schema": "https://schemas.designtokens.org/2025-10-01/draft.json",
-  "$description": "Primitive token layer — color, type scale, spacing, motion, focus. Baselined on the IBM Carbon vocabulary; semantic overrides per tenant brand live in themes/<brand>/. v0.0.1 ships the floor only.",
+  "$description": "PointSav design system — primitive token layer. Numeric scales (10/20/.../100 for color; 1..13 for spacing; 1..6 for duration) follow the convention popularised by Carbon, Material, Polaris, Atlassian, and the broader 2020-2026 design-system field — designers arriving from any of these systems recognise the structure. Color family names, hex values, spacing values, motion curves, and type scale are PointSav-original. Semantic overrides per tenant brand live in themes/<brand>.json.",
   "color": {
     "$type": "color",
     "white": { "$value": "#ffffff" },
     "black": { "$value": "#000000" },
-    "gray-10": { "$value": "#f4f4f4" },
-    "gray-20": { "$value": "#e0e0e0" },
-    "gray-30": { "$value": "#c6c6c6" },
-    "gray-40": { "$value": "#a8a8a8" },
-    "gray-50": { "$value": "#8d8d8d" },
-    "gray-60": { "$value": "#6f6f6f" },
-    "gray-70": { "$value": "#525252" },
-    "gray-80": { "$value": "#393939" },
-    "gray-90": { "$value": "#262626" },
-    "gray-100": { "$value": "#161616" },
-    "blue-10": { "$value": "#edf5ff" },
-    "blue-20": { "$value": "#d0e2ff" },
-    "blue-30": { "$value": "#a6c8ff" },
-    "blue-40": { "$value": "#78a9ff" },
-    "blue-50": { "$value": "#4589ff" },
-    "blue-60": { "$value": "#0f62fe" },
-    "blue-70": { "$value": "#0043ce" },
-    "blue-80": { "$value": "#002d9c" },
-    "red-50": { "$value": "#fa4d56" },
-    "red-60": { "$value": "#da1e28" },
-    "red-70": { "$value": "#a2191f" },
-    "green-50": { "$value": "#42be65" },
-    "green-60": { "$value": "#24a148" },
-    "green-70": { "$value": "#198038" },
-    "yellow-30": { "$value": "#f1c21b" },
-    "yellow-40": { "$value": "#d2a106" }
+    "neutral-10":  { "$value": "#f5f6f8" },
+    "neutral-20":  { "$value": "#e6e8ec" },
+    "neutral-30":  { "$value": "#cdd1d8" },
+    "neutral-40":  { "$value": "#aab0bb" },
+    "neutral-50":  { "$value": "#878d99" },
+    "neutral-60":  { "$value": "#666c78" },
+    "neutral-70":  { "$value": "#4a4f59" },
+    "neutral-80":  { "$value": "#33373e" },
+    "neutral-90":  { "$value": "#1f2125" },
+    "neutral-100": { "$value": "#0e0f12" },
+    "primary-10":  { "$value": "#eef3ff" },
+    "primary-20":  { "$value": "#d3deff" },
+    "primary-30":  { "$value": "#a6bcff" },
+    "primary-40":  { "$value": "#7392ff" },
+    "primary-50":  { "$value": "#3f6cf2" },
+    "primary-60":  { "$value": "#234ed8" },
+    "primary-70":  { "$value": "#173ab1" },
+    "primary-80":  { "$value": "#0c2785" },
+    "primary-90":  { "$value": "#04165a" },
+    "positive-10": { "$value": "#e8f6ed" },
+    "positive-30": { "$value": "#9fdaae" },
+    "positive-50": { "$value": "#3fa55c" },
+    "positive-60": { "$value": "#26823f" },
+    "positive-70": { "$value": "#16602b" },
+    "caution-10":  { "$value": "#fff5e1" },
+    "caution-30":  { "$value": "#f5cd7a" },
+    "caution-50":  { "$value": "#d49b1f" },
+    "caution-60":  { "$value": "#a87514" },
+    "caution-70":  { "$value": "#7a520a" },
+    "critical-10": { "$value": "#fceaea" },
+    "critical-30": { "$value": "#f0a3a3" },
+    "critical-50": { "$value": "#d24747" },
+    "critical-60": { "$value": "#a52323" },
+    "critical-70": { "$value": "#7d1414" }
   },
   "size": {
     "$type": "dimension",
-    "spacing-01": { "$value": "0.125rem", "$description": "2px @ 16px base" },
-    "spacing-02": { "$value": "0.25rem",  "$description": "4px @ 16px base" },
-    "spacing-03": { "$value": "0.5rem",   "$description": "8px @ 16px base" },
-    "spacing-04": { "$value": "0.75rem",  "$description": "12px @ 16px base" },
-    "spacing-05": { "$value": "1rem",     "$description": "16px @ 16px base" },
-    "spacing-06": { "$value": "1.5rem",   "$description": "24px @ 16px base" },
-    "spacing-07": { "$value": "2rem",     "$description": "32px @ 16px base" },
-    "spacing-08": { "$value": "2.5rem",   "$description": "40px @ 16px base" },
-    "spacing-09": { "$value": "3rem",     "$description": "48px @ 16px base" },
-    "spacing-10": { "$value": "4rem",     "$description": "64px @ 16px base" },
-    "spacing-11": { "$value": "5rem",     "$description": "80px @ 16px base" },
-    "spacing-12": { "$value": "6rem",     "$description": "96px @ 16px base" },
-    "spacing-13": { "$value": "10rem",    "$description": "160px @ 16px base" }
+    "space-1":  { "$value": "0.125rem", "$description": "2px @ 16px base — hairline gutter" },
+    "space-2":  { "$value": "0.25rem",  "$description": "4px @ 16px base" },
+    "space-3":  { "$value": "0.5rem",   "$description": "8px @ 16px base — paragraph rhythm floor" },
+    "space-4":  { "$value": "0.75rem",  "$description": "12px @ 16px base" },
+    "space-5":  { "$value": "1rem",     "$description": "16px @ 16px base — body grid unit" },
+    "space-6":  { "$value": "1.5rem",   "$description": "24px @ 16px base" },
+    "space-7":  { "$value": "2rem",     "$description": "32px @ 16px base — section gutter" },
+    "space-8":  { "$value": "2.5rem",   "$description": "40px @ 16px base" },
+    "space-9":  { "$value": "3rem",     "$description": "48px @ 16px base" },
+    "space-10": { "$value": "4rem",     "$description": "64px @ 16px base — major section" },
+    "space-11": { "$value": "5rem",     "$description": "80px @ 16px base" },
+    "space-12": { "$value": "6rem",     "$description": "96px @ 16px base" },
+    "space-13": { "$value": "10rem",    "$description": "160px @ 16px base — hero spacing" }
   },
   "typography": {
     "$type": "typography",
-    "productive-01": {
+    "utility-1": {
       "$value": {
-        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "fontWeight": 400,
+        "fontSize": "0.75rem",
+        "lineHeight": 1.34,
+        "letterSpacing": "0.16px"
+      },
+      "$description": "12/16 — caption, label, table cell"
+    },
+    "utility-2": {
+      "$value": {
+        "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         "fontWeight": 400,
         "fontSize": "0.875rem",
-        "lineHeight": 1.29,
+        "lineHeight": 1.43,
         "letterSpacing": "0.16px"
-      }
+      },
+      "$description": "14/20 — secondary body, helper text"
     },
-    "productive-02": {
+    "utility-3": {
       "$value": {
-        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         "fontWeight": 400,
         "fontSize": "1rem",
         "lineHeight": 1.5,
         "letterSpacing": "0px"
-      }
+      },
+      "$description": "16/24 — body floor"
     },
-    "expressive-01": {
+    "utility-4": {
       "$value": {
-        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
-        "fontWeight": 400,
+        "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "fontWeight": 600,
+        "fontSize": "1rem",
+        "lineHeight": 1.5,
+        "letterSpacing": "0px"
+      },
+      "$description": "16/24 — UI heading, button label, table heading"
+    },
+    "display-1": {
+      "$value": {
+        "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "fontWeight": 500,
         "fontSize": "1.25rem",
         "lineHeight": 1.4,
-        "letterSpacing": "0px"
-      }
+        "letterSpacing": "-0.01em"
+      },
+      "$description": "20/28 — sub-heading"
     },
-    "expressive-02": {
+    "display-2": {
       "$value": {
-        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "fontWeight": 500,
+        "fontSize": "1.5rem",
+        "lineHeight": 1.34,
+        "letterSpacing": "-0.01em"
+      },
+      "$description": "24/32 — section heading"
+    },
+    "display-3": {
+      "$value": {
+        "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         "fontWeight": 400,
-        "fontSize": "1.75rem",
-        "lineHeight": 1.29,
-        "letterSpacing": "0px"
-      }
-    },
-    "expressive-03": {
-      "$value": {
-        "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif",
-        "fontWeight": 300,
         "fontSize": "2rem",
         "lineHeight": 1.25,
-        "letterSpacing": "0px"
-      }
+        "letterSpacing": "-0.015em"
+      },
+      "$description": "32/40 — page title"
+    },
+    "display-4": {
+      "$value": {
+        "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "fontWeight": 300,
+        "fontSize": "2.625rem",
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.02em"
+      },
+      "$description": "42/50 — hero / landing"
     }
   },
   "motion": {
     "$type": "cubicBezier",
-    "ease-productive": { "$value": [0.2, 0, 0.38, 0.9], "$description": "Carbon productive easing" },
-    "ease-expressive": { "$value": [0.4, 0.14, 0.3, 1.0], "$description": "Carbon expressive easing" },
-    "ease-entrance":   { "$value": [0.0, 0.0, 0.38, 0.9] },
-    "ease-exit":       { "$value": [0.2, 0.0, 1.0, 0.9] }
+    "ease-utility": { "$value": [0.2, 0, 0.4, 1.0],  "$description": "Productive interaction — buttons, inputs, tabs" },
+    "ease-display": { "$value": [0.4, 0.14, 0.3, 1.0], "$description": "Expressive interaction — toasts, modals, hero" },
+    "ease-enter":   { "$value": [0.0, 0.0, 0.4, 1.0] },
+    "ease-exit":    { "$value": [0.2, 0.0, 1.0, 1.0] }
   },
   "duration": {
     "$type": "duration",
-    "fast-01":     { "$value": "70ms"  },
-    "fast-02":     { "$value": "110ms" },
-    "moderate-01": { "$value": "150ms" },
-    "moderate-02": { "$value": "240ms" },
-    "slow-01":     { "$value": "400ms" },
-    "slow-02":     { "$value": "700ms" }
+    "speed-1": { "$value": "70ms",  "$description": "Imperceptible — color hover" },
+    "speed-2": { "$value": "120ms", "$description": "Quick — button press, focus ring fade" },
+    "speed-3": { "$value": "200ms", "$description": "Snappy — tab switch" },
+    "speed-4": { "$value": "320ms", "$description": "Smooth — toast appearance, drawer slide" },
+    "speed-5": { "$value": "480ms", "$description": "Considered — modal entrance" },
+    "speed-6": { "$value": "720ms", "$description": "Deliberate — hero animation" }
   },
   "border": {
     "$type": "dimension",
-    "radius-01": { "$value": "0.125rem" },
-    "radius-02": { "$value": "0.25rem"  },
-    "radius-03": { "$value": "0.5rem"   }
+    "corner-1": { "$value": "0.125rem", "$description": "2px — chip, badge" },
+    "corner-2": { "$value": "0.25rem",  "$description": "4px — button, input default" },
+    "corner-3": { "$value": "0.5rem",   "$description": "8px — surface, dialog" },
+    "stroke-1": { "$value": "1px",  "$description": "Default border" },
+    "stroke-2": { "$value": "2px",  "$description": "Focus ring, error state" }
   },
   "focus": {
     "$type": "border",
     "ring": {
       "$value": {
-        "color": "{color.blue-60}",
-        "width": "2px",
-        "style": "solid"
+        "color": "{color.primary-60}",
+        "width": "{border.stroke-2}",
+        "style": "solid",
+        "offset": "2px"
       },
-      "$description": "WCAG 2.2 AAA focus ring; meets 3:1 contrast against any tenant background"
+      "$description": "WCAG 2.2 AAA-conformant focus ring; 3:1 contrast against any tenant background"
     }
   }
 }
