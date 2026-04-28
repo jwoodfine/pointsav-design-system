@@ -1,0 +1,31 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "button-primary",
+  "display_name": "Primary button",
+  "description": "Primary call-to-action button. One per surface; never adjacent to another primary button.",
+  "html": "<button type=\"button\" class=\"btn btn-primary\"><span class=\"btn__label\">{{label}}</span></button>",
+  "css": ".btn{display:inline-flex;align-items:center;justify-content:center;min-height:2.5rem;padding:0 1rem;border:0;border-radius:0;font:inherit;cursor:pointer;transition:background-color 110ms cubic-bezier(0.2,0,0.38,0.9)}.btn:focus-visible{outline:2px solid var(--focus-ring,#0f62fe);outline-offset:2px}.btn-primary{background-color:var(--interactive-primary,#0f62fe);color:var(--ink-on-interactive,#fff)}.btn-primary:hover{background-color:var(--interactive-primary-hover,#0043ce)}.btn-primary:active{background-color:var(--interactive-primary-pressed,#002d9c)}.btn-primary[disabled]{background-color:var(--border-subtle,#e0e0e0);color:var(--ink-secondary,#525252);cursor:not-allowed}",
+  "aria": "Native <button> element carries the role implicitly. Set aria-label when the visible label is not descriptive (icon-only buttons). Never disable a primary button without surfacing the constraint near the trigger.",
+  "research_link": "carbon-baseline-rationale",
+  "tokens_consumed": [
+    "{color.blue-60}",
+    "{color.blue-70}",
+    "{color.blue-80}",
+    "{color.gray-20}",
+    "{color.gray-70}",
+    "{color.white}",
+    "{duration.fast-02}",
+    "{motion.ease-productive}"
+  ],
+  "anti_patterns": [
+    "Two primary buttons on the same surface — only one primary action per context.",
+    "Using primary styling for destructive actions — use button-danger (later milestone).",
+    "Disabled primary without explanation — failed-state buttons must communicate why."
+  ],
+  "wcag": {
+    "target": "2.2 AAA",
+    "focus_visible": true,
+    "contrast_text_to_background": ">= 7:1 against blue-60 ink-on-interactive pair",
+    "min_touch_target": "44x44 CSS pixels"
+  }
+}
