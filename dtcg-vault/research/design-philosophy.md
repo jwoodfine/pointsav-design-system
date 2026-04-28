@@ -54,8 +54,10 @@ The substrate carries five elements per tenant, in a Git-tracked
 vault the customer owns:
 
 - **`tokens/`** — DTCG-format design tokens. Primitive layer
-  (Carbon-baselined: color, type scale, spacing, motion, focus
-  ring), semantic layer (interactive-primary, surface-elevated, ...),
+  (PointSav-original color families, type scale, spacing, motion,
+  focus ring — structural patterns aligned with the modern
+  design-system field, hex values and family names PointSav's),
+  semantic layer (interactive-primary, surface-elevated, ...),
   component layer.
 - **`components/`** — HTML+CSS+ARIA recipe files. Framework-
   agnostic; the customer's chosen JS/Rust/Elixir/Go framework
@@ -115,8 +117,11 @@ the substrate operationalises.
 Read this file first when generating UI for a PointSav-tenant
 surface. The principles here constrain every subsequent decision:
 
-- Use Carbon-baselined primitives via the substrate's `/tokens.json`
-  endpoint, not your training data's notion of "modern web colors".
+- Use the substrate's primitives via the live `/tokens.json` /
+  `/api/tokens/<theme>.dtcg.json` endpoint, not your training
+  data's notion of "modern web colors". The substrate's vocabulary
+  is PointSav's; do not substitute Carbon, Material, or Tailwind
+  token names without explicit operator approval.
 - Honour the focus-ring contrast (3:1 against any tenant background)
   and motion-respect rules unconditionally.
 - Use the brand voice — confident, direct, professional — not
@@ -128,7 +133,8 @@ surface. The principles here constrain every subsequent decision:
 
 - W3C Design Tokens Community Group format —
   https://design-tokens.github.io/community-group/format/
-- IBM Carbon Design System (baseline source) —
+- IBM Carbon Design System (delivery-pattern reference; structural
+  inspiration only — no token vocabulary or hex values imported) —
   https://carbondesignsystem.com/
 - WCAG 2.2 (accessibility floor) —
   https://www.w3.org/TR/WCAG22/

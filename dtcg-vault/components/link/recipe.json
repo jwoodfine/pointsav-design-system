@@ -1,0 +1,14 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "link",
+  "display_name": "Link",
+  "description": "A navigation primitive — moves the user to a destination without state change.",
+  "category": "components",
+  "registry_type": "component",
+  "html": "<a class=\"ps-link\" href=\"{{href}}\">{{label}}</a>",
+  "css": ".ps-link{color:var(--ps-interactive-primary,#234ed8);text-decoration:underline;text-underline-offset:.2em;transition:color var(--ps-speed-1,70ms) var(--ps-ease-utility,cubic-bezier(.2,0,.4,1))}.ps-link:hover{color:var(--ps-interactive-primary-hover,#173ab1)}.ps-link:visited{color:var(--ps-interactive-primary-pressed,#0c2785)}.ps-link:focus-visible{outline:2px solid var(--ps-focus-ring,#234ed8);outline-offset:2px;border-radius:2px}",
+  "aria": "Use semantic <a> with href. Never use a <button> styled as a link or vice versa. Distinguish links from buttons by behaviour: links navigate, buttons do.",
+  "wcag": { "target": "2.2 AAA", "focus_visible": true, "underline_required": true },
+  "research_links": ["primitive-vocabulary-rationale"],
+  "registry_dependencies": []
+}
