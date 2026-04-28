@@ -6,7 +6,7 @@
 > Read at session start when a Root Claude opens in this repo. Update
 > at session end when repo-scope open items change.
 
-Last updated: 2026-04-27.
+Last updated: 2026-04-28.
 
 ---
 
@@ -23,6 +23,24 @@ Last updated: 2026-04-27.
   `CLAUDE.md` / `NEXT.md`. Decide whether they need them — this repo
   is a single coherent artefact per the framework, so the answer may
   be "no," but worth settling explicitly.
+
+## Recently added (2026-04-28)
+
+- Woodfine Color Matrix MEMO extended (`themes/MEMO-Woodfine-Color-Matrix.md`).
+  Adds the full Woodfine brand palette (`--wf-blue`, `--wf-green`,
+  `--wf-orange`, `--wf-red`, `--wf-purple`, `--wf-gold`) plus
+  the neutral scale (`--ink` through `--ink-4`, `--rule`,
+  `--rule-strong`) and the per-chart accent rule (single `--accent`
+  bound per chart per domain — blue for counsel/governance, green
+  for accounting/finance/ops). Backfilled from the Apr 15 JW14
+  Accounting / Counsel pair + Apr 6 JW9 Accounting Statements
+  consolidation chart authored in the project-orgcharts cluster.
+- Org-chart printable template (`templates/html/org-chart-printable.html`).
+  Single-template, accent-swappable chart skeleton — title block +
+  4 sections (board / management / offices / disciplines) +
+  signature, on a 1056×816 US Letter landscape canvas. Drives all
+  future Woodfine corporate org-chart authoring; replaces the
+  ad-hoc PowerPoint export pattern that the legacy charts used.
 
 ## Recently added (2026-04-27)
 
