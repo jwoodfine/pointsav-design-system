@@ -6,7 +6,7 @@
 > Read at session start when a Root Claude opens in this repo. Update
 > at session end when repo-scope open items change.
 
-Last updated: 2026-04-22.
+Last updated: 2026-04-27.
 
 ---
 
@@ -23,6 +23,16 @@ Last updated: 2026-04-22.
   `CLAUDE.md` / `NEXT.md`. Decide whether they need them — this repo
   is a single coherent artefact per the framework, so the answer may
   be "no," but worth settling explicitly.
+
+## Recently added (2026-04-27)
+
+- Chart component family — `components/chart.css`,
+  `components/nodes.css`, `components/connectors.css`, plus
+  `guidelines/MEMO-05-Org-Chart-Patterns.md`. Backfilled from the
+  Woodfine SPV Arrangements chart authored in the project-orgcharts
+  cluster. Surface: chart canvas + panel + entity-node + role-badge
+  + connector primitives, themed via existing `--sys-*` tokens. See
+  the memo for composition rules and theming guidance.
 
 ## Recently closed (2026-04-22)
 

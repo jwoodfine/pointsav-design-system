@@ -1,0 +1,11 @@
+/* connectors.css - Hierarchy Lines (vertical drop, horizontal bus, fan-out cell) */
+.connector-vertical { width: 2px; height: 24px; background: var(--sys-text); }
+.connector-vertical--short { height: 16px; }
+
+.lp-bus { width: 100%; height: 2px; background: var(--sys-text); }
+.lp-row { display: flex; gap: 20px; align-items: flex-start; justify-content: space-around; width: 100%; }
+.lp-cell { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+
+@media print {
+    .connector-vertical, .lp-bus { background: #000; }
+}

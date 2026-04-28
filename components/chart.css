@@ -1,0 +1,28 @@
+/* chart.css - Structural Chart Canvas (panels, rows, fund wrapper) */
+.spv-chart { max-width: 1400px; margin: 0 auto; }
+.spv-chart__header { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--sys-hairline); }
+.spv-chart__title { font-size: 1.875rem; font-weight: 800; letter-spacing: -0.02em; margin: 0; }
+.spv-chart__subtitle { display: block; margin-top: 8px; font-family: var(--sys-font-mono); font-size: 0.75rem; color: var(--sys-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.spv-chart__legend { display: flex; gap: 12px; list-style: none; }
+.spv-chart__legend-item { border: 1px solid var(--sys-border); background: var(--sys-card); padding: 8px 16px; font-size: 0.95rem; border-radius: 2px; }
+
+.spv-chart__row { display: grid; gap: 24px; margin-bottom: 32px; }
+.spv-chart__row--top { grid-template-columns: 1fr 1.4fr 1fr; }
+.spv-chart__row--bottom { grid-template-columns: 1fr 1fr; }
+
+.spv-panel { display: flex; flex-direction: column; gap: 16px; }
+.spv-panel__title { font-size: 1rem; font-weight: 700; margin: 0; padding-bottom: 8px; border-bottom: 1px solid var(--sys-hairline); letter-spacing: -0.01em; }
+.spv-panel__diagram { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 32px 20px; background: var(--sys-card); border: 1px solid var(--sys-hairline); border-radius: 2px; flex-grow: 1; }
+
+.fund-wrapper { border: 1px dashed var(--sys-text); padding: 32px 20px 20px 20px; position: relative; width: 100%; margin-top: 12px; }
+.fund-wrapper__label { position: absolute; top: -12px; left: 20px; background: var(--sys-accent); color: var(--sys-card); font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 2px; font-family: var(--sys-font-mono); letter-spacing: 0.05em; }
+
+.spv-chart__footnote { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--sys-hairline); font-size: 0.85rem; color: var(--sys-muted); text-align: right; font-family: var(--sys-font-mono); }
+
+@media print {
+    .spv-chart { max-width: none; }
+    .spv-chart__header, .spv-panel__title, .spv-chart__footnote { border-color: #000; }
+    .spv-panel__diagram { background: #FFF; border-color: #000; }
+    .fund-wrapper { border-color: #000; }
+    .fund-wrapper__label { background: #000; color: #FFF; }
+}

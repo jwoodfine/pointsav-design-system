@@ -1,0 +1,12 @@
+/* nodes.css - Entity & Role Primitives (rect node, role badge, footnote marker) */
+.entity-node { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--sys-border); background: var(--sys-card); padding: 8px 20px; font-weight: 700; font-size: 0.9rem; text-align: center; min-width: 56px; border-radius: 2px; }
+
+.role-badge { font-size: 0.85rem; color: var(--sys-text); text-align: center; line-height: 1.2; }
+.role-badge--lead { font-weight: 700; }
+.role-badge--ellipsis { font-weight: 700; letter-spacing: 0.25em; }
+
+.footnote-marker { font-size: 1rem; font-weight: 700; color: var(--sys-text); }
+
+@media print {
+    .entity-node { border-color: #000; }
+}
