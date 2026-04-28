@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!--
+  org-chart-printable.html — Woodfine corporate org-chart template
+
+  Canonical printable chart template for the Woodfine corporate group.
+  Derived 2026-04-28 from the Apr 15 JW14 Accounting / Counsel pair
+  (project-orgcharts cluster). Single-template, accent-swappable per
+  the Woodfine Color Matrix MEMO §5.
+
+  TO USE:
+    1. Copy this file into the chart's working location.
+    2. Set --accent on `:root` to the chart's domain accent
+       (--wf-blue for counsel/governance, --wf-green for
+       accounting/finance/operations). Update --accent-tint to match.
+    3. Replace KICKER / HEADLINE / SUBHEAD with the chart's title block.
+    4. Fill or remove each of the four sections as needed; the four
+       sections are independent and any can be omitted.
+    5. Update the signature block at the bottom-right.
+
+  CANVAS: 1056 × 816 px (US Letter landscape). Internal layout
+  uses absolute positioning relative to .sheet; sections place
+  themselves via section.style="top:Npx".
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Woodfine Org-Chart Printable Template</title>
+<style>
+  :root{
+    /* Woodfine brand palette — see themes/MEMO-Woodfine-Color-Matrix.md */
+    --wf-blue:#164679;
+    --wf-green:#54924E;
+    --wf-orange:#F15F22;
+    --wf-red:#ED1B2F;
+    --wf-purple:#7C468C;
+    --wf-gold:#C89211;
+    --wf-grey:#E6E7E8;
+
+    /* Neutrals */
+    --ink:#111827;          /* primary text — replaces #000000 (forbidden) */
+    --ink-2:#374151;
+    --ink-3:#6B7280;
+    --ink-4:#9CA3AF;
+    --paper:#FFFFFF;
+    --paper-2:#F7F9FA;       /* canvas (outer) */
+    --rule:#E6E7E8;
+    --rule-strong:#9CA3AF;
+
+    /* === Per-chart accent — set ONE of these pairs ============ */
+    --accent:#54924E;        /* GREEN by default (accounting/finance/ops) */
+    --accent-2:#6BAE64;      /* +8% lightness */
+    --accent-tint:#EEF6EC;   /* 10% green wash */
+    /* For counsel/governance/legal:
+       --accent:#164679; --accent-2:#2B5E95; --accent-tint:#E8EFF7; */
+
+    /* Highlight (cross-cutting marker, not a chart-wide accent) */
+    --highlight:#FDE8DD;     /* 10% Woodfine Orange wash */
+    --highlight-fg:#F15F22;  /* Woodfine Orange */
+
+    /* Per-entity domain markers (use inline; never as chart-wide accent) */
+    --tier-purple-b:#7C468C; --tier-purple-t:#EEE6F1;
+    --tier-gold-b:#C89211;   --tier-gold-t:#FAEFCC;
+    --tier-grey-b:#9CA3AF;   --tier-grey-t:#F2F2F2;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:var(--paper-2);}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    font-feature-settings:"tnum";
+    color:var(--ink);
+    display:flex;justify-content:center;padding:40px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .sheet{
+    position:relative;width:1056px;height:816px;flex-shrink:0;
+    background:var(--paper);
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    overflow:hidden;
+  }
+
+  /* ---------- TITLE BLOCK ---------- */
+  .title-block{
+    position:absolute;top:28px;left:56px;right:56px;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    padding-bottom:14px;border-bottom:.5px solid var(--rule);
+  }
+  .kicker{
+    font-size:9.5px;font-weight:600;letter-spacing:.28em;
+    color:var(--accent);text-transform:uppercase;margin-bottom:6px;
+  }
+  .headline{
+    font-weight:800;font-size:22px;letter-spacing:-.015em;
+    line-height:1.05;color:var(--ink);
+  }
+  .headline em{font-style:italic;font-weight:600;color:var(--ink-2);}
+  .subhead{
+    font-style:italic;font-weight:400;font-size:12px;
+    color:var(--ink-3);max-width:380px;text-align:right;line-height:1.45;
+  }
+
+  /* ---------- SECTION ---------- */
+  .section{position:absolute;left:56px;right:56px;}
+  .section-header{
+    display:flex;align-items:center;gap:12px;
+    margin-bottom:10px;
+  }
+  .sec-title{
+    font-size:10px;font-weight:700;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--ink);
+  }
+  .sec-rule{flex:1;height:1px;background:var(--ink);}
+  .sec-rule-thin{flex:1;height:1px;background:var(--rule);}
+
+  /* ---------- BOX (node) ---------- */
+  .node{
+    border:.75px solid var(--ink-3);
+    background:var(--paper);
+    padding:7px 10px;
+    font-size:10.5px;font-weight:500;
+    color:var(--ink);
+    text-align:center;
+    line-height:1.2;
+    display:flex;align-items:center;justify-content:center;
+    min-height:28px;
+  }
+  .node.tint{background:var(--accent-tint);border-color:var(--accent-2);}
+  .node.strong{
+    background:var(--accent);color:var(--paper);
+    border-color:var(--accent);font-weight:600;
+    letter-spacing:.04em;text-transform:uppercase;font-size:10px;
+  }
+  .node.highlight{
+    background:var(--highlight);border-color:var(--ink);
+    font-weight:600;
+  }
+  .node.caps{
+    text-transform:uppercase;letter-spacing:.08em;font-size:9.5px;font-weight:600;
+  }
+  .node.purple{background:var(--tier-purple-t);border-color:var(--tier-purple-b);}
+  .node.gold{background:var(--tier-gold-t);border-color:var(--tier-gold-b);}
+  .node.grey{background:var(--tier-grey-t);border-color:var(--tier-grey-b);}
+
+  /* ---------- DUTIES SIDEBAR ---------- */
+  .duties{position:absolute;}
+  .duties-title{
+    font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink);padding-bottom:4px;margin-bottom:6px;
+    border-bottom:.5px solid var(--rule);
+  }
+  .duties ul{list-style:none;padding:0;margin:0;}
+  .duties li{
+    position:relative;padding-left:10px;
+    font-size:10px;line-height:1.5;color:var(--ink-2);
+    margin-bottom:2px;
+  }
+  .duties li::before{
+    content:"";position:absolute;left:0;top:7px;
+    width:4px;height:1px;background:var(--accent);
+  }
+
+  /* ---------- ENTITY LIST ---------- */
+  .entities{
+    font-size:9.5px;line-height:1.55;color:var(--ink-2);
+  }
+  .entities .e-row{display:flex;gap:6px;}
+  .entities .e-row .e-tag{
+    font-size:8px;
+    color:var(--ink-4);padding-top:1px;letter-spacing:.04em;min-width:20px;
+  }
+  .entities .e-more{color:var(--ink-4);font-style:italic;font-size:9.5px;}
+
+  /* ---------- DISCIPLINE COLUMNS ---------- */
+  .disc{display:flex;flex-direction:column;}
+  .disc-head{
+    font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--paper);background:var(--accent);
+    padding:6px 8px;text-align:center;
+    border:.5px solid var(--accent);
+    min-height:38px;
+    display:flex;align-items:center;justify-content:center;
+    line-height:1.15;
+  }
+  .disc-body{
+    padding:7px 2px 0 2px;
+    font-size:9.5px;line-height:1.5;color:var(--ink-2);
+    text-align:left;
+  }
+  .disc-body .item{display:block;}
+  .disc-body .sub{display:block;padding-left:12px;}
+  .disc-body .lead{display:block;}
+
+  /* ---------- FOOTNOTES ---------- */
+  .fn{
+    position:absolute;
+    font-style:italic;font-size:9.5px;color:var(--ink-3);line-height:1.4;
+    letter-spacing:.005em;
+  }
+  .fn sup{font-size:8px;padding-right:3px;color:var(--accent);font-style:normal;font-weight:600;}
+
+  /* ---------- CONNECTORS (absolute SVG overlay) ---------- */
+  .wires{position:absolute;inset:0;pointer-events:none;}
+  .wires line, .wires path{stroke:var(--ink-3);stroke-width:.75;fill:none;}
+  .wires .dashed{stroke-dasharray:3,3;}
+
+  /* ---------- SIGNATURE ---------- */
+  .token-signature{
+    position:absolute;bottom:24px;right:56px;
+    font-size:10px;line-height:1.45;text-align:right;color:var(--ink);
+    letter-spacing:.01em;
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    @page{size:letter landscape;margin:0;}
+    html,body{background:#fff;padding:0;margin:0;}
+    body{padding:0;}
+    .sheet{box-shadow:none;width:1056px;height:816px;background:var(--paper);}
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ============ TITLE ============ -->
+  <div class="title-block">
+    <div>
+      <div class="kicker">Kicker — chart domain (e.g., Organizational Governance)</div>
+      <h1 class="headline">CHART HEADLINE IN UPPERCASE</h1>
+    </div>
+    <div class="subhead">
+      Subhead — one-sentence description of what the chart depicts and for whom.
+    </div>
+  </div>
+
+  <!-- ============ SECTION I — typically a board / parent committee row ============ -->
+  <div class="section" style="top:104px;">
+    <div class="section-header">
+      <span class="sec-title">Section I title</span>
+      <span class="sec-rule"></span>
+    </div>
+  </div>
+
+  <!-- 3-column committee row example -->
+  <div style="position:absolute;top:140px;left:56px;width:616px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+    <div class="node caps strong">Committee A</div>
+    <div class="node caps strong">Committee B</div>
+    <div class="node caps strong">Committee C</div>
+  </div>
+
+  <!-- Section duties sidebar example -->
+  <div class="duties" style="top:140px;right:56px;width:300px;">
+    <div class="duties-title">Duties &amp; Responsibilities</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <ul>
+        <li>Duty one</li>
+        <li>Duty two</li>
+        <li>Duty three</li>
+      </ul>
+      <ul>
+        <li>Duty four</li>
+        <li>Duty five</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ SECTION II — typically a management/officer row ============ -->
+  <div class="section" style="top:284px;">
+    <div class="section-header">
+      <span class="sec-title">Section II title</span>
+      <span class="sec-rule"></span>
+    </div>
+  </div>
+
+  <div style="position:absolute;top:322px;left:56px;width:616px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div class="node caps strong">Top role A</div>
+      <div class="node caps strong">Top role B</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+      <div class="node caps">Role C</div>
+      <div class="node caps highlight">Role D<sup style="font-size:8px;color:var(--accent);font-weight:700;margin-left:3px;">*</sup></div>
+      <div class="node caps">Role E</div>
+    </div>
+  </div>
+
+  <!-- ============ SECTION III — typically an offices / entities row ============ -->
+  <div class="section" style="top:464px;">
+    <div class="section-header">
+      <span class="sec-title">Section III title</span>
+      <span class="sec-rule"></span>
+    </div>
+  </div>
+
+  <div style="position:absolute;top:500px;left:56px;width:616px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+    <div class="node strong">Office A</div>
+    <div class="node strong">Office B</div>
+    <div class="node strong">Office C</div>
+  </div>
+
+  <div style="position:absolute;top:540px;left:56px;width:616px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+    <div class="entities">
+      <div class="e-row"><span class="e-tag">CA</span><span>Entity 1</span></div>
+      <div class="e-row"><span class="e-tag">US</span><span>Entity 2</span></div>
+    </div>
+    <div class="entities">
+      <div class="e-row"><span>Entity 3</span></div>
+      <div class="e-row"><span>Entity 4</span></div>
+    </div>
+    <div class="entities">
+      <div class="e-row"><span>Entity 5</span></div>
+      <div class="e-more">additional entities as required</div>
+    </div>
+  </div>
+
+  <!-- ============ SECTION IV — typically a practice/discipline grid (6 cols) ============ -->
+  <div class="section" style="top:624px;">
+    <div class="section-header">
+      <span class="sec-title">Practice Disciplines</span>
+      <span class="sec-rule"></span>
+    </div>
+  </div>
+
+  <div style="position:absolute;top:656px;left:56px;right:56px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;">
+    <div class="disc">
+      <div class="disc-head">Discipline 1</div>
+      <div class="disc-body">
+        <span class="item">Item A</span>
+        <span class="item">Item B</span>
+      </div>
+    </div>
+    <div class="disc">
+      <div class="disc-head">Discipline 2</div>
+      <div class="disc-body">
+        <span class="item">Item C</span>
+        <span class="lead">Item D</span>
+        <span class="sub">Sub D-1</span>
+        <span class="sub">Sub D-2</span>
+      </div>
+    </div>
+    <div class="disc">
+      <div class="disc-head">Discipline 3</div>
+      <div class="disc-body">
+        <span class="item">Item E</span>
+      </div>
+    </div>
+    <div class="disc">
+      <div class="disc-head">Discipline 4</div>
+      <div class="disc-body">
+        <span class="item">Item F</span>
+      </div>
+    </div>
+    <div class="disc">
+      <div class="disc-head">Discipline 5</div>
+      <div class="disc-body">
+        <span class="item">Item G</span>
+      </div>
+    </div>
+    <div class="disc">
+      <div class="disc-head">Discipline 6</div>
+      <div class="disc-body">
+        <span class="item">Item H</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="token-signature">
+    [Date]<br>
+    Prepared by Woodfine Management Corp.
+  </div>
+
+</div>
+
+</body>
+</html>
