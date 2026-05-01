@@ -13,7 +13,7 @@
  *
  *   --article-freshness-ribbon-color-archived
  *     → component.article.freshness-ribbon.color-archived
- *     → primitive.color.neutral-50 → #878d99
+ *     → primitive.color.neutral-70 → #4a4f59  (5.2:1 on neutral-20; contrast fix 2026-05-01)
  *
  *   Threshold number tokens (per-deployment overrideable):
  *   --article-freshness-ribbon-threshold-fresh-days  → 90
@@ -103,8 +103,8 @@
 
 .ps-freshness-ribbon--archived {
   background: var(--semantic-surface-layer-accent, #e6e8ec);
-  color: var(--article-freshness-ribbon-color-archived, #878d99);
-  border-color: var(--article-freshness-ribbon-color-archived, #878d99);
+  color: var(--article-freshness-ribbon-color-archived, #4a4f59);
+  border-color: var(--article-freshness-ribbon-color-archived, #4a4f59);
 }
 
 /* ── Reader preference toggle ─────────────────────────────────────────────── */
