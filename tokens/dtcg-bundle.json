@@ -322,7 +322,7 @@
         "$description": "Per-section last-content-review badge. Three-stop semantic: fresh / stale / archived. Thresholds are per-deployment overrideable number tokens.",
         "color-fresh":           { "$type": "color",  "$value": "{semantic.status.success.base}" },
         "color-stale":           { "$type": "color",  "$value": "{semantic.status.warn.base}" },
-        "color-archived":        { "$type": "color",  "$value": "{primitive.color.neutral-50}" },
+        "color-archived":        { "$type": "color",  "$value": "{primitive.color.neutral-70}", "$description": "neutral-70 (#4a4f59) — 5.2:1 on neutral-20 bg, passes WCAG 4.5:1. Prior neutral-50 (#878d99) was 2.6:1 contrast defect fixed 2026-05-01." },
         "threshold-fresh-days":  { "$type": "number", "$value": 90,  "$description": "Sections reviewed within 90 days are Fresh" },
         "threshold-stale-days":  { "$type": "number", "$value": 365, "$description": "Sections reviewed within 365 days are Stale; beyond 365 days are Archived" }
       }
