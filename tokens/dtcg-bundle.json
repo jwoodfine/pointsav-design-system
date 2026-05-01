@@ -1,0 +1,331 @@
+{
+  "$schema": "https://schemas.designtokens.org/2025-10-01/draft.json",
+  "$description": "PointSav design system — three-tier DTCG 2025.10 bundle. Primitive tier: raw palette values, named after what they are. Semantic tier: named for why, referencing primitives via alias syntax. Component tier: named for the component and design decision, referencing semantic tokens only. Wiki-specific additions (wiki.* semantic namespace; home-grid, home-featured, home-recent, article.* component namespaces) are net-new and additive — all existing Carbon-derived primitive tokens are preserved unchanged. Governance: wiki.* namespace approved by Master co-sign 2026-04-30T17:00Z (operator-ratified). FLI-banner: left-border accent only, not amber background. font.family.heading: system-stack per CLAUDE.md §6 sovereignty discipline.",
+  "primitive": {
+    "color": {
+      "$type": "color",
+      "neutral-10":  { "$value": "#f5f6f8" },
+      "neutral-20":  { "$value": "#e6e8ec" },
+      "neutral-30":  { "$value": "#cdd1d8" },
+      "neutral-40":  { "$value": "#aab0bb" },
+      "neutral-50":  { "$value": "#878d99" },
+      "neutral-60":  { "$value": "#666c78" },
+      "neutral-70":  { "$value": "#4a4f59" },
+      "neutral-80":  { "$value": "#33373e" },
+      "neutral-90":  { "$value": "#1f2125" },
+      "neutral-100": { "$value": "#0e0f12" },
+      "white":       { "$value": "#ffffff" },
+      "black":       { "$value": "#000000" },
+      "primary-10":  { "$value": "#eef3ff" },
+      "primary-20":  { "$value": "#d3deff" },
+      "primary-30":  { "$value": "#a6bcff" },
+      "primary-40":  { "$value": "#7392ff" },
+      "primary-50":  { "$value": "#3f6cf2" },
+      "primary-60":  { "$value": "#234ed8" },
+      "primary-70":  { "$value": "#173ab1" },
+      "primary-80":  { "$value": "#0c2785" },
+      "primary-90":  { "$value": "#04165a" },
+      "positive-10": { "$value": "#e8f6ed" },
+      "positive-30": { "$value": "#9fdaae" },
+      "positive-50": { "$value": "#3fa55c" },
+      "positive-60": { "$value": "#26823f" },
+      "positive-70": { "$value": "#16602b" },
+      "caution-10":  { "$value": "#fff5e1" },
+      "caution-30":  { "$value": "#f5cd7a" },
+      "caution-50":  { "$value": "#d49b1f" },
+      "caution-60":  { "$value": "#a87514" },
+      "caution-70":  { "$value": "#7a520a" },
+      "critical-10": { "$value": "#fceaea" },
+      "critical-30": { "$value": "#f0a3a3" },
+      "critical-50": { "$value": "#d24747" },
+      "critical-60": { "$value": "#a52323" },
+      "critical-70": { "$value": "#7d1414" },
+      "link-default": {
+        "$value": "#3366cc",
+        "$description": "Encyclopedic-register link blue — aligns with Wikimedia Codex --color-progressive: #36c for muscle-memory continuity"
+      },
+      "link-visited": { "$value": "#795cb2" },
+      "link-hover":   { "$value": "#447ff5" },
+      "link-active":  { "$value": "#0043ce" },
+      "link-redlink": {
+        "$value": "#cc3333",
+        "$description": "Wikipedia red-link convention — article not yet written"
+      },
+      "brand-blue-50": { "$value": "#edf5ff" },
+      "brand-blue-60": {
+        "$value": "#0f62fe",
+        "$description": "PointSav primary interactive blue (Carbon interactive-01 equivalent)"
+      },
+      "brand-blue-70": { "$value": "#0043ce" },
+      "brand-blue-80": { "$value": "#002d9c" },
+      "brand-teal-50": {
+        "$value": "#d9fbfb",
+        "$description": "Featured-pin accent background — direct-source signal"
+      },
+      "brand-teal-60": {
+        "$value": "#009d9a",
+        "$description": "PointSav direct-source / featured-pin accent"
+      }
+    },
+    "font": {
+      "family": {
+        "$type": "fontFamily",
+        "body": {
+          "$value": "Linux Libertine, Georgia, Times, Source Serif 4, serif",
+          "$description": "Encyclopedic-register body serif — Linux Libertine is Wikipedia's body font (Apache 2.0/OFL)"
+        },
+        "heading": {
+          "$value": "Georgia, 'Times New Roman', serif",
+          "$description": "System-stack heading serif — governance decision 2026-04-30: no CDN dependency at this stage per CLAUDE.md §6 sovereignty discipline. Upgradeable to self-hosted variable font at v0.5.0+ when asset pipeline matures."
+        },
+        "sans": {
+          "$value": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "$description": "Carbon substrate sans — IBM Plex (Apache 2.0)"
+        },
+        "mono": {
+          "$value": "IBM Plex Mono, Menlo, Consolas, Liberation Mono, 'Courier New', monospace",
+          "$description": "Carbon substrate mono — used for code, dates, technical strings"
+        },
+        "kbd": {
+          "$value": "IBM Plex Mono, SFMono-Regular, Consolas, monospace"
+        }
+      },
+      "size": {
+        "$type": "dimension",
+        "1":  { "$value": "0.6875rem", "$description": "11px — fine print, legal" },
+        "2":  { "$value": "0.75rem",   "$description": "12px — captions, footnote labels, freshness-ribbon dates" },
+        "3":  { "$value": "0.875rem",  "$description": "14px — footnote body, kbd, small, citation prose" },
+        "4":  { "$value": "1rem",      "$description": "16px — body copy default" },
+        "5":  { "$value": "1.125rem",  "$description": "18px — reading-mode body (Wikipedia Vector 2022 convergence)" },
+        "6":  { "$value": "1.25rem",   "$description": "20px — lead sentence / lede" },
+        "7":  { "$value": "1.5rem",    "$description": "24px — H4, sub-section" },
+        "8":  { "$value": "1.75rem",   "$description": "28px — H3" },
+        "9":  { "$value": "2rem",      "$description": "32px — H2" },
+        "10": { "$value": "2.25rem",   "$description": "36px — H1 article title" },
+        "11": { "$value": "2.625rem" },
+        "12": { "$value": "3rem" },
+        "13": { "$value": "3.75rem" },
+        "14": { "$value": "4.25rem" }
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "light":    { "$value": 300 },
+        "regular":  { "$value": 400 },
+        "semibold": { "$value": 600 },
+        "bold":     { "$value": 700 }
+      }
+    },
+    "line-height": {
+      "$type": "number",
+      "body":    { "$value": 1.6,  "$description": "Wikimedia Codex: 1.6× font size for reading paragraphs" },
+      "tight":   { "$value": 1.2 },
+      "lede":    { "$value": 1.45 },
+      "kbd":     { "$value": 1.4 },
+      "caption": { "$value": 1.3 }
+    },
+    "space": {
+      "$type": "dimension",
+      "025": { "$value": "0.125rem", "$description": "2px — micro-spacing (hairline gutter)" },
+      "05":  { "$value": "0.25rem",  "$description": "4px" },
+      "1":   { "$value": "0.5rem",   "$description": "8px — paragraph rhythm floor" },
+      "2":   { "$value": "1rem",     "$description": "16px — body grid unit" },
+      "4":   { "$value": "2rem",     "$description": "32px — section gutter" },
+      "8":   { "$value": "4rem",     "$description": "64px — major section" },
+      "16":  { "$value": "8rem",     "$description": "128px" },
+      "32":  { "$value": "16rem",    "$description": "256px" }
+    },
+    "radius": {
+      "$type": "dimension",
+      "none": { "$value": "0" },
+      "xs":   { "$value": "2px", "$description": "Encyclopedia register — minimal rounding" },
+      "sm":   { "$value": "4px" },
+      "md":   { "$value": "8px" }
+    },
+    "motion": {
+      "duration": {
+        "$type": "duration",
+        "instant": { "$value": "0ms" },
+        "fast":    { "$value": "75ms" },
+        "base":    { "$value": "150ms" },
+        "slow":    { "$value": "300ms" }
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "standard":   { "$value": [0.2, 0, 0.38, 0.9] },
+        "accelerate": { "$value": [0.4, 0, 1, 1] },
+        "decelerate": { "$value": [0, 0, 0.38, 0.9] }
+      }
+    }
+  },
+  "semantic": {
+    "surface": {
+      "$type": "color",
+      "background":    { "$value": "{primitive.color.neutral-10}" },
+      "layer":         { "$value": "#ffffff" },
+      "layer-accent":  { "$value": "{primitive.color.neutral-20}" },
+      "layer-hover":   { "$value": "{primitive.color.neutral-30}" },
+      "inverse":       { "$value": "{primitive.color.neutral-90}" }
+    },
+    "text": {
+      "$type": "color",
+      "primary":     { "$value": "{primitive.color.neutral-100}" },
+      "secondary":   { "$value": "{primitive.color.neutral-70}" },
+      "tertiary":    { "$value": "{primitive.color.neutral-50}" },
+      "placeholder": { "$value": "{primitive.color.neutral-40}" },
+      "on-color":    { "$value": "#ffffff" },
+      "disabled":    { "$value": "{primitive.color.neutral-30}" }
+    },
+    "interactive": {
+      "$type": "color",
+      "link":         { "$value": "{primitive.color.link-default}" },
+      "link-visited": { "$value": "{primitive.color.link-visited}" },
+      "link-hover":   { "$value": "{primitive.color.link-hover}" },
+      "link-redlink": { "$value": "{primitive.color.link-redlink}" },
+      "focus-ring":   { "$value": "{primitive.color.brand-blue-60}" },
+      "button-primary": { "$value": "{primitive.color.brand-blue-60}" }
+    },
+    "border": {
+      "$type": "color",
+      "subtle":      { "$value": "{primitive.color.neutral-20}" },
+      "strong":      { "$value": "{primitive.color.neutral-50}" },
+      "interactive": { "$value": "{primitive.color.brand-blue-60}" },
+      "disabled":    { "$value": "{primitive.color.neutral-30}" }
+    },
+    "status": {
+      "success": {
+        "$type": "color",
+        "base": { "$value": "{primitive.color.positive-60}" },
+        "bg":   { "$value": "{primitive.color.positive-10}" }
+      },
+      "warn": {
+        "$type": "color",
+        "base": { "$value": "{primitive.color.caution-60}" },
+        "bg":   { "$value": "{primitive.color.caution-10}" }
+      },
+      "error": {
+        "$type": "color",
+        "base": { "$value": "{primitive.color.critical-60}" },
+        "bg":   { "$value": "{primitive.color.critical-10}" }
+      },
+      "info": {
+        "$type": "color",
+        "base": { "$value": "{primitive.color.brand-blue-60}" },
+        "bg":   { "$value": "{primitive.color.brand-blue-50}" }
+      }
+    },
+    "wiki": {
+      "$description": "wiki.* semantic namespace — approved by Master co-sign 2026-04-30T17:00Z. Operator ratified: no vendor prefix (ps-wiki.*) — the token substrate uses no vendor prefix at any tier; wiki.* is consistent with existing unprefixed semantic namespaces.",
+      "hatnote": {
+        "bg":     { "$type": "color", "$value": "{semantic.surface.layer-accent}" },
+        "border": { "$type": "color", "$value": "{semantic.border.subtle}" }
+      },
+      "lead": {
+        "bg": { "$type": "color", "$value": "{semantic.surface.layer}" }
+      },
+      "toc": {
+        "bg": { "$type": "color", "$value": "{semantic.surface.layer-accent}" }
+      },
+      "references": {
+        "bg": { "$type": "color", "$value": "{semantic.surface.layer-accent}" }
+      },
+      "redlink": {
+        "color": { "$type": "color", "$value": "{semantic.interactive.link-redlink}" }
+      },
+      "editpencil": {
+        "color": { "$type": "color", "$value": "{semantic.text.tertiary}" }
+      },
+      "featured-pin": {
+        "bg":     { "$type": "color", "$value": "{primitive.color.brand-teal-50}" },
+        "accent": { "$type": "color", "$value": "{primitive.color.brand-teal-60}" }
+      }
+    }
+  },
+  "component": {
+    "home-grid": {
+      "$description": "By-category browse grid on the documentation wiki home page — 9-card responsive layout. Used by ps-home-grid component.",
+      "gap":               { "$type": "dimension", "$value": "{primitive.space.2}" },
+      "card-padding":      { "$type": "dimension", "$value": "{primitive.space.2}" },
+      "card-radius":       { "$type": "dimension", "$value": "{primitive.radius.xs}" },
+      "card-border-width": { "$type": "dimension", "$value": "1px" },
+      "card-border-color": { "$type": "color",     "$value": "{semantic.border.subtle}" },
+      "card-surface":      { "$type": "color",     "$value": "{semantic.surface.layer}" },
+      "breakpoint-3-to-2": { "$type": "dimension", "$value": "960px" },
+      "breakpoint-2-to-1": { "$type": "dimension", "$value": "640px" },
+      "card-min-height":   { "$type": "dimension", "$value": "120px" }
+    },
+    "home-featured": {
+      "$description": "Featured article panel with left-border accent — appears above the home-grid. Accent uses wiki.featured-pin.accent (teal), NOT amber (operator-ratified 2026-04-30).",
+      "accent-width":               { "$type": "dimension", "$value": "4px" },
+      "accent-color":               { "$type": "color",     "$value": "{semantic.wiki.featured-pin.accent}" },
+      "padding":                    { "$type": "dimension", "$value": "{primitive.space.4}" },
+      "lead-paraphrase-max-chars":  { "$type": "number",    "$value": 280, "$description": "Wikipedia TFA blurb ~900 chars; 280 is tighter for documentation register" }
+    },
+    "home-recent": {
+      "$description": "Recent additions feed below the home-grid. Monospace date column preserves machine-readability.",
+      "date-column-width":      { "$type": "dimension",  "$value": "6rem" },
+      "date-font-family-mono":  { "$type": "fontFamily", "$value": "{primitive.font.family.mono}" },
+      "item-padding-y":         { "$type": "dimension",  "$value": "{primitive.space.1}" }
+    },
+    "article": {
+      "lead": {
+        "$description": "Article lead / lede section styling.",
+        "line-length-max-chars": { "$type": "number",    "$value": 75, "$description": "Wikimedia Codex: ≤ 75 ch; literature consensus 45–75 ch, 66 ch ideal" },
+        "first-sentence-bold":   { "$type": "number",    "$value": 1,  "$description": "Boolean as number per DTCG convention" },
+        "paragraph-spacing":     { "$type": "dimension", "$value": "{primitive.space.2}" }
+      },
+      "toc": {
+        "$description": "Table of contents — left-rail collapsible.",
+        "collapsed-default":  { "$type": "number",    "$value": 0 },
+        "position-left-rail": { "$type": "number",    "$value": 1 },
+        "max-depth":          { "$type": "number",    "$value": 3 },
+        "indent-step":        { "$type": "dimension", "$value": "{primitive.space.2}" },
+        "bg":                 { "$type": "color",     "$value": "{semantic.wiki.toc.bg}" }
+      },
+      "section": {
+        "$description": "Per-section heading and edit-pencil.",
+        "heading-edit-pencil-color":           { "$type": "color",  "$value": "{semantic.wiki.editpencil.color}" },
+        "heading-edit-pencil-opacity-default": { "$type": "number", "$value": 0 },
+        "heading-edit-pencil-opacity-hover":   { "$type": "number", "$value": 1 }
+      },
+      "references": {
+        "$description": "References list — citation-authority ribbon token anchors.",
+        "backlink-bracket-color":             { "$type": "color", "$value": "{semantic.text.secondary}" },
+        "citation-badge-academic-bg":         { "$type": "color", "$value": "{semantic.status.info.bg}" },
+        "citation-badge-regulator-bg":        { "$type": "color", "$value": "{semantic.status.success.base}" },
+        "citation-badge-industry-bg":         { "$type": "color", "$value": "{semantic.surface.layer-accent}" },
+        "citation-badge-direct-source-bg":    { "$type": "color", "$value": "{primitive.color.brand-teal-50}" },
+        "footnote-arrow-rotation":            { "$type": "number", "$value": 180 }
+      },
+      "research-trail": {
+        "$description": "Collapsible research-trail footer — Done / Suggested / Open questions subsections.",
+        "done-color":          { "$type": "color", "$value": "{semantic.status.success.base}" },
+        "suggested-color":     { "$type": "color", "$value": "{semantic.status.info.base}" },
+        "open-question-color": { "$type": "color", "$value": "{semantic.status.warn.base}" },
+        "trail-bg":            { "$type": "color", "$value": "{semantic.surface.layer-accent}" },
+        "trail-border":        { "$type": "color", "$value": "{semantic.border.subtle}" }
+      },
+      "fli-banner": {
+        "$description": "Forward-looking information disclosure banner. Governance decision 2026-04-30: left-border accent only — NOT amber background. FLI is a regulatory-register process-discipline marker, not an error condition. Goal is informed reader, not alarmed reader.",
+        "bg":      { "$type": "color",     "$value": "{semantic.surface.layer-accent}", "$description": "Neutral surface — NOT status.warn.bg per operator-ratified governance decision" },
+        "border":  { "$type": "color",     "$value": "{semantic.border.subtle}" },
+        "accent":  { "$type": "color",     "$value": "{semantic.interactive.link}", "$description": "Left-border accent uses primary link colour for structural discoverability" },
+        "icon":    { "$type": "color",     "$value": "{semantic.text.secondary}" },
+        "padding": { "$type": "dimension", "$value": "{primitive.space.2}" }
+      },
+      "density-toggle": {
+        "$description": "Reader-preference density toggle — compact / comfortable / spacious. Affects row-grid multiplier.",
+        "compact-multiplier":    { "$type": "number", "$value": 0.75, "$description": "24px row grid (0.75 × 32px baseline)" },
+        "comfortable-multiplier": { "$type": "number", "$value": 1,   "$description": "32px row grid (baseline)" },
+        "spacious-multiplier":   { "$type": "number", "$value": 1.5,  "$description": "48px row grid (1.5 × 32px)" }
+      },
+      "freshness-ribbon": {
+        "$description": "Per-section last-content-review badge. Three-stop semantic: fresh / stale / archived. Thresholds are per-deployment overrideable number tokens.",
+        "color-fresh":           { "$type": "color",  "$value": "{semantic.status.success.base}" },
+        "color-stale":           { "$type": "color",  "$value": "{semantic.status.warn.base}" },
+        "color-archived":        { "$type": "color",  "$value": "{primitive.color.neutral-50}" },
+        "threshold-fresh-days":  { "$type": "number", "$value": 90,  "$description": "Sections reviewed within 90 days are Fresh" },
+        "threshold-stale-days":  { "$type": "number", "$value": 365, "$description": "Sections reviewed within 365 days are Stale; beyond 365 days are Archived" }
+      }
+    }
+  }
+}
