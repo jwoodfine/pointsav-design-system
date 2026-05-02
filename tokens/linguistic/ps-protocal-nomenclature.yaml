@@ -81,13 +81,6 @@ nomenclature_matrix:
       prefix: "N/A"
       description: "A bare-metal installation on trusted hardware (Type I). Boots directly into PointSav Console OS."
       deployments: []
-    - wordmark: "Totebox Integration OS"
-      category: "Systemic Wordmark"
-      tag: "os-interface"
-      prefix: "gateway-"
-      description: "Handles the aggregation and active routing of Totebox Archives."
-      deployments:
-        - "gateway-interface-command"
     - wordmark: "Totebox OS"
       category: "Systemic Wordmark"
       tag: "os-totebox"
