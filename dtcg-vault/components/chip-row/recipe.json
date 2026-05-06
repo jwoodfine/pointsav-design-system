@@ -1,0 +1,32 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "chip-row",
+  "display_name": "Chip Row",
+  "description": "Inline horizontal chip group with semantic variants. Each chip carries a small monospace label prefix + value, rendered as an inline-flex element with constrained height and consistent border-radius.",
+  "category": "components",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "project-bim flowback — design-generic-components-index.md (2026-04-29)",
+  "html": "<div class=\"ps-chip-row\">\n  <span class=\"ps-chip\"><span class=\"ps-chip__label\">{{label}}</span>{{value}}</span>\n</div>",
+  "css_class": "ps-chip",
+  "variants": [
+    { "name": "default",   "css_class": "ps-chip",              "description": "Generic categorisation chip." },
+    { "name": "primary",   "css_class": "ps-chip ps-chip--primary",   "description": "Primary semantic anchor." },
+    { "name": "accent",    "css_class": "ps-chip ps-chip--accent",    "description": "Classification-domain chip." },
+    { "name": "neutral",   "css_class": "ps-chip ps-chip--neutral",   "description": "Mode or state chip." },
+    { "name": "warning",   "css_class": "ps-chip ps-chip--warning",   "description": "Warning / regulation-attached chip." },
+    { "name": "success",   "css_class": "ps-chip ps-chip--success",   "description": "Verified / pass state chip." }
+  ],
+  "tokens": [
+    "{semantic.surface-raised}",
+    "{semantic.ink-primary}",
+    "{semantic.ink-secondary}",
+    "{semantic.interactive-primary}",
+    "{semantic.status-warning}",
+    "{semantic.status-success}"
+  ],
+  "aria": "Chips are presentational by default. If a chip is interactive (toggleable filter), use role='checkbox' or role='button' with aria-pressed. Static chips carry no role override — inline text is sufficient.",
+  "wcag": { "target": "2.2 AA" },
+  "research_links": [],
+  "registry_dependencies": []
+}

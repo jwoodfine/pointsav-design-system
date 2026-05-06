@@ -1,0 +1,31 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "sidebar-accordion",
+  "display_name": "Sidebar Accordion",
+  "description": "Collapsible categorised left-rail navigation. Sections labelled with small monospace caps; items as horizontally-padded links with an active state (2 px left border in brand accent + soft accent-tint background).",
+  "category": "components",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "project-bim flowback — design-generic-components-index.md (2026-04-29)",
+  "html": "<nav class=\"ps-sidebar\" aria-label=\"Section navigation\">\n  <section class=\"ps-sidebar__section\">\n    <h2 class=\"ps-sidebar__heading\">{{sectionLabel}}</h2>\n    <ul class=\"ps-sidebar__list\">\n      <li><a class=\"ps-sidebar__link ps-sidebar__link--active\" aria-current=\"page\" href=\"{{href}}\">{{label}}</a></li>\n    </ul>\n  </section>\n</nav>",
+  "css_class": "ps-sidebar",
+  "variants": [
+    {
+      "name": "default",
+      "description": "Standard categorised left-rail navigation."
+    }
+  ],
+  "tokens": [
+    "{semantic.interactive-primary}",
+    "{semantic.ink-primary}",
+    "{semantic.ink-secondary}",
+    "{semantic.surface-raised}"
+  ],
+  "aria": "Wrap in <nav aria-label> to identify the navigation landmark. aria-current=page marks the active link. Do not nest <nav> elements inside each other.",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [
+    "Adopt ps- class naming mirroring existing substrate conventions (ps-sidebar__link etc.) — resolved YES at sweep (consistent with ps-btn, ps-tabs, ps-crumbs)."
+  ],
+  "research_links": [],
+  "registry_dependencies": []
+}
