@@ -160,37 +160,53 @@
 
   /* ==========================================================================
      3. WIKI TYPOGRAPHY TOKENS
-     IBM Plex Sans body / IBM Plex Mono code
-     106.25% base (17px) · 1.6 leading · 65ch measure · Major Third heading scale
+     IBM Plex Sans body / IBM Plex Mono code (SIL OFL 1.1)
+     106.25% base (17px) · 1.6 leading · 65ch measure
+     Heading scale per editorial research pass 2026-05-06
      ========================================================================== */
 
   --ps-wiki-font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --ps-wiki-font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
 
-  --ps-wiki-font-size-base:     1.0625rem;  /* 17px */
-  --ps-wiki-line-height-body:   1.6;
-  --ps-wiki-measure:            65ch;
+  --ps-wiki-font-size-base:   1.0625rem;  /* 17px */
+  --ps-wiki-line-height-body: 1.6;
+  --ps-wiki-measure:          65ch;
 
-  /* Major Third scale (× 1.25 per step from 17px base) */
-  --ps-wiki-text-h5: 1.25rem;    /* 20px  */
-  --ps-wiki-text-h4: 1.563rem;   /* 25px  */
-  --ps-wiki-text-h3: 1.953rem;   /* 31px  */
-  --ps-wiki-text-h2: 2.441rem;   /* 39px  */
-  --ps-wiki-text-h1: 3.052rem;   /* 49px  */
+  /* Heading scale — editorial research confirmed values */
+  --ps-wiki-text-h1: 2.25rem;    /* 36px */
+  --ps-wiki-text-h2: 1.75rem;    /* 28px */
+  --ps-wiki-text-h3: 1.375rem;   /* 22px */
+  --ps-wiki-text-h4: 1.125rem;   /* 18px */
 
-  --ps-wiki-leading-h1: 1.15;
-  --ps-wiki-leading-h2: 1.2;
-  --ps-wiki-leading-h3: 1.25;
-  --ps-wiki-leading-h4: 1.3;
-  --ps-wiki-leading-h5: 1.4;
+  /* Aliases — short-form names the wiki engine and templates reference */
+  --font-sans:    var(--ps-wiki-font-body);
+  --font-mono:    var(--ps-wiki-font-mono);
+  --leading-body: 1.6;
+  --measure:      65ch;
+  --text-h1:      var(--ps-wiki-text-h1);
+  --text-h2:      var(--ps-wiki-text-h2);
+  --text-h3:      var(--ps-wiki-text-h3);
+  --text-h4:      var(--ps-wiki-text-h4);
 
   /* Wiki-specific semantic colors (light mode) */
   --ps-wiki-link:         var(--ps-color-primary-60);
   --ps-wiki-link-hover:   var(--ps-color-primary-70);
   --ps-wiki-redlink:      var(--ps-color-critical-60);
-  --ps-wiki-code-keyword: var(--ps-color-caution-60);
+  --ps-wiki-code-keyword: #7c3aed;  /* purple-700 per editorial research */
   --ps-wiki-code-string:  var(--ps-color-positive-60);
   --ps-wiki-code-comment: var(--ps-color-neutral-50);
+
+  /* Wiki surface aliases — names the wiki CSS uses directly */
+  --color-surface-page:    var(--ps-color-white);
+  --color-surface-sidebar: var(--ps-color-neutral-10);
+  --color-surface-code:    var(--ps-color-neutral-10);
+  --color-text-primary:    var(--ps-color-neutral-100);
+  --color-text-secondary:  var(--ps-color-neutral-60);
+  --color-text-link:       var(--ps-color-primary-60);
+  --color-text-redlink:    var(--ps-color-critical-60);
+  --color-border-subtle:   var(--ps-color-neutral-20);
+  --color-accent-primary:  var(--ps-color-primary-60);
+  --color-code-keyword:    #7c3aed;  /* purple-700 */
 
   /* ==========================================================================
      4. VIEWPORT / BREAKPOINT TOKENS
@@ -248,13 +264,25 @@
   --ps-support-positive:    #9fdaae;  /* positive-30 */
   --ps-support-positive-bg: #0e2a14;  /* dark positive tint */
 
-  /* Wiki-specific dark overrides */
-  --ps-wiki-link:         #7392ff;  /* primary-40 — 4.1:1 vs surface-base */
-  --ps-wiki-link-hover:   #a6bcff;  /* primary-30 */
-  --ps-wiki-redlink:      #f0a3a3;  /* critical-30 */
-  --ps-wiki-code-keyword: #f5cd7a;  /* caution-30 — syntax keyword */
-  --ps-wiki-code-string:  #9fdaae;  /* positive-30 — syntax string */
-  --ps-wiki-code-comment: #878d99;  /* neutral-50 — syntax comment */
+  /* Wiki-specific dark overrides — values per editorial research pass 2026-05-06 */
+  --ps-wiki-link:         #6ab0f5;
+  --ps-wiki-link-hover:   #93c5f8;
+  --ps-wiki-redlink:      #f56565;
+  --ps-wiki-code-keyword: #c792ea;  /* purple — editorial research confirmed */
+  --ps-wiki-code-string:  #9fdaae;  /* positive-30 */
+  --ps-wiki-code-comment: #878d99;  /* neutral-50 */
+
+  /* Wiki surface aliases — dark overrides */
+  --color-surface-page:    #0d0d0d;
+  --color-surface-sidebar: #1a1a1a;
+  --color-surface-code:    #111111;
+  --color-text-primary:    #e8e8e8;
+  --color-text-secondary:  #999999;
+  --color-text-link:       #6ab0f5;
+  --color-text-redlink:    #f56565;
+  --color-border-subtle:   #2a2a2a;
+  --color-accent-primary:  #4a9eff;
+  --color-code-keyword:    #c792ea;
 }
 
 /* ==========================================================================
