@@ -1,0 +1,34 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "wiki-modal-dialog",
+  "display_name": "Wiki Modal Dialog",
+  "description": "Native <dialog> element modal with showModal() focus trap. Used for image lightbox, search overlay, and confirmation prompts. Dismisses on Escape or backdrop click.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-wiki-modal-dialog-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
+  "html": "<dialog class=\"ps-wiki-dialog\" aria-labelledby=\"dialog-title-{{id}}\" aria-describedby=\"dialog-body-{{id}}\">\n  <div class=\"ps-wiki-dialog__content\">\n    <header class=\"ps-wiki-dialog__header\">\n      <h2 class=\"ps-wiki-dialog__title\" id=\"dialog-title-{{id}}\">{{title}}</h2>\n      <button class=\"ps-wiki-dialog__close\" aria-label=\"Close dialog\" autofocus>×</button>\n    </header>\n    <div class=\"ps-wiki-dialog__body\" id=\"dialog-body-{{id}}\">\n      {{content}}\n    </div>\n    <footer class=\"ps-wiki-dialog__footer\">\n      <slot name=\"actions\"></slot>\n    </footer>\n  </div>\n</dialog>",
+  "css_class": "ps-wiki-dialog",
+  "variants": [
+    { "name": "default", "description": "Title + body + optional footer actions." },
+    { "name": "image-lightbox", "description": "Full-width <figure> as content; no footer." },
+    { "name": "search-overlay", "description": "Search input + live results as content." }
+  ],
+  "tokens": [
+    "{semantic.surface-elevated}",
+    "{semantic.ink-primary}",
+    "{semantic.ink-secondary}",
+    "{semantic.border-subtle}",
+    "{semantic.interactive-primary}",
+    "{primitive.corner-3}",
+    "{primitive.space-6}",
+    "{primitive.space-7}",
+    "{primitive.speed-3}",
+    "{primitive.ease-enter}"
+  ],
+  "aria": "dialog.showModal() creates a native focus trap; all content outside the dialog is unreachable. aria-labelledby points to visible <h2> title. aria-describedby points to body div. Close button: aria-label='Close dialog', positioned first in DOM for Tab-first focus or autofocus attr. Escape key: native <dialog> handles Escape → 'cancel' event → call dialog.close().",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [],
+  "research_links": [],
+  "registry_dependencies": []
+}

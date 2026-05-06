@@ -1,0 +1,36 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "wiki-toc-sidebar",
+  "display_name": "Wiki Table of Contents Sidebar",
+  "description": "Sticky right-rail sidebar listing article headings (H2/H3). Active section highlighted via IntersectionObserver. Collapses to an inline toggle on compact viewports.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-wiki-toc-sidebar-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
+  "html": "<nav class=\"ps-wiki-toc\" aria-label=\"Table of contents\">\n  <h2 class=\"ps-wiki-toc__heading\">Contents</h2>\n  <ol class=\"ps-wiki-toc__list\">\n    <li class=\"ps-wiki-toc__item\">\n      <a class=\"ps-wiki-toc__link ps-wiki-toc__link--active\" href=\"#{{section-id}}\" aria-current=\"true\">{{section-title}}</a>\n      <ol class=\"ps-wiki-toc__sublist\">\n        <li><a class=\"ps-wiki-toc__link ps-wiki-toc__link--sub\" href=\"#{{subsection-id}}\">{{subsection-title}}</a></li>\n      </ol>\n    </li>\n  </ol>\n</nav>",
+  "css_class": "ps-wiki-toc",
+  "variants": [
+    { "name": "desktop", "description": "Sticky right-rail; position: sticky; top: 1rem." },
+    { "name": "mobile", "description": "Inline collapsible toggle above article body; <details>/<summary> pattern." }
+  ],
+  "tokens": [
+    "{wiki.font-body}",
+    "{semantic.ink-primary}",
+    "{semantic.ink-secondary}",
+    "{wiki.link}",
+    "{wiki.link-hover}",
+    "{semantic.interactive-primary}",
+    "{semantic.surface-subtle}",
+    "{semantic.border-subtle}",
+    "{primitive.space-2}",
+    "{primitive.space-4}",
+    "{primitive.space-5}"
+  ],
+  "aria": "<nav aria-label='Table of contents'>. Active section link gets aria-current='true' (updated via IntersectionObserver JS). Sublist items indented visually with padding-left; nesting conveyed by <ol> inside <li> (no extra ARIA needed).",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [
+    "Confirm whether IntersectionObserver threshold should be 0.1 (section enters viewport) or 0.5 (section majority visible) — affects feel at scroll boundaries."
+  ],
+  "research_links": [],
+  "registry_dependencies": []
+}

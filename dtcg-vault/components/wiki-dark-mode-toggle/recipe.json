@@ -1,0 +1,36 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "wiki-dark-mode-toggle",
+  "display_name": "Wiki Dark Mode Toggle",
+  "description": "Button that toggles data-theme='dark' on the <html> element and persists the choice in localStorage. Initialises from localStorage on load, then falls back to prefers-color-scheme.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-wiki-dark-mode-toggle-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
+  "research_notes": [
+    "All 7 dark mode color pairs (verified 2026-05-06) pass WCAG 2.1 AAA — no contrast remediation needed.",
+    "Weakest pair: #4a9eff on #1a1a1a = 6.32:1 (AA pass, narrowly misses AAA 7.0:1 for normal text — use for large/bold text or decorative only if needed at exactly that threshold).",
+    "Full results in dtcg-vault/research/wiki-wcag-audit-2026-05-06.md (pending creation)."
+  ],
+  "html": "<button class=\"ps-wiki-dark-toggle\"\n        type=\"button\"\n        aria-pressed=\"{{isDark}}\"\n        aria-label=\"{{isDark ? 'Switch to light mode' : 'Switch to dark mode'}}\">\n  <span class=\"ps-wiki-dark-toggle__icon\" aria-hidden=\"true\">{{isDark ? '☀' : '🌙'}}</span>\n  <span class=\"ps-wiki-dark-toggle__label\">{{isDark ? 'Light' : 'Dark'}}</span>\n</button>",
+  "css_class": "ps-wiki-dark-toggle",
+  "js_init": "(() => {\n  const stored = localStorage.getItem('ps-theme');\n  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\n  if (stored === 'dark' || (!stored && prefersDark)) {\n    document.documentElement.dataset.theme = 'dark';\n  }\n})();",
+  "js_toggle": "document.querySelector('.ps-wiki-dark-toggle').addEventListener('click', () => {\n  const isDark = document.documentElement.dataset.theme === 'dark';\n  document.documentElement.dataset.theme = isDark ? '' : 'dark';\n  localStorage.setItem('ps-theme', isDark ? 'light' : 'dark');\n  btn.setAttribute('aria-pressed', String(!isDark));\n  btn.setAttribute('aria-label', isDark ? 'Switch to dark mode' : 'Switch to light mode');\n});",
+  "variants": [
+    { "name": "icon-only", "description": "Compact — icon only, sr-only label." },
+    { "name": "icon-and-label", "description": "Icon + visible text label." }
+  ],
+  "tokens": [
+    "{semantic.interactive-ghost}",
+    "{semantic.interactive-ghost-hover}",
+    "{semantic.ink-secondary}",
+    "{primitive.corner-2}",
+    "{primitive.space-3}",
+    "{primitive.speed-2}"
+  ],
+  "aria": "Toggle button uses aria-pressed (true/false, not 'mixed'). aria-label updates on toggle to describe the ACTION ('Switch to dark mode' when in light mode). Icon is aria-hidden. Init script must run before first paint to prevent flash — place in <head> as inline script.",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [],
+  "research_links": [],
+  "registry_dependencies": []
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "wiki-article-footer",
+  "display_name": "Wiki Article Footer",
+  "description": "Bottom-of-article surface: category tags, references/citations section, and an edit-on-github link. Separates editorial metadata from article body.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-wiki-article-footer-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
+  "html": "<footer class=\"ps-wiki-article-footer\">\n  <section class=\"ps-wiki-article-footer__categories\" aria-labelledby=\"footer-categories-heading\">\n    <h2 class=\"ps-wiki-article-footer__section-heading\" id=\"footer-categories-heading\">Categories</h2>\n    <ul class=\"ps-wiki-article-footer__category-list\">\n      <li><a class=\"ps-wiki-badge ps-wiki-badge--category\" href=\"{{category-url}}\">{{category-name}}</a></li>\n    </ul>\n  </section>\n  <section class=\"ps-wiki-article-footer__references\" aria-labelledby=\"footer-refs-heading\">\n    <h2 class=\"ps-wiki-article-footer__section-heading\" id=\"footer-refs-heading\">References</h2>\n    <ol class=\"ps-wiki-article-footer__ref-list\">\n      <li id=\"ref-{{n}}\"><cite>{{citation-text}}</cite></li>\n    </ol>\n  </section>\n  <div class=\"ps-wiki-article-footer__actions\">\n    <a class=\"ps-wiki-article-footer__edit-link\" href=\"{{github-edit-url}}\" rel=\"noopener\" target=\"_blank\">Edit on GitHub</a>\n  </div>\n</footer>",
+  "css_class": "ps-wiki-article-footer",
+  "variants": [
+    { "name": "standard", "description": "Categories + references + edit link." },
+    { "name": "no-references", "description": "Categories + edit link; references section omitted." }
+  ],
+  "tokens": [
+    "{wiki.font-body}",
+    "{semantic.ink-primary}",
+    "{semantic.ink-secondary}",
+    "{wiki.link}",
+    "{semantic.border-subtle}",
+    "{primitive.space-5}",
+    "{primitive.space-6}"
+  ],
+  "aria": "Two <section> elements each with aria-labelledby pointing to their visible <h2>. References use <ol> with id='ref-N' for in-article back-links (<a href='#ref-N'>). Edit link: rel=noopener + target=_blank with visually hidden '(opens in new tab)' text for SR.",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [],
+  "research_links": [],
+  "registry_dependencies": ["wiki-badge-tag", "edit-on-github-link"]
+}
