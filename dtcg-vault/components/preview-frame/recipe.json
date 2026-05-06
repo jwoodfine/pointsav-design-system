@@ -1,0 +1,23 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "preview-frame",
+  "display_name": "Preview Frame",
+  "description": "Bordered surface for previewing component recipes. Carries a data-theme attribute (light/dark) on the container. Toolbar with two toggle buttons in the top-right; JS flips data-theme and updates aria-pressed on each toggle.",
+  "category": "components",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "project-bim flowback — design-generic-components-index.md (2026-04-29)",
+  "html": "<div class=\"ps-preview\" data-theme=\"light\">\n  <div class=\"ps-preview__toolbar\">\n    <button type=\"button\" class=\"ps-preview__toggle\" aria-pressed=\"true\" data-ps-theme=\"light\">Light</button>\n    <button type=\"button\" class=\"ps-preview__toggle\" aria-pressed=\"false\" data-ps-theme=\"dark\">Dark</button>\n  </div>\n  <div class=\"ps-preview__canvas\">{{content}}</div>\n</div>",
+  "css_class": "ps-preview",
+  "tokens": [
+    "{semantic.surface-default}",
+    "{semantic.border-subtle}",
+    "{semantic.surface-inverse}",
+    "{semantic.ink-on-inverse}"
+  ],
+  "aria": "Each theme toggle button carries aria-pressed reflecting the active state. Update aria-pressed via JS when the theme changes. The preview frame itself is not a landmark — it is a visual container. The content inside it should carry its own appropriate landmark roles.",
+  "wcag": { "target": "2.2 AA", "focus_visible": true },
+  "js_notes": "JS reads data-ps-theme from the clicked button, sets data-theme on the parent .ps-preview, and updates aria-pressed on all sibling toggles. CSS rules scoped to [data-theme='dark'] override surface palette tokens.",
+  "research_links": [],
+  "registry_dependencies": []
+}

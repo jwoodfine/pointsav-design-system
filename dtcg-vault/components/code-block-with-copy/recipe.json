@@ -1,0 +1,22 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "code-block-with-copy",
+  "display_name": "Code Block with Copy",
+  "description": "Pre-formatted code block with an inset copy-to-clipboard button that fades in on hover. Uses navigator.clipboard.writeText with a textarea fallback. 'Copied' indicator shows for 1.4 s then reverts.",
+  "category": "components",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "project-bim flowback — design-generic-components-index.md (2026-04-29)",
+  "html": "<div class=\"ps-code-block\">\n  <pre><code>{{content}}</code></pre>\n  <button type=\"button\" class=\"ps-code-block__copy\" data-ps-copy aria-label=\"Copy to clipboard\">Copy</button>\n</div>",
+  "css_class": "ps-code-block",
+  "tokens": [
+    "{semantic.surface-code}",
+    "{semantic.ink-code}",
+    "{semantic.interactive-ghost-hover}"
+  ],
+  "aria": "The copy button must carry aria-label describing the action ('Copy to clipboard'). After a successful copy, update aria-label or use aria-live='polite' to announce 'Copied' to screen readers. The 1.4 s revert should reset both visual state and aria-label.",
+  "wcag": { "target": "2.2 AA", "focus_visible": true },
+  "js_binding": "data-ps-copy attribute; navigator.clipboard.writeText with textarea fallback for restricted contexts.",
+  "research_links": [],
+  "registry_dependencies": []
+}

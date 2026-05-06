@@ -1,0 +1,21 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "edit-on-github-link",
+  "display_name": "Edit on GitHub Link",
+  "description": "Footer link to the source markdown of the current page on GitHub. Surfaces the substrate's open-source posture and invites contribution. Typically rendered as a small secondary link with a pencil icon or 'Edit this page' label.",
+  "category": "components",
+  "registry_type": "component",
+  "status": "leg-pending",
+  "stub_source": "project-bim flowback — design-generic-components-index.md (2026-04-29); noted as 'not yet implemented in v0.0.2'",
+  "html": "<a class=\"ps-edit-link\" href=\"{{githubSourceUrl}}\" target=\"_blank\" rel=\"noopener noreferrer\">Edit this page on GitHub</a>",
+  "css_class": "ps-edit-link",
+  "tokens": [
+    "{semantic.interactive-primary}",
+    "{semantic.ink-secondary}"
+  ],
+  "aria": "Standard <a> element. rel='noopener noreferrer' prevents opener access from the new tab. If an icon is used alongside the label, mark the icon as aria-hidden='true'.",
+  "wcag": { "target": "2.2 AA" },
+  "notes": "Implementation deferred. The pattern is well-understood — link in page footer pointing to the source markdown on GitHub. No JS required. Operator direction requested before committing the GitHub URL template.",
+  "research_links": [],
+  "registry_dependencies": []
+}

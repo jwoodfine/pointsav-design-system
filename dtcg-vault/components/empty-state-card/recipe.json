@@ -1,0 +1,23 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "empty-state-card",
+  "display_name": "Empty State Card",
+  "description": "Dashed-border card for surfaces with no data yet. Title in display-serif; body in body-sans; optional inline links separated by whitespace (not bullets). Used for index pages with no entries, dashboard panels awaiting data, and search results with no matches.",
+  "category": "components",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "project-bim flowback — design-generic-components-index.md (2026-04-29)",
+  "html": "<div class=\"ps-empty-state\">\n  <h2 class=\"ps-empty-state__title\">{{title}}</h2>\n  <p class=\"ps-empty-state__body\">{{body}}</p>\n  <div class=\"ps-empty-state__links\">{{links}}</div>\n</div>",
+  "css_class": "ps-empty-state",
+  "tokens": [
+    "{semantic.border-subtle}",
+    "{semantic.surface-default}",
+    "{semantic.ink-primary}",
+    "{semantic.ink-secondary}",
+    "{semantic.interactive-primary}"
+  ],
+  "aria": "The empty state card is a purely visual container. The heading and body are standard text. If the card replaces a live region (e.g. a search result list that becomes empty), wrap the card in an aria-live='polite' container so screen readers announce the state change.",
+  "wcag": { "target": "2.2 AA" },
+  "research_links": [],
+  "registry_dependencies": []
+}
