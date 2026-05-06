@@ -1,0 +1,504 @@
+{
+  "primitive": {
+    "$description": "PointSav design system — primitive token layer. Numeric scales (10/20/.../100 for color; 1..13 for spacing; 1..6 for duration) follow the convention popularised by Carbon, Material, Polaris, Atlassian, and the broader 2020-2026 design-system field — designers arriving from any of these systems recognise the structure. Color family names, hex values, spacing values, motion curves, and type scale are PointSav-original. Semantic overrides per tenant brand live in themes/<brand>.json.",
+    "$schema": "https://schemas.designtokens.org/2025-10-01/draft.json",
+    "border": {
+      "$type": "dimension",
+      "corner-1": {
+        "$description": "2px — chip, badge",
+        "$value": "0.125rem"
+      },
+      "corner-2": {
+        "$description": "4px — button, input default",
+        "$value": "0.25rem"
+      },
+      "corner-3": {
+        "$description": "8px — surface, dialog",
+        "$value": "0.5rem"
+      },
+      "stroke-1": {
+        "$description": "Default border",
+        "$value": "1px"
+      },
+      "stroke-2": {
+        "$description": "Focus ring, error state",
+        "$value": "2px"
+      }
+    },
+    "color": {
+      "$type": "color",
+      "black": {
+        "$value": "#000000"
+      },
+      "caution-10": {
+        "$value": "#fff5e1"
+      },
+      "caution-30": {
+        "$value": "#f5cd7a"
+      },
+      "caution-50": {
+        "$value": "#d49b1f"
+      },
+      "caution-60": {
+        "$value": "#a87514"
+      },
+      "caution-70": {
+        "$value": "#7a520a"
+      },
+      "critical-10": {
+        "$value": "#fceaea"
+      },
+      "critical-30": {
+        "$value": "#f0a3a3"
+      },
+      "critical-50": {
+        "$value": "#d24747"
+      },
+      "critical-60": {
+        "$value": "#a52323"
+      },
+      "critical-70": {
+        "$value": "#7d1414"
+      },
+      "neutral-10": {
+        "$value": "#f5f6f8"
+      },
+      "neutral-100": {
+        "$value": "#0e0f12"
+      },
+      "neutral-20": {
+        "$value": "#e6e8ec"
+      },
+      "neutral-30": {
+        "$value": "#cdd1d8"
+      },
+      "neutral-40": {
+        "$value": "#aab0bb"
+      },
+      "neutral-50": {
+        "$value": "#878d99"
+      },
+      "neutral-60": {
+        "$value": "#666c78"
+      },
+      "neutral-70": {
+        "$value": "#4a4f59"
+      },
+      "neutral-80": {
+        "$value": "#33373e"
+      },
+      "neutral-90": {
+        "$value": "#1f2125"
+      },
+      "positive-10": {
+        "$value": "#e8f6ed"
+      },
+      "positive-30": {
+        "$value": "#9fdaae"
+      },
+      "positive-50": {
+        "$value": "#3fa55c"
+      },
+      "positive-60": {
+        "$value": "#26823f"
+      },
+      "positive-70": {
+        "$value": "#16602b"
+      },
+      "primary-10": {
+        "$value": "#eef3ff"
+      },
+      "primary-20": {
+        "$value": "#d3deff"
+      },
+      "primary-30": {
+        "$value": "#a6bcff"
+      },
+      "primary-40": {
+        "$value": "#7392ff"
+      },
+      "primary-50": {
+        "$value": "#3f6cf2"
+      },
+      "primary-60": {
+        "$value": "#234ed8"
+      },
+      "primary-70": {
+        "$value": "#173ab1"
+      },
+      "primary-80": {
+        "$value": "#0c2785"
+      },
+      "primary-90": {
+        "$value": "#04165a"
+      },
+      "white": {
+        "$value": "#ffffff"
+      }
+    },
+    "duration": {
+      "$type": "duration",
+      "speed-1": {
+        "$description": "Imperceptible — color hover",
+        "$value": "70ms"
+      },
+      "speed-2": {
+        "$description": "Quick — button press, focus ring fade",
+        "$value": "120ms"
+      },
+      "speed-3": {
+        "$description": "Snappy — tab switch",
+        "$value": "200ms"
+      },
+      "speed-4": {
+        "$description": "Smooth — toast appearance, drawer slide",
+        "$value": "320ms"
+      },
+      "speed-5": {
+        "$description": "Considered — modal entrance",
+        "$value": "480ms"
+      },
+      "speed-6": {
+        "$description": "Deliberate — hero animation",
+        "$value": "720ms"
+      }
+    },
+    "focus": {
+      "$type": "border",
+      "ring": {
+        "$description": "WCAG 2.2 AAA-conformant focus ring; 3:1 contrast against any tenant background",
+        "$value": {
+          "color": "{color.primary-60}",
+          "offset": "2px",
+          "style": "solid",
+          "width": "{border.stroke-2}"
+        }
+      }
+    },
+    "motion": {
+      "$type": "cubicBezier",
+      "ease-display": {
+        "$description": "Expressive interaction — toasts, modals, hero",
+        "$value": [
+          0.4,
+          0.14,
+          0.3,
+          1.0
+        ]
+      },
+      "ease-enter": {
+        "$value": [
+          0.0,
+          0.0,
+          0.4,
+          1.0
+        ]
+      },
+      "ease-exit": {
+        "$value": [
+          0.2,
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "ease-utility": {
+        "$description": "Productive interaction — buttons, inputs, tabs",
+        "$value": [
+          0.2,
+          0,
+          0.4,
+          1.0
+        ]
+      }
+    },
+    "size": {
+      "$type": "dimension",
+      "space-1": {
+        "$description": "2px @ 16px base — hairline gutter",
+        "$value": "0.125rem"
+      },
+      "space-10": {
+        "$description": "64px @ 16px base — major section",
+        "$value": "4rem"
+      },
+      "space-11": {
+        "$description": "80px @ 16px base",
+        "$value": "5rem"
+      },
+      "space-12": {
+        "$description": "96px @ 16px base",
+        "$value": "6rem"
+      },
+      "space-13": {
+        "$description": "160px @ 16px base — hero spacing",
+        "$value": "10rem"
+      },
+      "space-2": {
+        "$description": "4px @ 16px base",
+        "$value": "0.25rem"
+      },
+      "space-3": {
+        "$description": "8px @ 16px base — paragraph rhythm floor",
+        "$value": "0.5rem"
+      },
+      "space-4": {
+        "$description": "12px @ 16px base",
+        "$value": "0.75rem"
+      },
+      "space-5": {
+        "$description": "16px @ 16px base — body grid unit",
+        "$value": "1rem"
+      },
+      "space-6": {
+        "$description": "24px @ 16px base",
+        "$value": "1.5rem"
+      },
+      "space-7": {
+        "$description": "32px @ 16px base — section gutter",
+        "$value": "2rem"
+      },
+      "space-8": {
+        "$description": "40px @ 16px base",
+        "$value": "2.5rem"
+      },
+      "space-9": {
+        "$description": "48px @ 16px base",
+        "$value": "3rem"
+      }
+    },
+    "typography": {
+      "$type": "typography",
+      "display-1": {
+        "$description": "20/28 — sub-heading",
+        "$value": {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "1.25rem",
+          "fontWeight": 500,
+          "letterSpacing": "-0.01em",
+          "lineHeight": 1.4
+        }
+      },
+      "display-2": {
+        "$description": "24/32 — section heading",
+        "$value": {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 500,
+          "letterSpacing": "-0.01em",
+          "lineHeight": 1.34
+        }
+      },
+      "display-3": {
+        "$description": "32/40 — page title",
+        "$value": {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "2rem",
+          "fontWeight": 400,
+          "letterSpacing": "-0.015em",
+          "lineHeight": 1.25
+        }
+      },
+      "display-4": {
+        "$description": "42/50 — hero / landing",
+        "$value": {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "2.625rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.02em",
+          "lineHeight": 1.2
+        }
+      },
+      "utility-1": {
+        "$description": "12/16 — caption, label, table cell",
+        "$value": {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.16px",
+          "lineHeight": 1.34
+        }
+      },
+      "utility-2": {
+        "$description": "14/20 — secondary body, helper text",
+        "$value": {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.16px",
+          "lineHeight": 1.43
+        }
+      },
+      "utility-3": {
+        "$description": "16/24 — body floor",
+        "$value": {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0px",
+          "lineHeight": 1.5
+        }
+      },
+      "utility-4": {
+        "$description": "16/24 — UI heading, button label, table heading",
+        "$value": {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 600,
+          "letterSpacing": "0px",
+          "lineHeight": 1.5
+        }
+      }
+    }
+  },
+  "theme": {
+    "$description": "PointSav brand semantic-layer override — maps semantic roles (interactive-primary, surface-elevated, ink-primary) to primitive references. SMB customers fork this file as themes/<their-brand>.json and re-point the references at their own primitive values.",
+    "$schema": "https://schemas.designtokens.org/2025-10-01/draft.json",
+    "accessibility": {
+      "contrast_floor_focus_ring_to_surface": 3,
+      "contrast_floor_text_to_surface": 7,
+      "min_touch_target_px": 44,
+      "motion_respect": "prefers-reduced-motion honored at all interaction layers",
+      "wcag_target": "2.2 AAA"
+    },
+    "github": {
+      "edit_path_prefix": "edit/main/dtcg-vault",
+      "repo": "https://github.com/pointsav/pointsav-design-system"
+    },
+    "semantic": {
+      "$type": "color",
+      "border-interactive": {
+        "$value": "{color.primary-60}"
+      },
+      "border-strong": {
+        "$value": "{color.neutral-40}"
+      },
+      "border-subtle": {
+        "$value": "{color.neutral-20}"
+      },
+      "focus-ring": {
+        "$value": "{color.primary-60}"
+      },
+      "ink-disabled": {
+        "$value": "{color.neutral-50}"
+      },
+      "ink-on-caution": {
+        "$value": "{color.neutral-100}"
+      },
+      "ink-on-critical": {
+        "$value": "{color.white}"
+      },
+      "ink-on-interactive": {
+        "$value": "{color.white}"
+      },
+      "ink-on-positive": {
+        "$value": "{color.white}"
+      },
+      "ink-placeholder": {
+        "$value": "{color.neutral-50}"
+      },
+      "ink-primary": {
+        "$value": "{color.neutral-100}"
+      },
+      "ink-secondary": {
+        "$value": "{color.neutral-70}"
+      },
+      "interactive-critical": {
+        "$value": "{color.critical-50}"
+      },
+      "interactive-critical-hover": {
+        "$value": "{color.critical-60}"
+      },
+      "interactive-critical-pressed": {
+        "$value": "{color.critical-70}"
+      },
+      "interactive-ghost": {
+        "$value": "transparent"
+      },
+      "interactive-ghost-hover": {
+        "$value": "{color.neutral-10}"
+      },
+      "interactive-ghost-pressed": {
+        "$value": "{color.neutral-20}"
+      },
+      "interactive-primary": {
+        "$value": "{color.primary-60}"
+      },
+      "interactive-primary-disabled": {
+        "$value": "{color.neutral-20}"
+      },
+      "interactive-primary-hover": {
+        "$value": "{color.primary-70}"
+      },
+      "interactive-primary-pressed": {
+        "$value": "{color.primary-80}"
+      },
+      "interactive-secondary": {
+        "$value": "{color.neutral-80}"
+      },
+      "interactive-secondary-hover": {
+        "$value": "{color.neutral-90}"
+      },
+      "interactive-secondary-pressed": {
+        "$value": "{color.neutral-100}"
+      },
+      "support-caution": {
+        "$value": "{color.caution-60}"
+      },
+      "support-caution-bg": {
+        "$value": "{color.caution-10}"
+      },
+      "support-critical": {
+        "$value": "{color.critical-60}"
+      },
+      "support-critical-bg": {
+        "$value": "{color.critical-10}"
+      },
+      "support-info": {
+        "$value": "{color.primary-60}"
+      },
+      "support-info-bg": {
+        "$value": "{color.primary-10}"
+      },
+      "support-positive": {
+        "$value": "{color.positive-60}"
+      },
+      "support-positive-bg": {
+        "$value": "{color.positive-10}"
+      },
+      "surface-base": {
+        "$value": "{color.white}"
+      },
+      "surface-elevated": {
+        "$value": "{color.white}"
+      },
+      "surface-inverse": {
+        "$value": "{color.neutral-100}"
+      },
+      "surface-subtle": {
+        "$value": "{color.neutral-10}"
+      }
+    },
+    "tenant": "pointsav",
+    "voice": {
+      "bcsc_posture": "Forward-looking statements carry planned/intended/may/target language with reasonable basis + cautionary language + material assumptions. Sovereign Data Foundation referenced only in planned/intended terms.",
+      "lexicon_avoid": [
+        "mathematically air-gapped",
+        "hyperscale-grade",
+        "industry-leading",
+        "enterprise-class",
+        "world-class",
+        "best-in-class",
+        "magical",
+        "AI-powered",
+        "revolutionary"
+      ],
+      "register": "Bloomberg article standard — precise, professional, financially-literate-reader-without-technical-background friendly",
+      "tone": [
+        "confident",
+        "direct",
+        "professional"
+      ]
+    }
+  }
+}
