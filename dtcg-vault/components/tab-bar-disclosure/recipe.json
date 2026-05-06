@@ -1,0 +1,24 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "tab-bar-disclosure",
+  "display_name": "Tab Bar (Disclosure)",
+  "description": "Tabs implemented as <details> elements, progressively enhanced by JS to behave as a tabset (opening one closes others; deep-link via #fragment). Zero-JS baseline: all panels accessible via expand/collapse. Distinct from ps-tab (URL-reflected routing pattern) — use this when content is in-page and JS may be unavailable.",
+  "category": "components",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "project-bim flowback — design-generic-components-index.md (2026-04-29)",
+  "html": "<div class=\"ps-tab-bar\" role=\"tablist\">\n  <details class=\"ps-tab\" open>\n    <summary class=\"ps-tab__summary\">{{tabLabel}}</summary>\n    <div class=\"ps-tab__panel\">{{content}}</div>\n  </details>\n</div>",
+  "css_class": "ps-tab-bar",
+  "tokens": [
+    "{semantic.interactive-primary}",
+    "{semantic.surface-default}",
+    "{semantic.border-subtle}",
+    "{semantic.ink-primary}"
+  ],
+  "aria": "With JS: synthesise role=tablist / role=tab / role=tabpanel / aria-selected / aria-controls once JS is confirmed available. Without JS: the native <details>/<summary> interaction is accessible to all screen readers with no additional ARIA required. Do not add tablist roles before JS runs — mismatched roles on a non-interactive element break screen readers.",
+  "wcag": { "target": "2.2 AA", "focus_visible": true },
+  "js_notes": "JS coordination closes sibling <details> elements on open. Deep-link: read window.location.hash on DOMContentLoaded; open the matching <details> and scroll into view.",
+  "comparison": "ps-tab (existing) uses URL-reflected <a href> navigation — each tab is a separate route. ps-tab-bar-disclosure uses in-page <details> panels — state lives in DOM, not URL. Use ps-tab for multi-page documentation sites; use ps-tab-bar-disclosure for in-page content sections where routing is not available.",
+  "research_links": [],
+  "registry_dependencies": []
+}

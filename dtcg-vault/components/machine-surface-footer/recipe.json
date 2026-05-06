@@ -1,0 +1,23 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "machine-surface-footer",
+  "display_name": "Machine Surface Footer",
+  "description": "Three-column footer for PointSav machine surfaces (design.pointsav.com, showcase instances, etc.). Columns: brand identity (left), machine surface links (/tokens.json, /components, /research, /healthz), substrate provenance (Doctrine claims, standards floor). Small monospace section headings (11 px caps); body at 14 px; canonical-URL base bar at 12 px muted monospace.",
+  "category": "components",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "project-bim flowback — design-generic-components-index.md (2026-04-29)",
+  "html": "<footer class=\"ps-machine-footer\">\n  <div class=\"ps-machine-footer__inner\">\n    <div class=\"ps-machine-footer__col\">\n      <h2 class=\"ps-machine-footer__heading\">{{brandLabel}}</h2>\n      <ul class=\"ps-machine-footer__list\">{{brandLinks}}</ul>\n    </div>\n    <div class=\"ps-machine-footer__col\">\n      <h2 class=\"ps-machine-footer__heading\">Machine surface</h2>\n      <ul class=\"ps-machine-footer__list\">\n        <li><a href=\"/tokens.json\">/tokens.json</a></li>\n        <li><a href=\"/components\">/components</a></li>\n        <li><a href=\"/research\">/research</a></li>\n        <li><a href=\"/healthz\">/healthz</a></li>\n      </ul>\n    </div>\n    <div class=\"ps-machine-footer__col\">\n      <h2 class=\"ps-machine-footer__heading\">Substrate</h2>\n      <ul class=\"ps-machine-footer__list\">{{provenanceLinks}}</ul>\n    </div>\n  </div>\n  <div class=\"ps-machine-footer__base\">{{canonicalUrl}}</div>\n</footer>",
+  "css_class": "ps-machine-footer",
+  "tokens": [
+    "{semantic.surface-default}",
+    "{semantic.border-subtle}",
+    "{semantic.ink-secondary}",
+    "{semantic.ink-tertiary}",
+    "{semantic.interactive-primary}"
+  ],
+  "aria": "<footer> is a landmark role (contentinfo) implicitly. It should be the last landmark on the page. The three columns are visually labelled with headings (h2); no additional ARIA landmarks needed inside the footer.",
+  "wcag": { "target": "2.2 AA" },
+  "research_links": [],
+  "registry_dependencies": []
+}
