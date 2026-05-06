@@ -348,6 +348,92 @@
           "letterSpacing": "0px",
           "lineHeight": 1.5
         }
+      },
+      "wiki-body": {
+        "$description": "17/27 — wiki article body (IBM Plex Sans, 106.25% base, 1.6 leading, 65ch measure)",
+        "$value": {
+          "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "1.0625rem",
+          "fontWeight": 400,
+          "letterSpacing": "0px",
+          "lineHeight": 1.6
+        }
+      },
+      "wiki-code": {
+        "$description": "15/24 — wiki inline and block code (IBM Plex Mono)",
+        "$value": {
+          "fontFamily": "'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace",
+          "fontSize": "0.9375rem",
+          "fontWeight": 400,
+          "letterSpacing": "0px",
+          "lineHeight": 1.6
+        }
+      },
+      "wiki-h1": {
+        "$description": "51.9/58 — wiki article h1 (Major Third scale × 5 from 17px base)",
+        "$value": {
+          "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "3.052rem",
+          "fontWeight": 600,
+          "letterSpacing": "-0.02em",
+          "lineHeight": 1.15
+        }
+      },
+      "wiki-h2": {
+        "$description": "41.5/50 — wiki section heading (Major Third scale × 4)",
+        "$value": {
+          "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "2.441rem",
+          "fontWeight": 600,
+          "letterSpacing": "-0.015em",
+          "lineHeight": 1.2
+        }
+      },
+      "wiki-h3": {
+        "$description": "33.2/42 — wiki subsection heading (Major Third scale × 3)",
+        "$value": {
+          "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "1.953rem",
+          "fontWeight": 600,
+          "letterSpacing": "-0.01em",
+          "lineHeight": 1.25
+        }
+      },
+      "wiki-h4": {
+        "$description": "26.6/34 — wiki heading level 4 (Major Third scale × 2)",
+        "$value": {
+          "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "1.563rem",
+          "fontWeight": 600,
+          "letterSpacing": "0px",
+          "lineHeight": 1.3
+        }
+      },
+      "wiki-h5": {
+        "$description": "21.25/28 — wiki heading level 5 (Major Third scale × 1)",
+        "$value": {
+          "fontFamily": "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "fontSize": "1.25rem",
+          "fontWeight": 600,
+          "letterSpacing": "0px",
+          "lineHeight": 1.4
+        }
+      }
+    },
+    "viewport": {
+      "$type": "dimension",
+      "$description": "Wiki platform responsive breakpoints — three-tier layout system",
+      "compact": {
+        "$description": "≤ 799px — single-column mobile layout; sidebar collapses to drawer",
+        "$value": "799px"
+      },
+      "medium": {
+        "$description": "800px – 1151px — two-column layout; TOC inline with content",
+        "$value": "1151px"
+      },
+      "wide": {
+        "$description": "≥ 1152px — three-column layout; sidebar + content + TOC",
+        "$value": "1152px"
       }
     }
   },
@@ -477,6 +563,118 @@
       },
       "surface-subtle": {
         "$value": "{color.neutral-10}"
+      }
+    },
+    "dark": {
+      "$description": "Dark mode semantic overrides — applied via [data-theme='dark'] on the root element. Maps the same semantic roles as theme.semantic to dark-optimised primitive values. Wiki surfaces verified: contrast targets WCAG 2.2 AA minimum for all text pairs.",
+      "$type": "color",
+      "surface-base": {
+        "$value": "#1f2125",
+        "$description": "neutral-90 — wiki page background in dark mode"
+      },
+      "surface-elevated": {
+        "$value": "#33373e",
+        "$description": "neutral-80 — card, panel, sidebar surface in dark mode"
+      },
+      "surface-subtle": {
+        "$value": "#2a2d33",
+        "$description": "between neutral-80 and neutral-90 — subtle dividers, table rows"
+      },
+      "surface-inverse": {
+        "$value": "#f5f6f8",
+        "$description": "neutral-10 — inverted surface (light chip on dark page)"
+      },
+      "surface-code": {
+        "$value": "#151618",
+        "$description": "near-black — code block background; darker than page to create depth"
+      },
+      "ink-primary": {
+        "$value": "#f5f6f8",
+        "$description": "neutral-10 — primary text on dark surface; 14.5:1 vs surface-base"
+      },
+      "ink-secondary": {
+        "$value": "#aab0bb",
+        "$description": "neutral-40 — secondary text; 6.2:1 vs surface-base (AA)"
+      },
+      "ink-disabled": {
+        "$value": "#4a4f59",
+        "$description": "neutral-70 — disabled text on dark surface"
+      },
+      "ink-on-inverse": {
+        "$value": "#0e0f12",
+        "$description": "neutral-100 — text on light chip within dark page"
+      },
+      "border-subtle": {
+        "$value": "#4a4f59",
+        "$description": "neutral-70 — hairline borders on dark surface"
+      },
+      "border-strong": {
+        "$value": "#878d99",
+        "$description": "neutral-50 — strong borders, table rules"
+      },
+      "border-interactive": {
+        "$value": "#7392ff",
+        "$description": "primary-40 — input border, interactive element outline on dark bg"
+      },
+      "focus-ring": {
+        "$value": "#7392ff",
+        "$description": "primary-40 — focus ring; 3.1:1 vs surface-base (AA non-text)"
+      },
+      "interactive-primary": {
+        "$value": "#3f6cf2",
+        "$description": "primary-50 — button fill; 4.8:1 vs surface-base with white text"
+      },
+      "interactive-primary-hover": {
+        "$value": "#7392ff",
+        "$description": "primary-40 — hover state on dark"
+      },
+      "interactive-ghost-hover": {
+        "$value": "rgba(255,255,255,0.08)",
+        "$description": "semi-transparent white — ghost button hover on dark"
+      },
+      "interactive-ghost-pressed": {
+        "$value": "rgba(255,255,255,0.12)",
+        "$description": "semi-transparent white — ghost button press on dark"
+      },
+      "support-critical": {
+        "$value": "#f0a3a3",
+        "$description": "critical-30 — error text on dark background (AA)"
+      },
+      "support-critical-bg": {
+        "$value": "#3d1515",
+        "$description": "dark critical tint — error banner fill on dark page"
+      },
+      "support-caution": {
+        "$value": "#f5cd7a",
+        "$description": "caution-30 — warning text on dark background"
+      },
+      "support-caution-bg": {
+        "$value": "#3d2e0a",
+        "$description": "dark caution tint — warning banner fill on dark page"
+      },
+      "support-positive": {
+        "$value": "#9fdaae",
+        "$description": "positive-30 — success text on dark background"
+      },
+      "wiki-link": {
+        "$value": "#7392ff",
+        "$description": "primary-40 — wiki hyperlink on dark page; 4.1:1 vs surface-base (AA)"
+      },
+      "wiki-redlink": {
+        "$value": "#f0a3a3",
+        "$description": "critical-30 — wiki red (missing) link on dark page"
+      },
+      "wiki-code-keyword": {
+        "$value": "#f5cd7a",
+        "$description": "caution-30 — syntax highlight keyword on dark code block"
+      },
+      "wiki-code-string": {
+        "$value": "#9fdaae",
+        "$description": "positive-30 — syntax highlight string literal on dark code block"
+      },
+      "wiki-code-comment": {
+        "$value": "#878d99",
+        "$description": "neutral-50 — syntax highlight comment on dark code block"
       }
     },
     "tenant": "pointsav",
