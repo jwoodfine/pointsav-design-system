@@ -1,0 +1,41 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "wiki-drawer-mobile-nav",
+  "display_name": "Wiki Drawer (Mobile Navigation)",
+  "description": "Slide-in overlay navigation for compact (≤799px) viewports. Hamburger trigger opens a full-height left drawer containing the wiki site nav. Uses HTML inert attribute to lock the background DOM.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-wiki-drawer-mobile-nav-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
+  "research_notes": [
+    "inert attribute: ~94% global native support (Aug 2025). iOS Safari from 15.5+.",
+    "WICG polyfill: ~3KB gzipped, maintenance mode since late 2023 but functional.",
+    "Strategy: native-first with conditional WICG polyfill: if (!('inert' in HTMLElement.prototype)) load polyfill.",
+    "CSS partial: pointer-events:none + user-select:none blocks mouse but NOT keyboard — do NOT use as inert substitute.",
+    "Drawer is only shown at compact (≤799px) — desktop users never see it."
+  ],
+  "html": "<!-- Trigger -->\n<button class=\"ps-wiki-drawer-trigger\"\n        type=\"button\"\n        aria-expanded=\"{{isOpen}}\"\n        aria-controls=\"wiki-drawer\"\n        aria-label=\"{{isOpen ? 'Close navigation' : 'Open navigation'}}\">\n  <span class=\"ps-wiki-drawer-trigger__icon\" aria-hidden=\"true\">☰</span>\n</button>\n\n<!-- Backdrop -->\n<div class=\"ps-wiki-drawer-backdrop\" aria-hidden=\"true\" hidden></div>\n\n<!-- Drawer panel -->\n<nav id=\"wiki-drawer\"\n     class=\"ps-wiki-drawer\"\n     aria-label=\"Site navigation\"\n     hidden>\n  <ul class=\"ps-wiki-drawer__list\">\n    <li><a href=\"{{href}}\" class=\"ps-wiki-drawer__link\" {{#active}}aria-current='page'{{/active}}>{{label}}</a></li>\n  </ul>\n</nav>",
+  "css_class": "ps-wiki-drawer",
+  "js_notes": "On open: remove [hidden] from drawer + backdrop; set inert on #wiki-main-content and #wiki-header; update trigger aria-expanded. On close: add [hidden] back; remove inert from main/header. Escape key closes. Backdrop click closes.",
+  "variants": [
+    { "name": "closed", "description": "Hamburger button only; drawer and backdrop [hidden]." },
+    { "name": "open", "description": "Drawer slides in; backdrop dims; main content inert." }
+  ],
+  "tokens": [
+    "{semantic.surface-base}",
+    "{semantic.surface-elevated}",
+    "{semantic.ink-primary}",
+    "{wiki.link}",
+    "{semantic.interactive-ghost-hover}",
+    "{semantic.border-subtle}",
+    "{primitive.space-5}",
+    "{primitive.space-6}",
+    "{primitive.speed-4}",
+    "{primitive.ease-enter}"
+  ],
+  "aria": "Trigger button: aria-expanded (true/false), aria-controls='wiki-drawer', aria-label updates on state. Backdrop: aria-hidden='true' always. Drawer <nav aria-label='Site navigation'>. inert applied to #wiki-main-content and any other focusable regions when drawer is open — prevents Tab from escaping drawer.",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [],
+  "research_links": [],
+  "registry_dependencies": []
+}

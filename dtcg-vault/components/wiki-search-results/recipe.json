@@ -1,0 +1,44 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "wiki-search-results",
+  "display_name": "Wiki Search Results",
+  "description": "Ordered list of search hits: article title link + plain-text excerpt (~180 chars). Zero-results state with a prompt to try different terms. Backed by the Tantivy JSON-RPC endpoint at /mcp (see research note).",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-wiki-search-results-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
+  "research_notes": [
+    "Tantivy search API shape confirmed 2026-05-06 (project-knowledge codebase, search.rs:59-65 + server.rs:309-328).",
+    "Response: {query, count, hits: [{slug, title, snippet}]}. No <mark> HTML — plain text only.",
+    "Snippet: first non-empty, non-heading paragraph, ~180 chars, truncated at word boundary with '…'.",
+    "Endpoint: POST /mcp, JSON-RPC 2.0, method='search', params={q, limit:10} (HTML page uses limit:25).",
+    "score field computed internally (BM25) but not returned in JSON."
+  ],
+  "html": "<section class=\"ps-wiki-search-results\" aria-label=\"Search results for {{query}}\" aria-live=\"polite\" aria-atomic=\"true\">\n\n  <!-- Non-empty results -->\n  <p class=\"ps-wiki-search-results__summary\">{{count}} result{{#plural}}s{{/plural}} for <strong>\"{{query}}\"</strong></p>\n  <ol class=\"ps-wiki-search-results__list\">\n    <li class=\"ps-wiki-search-result\">\n      <a class=\"ps-wiki-search-result__title\" href=\"/{{slug}}\">{{title}}</a>\n      <p class=\"ps-wiki-search-result__excerpt\">{{snippet}}</p>\n    </li>\n  </ol>\n\n  <!-- Zero-results state -->\n  <div class=\"ps-wiki-search-results__empty\" hidden>\n    <p class=\"ps-wiki-search-results__empty-message\">No results for <strong>\"{{query}}\"</strong>. Try fewer or different keywords.</p>\n  </div>\n\n</section>",
+  "css_class": "ps-wiki-search-results",
+  "variants": [
+    { "name": "with-results", "description": "Count + ordered list of hits." },
+    { "name": "zero-results", "description": "Empty state with retry prompt." }
+  ],
+  "tokens": [
+    "{wiki.font-body}",
+    "{semantic.ink-primary}",
+    "{semantic.ink-secondary}",
+    "{wiki.link}",
+    "{wiki.link-hover}",
+    "{semantic.border-subtle}",
+    "{primitive.space-4}",
+    "{primitive.space-5}",
+    "{primitive.space-6}"
+  ],
+  "aria": "<section aria-label> wraps the results. aria-live='polite' + aria-atomic='true' causes SR to announce count when results update. Snippet text: plain text from Tantivy, no HTML manipulation needed. Zero-results div toggled via [hidden] attribute (not display:none) for SR compatibility.",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [
+    "Tantivy Phase 3.2+ may add query-aware snippet generation with <mark> highlights. When that ships, the excerpt template will need a sanitised innerHTML assignment instead of textContent."
+  ],
+  "research_links": [
+    "/srv/foundry/clones/project-knowledge/pointsav-monorepo/app-mediakit-knowledge/src/search.rs",
+    "/srv/foundry/clones/project-knowledge/pointsav-monorepo/app-mediakit-knowledge/src/server.rs"
+  ],
+  "registry_dependencies": []
+}

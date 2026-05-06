@@ -1,0 +1,43 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "wiki-pagination",
+  "display_name": "Wiki Pagination (Prev/Next)",
+  "description": "Prev/Next article navigation within a wiki category. Three-column grid: prev article (left), category link (centre), next article (right). NOT numbered-page pagination. Keyboard navigable via native <a> elements.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-wiki-pagination-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
+  "research_notes": [
+    "Zola sort semantics (training data, verify against getzola.org): sort_by field in _index.md controls section order.",
+    "sort_by = 'date' (default: newer first), 'weight' (lower int = earlier), 'title' (alphabetical), 'slug'.",
+    "Template variables: page.lower (previous in sort order), page.higher (next in sort order).",
+    "Example: {% if page.lower %}<a href='{{ page.lower.permalink }}'>← {{ page.lower.title }}</a>{% endif %}",
+    "Note: 'lower' and 'higher' refer to position in sort order, not alphanumeric comparison.",
+    "Open question: which sort_by is used by the wiki engine? Must be confirmed against project-knowledge _index.md files."
+  ],
+  "html": "<nav class=\"ps-wiki-pagination\" aria-label=\"Articles in {{category-name}}\">\n\n  <!-- Prev: omit <a> when no prev article; render spacer <span> to hold grid -->\n  <a class=\"ps-wiki-pagination__prev\"\n     href=\"{{prev-article-url}}\"\n     rel=\"prev\"\n     aria-label=\"Previous article: {{prev-article-title}}\">\n    <span class=\"ps-wiki-pagination__arrow\" aria-hidden=\"true\">←</span>\n    <span class=\"ps-wiki-pagination__direction\">Previous</span>\n    <span class=\"ps-wiki-pagination__article-title\">{{prev-article-title}}</span>\n  </a>\n\n  <span class=\"ps-wiki-pagination__context\">\n    <a href=\"{{category-url}}\" class=\"ps-wiki-pagination__category-link\">{{category-name}}</a>\n  </span>\n\n  <a class=\"ps-wiki-pagination__next\"\n     href=\"{{next-article-url}}\"\n     rel=\"next\"\n     aria-label=\"Next article: {{next-article-title}}\">\n    <span class=\"ps-wiki-pagination__article-title\">{{next-article-title}}</span>\n    <span class=\"ps-wiki-pagination__direction\">Next</span>\n    <span class=\"ps-wiki-pagination__arrow\" aria-hidden=\"true\">→</span>\n  </a>\n\n</nav>",
+  "css_class": "ps-wiki-pagination",
+  "layout": "grid-template-columns: 1fr auto 1fr; compact breakpoint (≤799px): stack vertically.",
+  "variants": [
+    { "name": "full", "description": "Prev + category + next." },
+    { "name": "first-article", "description": "No prev; spacer holds left cell." },
+    { "name": "last-article", "description": "No next; spacer holds right cell." },
+    { "name": "only-article", "description": "Both edges empty; category link only." }
+  ],
+  "tokens": [
+    "{wiki.link}",
+    "{wiki.link-hover}",
+    "{wiki.font-body}",
+    "{semantic.ink-secondary}",
+    "{semantic.border-subtle}",
+    "{primitive.space-5}",
+    "{primitive.space-6}"
+  ],
+  "aria": "<nav aria-label='Articles in {{category-name}}'>. aria-label on each <a> provides full context ('Previous article: {{title}}'). Arrow glyphs aria-hidden. rel=prev/rel=next on <a> elements; engine also emits <link rel> in <head> (engine responsibility).",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [
+    "Confirm which sort_by value the wiki engine uses for category sections — determines whether page.lower/page.higher in Zola maps to expected editorial ordering."
+  ],
+  "research_links": [],
+  "registry_dependencies": []
+}
