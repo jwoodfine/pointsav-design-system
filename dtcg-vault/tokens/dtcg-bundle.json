@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.designtokens.org/2025-10-01/draft.json",
-  "$description": "PointSav design system — knowledge-wiki baseline three-tier DTCG token bundle. Additive: no existing Carbon-derived primitive in primitive.json is replaced. Adds wiki-specific primitives (link, brand.blue, brand.teal), semantic layer (surface, text, interactive, border, wiki.*), and component layer (home-*, article.*). Master co-sign: master-claude 2026-04-30T17:00Z. Three governance decisions applied: (A) wiki.* namespace approved; (B) FLI-banner = neutral (not amber); (C) font.family.heading = system-stack.",
+  "$description": "PointSav design system — knowledge-wiki baseline three-tier DTCG token bundle. Additive: no existing Carbon-derived primitive in primitive.json is replaced. Adds knowledge-wiki primitives, semantic layer (surface, text, interactive, border, knowledge.*), and component layer (home-*, article.*). Master co-sign (original): master-claude 2026-04-30T17:00Z — (A) namespace approved; (B) FLI-banner=neutral; (C) font.family.heading=system-stack. Master co-sign (F-conditions): master@claude-code 2026-05-07 — F-1: wiki.*→knowledge.*; F-2: freshness-ribbon tokens removed; F-3: system-stack fonts applied.",
   "$version": "0.0.1",
   "$cites": ["dtcg-w3c", "carbon-v10", "wikimedia-codex"],
 
@@ -58,11 +58,11 @@
     "font": {
       "family": {
         "$type": "fontFamily",
-        "body": { "$value": "Linux Libertine, Georgia, Times, Source Serif 4, serif" },
-        "heading": { "$value": "Linux Libertine Display, Charter, Tinos, system-ui-serif, serif", "$description": "System-stack only — no self-hosted variable font at this stage. (Master co-sign decision C, 2026-04-30)" },
-        "sans": { "$value": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif" },
-        "mono": { "$value": "IBM Plex Mono, Menlo, Consolas, Liberation Mono, Courier New, monospace" },
-        "kbd": { "$value": "IBM Plex Mono, SFMono-Regular, Consolas, monospace" }
+        "body": { "$value": "Georgia, 'Times New Roman', Times, serif", "$description": "System-stack serif. Linux Libertine deferred to v0.5.0+ when self-hosted asset pipeline is mature. (F-3 system-stack discipline 2026-05-07)" },
+        "heading": { "$value": "Charter, 'Bitstream Charter', Georgia, serif", "$description": "System-stack serif for headings — no self-hosted variable font at this stage. (Master co-sign decision C 2026-04-30; F-3 2026-05-07)" },
+        "sans": { "$value": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif", "$description": "System-stack sans-serif. IBM Plex Sans deferred to when self-hosted. (F-3 2026-05-07)" },
+        "mono": { "$value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace", "$description": "System-stack mono. IBM Plex Mono deferred to when self-hosted. (F-3 2026-05-07)" },
+        "kbd": { "$value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" }
       },
       "size": {
         "$type": "dimension",
@@ -176,9 +176,9 @@
       "interactive": { "$value": "{primitive.color.brand.blue.60}" },
       "disabled": { "$value": "#cdd1d8", "$description": "→ primitive.color.neutral-30 in primitive.json" }
     },
-    "wiki": {
+    "knowledge": {
       "$type": "color",
-      "$description": "Wiki-specific semantic namespace. Approved as wiki.* (not ps-wiki.*) per Master co-sign decision A, 2026-04-30.",
+      "$description": "Knowledge-wiki semantic namespace. Renamed wiki.* → knowledge.* per Master co-sign F-1 condition 2026-05-07 to match canonical product name (app-mediakit-knowledge). Original wiki.* namespace approval from Master co-sign decision A, 2026-04-30 still stands as the architectural rationale.",
       "hatnote": {
         "bg": { "$value": "#e6e8ec", "$description": "→ semantic.surface.layer-accent" },
         "border": { "$value": "#e6e8ec", "$description": "→ semantic.border.subtle" }
@@ -221,7 +221,7 @@
     },
     "home-featured": {
       "accent-width": { "$type": "dimension", "$value": "4px" },
-      "accent-color": { "$type": "color", "$value": "{primitive.color.brand.teal.60}", "$description": "→ semantic.wiki.featured-pin.accent" },
+      "accent-color": { "$type": "color", "$value": "{primitive.color.brand.teal.60}", "$description": "→ semantic.knowledge.featured-pin.accent" },
       "padding": { "$type": "dimension", "$value": "2rem", "$description": "→ primitive.space.4" },
       "lead-paraphrase-max-chars": { "$type": "number", "$value": 280, "$description": "Wikipedia TFA blurb is 909–1009 chars; 280 is shorter for documentation register" }
     },
@@ -240,10 +240,10 @@
         "position-left-rail": { "$type": "number", "$value": 1 },
         "max-depth": { "$type": "number", "$value": 3 },
         "indent-step": { "$type": "dimension", "$value": "1rem", "$description": "→ primitive.space.2" },
-        "bg": { "$type": "color", "$value": "#e6e8ec", "$description": "→ semantic.wiki.toc.bg" }
+        "bg": { "$type": "color", "$value": "#e6e8ec", "$description": "→ semantic.knowledge.toc.bg" }
       },
       "section": {
-        "heading-edit-pencil-color": { "$type": "color", "$value": "#878d99", "$description": "→ semantic.wiki.editpencil.color" },
+        "heading-edit-pencil-color": { "$type": "color", "$value": "#878d99", "$description": "→ semantic.knowledge.editpencil.color" },
         "heading-edit-pencil-opacity-default": { "$type": "number", "$value": 0 },
         "heading-edit-pencil-opacity-hover": { "$type": "number", "$value": 1 }
       },
@@ -273,13 +273,6 @@
         "compact-multiplier": { "$type": "number", "$value": 0.75, "$description": "→ primitive.density.compact" },
         "comfortable-multiplier": { "$type": "number", "$value": 1, "$description": "→ primitive.density.comfortable (baseline)" },
         "spacious-multiplier": { "$type": "number", "$value": 1.5, "$description": "→ primitive.density.spacious" }
-      },
-      "freshness-ribbon": {
-        "color-fresh": { "$type": "color", "$value": "{primitive.color.status.success.base}", "$description": "Green — ≤90 days" },
-        "color-stale": { "$type": "color", "$value": "{primitive.color.status.warn.base}", "$description": "Amber — 91–365 days" },
-        "color-archived": { "$type": "color", "$value": "#878d99", "$description": "Gray — >365 days. → primitive.color.neutral-50 in primitive.json" },
-        "threshold-fresh-days": { "$type": "number", "$value": 90, "$description": "Per-deployment override permitted" },
-        "threshold-stale-days": { "$type": "number", "$value": 365, "$description": "Per-deployment override permitted" }
       }
     }
   }
