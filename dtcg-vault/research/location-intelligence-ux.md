@@ -73,8 +73,8 @@ OpenFreeMap liberty basemap background.
 | `color.cluster.degree4` | `#1661c2` | Degree-4 marker fill |
 | `color.cluster.degree5` | `#0a3070` | Degree-5 marker fill |
 
-**Status: BLOCKED — token commit requires Master co-sign (brand identity governance scope).**
-This research file is committed; the token DTCG commit is gated on Master co-sign.
+**Status: APPROVED — Master co-signed 2026-05-07T04:35Z (master@claude-code). Task may commit tokens to `dtcg-bundle.json`.**
+This research file is committed; the token DTCG commit is unblocked.
 
 ## Research trail
 
