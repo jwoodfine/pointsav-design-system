@@ -5,10 +5,9 @@
   "description": "9-card responsive category browse grid for the documentation wiki home page. Always renders all 9 ratified categories regardless of article count — including empty categories with '0 articles — in preparation' placeholder. 3-col → 2-col (960px) → 1-col (640px). Carbon Tile pattern extended with a top-3 child list + 'More →' link per card.",
   "category": "wiki",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-home-grid.draft.md — project-knowledge 2026-04-29",
   "html": "<section class=\"ps-home-grid\" aria-label=\"Browse by category\">\n  <h2 class=\"ps-home-grid__heading\">Browse by category</h2>\n  <div class=\"ps-home-grid__row\">\n    <article class=\"ps-home-grid__card\">\n      <h3 class=\"ps-home-grid__title\">\n        <a href=\"/architecture\">Architecture</a>\n      </h3>\n      <p class=\"ps-home-grid__count\">12 articles</p>\n      <ul class=\"ps-home-grid__list\">\n        <li><a href=\"/architecture/three-layer-stack\">Three-layer stack</a></li>\n        <li><a href=\"/architecture/compounding-substrate\">Compounding substrate</a></li>\n        <li><a href=\"/architecture/citation-substrate\">Citation substrate</a></li>\n      </ul>\n      <a class=\"ps-home-grid__more\" href=\"/architecture\">More →</a>\n    </article>\n    <article class=\"ps-home-grid__card ps-home-grid__card--empty\">\n      <h3 class=\"ps-home-grid__title\">\n        <a href=\"/help\">Help</a>\n      </h3>\n      <p class=\"ps-home-grid__empty\">0 articles — in preparation</p>\n    </article>\n  </div>\n</section>",
   "css_class": "ps-home-grid",
+  "css": ".ps-home-grid__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--pds-space-2); margin-block-end: var(--pds-space-4); }\n@media (max-width: 959px) { .ps-home-grid__row { grid-template-columns: repeat(2, 1fr); } }\n@media (max-width: 639px) { .ps-home-grid__row { grid-template-columns: 1fr; } }\n.ps-home-grid__card { border: 1px solid var(--pds-border-subtle); border-radius: var(--pds-radius-xs); padding: var(--pds-space-2); background: var(--pds-surface-layer); transition: border-color var(--pds-duration-fast) ease; }\n.ps-home-grid__card:hover { border-color: var(--pds-link); }\n@media (prefers-reduced-motion: reduce) { .ps-home-grid__card { transition: none; } }\n.ps-home-grid__heading { font-size: 1.125rem; font-weight: 600; margin-block-end: var(--pds-space-2); }\n.ps-home-grid__title { font-size: 1.0625rem; font-weight: 600; margin-block-end: 0.25rem; }\n.ps-home-grid__title a { color: var(--pds-link); text-decoration: none; }\n.ps-home-grid__title a:hover { text-decoration: underline; }\n.ps-home-grid__title a:focus-visible { outline: 2px solid var(--pds-focus-ring); outline-offset: 2px; }\n.ps-home-grid__count, .ps-home-grid__empty { font-size: 0.8125rem; color: var(--pds-text-secondary); margin-block-end: 0.5rem; }\n.ps-home-grid__list { list-style: none; padding: 0; margin-block-end: 0.5rem; font-size: 0.875rem; }\n.ps-home-grid__list li { padding-block: 0.125rem; }\n.ps-home-grid__list a { color: var(--pds-link); }\n.ps-home-grid__more { font-size: 0.8125rem; color: var(--pds-link); }",
   "category_set": [
     "architecture",
     "services",
@@ -26,14 +25,15 @@
     { "name": "empty", "description": "Card shows '0 articles — in preparation' only. No child list, no More link." }
   ],
   "tokens": [
-    "--component-home-grid-gap",
-    "--component-home-grid-card-padding",
-    "--component-home-grid-card-radius",
-    "--component-home-grid-card-border-width",
-    "--component-home-grid-card-border-color",
-    "--component-home-grid-card-surface",
-    "--component-home-grid-breakpoint-3-to-2",
-    "--component-home-grid-breakpoint-2-to-1"
+    "{semantic.surface.layer}",
+    "{semantic.text.secondary}",
+    "{semantic.interactive.link}",
+    "{semantic.interactive.focus-ring}",
+    "{semantic.border.subtle}",
+    "{primitive.radius.xs}",
+    "{primitive.space.2}",
+    "{primitive.space.4}",
+    "{primitive.motion.duration.fast}"
   ],
   "responsive_breakpoints": {
     "3_col": "≥960px",

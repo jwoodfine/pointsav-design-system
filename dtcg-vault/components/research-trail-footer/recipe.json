@@ -5,10 +5,9 @@
   "description": "Collapsible bottom-of-article epistemic-frontier disclosure. Three fixed subsections: Research done / Suggested research / Open questions. Collapsed by default; summary line shows counts ('N done · N suggested · N open question(s)'). Native <details>/<summary> — no JS needed. Emits JSON-LD potentialAction nodes (SearchAction + Question). Doctrine claim #39 at article scale.",
   "category": "wiki",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-research-trail-footer.draft.md — project-knowledge 2026-04-30",
   "html": "<details class=\"ps-research-trail\">\n  <summary class=\"ps-research-trail__summary\">\n    Research trail — 4 done · 3 suggested · 1 open question\n  </summary>\n  <section class=\"ps-research-trail__body\" aria-label=\"Research trail detail\">\n    <h3 class=\"ps-research-trail__heading ps-research-trail__heading--done\"\n        id=\"research-trail-done\">\n      Research done\n    </h3>\n    <ul class=\"ps-research-trail__list\">\n      <li>Klein 2009 — seL4 formal verification (academic source)</li>\n      <li>Wikipedia capability-based-security article (secondary survey)</li>\n    </ul>\n    <h3 class=\"ps-research-trail__heading ps-research-trail__heading--suggested\"\n        id=\"research-trail-suggested\">\n      Suggested research\n    </h3>\n    <ul class=\"ps-research-trail__list\">\n      <li>seL4 capability-revocation 2024–2026 papers — verify transitive revocation behaviour</li>\n    </ul>\n    <h3 class=\"ps-research-trail__heading ps-research-trail__heading--open\"\n        id=\"research-trail-open\">\n      Open questions\n    </h3>\n    <ul class=\"ps-research-trail__list\">\n      <li>Does the seL4 microkernel revoke capabilities transitively when a parent capability is destroyed?</li>\n    </ul>\n  </section>\n</details>",
   "css_class": "ps-research-trail",
+  "css": ".ps-research-trail { margin-block-start: var(--pds-space-4); padding: var(--pds-space-2); background: var(--pds-surface-layer-accent); border-inline-start: 3px solid var(--pds-border-subtle); }\n.ps-research-trail__summary { font-family: var(--pds-font-sans); font-size: 0.875rem; font-weight: 600; color: var(--pds-text-secondary); cursor: pointer; list-style: revert; user-select: none; }\n.ps-research-trail__summary:focus-visible { outline: 2px solid var(--pds-focus-ring); outline-offset: 2px; }\n.ps-research-trail__body { margin-block-start: var(--pds-space-2); }\n.ps-research-trail__heading { font-family: var(--pds-font-sans); font-size: 0.9375rem; font-weight: 600; margin: var(--pds-space-2) 0 var(--pds-space-1); padding-inline-start: var(--pds-space-1); border-inline-start: 3px solid transparent; }\n.ps-research-trail__heading--done { border-inline-start-color: var(--pds-status-success); }\n.ps-research-trail__heading--suggested { border-inline-start-color: var(--pds-brand-blue-60); }\n.ps-research-trail__heading--open { border-inline-start-color: var(--pds-status-warn); }\n.ps-research-trail__list { margin: 0; padding-inline-start: var(--pds-space-2); font-size: 0.875rem; line-height: 1.6; }\n.ps-research-trail__list li { padding-block: 0.125rem; color: var(--pds-text-primary); }",
   "surface_scope": "wiki-article-foot",
   "placement": "bottom-of-article, after See also and before References",
   "variants": [
@@ -17,23 +16,25 @@
     { "name": "suppressed", "description": "Not rendered — article frontmatter declares research_trail: false, or all three counts are zero." }
   ],
   "tokens": [
-    "--article-research-trail-done-color",
-    "--article-research-trail-suggested-color",
-    "--article-research-trail-open-question-color",
-    "--article-research-trail-trail-bg",
-    "--article-research-trail-trail-border",
-    "--font-size-3",
-    "--font-size-4",
-    "--space-1",
-    "--space-2",
-    "--space-4"
+    "{semantic.surface.layer-accent}",
+    "{semantic.border.subtle}",
+    "{semantic.text.primary}",
+    "{semantic.text.secondary}",
+    "{semantic.interactive.focus-ring}",
+    "{primitive.color.status.success}",
+    "{primitive.color.brand.blue.60}",
+    "{primitive.color.status.warn}",
+    "{primitive.font.family.sans}",
+    "{primitive.space.1}",
+    "{primitive.space.2}",
+    "{primitive.space.4}"
   ],
   "aria": "Native <details>/<summary> element pair. Browsers handle keyboard (Enter/Space on summary), screen-reader announcement, and aria-expanded natively. Subsections use <h3> because the article's '## Research trail' renders as <h2>. Focus ring on summary via :focus-visible.",
   "wcag": { "target": "2.2 AA" },
   "ai_hint": "Emits JSON-LD potentialAction nodes: SearchAction for suggested-research items, Question for open-question items. LLM consumers identify article epistemic frontier without reading prose.",
   "engine_note": "Summary counts derived from frontmatter fields research_done_count / research_suggested_count / open_questions_count — render-time substitution, not author-maintained.",
   "open_questions": [
-    "§7(f) of research draft — visual weight as chrome (collapsed, muted) vs body content (expanded, same rhythm as article sections). Affects --article-research-trail-trail-bg token resolution.",
+    "§7(f) of research draft — visual weight as chrome (collapsed, muted) vs body content (expanded, same rhythm as article sections). Affects semantic.surface.layer-accent vs semantic.surface.layer token choice.",
     "Render-time count emission — engine reads frontmatter fields directly OR counts body subsection items at render time?"
   ],
   "research_links": ["research/wikipedia-leapfrog-2030.md#62-research-trail-footer-block-first"],
