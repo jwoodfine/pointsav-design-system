@@ -5,8 +5,6 @@
   "description": "Slide-in overlay navigation for compact (≤799px) viewports. Hamburger trigger opens a full-height left drawer containing the wiki site nav. Uses HTML inert attribute to lock the background DOM.",
   "category": "wiki",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-wiki-drawer-mobile-nav-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
   "research_notes": [
     "inert attribute: ~94% global native support (Aug 2025). iOS Safari from 15.5+.",
     "WICG polyfill: ~3KB gzipped, maintenance mode since late 2023 but functional.",
@@ -16,22 +14,23 @@
   ],
   "html": "<!-- Trigger -->\n<button class=\"ps-wiki-drawer-trigger\"\n        type=\"button\"\n        aria-expanded=\"{{isOpen}}\"\n        aria-controls=\"wiki-drawer\"\n        aria-label=\"{{isOpen ? 'Close navigation' : 'Open navigation'}}\">\n  <span class=\"ps-wiki-drawer-trigger__icon\" aria-hidden=\"true\">☰</span>\n</button>\n\n<!-- Backdrop -->\n<div class=\"ps-wiki-drawer-backdrop\" aria-hidden=\"true\" hidden></div>\n\n<!-- Drawer panel -->\n<nav id=\"wiki-drawer\"\n     class=\"ps-wiki-drawer\"\n     aria-label=\"Site navigation\"\n     hidden>\n  <ul class=\"ps-wiki-drawer__list\">\n    <li><a href=\"{{href}}\" class=\"ps-wiki-drawer__link\" {{#active}}aria-current='page'{{/active}}>{{label}}</a></li>\n  </ul>\n</nav>",
   "css_class": "ps-wiki-drawer",
+  "css": ".ps-wiki-drawer-trigger { display: none; padding: var(--pds-space-1); background: transparent; border: none; cursor: pointer; color: var(--pds-text-primary); }\n@media (max-width: 799px) { .ps-wiki-drawer-trigger { display: flex; } }\n.ps-wiki-drawer-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; }\n.ps-wiki-drawer-backdrop[hidden] { display: none; }\n.ps-wiki-drawer { position: fixed; inset-block: 0; inset-inline-start: 0; width: min(80vw, 20rem); background: var(--pds-surface-layer); border-inline-end: 1px solid var(--pds-border-subtle); padding: var(--pds-space-2); z-index: 101; overflow-y: auto; transform: translateX(-100%); transition: transform var(--pds-duration-slow) var(--pds-easing-decelerate); }\n.ps-wiki-drawer:not([hidden]) { transform: translateX(0); }\n.ps-wiki-drawer__list { list-style: none; padding: 0; }\n.ps-wiki-drawer__link { display: block; padding: var(--pds-space-1) var(--pds-space-2); color: var(--pds-link); text-decoration: none; border-radius: var(--pds-radius-xs); }\n.ps-wiki-drawer__link:hover { background: var(--pds-surface-layer-hover); }",
   "js_notes": "On open: remove [hidden] from drawer + backdrop; set inert on #wiki-main-content and #wiki-header; update trigger aria-expanded. On close: add [hidden] back; remove inert from main/header. Escape key closes. Backdrop click closes.",
   "variants": [
     { "name": "closed", "description": "Hamburger button only; drawer and backdrop [hidden]." },
     { "name": "open", "description": "Drawer slides in; backdrop dims; main content inert." }
   ],
   "tokens": [
-    "{semantic.surface-base}",
-    "{semantic.surface-elevated}",
-    "{semantic.ink-primary}",
-    "{wiki.link}",
-    "{semantic.interactive-ghost-hover}",
-    "{semantic.border-subtle}",
-    "{primitive.space-5}",
-    "{primitive.space-6}",
-    "{primitive.speed-4}",
-    "{primitive.ease-enter}"
+    "{semantic.surface.background}",
+    "{semantic.surface.layer}",
+    "{semantic.text.primary}",
+    "{semantic.interactive.link}",
+    "{semantic.surface.layer-hover}",
+    "{semantic.border.subtle}",
+    "{primitive.space.2}",
+    "{primitive.space.4}",
+    "{primitive.motion.duration.slow}",
+    "{primitive.motion.easing.decelerate}"
   ],
   "aria": "Trigger button: aria-expanded (true/false), aria-controls='wiki-drawer', aria-label updates on state. Backdrop: aria-hidden='true' always. Drawer <nav aria-label='Site navigation'>. inert applied to #wiki-main-content and any other focusable regions when drawer is open — prevents Tab from escaping drawer.",
   "wcag": { "target": "2.2 AA" },

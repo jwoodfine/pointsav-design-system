@@ -5,40 +5,40 @@
   "description": "Dual-purpose chip: (1) article quality grade (Featured/Good/A/B/C/Stub), (2) category tag links. Inline, pill-shaped. Used by wiki-article-header (quality badge) and wiki-article-footer (category tags).",
   "category": "wiki",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-wiki-badge-tag-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
   "html": "<!-- Quality grade badge (non-interactive) -->\n<span class=\"ps-wiki-badge ps-wiki-badge--{{grade}}\" aria-label=\"Article quality: {{grade-label}}\">{{grade-label}}</span>\n\n<!-- Category tag (interactive link) -->\n<a class=\"ps-wiki-tag\" href=\"/category/{{slug}}\">{{label}}</a>",
   "css_class": "ps-wiki-badge",
+  "css": ".ps-wiki-badge { display: inline-flex; align-items: center; padding: 0.1em var(--pds-space-1); border-radius: var(--pds-radius-xs); font-size: 0.75rem; font-weight: 600; white-space: nowrap; }\n.ps-wiki-badge--featured { background-color: var(--pds-status-warn); color: var(--pds-text-on-color); }\n.ps-wiki-badge--good { background-color: var(--pds-status-success); color: var(--pds-text-on-color); }\n.ps-wiki-badge--a-class { background-color: var(--pds-brand-blue-60); color: var(--pds-text-on-color); }\n.ps-wiki-badge--b-class { background-color: var(--pds-brand-blue-50); color: var(--pds-text-on-color); }\n.ps-wiki-badge--c-class, .ps-wiki-badge--stub { background-color: var(--pds-surface-layer-accent); color: var(--pds-text-secondary); }\n.ps-wiki-tag { display: inline-flex; align-items: center; padding: 0.1em var(--pds-space-1); border-radius: var(--pds-radius-xs); font-size: 0.8125rem; color: var(--pds-link); border: 1px solid var(--pds-border-subtle); text-decoration: none; }",
   "quality_grades": [
-    { "modifier": "featured", "label": "Featured article", "color_token": "{primitive.color-caution-30}", "note": "Gold/amber — highest quality tier" },
-    { "modifier": "good", "label": "Good article", "color_token": "{primitive.color-positive-50}", "note": "Green — second tier" },
-    { "modifier": "a-class", "label": "A-class", "color_token": "{primitive.color-primary-50}", "note": "Blue — third tier" },
-    { "modifier": "b-class", "label": "B-class", "color_token": "{primitive.color-primary-30}", "note": "Light blue — fourth tier" },
-    { "modifier": "c-class", "label": "C-class", "color_token": "{primitive.color-neutral-50}", "note": "Grey — developing" },
-    { "modifier": "stub", "label": "Stub", "color_token": "{primitive.color-neutral-40}", "note": "Light grey — minimal content" }
+    { "modifier": "featured", "label": "Featured article", "color_token": "{primitive.color.status.warn}", "note": "Gold/amber — highest quality tier" },
+    { "modifier": "good", "label": "Good article", "color_token": "{primitive.color.status.success}", "note": "Green — second tier" },
+    { "modifier": "a-class", "label": "A-class", "color_token": "{primitive.color.brand.blue.60}", "note": "Blue — third tier" },
+    { "modifier": "b-class", "label": "B-class", "color_token": "{primitive.color.brand.blue.50}", "note": "Light blue — fourth tier" },
+    { "modifier": "c-class", "label": "C-class", "color_token": "{semantic.surface.layer-accent}", "note": "Muted surface — developing" },
+    { "modifier": "stub", "label": "Stub", "color_token": "{semantic.surface.layer-accent}", "note": "Muted surface — minimal content" }
   ],
   "variants": [
     { "name": "quality-grade", "description": "Non-interactive <span> with grade color and aria-label." },
     { "name": "category-tag", "description": "Interactive <a> link to category page." }
   ],
   "tokens": [
-    "{primitive.color-caution-30}",
-    "{primitive.color-positive-50}",
-    "{primitive.color-primary-50}",
-    "{primitive.color-primary-30}",
-    "{primitive.color-neutral-40}",
-    "{primitive.color-neutral-50}",
-    "{semantic.ink-primary}",
-    "{semantic.ink-on-interactive}",
-    "{wiki.link}",
-    "{primitive.corner-1}",
-    "{primitive.space-2}",
-    "{primitive.space-3}"
+    "{primitive.color.status.warn}",
+    "{primitive.color.status.success}",
+    "{primitive.color.brand.blue.60}",
+    "{primitive.color.brand.blue.50}",
+    "{semantic.surface.layer-accent}",
+    "{semantic.text.primary}",
+    "{semantic.text.secondary}",
+    "{semantic.text.on-color}",
+    "{semantic.interactive.link}",
+    "{semantic.border.subtle}",
+    "{primitive.radius.xs}",
+    "{primitive.space.05}",
+    "{primitive.space.1}"
   ],
   "aria": "Quality badge: non-interactive <span> with aria-label containing the full grade name ('Article quality: Featured article'). Abbreviated display text (e.g., 'FA') is acceptable visually since aria-label supplies the full name. Category tag: standard <a href>; no additional ARIA needed.",
   "wcag": { "target": "2.2 AA" },
   "open_questions": [
-    "Featured article badge uses amber/gold (#f5cd7a on white) — verify contrast in light mode. In dark mode the badge background is on a dark surface; WCAG agent confirmed #f5cd7a passes on dark. Light-mode contrast needs separate check for this specific combination."
+    "Featured article badge uses amber/gold (primitive.color.status.warn) on white — verify contrast in light mode. In dark mode the badge background is on a dark surface; WCAG agent confirmed #f5cd7a passes on dark. Light-mode contrast needs separate check for this specific combination."
   ],
   "research_links": [],
   "registry_dependencies": []

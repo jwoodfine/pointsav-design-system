@@ -5,8 +5,6 @@
   "description": "Ordered list of search hits: article title link + plain-text excerpt (~180 chars). Zero-results state with a prompt to try different terms. Backed by the Tantivy JSON-RPC endpoint at /mcp (see research note).",
   "category": "wiki",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-wiki-search-results-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
   "research_notes": [
     "Tantivy search API shape confirmed 2026-05-06 (project-knowledge codebase, search.rs:59-65 + server.rs:309-328).",
     "Response: {query, count, hits: [{slug, title, snippet}]}. No <mark> HTML — plain text only.",
@@ -16,20 +14,20 @@
   ],
   "html": "<section class=\"ps-wiki-search-results\" aria-label=\"Search results for {{query}}\" aria-live=\"polite\" aria-atomic=\"true\">\n\n  <!-- Non-empty results -->\n  <p class=\"ps-wiki-search-results__summary\">{{count}} result{{#plural}}s{{/plural}} for <strong>\"{{query}}\"</strong></p>\n  <ol class=\"ps-wiki-search-results__list\">\n    <li class=\"ps-wiki-search-result\">\n      <a class=\"ps-wiki-search-result__title\" href=\"/{{slug}}\">{{title}}</a>\n      <p class=\"ps-wiki-search-result__excerpt\">{{snippet}}</p>\n    </li>\n  </ol>\n\n  <!-- Zero-results state -->\n  <div class=\"ps-wiki-search-results__empty\" hidden>\n    <p class=\"ps-wiki-search-results__empty-message\">No results for <strong>\"{{query}}\"</strong>. Try fewer or different keywords.</p>\n  </div>\n\n</section>",
   "css_class": "ps-wiki-search-results",
+  "css": ".ps-wiki-search-results { font-family: var(--pds-font-body); }\n.ps-wiki-search-results__summary { color: var(--pds-text-secondary); font-size: 0.875rem; margin-block-end: var(--pds-space-2); }\n.ps-wiki-search-results__list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--pds-space-2); }\n.ps-wiki-search-result { padding-block-end: var(--pds-space-2); border-block-end: 1px solid var(--pds-border-subtle); }\n.ps-wiki-search-result__title { display: block; font-size: 1.0625rem; font-weight: 600; color: var(--pds-link); text-decoration: none; margin-block-end: var(--pds-space-05); }\n.ps-wiki-search-result__title:hover { color: var(--pds-link-hover); text-decoration: underline; }\n.ps-wiki-search-result__excerpt { color: var(--pds-text-secondary); font-size: 0.9rem; line-height: 1.5; margin: 0; }\n.ps-wiki-search-results__empty { padding-block: var(--pds-space-4); text-align: center; color: var(--pds-text-secondary); }\n.ps-wiki-search-results__empty[hidden] { display: none; }",
   "variants": [
     { "name": "with-results", "description": "Count + ordered list of hits." },
     { "name": "zero-results", "description": "Empty state with retry prompt." }
   ],
   "tokens": [
-    "{wiki.font-body}",
-    "{semantic.ink-primary}",
-    "{semantic.ink-secondary}",
-    "{wiki.link}",
-    "{wiki.link-hover}",
-    "{semantic.border-subtle}",
-    "{primitive.space-4}",
-    "{primitive.space-5}",
-    "{primitive.space-6}"
+    "{primitive.font.family.body}",
+    "{semantic.text.primary}",
+    "{semantic.text.secondary}",
+    "{semantic.interactive.link}",
+    "{semantic.interactive.link-hover}",
+    "{semantic.border.subtle}",
+    "{primitive.space.2}",
+    "{primitive.space.4}"
   ],
   "aria": "<section aria-label> wraps the results. aria-live='polite' + aria-atomic='true' causes SR to announce count when results update. Snippet text: plain text from Tantivy, no HTML manipulation needed. Zero-results div toggled via [hidden] attribute (not display:none) for SR compatibility.",
   "wcag": { "target": "2.2 AA" },
