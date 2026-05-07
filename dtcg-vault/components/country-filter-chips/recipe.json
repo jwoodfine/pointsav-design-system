@@ -1,0 +1,38 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "country-filter-chips",
+  "display_name": "Country Filter Chips",
+  "description": "Horizontal radiogroup of country chips that filter map data and flyTo the selected country's bounds. Default state is ALL (no filter, world view). Single exclusive selection; future multi-select variant planned. Reference implementation: gis.woodfinegroup.com (v0.1.94).",
+  "category": "map",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-country-filter-chips.draft.md — Master workspace v0.1.94 / project-editorial 2026-04-30",
+  "html": "<div class=\"ps-country-chips\" role=\"radiogroup\" aria-label=\"Filter by country\">\n  <button type=\"button\" class=\"ps-chip ps-chip--active\" role=\"radio\" aria-checked=\"true\">ALL</button>\n  <button type=\"button\" class=\"ps-chip\" role=\"radio\" aria-checked=\"false\">🇺🇸 US</button>\n  <button type=\"button\" class=\"ps-chip\" role=\"radio\" aria-checked=\"false\">🇨🇦 CA</button>\n  <button type=\"button\" class=\"ps-chip\" role=\"radio\" aria-checked=\"false\">🇲🇽 MX</button>\n  <button type=\"button\" class=\"ps-chip\" role=\"radio\" aria-checked=\"false\">🇪🇸 ES</button>\n</div>",
+  "css_class": "ps-country-chips",
+  "keyboard": "Tab focuses group; arrow keys move between chips; Space/Enter activates.",
+  "variants": [
+    { "name": "default", "description": "Exclusive selection (radiogroup). Current GIS use." },
+    { "name": "multi-select", "description": "Multiple chips active simultaneously. role=group + aria-pressed replaces radiogroup + aria-checked. Decision pending first multi-select use-case." }
+  ],
+  "tokens": [
+    "--ps-chip-height: 36px",
+    "--ps-chip-padding: 0 12px",
+    "--ps-chip-border-radius: 18px",
+    "--ps-chip-bg-default: surface",
+    "--ps-chip-bg-selected: brand-primary",
+    "--ps-chip-fg-default: text-primary",
+    "--ps-chip-fg-selected: text-on-brand",
+    "--ps-chip-border-default: border-subtle",
+    "--ps-chip-border-selected: brand-primary",
+    "--ps-chip-font: body-compact-01",
+    "--ps-chip-transition-duration: 150ms",
+    "--ps-chip-gap: spacing-08"
+  ],
+  "aria": "role='radiogroup' on container with aria-label. role='radio' + aria-checked on each chip (not aria-pressed — exclusive selection). Flag emoji is supplementary; ISO code is always rendered as text fallback. Selected state: background + border + aria-checked (not colour alone). Min touch target 44px tall (WCAG 2.2 AAA).",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [
+    "oq-1: Multi-select variant — when activated, does ALL become disabled or act as 'clear all'? Decision pending first multi-select use-case."
+  ],
+  "research_links": ["research/zoom-tier-reveal-pattern.md"],
+  "registry_dependencies": []
+}

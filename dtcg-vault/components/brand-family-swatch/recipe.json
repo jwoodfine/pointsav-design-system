@@ -1,0 +1,43 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "brand-family-swatch",
+  "display_name": "Brand-Family Swatch",
+  "description": "Taxonomic swatch rendering a brand-family identifier as a coloured dot + label chip. Visual primitive for the Department / Hardware / Warehouse Club retail taxonomy. Taxonomy-agnostic: customers can extend via runtime taxonomy file (leapfrog invention #5). Reference implementation: gis.woodfinegroup.com (v0.1.94).",
+  "category": "map",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-brand-family-swatch.draft.md — Master workspace v0.1.94 / project-editorial 2026-04-30",
+  "html": "<span class=\"ps-swatch ps-swatch--{{family-id}}\" aria-label=\"{{family-label}}\">\n  <span class=\"ps-swatch__dot\" aria-hidden=\"true\"></span>\n  <span class=\"ps-swatch__label\">{{family-label}}</span>\n</span>",
+  "css_class": "ps-swatch",
+  "variants": [
+    { "name": "inline-chip", "description": "Default. Dot + label chip." },
+    { "name": "map-marker", "description": "Large dot (24-32px); label suppressed (label via parent tooltip/drawer)." },
+    { "name": "cluster-centroid-ring", "description": "Concentric arrangement of N family dots showing family distribution in a cluster. Renders at zoom < 8.5; crossfades to individual swatches above zoom 8." },
+    { "name": "filter-row", "description": "Paired with checkbox primitive: [✓] [●] Department." },
+    { "name": "drawer-header-badge", "description": "Dot fills behind brand short-code (e.g., HD for Home Depot)." }
+  ],
+  "brand_family_defaults": {
+    "department": { "color": "#0B5FFF", "label": "Department" },
+    "hardware": { "color": "#FF6B00", "label": "Hardware" },
+    "warehouse-club": { "color": "#00875A", "label": "Warehouse Club" }
+  },
+  "tokens": [
+    "--ps-brand-family-department-color: #0B5FFF",
+    "--ps-brand-family-hardware-color: #FF6B00",
+    "--ps-brand-family-warehouse-club-color: #00875A",
+    "--ps-swatch-dot-size: 12px",
+    "--ps-swatch-dot-size-marker: 24px",
+    "--ps-swatch-gap: spacing-04",
+    "--ps-swatch-label-font: body-compact-02",
+    "--ps-swatch-padding: 4px 8px",
+    "--ps-swatch-border-radius: 4px"
+  ],
+  "aria": "aria-label on the swatch element states the family name. Dot is aria-hidden='true'; label carries the semantic meaning. Colour is supplementary — label is the primary signifier. forced-colors: dots collapse to user link colour; labels remain.",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [
+    "oq-1: Should the component ship default family IDs (Department / Hardware / Warehouse Club / Grocery / Pharmacy / etc.) so customers extend from a baseline, or ship empty so customers always start from scratch?",
+    "oq-2: Cluster-centroid ring variant — when a cluster has 10+ anchors of different families, does the ring transition to a pie/donut at a threshold? Decision pending first banker-walkthrough feedback."
+  ],
+  "research_links": ["research/zoom-tier-reveal-pattern.md"],
+  "registry_dependencies": []
+}
