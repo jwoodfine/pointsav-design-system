@@ -1,0 +1,146 @@
+{
+  "$schema": "https://schemas.designtokens.org/2025-10-01/draft.json",
+  "$description": "Main Page Token 2 — Wikipedia-register knowledge home page. Visual contract for app-mediakit-knowledge home_chrome(). Per-tenant parameterised (documentation / corporate / projects). Master co-sign: master@claude-code 2026-05-07T04:55Z.",
+  "$version": "0.0.2",
+  "$source": "design-main-page-token-2.draft.md (project-editorial 2026-05-05); master_cosign: master@claude-code 2026-05-07T04:55Z",
+  "$cites": ["wikimedia-codex", "dtcg-w3c"],
+
+  "slot": {
+    "$description": "Canonical slot ordering for the home page. Matches Wikipedia Main Page anatomy. Implementation: home_chrome() in app-mediakit-knowledge/src/server.rs.",
+    "order": {
+      "$value": ["banner", "lede", "featured-article", "did-you-know", "portal-grid", "recent-additions", "other-areas", "contributing", "footer"],
+      "$type": "string[]",
+      "$description": "Render order top to bottom. Slots may be suppressed per-tenant (see slot.*.visible rules)."
+    },
+    "banner": {
+      "$description": "Site title, tagline, stats line. Per-tenant: site_title, site_tagline.",
+      "heading-level": { "$value": "h1", "$type": "string" },
+      "stats-register": { "$value": "N articles across N categories, last updated YYYY-MM-DD", "$type": "string", "$description": "Plain factual sentence. No trailing period. Trailing period is a P2 server.rs fix." }
+    },
+    "lede": {
+      "$description": "index.md body passthrough. Lede-only pattern (2026-05-05): index.md contains one paragraph only.",
+      "source": { "$value": "index.md body", "$type": "string" },
+      "max-paragraphs": { "$value": 2, "$type": "number" }
+    },
+    "featured-article": {
+      "$description": "Framed panel. Reads featured-topic.yaml. Suppress slot entirely when file absent.",
+      "heading-text": { "$value": "From today's featured article", "$type": "string", "$description": "Wikipedia register — not 'Featured article of the day'." },
+      "closer-text": { "$value": "(Full article...)", "$type": "string", "$description": "Wikipedia register — not 'Read more →' (P2 fix)." },
+      "visible-when": { "$value": "featured-topic.yaml exists", "$type": "string" }
+    },
+    "portal-grid": {
+      "$description": "Category gateway cards. Suppress when tenant has no categories (flat wikis: corporate, projects).",
+      "heading-level": { "$value": "h2", "$type": "string" },
+      "card-heading-level": { "$value": "h3", "$type": "string" },
+      "columns-wide": { "$value": 3, "$type": "number" },
+      "columns-mid": { "$value": 2, "$type": "number", "$description": "640–959px breakpoint" },
+      "columns-compact": { "$value": 1, "$type": "number", "$description": "<640px breakpoint" },
+      "visible-when": { "$value": "tenant.categories non-empty", "$type": "string" }
+    },
+    "recent-additions": {
+      "$description": "Top 5 articles sorted by last_edited descending.",
+      "heading-text": { "$value": "Recent additions", "$type": "string" },
+      "heading-level": { "$value": "h2", "$type": "string" },
+      "item-count": { "$value": 5, "$type": "number" }
+    },
+    "other-areas": {
+      "$description": "Per-tenant link list. P2 fix: replace hardcoded documentation GitHub links.",
+      "heading-text": { "$value": "Other areas", "$type": "string" },
+      "heading-level": { "$value": "h2", "$type": "string" },
+      "source": { "$value": "tenant.other_areas config", "$type": "string" }
+    }
+  },
+
+  "layout": {
+    "$description": "Page-level grid and spacing for the home chrome.",
+    "max-width": { "$value": "1152px", "$type": "dimension" },
+    "gutter": { "$value": "1.5rem", "$type": "dimension" },
+    "slot-gap": { "$value": "2rem", "$type": "dimension" },
+    "slot-gap-compact": { "$value": "1.25rem", "$type": "dimension" },
+    "breakpoint-mid": { "$value": "960px", "$type": "dimension" },
+    "breakpoint-compact": { "$value": "640px", "$type": "dimension" }
+  },
+
+  "typography": {
+    "$description": "Type scale for home-chrome slots. Inherits font stacks from primitive.json.",
+    "slot-heading": {
+      "$type": "typography",
+      "$value": { "fontSize": "1.25rem", "fontWeight": "600", "lineHeight": "1.4" },
+      "$description": "h2 slot headings — sentence case per Wikipedia register."
+    },
+    "card-heading": {
+      "$type": "typography",
+      "$value": { "fontSize": "1rem", "fontWeight": "600", "lineHeight": "1.35" },
+      "$description": "h3 portal card headings."
+    },
+    "lede-paragraph": {
+      "$type": "typography",
+      "$value": { "fontSize": "1rem", "fontWeight": "400", "lineHeight": "1.6" },
+      "$description": "index.md lede passthrough body text."
+    },
+    "stats-line": {
+      "$type": "typography",
+      "$value": { "fontSize": "0.875rem", "fontWeight": "400", "lineHeight": "1.5" },
+      "$description": "Stats banner line under h1."
+    }
+  },
+
+  "chrome": {
+    "$description": "Surface, border, and interactive tokens for home-chrome slots.",
+    "featured-article": {
+      "frame-color": { "$value": "{primitive.color.brand.blue.60}", "$type": "color", "$description": "Left-border accent on the featured article panel." },
+      "bg": { "$value": "{semantic.surface.elevated}", "$type": "color" }
+    },
+    "stats-banner": {
+      "bg": { "$value": "{semantic.surface.default}", "$type": "color" }
+    },
+    "portal-card": {
+      "bg": { "$value": "{semantic.surface.elevated}", "$type": "color" },
+      "bg-hover": { "$value": "{semantic.interactive.hover}", "$type": "color" },
+      "border": { "$value": "{semantic.border.subtle}", "$type": "color" },
+      "border-radius": { "$value": "4px", "$type": "dimension" }
+    },
+    "slot-divider": {
+      "color": { "$value": "{semantic.border.subtle}", "$type": "color" },
+      "width": { "$value": "1px", "$type": "dimension" }
+    }
+  },
+
+  "state": {
+    "$description": "Rendering rules for edge-case slot states.",
+    "portal-card-empty": {
+      "visible": { "$value": true, "$type": "boolean", "$description": "Render empty category card (0 articles) with muted style and 'No articles yet' placeholder." },
+      "opacity": { "$value": 0.5, "$type": "number" }
+    },
+    "featured-article-absent": {
+      "visible": { "$value": false, "$type": "boolean", "$description": "Suppress slot entirely when featured-topic.yaml is absent." }
+    },
+    "recent-additions-single": {
+      "visible": { "$value": true, "$type": "boolean", "$description": "Show even when only 1 article exists; suppress count display." }
+    }
+  },
+
+  "leapfrog-extensions": {
+    "$description": "Five leapfrog-2030 extensions beyond Wikipedia Main Page anatomy. Extensions 4–5 are gated.",
+    "json-ld": {
+      "priority": { "$value": "P3", "$type": "string" },
+      "scope": { "$value": "WebSite + ItemList (category grid) + Article (featured) + ItemList (recent additions) in <head>", "$type": "string" }
+    },
+    "editorial-cadence-signal": {
+      "priority": { "$value": "P3", "$type": "string" },
+      "scope": { "$value": "max(last_edited) surfaced under stats banner or recent-additions heading", "$type": "string" }
+    },
+    "editor-as-onramp": {
+      "priority": { "$value": "P3", "$type": "string" },
+      "scope": { "$value": "Contributing section includes direct /edit/ link in Wikipedia-register plain prose", "$type": "string" }
+    },
+    "research-trail-teaser": {
+      "priority": { "$value": "planned", "$type": "string" },
+      "gate": { "$value": "/citations/<slug> route must exist in app-mediakit-knowledge", "$type": "string" }
+    },
+    "citation-graph-entry": {
+      "priority": { "$value": "planned", "$type": "string" },
+      "gate": { "$value": "citations.yaml resolution pass wired in build pipeline", "$type": "string" }
+    }
+  }
+}
