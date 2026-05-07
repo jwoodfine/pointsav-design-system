@@ -5,8 +5,6 @@
   "description": "Prev/Next article navigation within a wiki category. Three-column grid: prev article (left), category link (centre), next article (right). NOT numbered-page pagination. Keyboard navigable via native <a> elements.",
   "category": "wiki",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-wiki-pagination-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
   "research_notes": [
     "Zola sort semantics (training data, verify against getzola.org): sort_by field in _index.md controls section order.",
     "sort_by = 'date' (default: newer first), 'weight' (lower int = earlier), 'title' (alphabetical), 'slug'.",
@@ -17,6 +15,7 @@
   ],
   "html": "<nav class=\"ps-wiki-pagination\" aria-label=\"Articles in {{category-name}}\">\n\n  <!-- Prev: omit <a> when no prev article; render spacer <span> to hold grid -->\n  <a class=\"ps-wiki-pagination__prev\"\n     href=\"{{prev-article-url}}\"\n     rel=\"prev\"\n     aria-label=\"Previous article: {{prev-article-title}}\">\n    <span class=\"ps-wiki-pagination__arrow\" aria-hidden=\"true\">←</span>\n    <span class=\"ps-wiki-pagination__direction\">Previous</span>\n    <span class=\"ps-wiki-pagination__article-title\">{{prev-article-title}}</span>\n  </a>\n\n  <span class=\"ps-wiki-pagination__context\">\n    <a href=\"{{category-url}}\" class=\"ps-wiki-pagination__category-link\">{{category-name}}</a>\n  </span>\n\n  <a class=\"ps-wiki-pagination__next\"\n     href=\"{{next-article-url}}\"\n     rel=\"next\"\n     aria-label=\"Next article: {{next-article-title}}\">\n    <span class=\"ps-wiki-pagination__article-title\">{{next-article-title}}</span>\n    <span class=\"ps-wiki-pagination__direction\">Next</span>\n    <span class=\"ps-wiki-pagination__arrow\" aria-hidden=\"true\">→</span>\n  </a>\n\n</nav>",
   "css_class": "ps-wiki-pagination",
+  "css": ".ps-wiki-pagination { display: grid; grid-template-columns: 1fr auto 1fr; gap: var(--pds-space-2); padding-block: var(--pds-space-4); border-block-start: 1px solid var(--pds-border-subtle); font-family: var(--pds-font-body); }\n@media (max-width: 799px) { .ps-wiki-pagination { grid-template-columns: 1fr; } }\n.ps-wiki-pagination__prev { display: flex; flex-direction: column; gap: 0.25em; color: var(--pds-link); text-decoration: none; }\n.ps-wiki-pagination__next { display: flex; flex-direction: column; gap: 0.25em; align-items: flex-end; text-align: end; color: var(--pds-link); text-decoration: none; }\n.ps-wiki-pagination__prev:hover, .ps-wiki-pagination__next:hover { color: var(--pds-link-hover); }\n.ps-wiki-pagination__context { display: flex; align-items: center; justify-content: center; }\n.ps-wiki-pagination__category-link { color: var(--pds-link); font-size: 0.875rem; }\n.ps-wiki-pagination__direction { font-size: 0.75rem; color: var(--pds-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }\n.ps-wiki-pagination__article-title { font-size: 0.9375rem; }",
   "layout": "grid-template-columns: 1fr auto 1fr; compact breakpoint (≤799px): stack vertically.",
   "variants": [
     { "name": "full", "description": "Prev + category + next." },
@@ -25,13 +24,13 @@
     { "name": "only-article", "description": "Both edges empty; category link only." }
   ],
   "tokens": [
-    "{wiki.link}",
-    "{wiki.link-hover}",
-    "{wiki.font-body}",
-    "{semantic.ink-secondary}",
-    "{semantic.border-subtle}",
-    "{primitive.space-5}",
-    "{primitive.space-6}"
+    "{semantic.interactive.link}",
+    "{semantic.interactive.link-hover}",
+    "{primitive.font.family.body}",
+    "{semantic.text.secondary}",
+    "{semantic.border.subtle}",
+    "{primitive.space.2}",
+    "{primitive.space.4}"
   ],
   "aria": "<nav aria-label='Articles in {{category-name}}'>. aria-label on each <a> provides full context ('Previous article: {{title}}'). Arrow glyphs aria-hidden. rel=prev/rel=next on <a> elements; engine also emits <link rel> in <head> (engine responsibility).",
   "wcag": { "target": "2.2 AA" },

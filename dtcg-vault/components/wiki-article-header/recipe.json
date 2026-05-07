@@ -5,10 +5,9 @@
   "description": "Top-of-article surface: slug breadcrumb, H1 title (from frontmatter), quality badge, and byline (last edited + editor + history link). Maps Wikipedia article-header muscle-memory using IBM Plex Sans at 2.25rem h1.",
   "category": "wiki",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-wiki-article-header-2026-05-06.draft.md — project-editorial brief 2026-05-06T18:30Z",
   "html": "<header class=\"ps-wiki-article-header\">\n  <nav class=\"ps-wiki-article-header__breadcrumb\" aria-label=\"Article location\">\n    <ol class=\"ps-wiki-article-header__crumb-list\">\n      <li><a href=\"{{category-url}}\">{{category-name}}</a></li>\n    </ol>\n  </nav>\n  <div class=\"ps-wiki-article-header__title-row\">\n    <h1 class=\"ps-wiki-article-header__title\">{{title}}</h1>\n    <span class=\"ps-wiki-badge ps-wiki-badge--{{quality-grade}}\" aria-label=\"Article quality: {{quality-grade-label}}\">{{quality-grade-label}}</span>\n  </div>\n  <div class=\"ps-wiki-article-header__meta\" role=\"doc-subtitle\">\n    <span class=\"ps-wiki-article-header__date\">Last edited <time datetime=\"{{iso-date}}\">{{display-date}}</time></span>\n    <span class=\"ps-wiki-article-header__divider\" aria-hidden=\"true\">·</span>\n    <span class=\"ps-wiki-article-header__editor\">{{editor-display-name}}</span>\n    <span class=\"ps-wiki-article-header__divider\" aria-hidden=\"true\">·</span>\n    <a class=\"ps-wiki-article-header__history\" href=\"{{history-url}}\">View history</a>\n  </div>\n</header>",
   "css_class": "ps-wiki-article-header",
+  "css": ".ps-wiki-article-header { padding-block-end: var(--pds-space-2); border-block-end: 1px solid var(--pds-border-subtle); }\n.ps-wiki-article-header__breadcrumb ol { list-style: none; padding: 0; display: flex; gap: 0.25em; font-size: 0.875rem; color: var(--pds-text-secondary); }\n.ps-wiki-article-header__title-row { display: flex; align-items: flex-start; gap: var(--pds-space-1); margin-block: var(--pds-space-1); }\n.ps-wiki-article-header__title { font-family: var(--pds-font-heading); font-size: var(--pds-font-size-10); font-weight: 700; line-height: 1.2; color: var(--pds-text-primary); margin: 0; }\n.ps-wiki-article-header__meta { display: flex; flex-wrap: wrap; gap: 0.25em; font-size: 0.875rem; color: var(--pds-text-secondary); }\n.ps-wiki-article-header__divider { margin-inline: 0.2em; }\n.ps-wiki-article-header__history { color: var(--pds-link); }",
   "variants": [
     { "name": "standard", "description": "Breadcrumb + title row (H1 + badge) + byline." },
     { "name": "with-lead-image", "description": "Standard + right-floated <figure>." },
@@ -16,15 +15,15 @@
     { "name": "ungraded", "description": "Badge omitted; title row is H1 only." }
   ],
   "tokens": [
-    "{wiki.font-body}",
-    "{wiki.text-h1}",
-    "{semantic.ink-primary}",
-    "{semantic.ink-secondary}",
-    "{wiki.link}",
-    "{semantic.border-subtle}",
-    "{primitive.space-3}",
-    "{primitive.space-5}",
-    "{primitive.space-7}"
+    "{primitive.font.family.body}",
+    "{primitive.font.size.10}",
+    "{semantic.text.primary}",
+    "{semantic.text.secondary}",
+    "{semantic.interactive.link}",
+    "{semantic.border.subtle}",
+    "{primitive.space.1}",
+    "{primitive.space.2}",
+    "{primitive.space.4}"
   ],
   "aria": "Breadcrumb <nav aria-label='Article location'> with <ol>. Quality badge <span aria-label='Article quality: {{grade-label}}'>. aria-current='page' on last breadcrumb item. <time datetime> for machine-readable date.",
   "wcag": { "target": "2.2 AA" },
