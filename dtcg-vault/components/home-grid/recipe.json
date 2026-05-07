@@ -1,0 +1,52 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "home-grid",
+  "display_name": "Home Grid",
+  "description": "9-card responsive category browse grid for the documentation wiki home page. Always renders all 9 ratified categories regardless of article count — including empty categories with '0 articles — in preparation' placeholder. 3-col → 2-col (960px) → 1-col (640px). Carbon Tile pattern extended with a top-3 child list + 'More →' link per card.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-home-grid.draft.md — project-knowledge 2026-04-29",
+  "html": "<section class=\"ps-home-grid\" aria-label=\"Browse by category\">\n  <h2 class=\"ps-home-grid__heading\">Browse by category</h2>\n  <div class=\"ps-home-grid__row\">\n    <article class=\"ps-home-grid__card\">\n      <h3 class=\"ps-home-grid__title\">\n        <a href=\"/architecture\">Architecture</a>\n      </h3>\n      <p class=\"ps-home-grid__count\">12 articles</p>\n      <ul class=\"ps-home-grid__list\">\n        <li><a href=\"/architecture/three-layer-stack\">Three-layer stack</a></li>\n        <li><a href=\"/architecture/compounding-substrate\">Compounding substrate</a></li>\n        <li><a href=\"/architecture/citation-substrate\">Citation substrate</a></li>\n      </ul>\n      <a class=\"ps-home-grid__more\" href=\"/architecture\">More →</a>\n    </article>\n    <article class=\"ps-home-grid__card ps-home-grid__card--empty\">\n      <h3 class=\"ps-home-grid__title\">\n        <a href=\"/help\">Help</a>\n      </h3>\n      <p class=\"ps-home-grid__empty\">0 articles — in preparation</p>\n    </article>\n  </div>\n</section>",
+  "css_class": "ps-home-grid",
+  "category_set": [
+    "architecture",
+    "services",
+    "systems",
+    "applications",
+    "governance",
+    "infrastructure",
+    "company",
+    "reference",
+    "help"
+  ],
+  "category_set_note": "Operator-ratified order per naming-convention.md §10 Q5-A. Do not alphabetize or re-order. Render all 9 always — suppressing empty categories is not permitted.",
+  "variants": [
+    { "name": "populated", "description": "Card shows count + top-3 child links + 'More →' link." },
+    { "name": "empty", "description": "Card shows '0 articles — in preparation' only. No child list, no More link." }
+  ],
+  "tokens": [
+    "--component-home-grid-gap",
+    "--component-home-grid-card-padding",
+    "--component-home-grid-card-radius",
+    "--component-home-grid-card-border-width",
+    "--component-home-grid-card-border-color",
+    "--component-home-grid-card-surface",
+    "--component-home-grid-breakpoint-3-to-2",
+    "--component-home-grid-breakpoint-2-to-1"
+  ],
+  "responsive_breakpoints": {
+    "3_col": "≥960px",
+    "2_col": "640px–959px",
+    "1_col": "<640px"
+  },
+  "aria": "<section aria-label='Browse by category'> carries the visual heading via aria-label so screen readers announce the region. Card role: plain <article> (no role override). Heading hierarchy: h2 for section heading, h3 for card title. :focus-visible ring on every link. Keyboard: tab order follows DOM order (ratified 9-category render order).",
+  "wcag": { "target": "2.2 AA" },
+  "ai_hint": "9-card grid is structurally machine-readable: each card carries stable category slug, numeric count, and 3 child slugs. RAG agents can extract category-to-article mappings without parsing prose. 9-category set is closed and operator-ratified.",
+  "open_questions": [
+    "Class-name prefix: keep .wiki-* (engine-internal scope) OR rename to .ps-* (substrate-shared scope)? Substrate ratifies; engine updates static/style.css accordingly.",
+    "Empty-state copy ratification: '0 articles — in preparation' is iteration-1 placeholder. Substrate may ratify as canonical platform-wide OR allow per-deployment customization."
+  ],
+  "research_links": ["research/wikipedia-leapfrog-2030.md"],
+  "registry_dependencies": []
+}
