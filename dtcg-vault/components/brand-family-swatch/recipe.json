@@ -5,10 +5,9 @@
   "description": "Taxonomic swatch rendering a brand-family identifier as a coloured dot + label chip. Visual primitive for the Department / Hardware / Warehouse Club retail taxonomy. Taxonomy-agnostic: customers can extend via runtime taxonomy file (leapfrog invention #5). Reference implementation: gis.woodfinegroup.com (v0.1.94).",
   "category": "map",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-brand-family-swatch.draft.md — Master workspace v0.1.94 / project-editorial 2026-04-30",
   "html": "<span class=\"ps-swatch ps-swatch--{{family-id}}\" aria-label=\"{{family-label}}\">\n  <span class=\"ps-swatch__dot\" aria-hidden=\"true\"></span>\n  <span class=\"ps-swatch__label\">{{family-label}}</span>\n</span>",
   "css_class": "ps-swatch",
+  "css": ".ps-swatch { display: inline-flex; align-items: center; gap: var(--pds-space-05); padding: 0.2em 0.5em; border-radius: var(--pds-radius-sm); font-size: 0.8125rem; }\n.ps-swatch__dot { flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background-color: var(--ps-brand-family-color, currentColor); }\n.ps-swatch--department .ps-swatch__dot { background-color: var(--ps-brand-family-department-color, #0B5FFF); }\n.ps-swatch--hardware .ps-swatch__dot { background-color: var(--ps-brand-family-hardware-color, #FF6B00); }\n.ps-swatch--warehouse-club .ps-swatch__dot { background-color: var(--ps-brand-family-warehouse-club-color, #00875A); }\n.ps-swatch--map-marker .ps-swatch__dot { width: 24px; height: 24px; }\n.ps-swatch--map-marker .ps-swatch__label { position: absolute; clip: rect(0 0 0 0); clip-path: inset(50%); }\n@media (forced-colors: active) { .ps-swatch__dot { background-color: LinkText; } }",
   "variants": [
     { "name": "inline-chip", "description": "Default. Dot + label chip." },
     { "name": "map-marker", "description": "Large dot (24-32px); label suppressed (label via parent tooltip/drawer)." },
@@ -22,16 +21,12 @@
     "warehouse-club": { "color": "#00875A", "label": "Warehouse Club" }
   },
   "tokens": [
-    "--ps-brand-family-department-color: #0B5FFF",
-    "--ps-brand-family-hardware-color: #FF6B00",
-    "--ps-brand-family-warehouse-club-color: #00875A",
-    "--ps-swatch-dot-size: 12px",
-    "--ps-swatch-dot-size-marker: 24px",
-    "--ps-swatch-gap: spacing-04",
-    "--ps-swatch-label-font: body-compact-02",
-    "--ps-swatch-padding: 4px 8px",
-    "--ps-swatch-border-radius: 4px"
+    "{semantic.text.primary}",
+    "{semantic.text.secondary}",
+    "{primitive.space.05}",
+    "{primitive.radius.sm}"
   ],
+  "brand_family_token_note": "Brand-family dot colors are customer-taxonomy-specific and not in the primitive token bundle. They are expressed as CSS custom properties (--ps-brand-family-*-color) set per deployment via the runtime taxonomy file.",
   "aria": "aria-label on the swatch element states the family name. Dot is aria-hidden='true'; label carries the semantic meaning. Colour is supplementary — label is the primary signifier. forced-colors: dots collapse to user link colour; labels remain.",
   "wcag": { "target": "2.2 AA" },
   "open_questions": [
