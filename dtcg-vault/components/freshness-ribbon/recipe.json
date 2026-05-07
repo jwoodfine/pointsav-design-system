@@ -1,0 +1,44 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "freshness-ribbon",
+  "display_name": "Freshness Ribbon",
+  "description": "Per-section last-content-review date badge on each section heading (right end, after [edit] pencil). Three-stop colour scale: fresh (green, ≤90 days) / stale (amber, 91–365 days) / archived (gray, >365 days). Data source: git-blame at section level (excluding whitespace-only commits) or frontmatter content_reviewed_on override. dateModified per-section WebPageElement JSON-LD emission.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-freshness-ribbon.draft.md — project-knowledge 2026-04-30",
+  "html": "<h2 class=\"ps-article__section-heading\">\n  Background\n  <a class=\"ps-article__section-edit\" href=\"?action=edit&section=2\"\n     aria-label=\"Edit section: Background\">[edit]</a>\n  <span class=\"ps-freshness-ribbon ps-freshness-ribbon--fresh\"\n        data-source=\"git-blame\"\n        data-iso=\"2026-03-15\"\n        aria-label=\"Last reviewed 2026-03-15 — fresh\">\n    2026-03-15\n  </span>\n</h2>\n\n<h2 class=\"ps-article__section-heading\">\n  Current implementations\n  <a class=\"ps-article__section-edit\" href=\"?action=edit&section=3\">[edit]</a>\n  <span class=\"ps-freshness-ribbon ps-freshness-ribbon--stale\"\n        data-source=\"git-blame\"\n        data-iso=\"2024-09-12\"\n        aria-label=\"Last reviewed 2024-09-12 — stale, over a year ago\">\n    2024-09-12\n  </span>\n</h2>\n\n<h2 class=\"ps-article__section-heading\">\n  Historical context\n  <a class=\"ps-article__section-edit\" href=\"?action=edit&section=4\">[edit]</a>\n  <span class=\"ps-freshness-ribbon ps-freshness-ribbon--archived\"\n        data-source=\"frontmatter-review\"\n        data-iso=\"2022-11-04\"\n        aria-label=\"Last reviewed 2022-11-04 — archived, content under historical review only\">\n    2022-11-04\n  </span>\n</h2>",
+  "css_class": "ps-freshness-ribbon",
+  "surface_scope": "wiki-article-section-heading",
+  "freshness_stops": [
+    { "name": "fresh", "threshold_days_max": 90, "token": "--article-freshness-ribbon-color-fresh", "description": "≤90 days since last substantive content change" },
+    { "name": "stale", "threshold_days_max": 365, "token": "--article-freshness-ribbon-color-stale", "description": "91–365 days since last substantive content change" },
+    { "name": "archived", "threshold_days_max": null, "token": "--article-freshness-ribbon-color-archived", "description": ">365 days since last substantive content change" }
+  ],
+  "data_sources": [
+    { "value": "git-blame", "description": "Most recent commit touching content lines in section; excludes whitespace-only changes (--ignore-all-space --ignore-blank-lines)" },
+    { "value": "frontmatter-review", "description": "content_reviewed_on per-section frontmatter field; manual editor override" }
+  ],
+  "tokens": [
+    "--article-freshness-ribbon-color-fresh",
+    "--article-freshness-ribbon-color-stale",
+    "--article-freshness-ribbon-color-archived",
+    "--article-freshness-ribbon-threshold-fresh-days",
+    "--article-freshness-ribbon-threshold-stale-days",
+    "--font-family-mono",
+    "--font-size-2",
+    "--radius-xs",
+    "--space-025",
+    "--space-1"
+  ],
+  "aria": "Ribbon is <span> (not focusable) inside <h2>. Heading semantic is unbroken. aria-label on ribbon announces date AND semantic class ('Last reviewed YYYY-MM-DD — fresh/stale/archived'). Colour is never sole differentiator — date string is always present. :root[data-freshness-display='off'] hides all ribbons for reader-preference toggle.",
+  "wcag": { "target": "2.2 AA" },
+  "ai_hint": "Emits per-section dateModified on WebPageElement JSON-LD nodes. additionalType values: FreshSection / StaleSection / ArchivedSection. Threshold parameters documented in wiki llms.txt so external AI consumers know the substrate's thresholds.",
+  "engine_scope_note": "Engine work (cluster-side, project-knowledge): section-boundary detection, git-blame at section level, frontmatter content_reviewed_on parsing, threshold computation, JSON-LD emission, ARIA-label generation.",
+  "open_questions": [
+    "Reader-preference default: ribbons on by default OR off by default with toggle? On-by-default adds visual weight; off-by-default hides signal until activated.",
+    "Display format: ISO '2026-03-15' vs relative '6 weeks ago' vs seasonal 'Spring 2026'. Substrate ratifies."
+  ],
+  "research_links": ["research/wikipedia-leapfrog-2030.md#63-freshness-ribbon--per-section-last-content-review-date-first"],
+  "registry_dependencies": []
+}

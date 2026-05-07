@@ -1,0 +1,39 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "citation-authority-ribbon",
+  "display_name": "Citation Authority Ribbon",
+  "description": "Source-type differentiation badges on references section entries. Six fixed source classes — academic (A, blue) / regulator (R, green) / industry (I, warm-gray) / direct-source (D, teal) / news (N, cool-gray) / web-informal (W, outline). data-source-authority attribute is the canonical machine-readable surface. JSON-LD @type refinement on citation entries. Addresses Wikipedia's flat numeric references list weakness.",
+  "category": "wiki",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-citation-authority-ribbon.draft.md — project-knowledge 2026-04-30",
+  "html": "<ol class=\"ps-references\">\n  <li class=\"ps-references__entry\" id=\"cite-1\" data-source-authority=\"academic\">\n    <span class=\"ps-citation-badge ps-citation-badge--academic\" aria-label=\"Academic source\">A</span>\n    <span class=\"ps-references__text\">\n      Klein, G. et al. seL4: Formal Verification of an OS Kernel. ACM SOSP 2009.\n      <a href=\"https://sel4.systems/\">sel4.systems</a>\n    </span>\n    <a class=\"ps-references__backref\" href=\"#cite-ref-1\" aria-label=\"Back to citation in body\">↑</a>\n  </li>\n  <li class=\"ps-references__entry\" id=\"cite-2\" data-source-authority=\"regulator\">\n    <span class=\"ps-citation-badge ps-citation-badge--regulator\" aria-label=\"Regulator source\">R</span>\n    <span class=\"ps-references__text\">\n      National Instrument 51-102 — Continuous Disclosure Obligations. BCSC.\n      <a href=\"https://www.bcsc.bc.ca/\">bcsc.bc.ca</a>\n    </span>\n    <a class=\"ps-references__backref\" href=\"#cite-ref-2\" aria-label=\"Back to citation in body\">↑</a>\n  </li>\n  <li class=\"ps-references__entry\" id=\"cite-3\" data-source-authority=\"industry\">\n    <span class=\"ps-citation-badge ps-citation-badge--industry\" aria-label=\"Industry source\">I</span>\n    <span class=\"ps-references__text\">\n      Anthropic engineering blog. Contextual retrieval. 2024.\n    </span>\n    <a class=\"ps-references__backref\" href=\"#cite-ref-3\" aria-label=\"Back to citation in body\">↑</a>\n  </li>\n</ol>",
+  "css_class": "ps-references",
+  "surface_scope": "wiki-article-references",
+  "source_authority_classes": [
+    { "value": "academic", "glyph": "A", "token": "--article-references-citation-badge-academic-bg", "aria_label": "Academic source" },
+    { "value": "regulator", "glyph": "R", "token": "--article-references-citation-badge-regulator-bg", "aria_label": "Regulator source" },
+    { "value": "industry", "glyph": "I", "token": "--article-references-citation-badge-industry-bg", "aria_label": "Industry source" },
+    { "value": "direct-source", "glyph": "D", "token": "--article-references-citation-badge-direct-source-bg", "aria_label": "Direct source" },
+    { "value": "news", "glyph": "N", "token": "--surface-layer-accent", "aria_label": "News source" },
+    { "value": "web-informal", "glyph": "W", "token": "transparent (outline only)", "aria_label": "Web source" }
+  ],
+  "tokens": [
+    "--article-references-citation-badge-academic-bg",
+    "--article-references-citation-badge-regulator-bg",
+    "--article-references-citation-badge-industry-bg",
+    "--article-references-citation-badge-direct-source-bg",
+    "--article-references-backlink-bracket-color",
+    "--font-size-3",
+    "--space-1"
+  ],
+  "aria": "Badge is <span> with aria-label (never aria-hidden — informative, not decorative). Tab-order unchanged: only citation hyperlinks and backref arrow are focusable. Backref <a> returns reader to inline footnote. Colour is never sole differentiator: each badge carries single-letter glyph + aria-label.",
+  "wcag": { "target": "2.2 AA" },
+  "ai_hint": "data-source-authority on each <li> is the canonical machine-readable surface. JSON-LD emission attaches @type refinement (AcademicSource, RegulatorSource, IndustrySource, DirectSource, NewsSource, WebInformalSource) on each citation entry in TechArticle schema.",
+  "open_questions": [
+    "Single-letter glyph (A/R/I/D/N/W) vs full-word tag ('Academic', 'Regulator') — substrate ratifies. Trade-off: single-letter preserves Wikipedia density floor; full-word is more accessible on first encounter.",
+    "Badge position — leading the entry text vs. outside-left-gutter. Leading is denser; left-gutter creates a clear scan column."
+  ],
+  "research_links": ["research/wikipedia-leapfrog-2030.md#61-citation-authority-ribbon-first"],
+  "registry_dependencies": []
+}
