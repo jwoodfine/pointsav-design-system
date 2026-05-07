@@ -5,10 +5,9 @@
   "description": "Floating data-display panel showing aggregate statistics for the current filtered map view. Always visible; updates reactively when filters (country chips, family checkboxes) change. Positioned top-right to avoid collision with map zoom controls. Reference implementation: gis.woodfinegroup.com (v0.1.94).",
   "category": "map",
   "registry_type": "component",
-  "status": "stub",
-  "stub_source": "component-map-stats-panel.draft.md — Master workspace v0.1.94 / project-editorial 2026-04-30",
   "html": "<aside class=\"ps-map-stats\" role=\"region\" aria-label=\"Map statistics\" aria-live=\"polite\">\n  <dl class=\"ps-map-stats__grid\">\n    <div class=\"ps-map-stats__cell\">\n      <dt class=\"ps-map-stats__label\">Corridors</dt>\n      <dd class=\"ps-map-stats__value\" aria-label=\"{{count}} corridors\">{{count}}</dd>\n    </div>\n    <div class=\"ps-map-stats__cell\">\n      <dt class=\"ps-map-stats__label\">Anchors</dt>\n      <dd class=\"ps-map-stats__value\" aria-label=\"{{count}} anchors\">{{count}}</dd>\n    </div>\n    <div class=\"ps-map-stats__cell\">\n      <dt class=\"ps-map-stats__label\">Countries</dt>\n      <dd class=\"ps-map-stats__value\" aria-label=\"{{count}} countries\">{{count}}</dd>\n    </div>\n    <div class=\"ps-map-stats__cell\">\n      <dt class=\"ps-map-stats__label\">Avg cluster grade</dt>\n      <dd class=\"ps-map-stats__value\">{{grade}}</dd>\n    </div>\n  </dl>\n</aside>",
   "css_class": "ps-map-stats",
+  "css": ".ps-map-stats { position: absolute; top: 1rem; right: 1rem; background: var(--pds-surface-layer); border: 1px solid var(--pds-border-subtle); border-radius: var(--pds-radius-sm); box-shadow: 0 2px 8px rgba(0,0,0,0.15); padding: var(--pds-space-2); z-index: 5; min-width: 160px; }\n.ps-map-stats__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--pds-space-2) var(--pds-space-4); margin: 0; }\n.ps-map-stats__cell { display: flex; flex-direction: column; gap: 0.125rem; }\n.ps-map-stats__label { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--pds-text-secondary); }\n.ps-map-stats__value { font-size: 1.25rem; font-weight: 700; color: var(--pds-text-primary); margin: 0; transition: color var(--pds-duration-base) ease; }",
   "positioning": "top: 16px; right: 16px; position: absolute over map container.",
   "variants": [
     { "name": "default", "description": "4 cells, 2×2 grid. Current GIS use." },
@@ -17,18 +16,14 @@
     { "name": "with-sparkline", "description": "Each cell carries a small inline sparkline. Phase-2 use." }
   ],
   "tokens": [
-    "--ps-map-stats-bg: surface-elevated",
-    "--ps-map-stats-padding: spacing-12",
-    "--ps-map-stats-border-radius: 8px",
-    "--ps-map-stats-shadow: shadow-floating",
-    "--ps-map-stats-gap: spacing-08",
-    "--ps-map-stats-value-font: heading-04",
-    "--ps-map-stats-value-color: text-primary",
-    "--ps-map-stats-label-font: caption-01",
-    "--ps-map-stats-label-color: text-secondary",
-    "--ps-map-stats-position-top: 16px",
-    "--ps-map-stats-position-right: 16px",
-    "--ps-map-stats-transition-duration: 200ms"
+    "{semantic.surface.layer}",
+    "{semantic.text.primary}",
+    "{semantic.text.secondary}",
+    "{semantic.border.subtle}",
+    "{primitive.radius.sm}",
+    "{primitive.space.2}",
+    "{primitive.space.4}",
+    "{primitive.motion.duration.base}"
   ],
   "aria": "role='region' + aria-label='Map statistics'. aria-live='polite' — filter-change updates announced without interrupting current speech. Each stat cell uses <dt>/<dd> pairing. <dd aria-label='N corridors'> spells out units when not implicit. Contrast 4.5:1 on label, 7:1 on value.",
   "wcag": { "target": "2.2 AA" },
