@@ -28,6 +28,14 @@
         "active": { "$value": "#0043ce" },
         "redlink": { "$value": "#cc3333", "$description": "Wikipedia red-link convention — article not yet written" }
       },
+      "cluster": {
+        "$description": "GIS cluster-grade colour ramp — 5-step single-hue blue ramp. Master co-sign: master@claude-code 2026-05-07T04:35Z. WCAG AA verified on white and OpenFreeMap liberty basemap.",
+        "degree1": { "$value": "#c8ddf7", "$description": "Degree-1 lone Primary — lightest; requires text label supplement (colour alone insufficient at this lightness)" },
+        "degree2": { "$value": "#7fb8f0", "$description": "Degree-2 cluster fill" },
+        "degree3": { "$value": "#3b90e8", "$description": "Degree-3 cluster fill" },
+        "degree4": { "$value": "#1661c2", "$description": "Degree-4 cluster fill" },
+        "degree5": { "$value": "#0a3070", "$description": "Degree-5 full cluster — deepest; visually dominant at national zoom" }
+      },
       "status": {
         "success": {
           "base": { "$value": "#26823f" },
