@@ -1,0 +1,40 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "map-stats-panel",
+  "display_name": "Map Stats Panel",
+  "description": "Floating data-display panel showing aggregate statistics for the current filtered map view. Always visible; updates reactively when filters (country chips, family checkboxes) change. Positioned top-right to avoid collision with map zoom controls. Reference implementation: gis.woodfinegroup.com (v0.1.94).",
+  "category": "map",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-map-stats-panel.draft.md — Master workspace v0.1.94 / project-editorial 2026-04-30",
+  "html": "<aside class=\"ps-map-stats\" role=\"region\" aria-label=\"Map statistics\" aria-live=\"polite\">\n  <dl class=\"ps-map-stats__grid\">\n    <div class=\"ps-map-stats__cell\">\n      <dt class=\"ps-map-stats__label\">Corridors</dt>\n      <dd class=\"ps-map-stats__value\" aria-label=\"{{count}} corridors\">{{count}}</dd>\n    </div>\n    <div class=\"ps-map-stats__cell\">\n      <dt class=\"ps-map-stats__label\">Anchors</dt>\n      <dd class=\"ps-map-stats__value\" aria-label=\"{{count}} anchors\">{{count}}</dd>\n    </div>\n    <div class=\"ps-map-stats__cell\">\n      <dt class=\"ps-map-stats__label\">Countries</dt>\n      <dd class=\"ps-map-stats__value\" aria-label=\"{{count}} countries\">{{count}}</dd>\n    </div>\n    <div class=\"ps-map-stats__cell\">\n      <dt class=\"ps-map-stats__label\">Avg cluster grade</dt>\n      <dd class=\"ps-map-stats__value\">{{grade}}</dd>\n    </div>\n  </dl>\n</aside>",
+  "css_class": "ps-map-stats",
+  "positioning": "top: 16px; right: 16px; position: absolute over map container.",
+  "variants": [
+    { "name": "default", "description": "4 cells, 2×2 grid. Current GIS use." },
+    { "name": "compact", "description": "2 cells horizontal. Single-axis stat dashboards." },
+    { "name": "wide", "description": "6 cells, 3×2 grid. Federated cluster comparison." },
+    { "name": "with-sparkline", "description": "Each cell carries a small inline sparkline. Phase-2 use." }
+  ],
+  "tokens": [
+    "--ps-map-stats-bg: surface-elevated",
+    "--ps-map-stats-padding: spacing-12",
+    "--ps-map-stats-border-radius: 8px",
+    "--ps-map-stats-shadow: shadow-floating",
+    "--ps-map-stats-gap: spacing-08",
+    "--ps-map-stats-value-font: heading-04",
+    "--ps-map-stats-value-color: text-primary",
+    "--ps-map-stats-label-font: caption-01",
+    "--ps-map-stats-label-color: text-secondary",
+    "--ps-map-stats-position-top: 16px",
+    "--ps-map-stats-position-right: 16px",
+    "--ps-map-stats-transition-duration: 200ms"
+  ],
+  "aria": "role='region' + aria-label='Map statistics'. aria-live='polite' — filter-change updates announced without interrupting current speech. Each stat cell uses <dt>/<dd> pairing. <dd aria-label='N corridors'> spells out units when not implicit. Contrast 4.5:1 on label, 7:1 on value.",
+  "wcag": { "target": "2.2 AA" },
+  "open_questions": [
+    "oq-1: Should the panel auto-collapse on small viewports (mobile <640px) and expand on tap, or always stay visible? Decision pending mobile usage telemetry."
+  ],
+  "research_links": ["research/zoom-tier-reveal-pattern.md"],
+  "registry_dependencies": []
+}
