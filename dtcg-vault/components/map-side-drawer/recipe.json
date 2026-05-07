@@ -1,0 +1,39 @@
+{
+  "$schema": "https://design.pointsav.com/schemas/component-recipe-v1.json",
+  "name": "map-side-drawer",
+  "display_name": "Map Side Drawer",
+  "description": "Persistent right-side info drawer for map feature detail. Slides in on feature click; stays visible while map remains interactive. Replaces popup-on-marker pattern with a complementary panel. Reference implementation: gis.woodfinegroup.com (v0.1.94).",
+  "category": "map",
+  "registry_type": "component",
+  "status": "stub",
+  "stub_source": "component-map-side-drawer.draft.md — Master workspace v0.1.94 / project-editorial 2026-04-30",
+  "html": "<aside class=\"ps-map-drawer\" role=\"complementary\" aria-label=\"{{feature-type}} details\">\n  <div class=\"ps-map-drawer__surface\">\n    <header class=\"ps-map-drawer__header\">\n      <div class=\"ps-map-drawer__title-block\">\n        <span class=\"ps-brand-badge\" aria-label=\"{{brand-family}}\">{{brand-code}}</span>\n        <h2 class=\"ps-map-drawer__title\">{{feature-name}}</h2>\n      </div>\n      <button type=\"button\" class=\"ps-map-drawer__close\" aria-label=\"Close details\">×</button>\n    </header>\n    <dl class=\"ps-map-drawer__facts\">\n      <dt>Address</dt><dd>{{address}}</dd>\n      <dt>NAICS</dt><dd>{{naics}}</dd>\n      <dt>Open</dt><dd>{{year-opened}}</dd>\n    </dl>\n    <div class=\"ps-map-drawer__cluster-context\" hidden>\n      <span class=\"ps-map-drawer__cluster-label\">Within cluster {{cluster-id}}</span>\n      <span class=\"ps-map-drawer__cluster-meta\">{{anchor-count}} anchors · {{max-radius}}m max radius</span>\n    </div>\n  </div>\n</aside>",
+  "css_class": "ps-map-drawer",
+  "width_px": 340,
+  "transition": "250ms cubic-bezier(0.16, 1, 0.3, 1)",
+  "variants": [
+    { "name": "default", "description": "Single-feature detail — current GIS use." },
+    { "name": "comparison", "description": "Split drawer with two features side-by-side; for federated cluster comparison (Doctrine invention #9). Decision pending." }
+  ],
+  "tokens": [
+    "--ps-map-drawer-width: 340px",
+    "--ps-map-drawer-bg: surface-elevated",
+    "--ps-map-drawer-border-color: border-subtle",
+    "--ps-map-drawer-shadow: shadow-side-panel",
+    "--ps-map-drawer-transition-duration: 250ms",
+    "--ps-map-drawer-transition-easing: cubic-bezier(0.16, 1, 0.3, 1)",
+    "--ps-map-drawer-padding: spacing-16",
+    "--ps-map-drawer-title-font: heading-03",
+    "--ps-map-drawer-fact-label-color: text-secondary",
+    "--ps-map-drawer-fact-value-color: text-primary"
+  ],
+  "aria": "role='complementary' + aria-label='<feature-type> details'. h2 inside drawer is the secondary heading. Close button: <button aria-label='Close details'>. Brand badge: aria-label states family name. aria-modal='false' — map stays interactive. Focus trap: Tab cycles within drawer while open; ESC dismisses and returns focus to map canvas.",
+  "wcag": { "target": "2.2 AA" },
+  "motion": "prefers-reduced-motion: collapse transition to 0ms; keep opacity fade.",
+  "open_questions": [
+    "oq-1: Should drawer expand to full-width on viewports below 640px or remain 340px overlay? Carbon responsive pattern vs GIS map-context preservation.",
+    "oq-2: Comparison variant — two drawer columns (640px total) or split-screen with map between? Decision pending cluster-comparison feature work."
+  ],
+  "research_links": ["research/zoom-tier-reveal-pattern.md"],
+  "registry_dependencies": []
+}
