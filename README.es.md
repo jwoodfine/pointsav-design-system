@@ -7,7 +7,7 @@
 *La fuente única de verdad para la voz institucional y la identidad visual en cada despliegue de PointSav.*
 
 [![WCAG: 2.2 AAA](https://img.shields.io/badge/WCAG-2.2_AAA-0075ca.svg?style=flat-square)](#estándares-visuales)
-[![Licencia: Propietaria](https://img.shields.io/badge/Licencia-Propietaria-e36209.svg?style=flat-square)](#uso-y-licenciamiento)
+[![Licencia: Apache 2.0](https://img.shields.io/badge/Licencia-Apache_2.0-0075ca.svg?style=flat-square)](#licencia)
 
 <br/>
 
@@ -56,6 +56,6 @@ El lenguaje en un contexto institucional no es una preferencia estilística. Es 
 
 ---
 
-*© 2026 PointSav Digital Systems™. Todos los derechos reservados.*
+*© 2026 Woodfine Capital Projects Inc. — Distribuido bajo la Licencia Apache, Versión 2.0. PointSav Digital Systems™ es una marca registrada de Woodfine Capital Projects Inc.*
 
 *→ English version: [README.md](./README.md)*

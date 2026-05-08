@@ -8,7 +8,7 @@
 
 [![Status: Verified](https://img.shields.io/badge/Status-Verified-22863a.svg?style=flat-square)](#token-ledgers)
 [![WCAG: 2.2 AAA](https://img.shields.io/badge/WCAG-2.2_AAA-0075ca.svg?style=flat-square)](#visual-standards)
-[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-e36209.svg?style=flat-square)](#usage--licensing)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-0075ca.svg?style=flat-square)](#license)
 
 <br/>
 
@@ -81,15 +81,15 @@ This separation matters for institutional reasons. If the rendering layer were e
 
 ## Usage & Licensing
 
-The token files in this repository are consumed automatically by PointSav deployment environments and Woodfine Management Corp.'s fleet. External use requires a written licensing agreement.
+The token files in this repository are consumed automatically by PointSav deployment environments and Woodfine Management Corp.'s fleet. They are also published under Apache License, Version 2.0 for external use, fork, modification, and redistribution.
 
-This repository is under an active incubation phase. Refer to the `LICENSE` file for full terms. All underlying intellectual property is strictly reserved by PointSav Digital Systems.
+Refer to the `LICENSE` file in the repository root for the full Apache 2.0 legal text and `NOTICE` for required attribution. The PointSav and Woodfine word marks, logos, and brand identity assets are NOT licensed under Apache 2.0 — see `TRADEMARK.md` for the trademark policy.
 
 **[→ pointsav.com](https://pointsav.com)** &nbsp;·&nbsp; **[→ github.com/pointsav](https://github.com/pointsav)**
 
 ---
 
-*© 2026 PointSav Digital Systems™. All rights reserved.*
+*© 2026 Woodfine Capital Projects Inc. — Licensed under Apache License 2.0. PointSav Digital Systems™ is a trademark of Woodfine Capital Projects Inc.*
 
 <!-- BEGIN: factory-release-engineering license-section -->
 <!-- ================================================================== -->
@@ -99,14 +99,17 @@ This repository is under an active incubation phase. Refer to the `LICENSE` file
 
 ## License
 
-This repository is licensed under the **PointSav-ARR**. See the
-`LICENSE` file in the root of this repository for the full legal text,
-which is authoritative.
+This repository is licensed under the **Apache License, Version 2.0**.
+See the `LICENSE` file in the root of this repository for the full
+legal text, which is authoritative, and `NOTICE` for required
+attribution.
 
-If the terms of the PointSav-ARR do not accommodate your use case, a commercial alternative is available under the **PointSav-Commercial**. Contact corporate.secretary@woodfinegroup.com for details.
+Copyright (c) 2026 Woodfine Capital Projects Inc.
 
-Copyright (c) 2026 Woodfine Capital Projects Inc.. All rights not expressly
-granted by the license are reserved.
+The Apache 2.0 license grants rights to the source code, design tokens,
+component recipes, and documentation in this repository. It does **not**
+grant rights to PointSav or Woodfine trademarks, word marks, or brand
+identity assets — see `TRADEMARK.md` for the trademark policy.
 
 <!-- ================================================================== -->
 <!-- Esta sección se genera desde factory-release-engineering.           -->
@@ -115,14 +118,18 @@ granted by the license are reserved.
 
 ## Licencia
 
-Este repositorio se distribuye bajo la **PointSav-ARR**. Véase el
-archivo `LICENSE` en la raíz del repositorio para consultar el texto
-legal completo, el cual es la versión autoritativa.
+Este repositorio se distribuye bajo la **Licencia Apache, Versión 2.0**.
+Véase el archivo `LICENSE` en la raíz del repositorio para consultar el
+texto legal completo, el cual es la versión autoritativa, y `NOTICE`
+para la atribución requerida.
 
-Si los términos de la PointSav-ARR no se ajustan a su caso de uso, existe una alternativa comercial disponible bajo la **PointSav-Commercial**. Para más información, escriba a corporate.secretary@woodfinegroup.com.
+Copyright (c) 2026 Woodfine Capital Projects Inc.
 
-Copyright (c) 2026 Woodfine Capital Projects Inc.. Se reservan todos los
-derechos no concedidos expresamente por la licencia.
+La licencia Apache 2.0 concede derechos sobre el código fuente, los
+tokens de diseño, las recetas de componentes y la documentación de este
+repositorio. **No** concede derechos sobre las marcas registradas,
+nombres comerciales o activos de identidad de marca de PointSav o
+Woodfine — consulte `TRADEMARK.md` para la política de marcas.
 <!-- END: factory-release-engineering license-section -->
 
 
