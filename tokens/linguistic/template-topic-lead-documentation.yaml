@@ -1,0 +1,160 @@
+title: "POINTSAV LINGUISTIC TOKEN: TOPIC LEAD TEMPLATES — DOCUMENTATION REGISTER"
+metadata:
+  status: "ACTIVE"
+  scope: "Opening sentence patterns for content-wiki-documentation articles"
+  wikis:
+    - content-wiki-documentation
+  primary_audience: "Software engineers, graphic designers, platform developers"
+  secondary_audience: "Next-generation institutional readers evaluating technical credibility"
+  sourced_from: |
+    Corpus analysis 2026-05-08 — positive examples from design-philosophy.md,
+    primitive-vocabulary-rationale.md, wikipedia-leapfrog-2030.md.
+    Confirmed pattern: state the system's behaviour and its consequence
+    in the same sentence. Both readers (engineering + institutional) need
+    this sentence to work without reading the full article.
+  usage: |
+    Select the pattern that matches the article type. The lead sentence must
+    work for both the engineering reader (who reads the whole article) and the
+    institutional reader (who reads the lead and section openers only).
+    After the lead, each section follows: Concept → Why it matters → How it works
+    → Code → Edge cases.
+lead_patterns:
+  - pattern_id: "DOC-LEAD-01"
+    type: "Service or component — what it does and why it matters"
+    template: "[service-name] [verb: routes / resolves / manages / tracks] [what it acts on], [consequence for the operator / institutional reader]."
+    word_target: 20
+    examples:
+      - text: "service-slm routes every AI request to the cheapest compute tier that meets the deadline — without the caller specifying which tier."
+        word_count: 20
+        source: "DataGraph-enriched example per plan 2026-05-08"
+        notes: |
+          Engineering reader: understands routing, compute tiers, latency SLA.
+          Institutional reader: 'cheapest compute tier' → cost control; 'without the caller specifying'
+          → automatic. Both readers have what they need from this sentence.
+      - text: "service-content serves structured knowledge to every application in the platform from a single validated source, eliminating duplicate data paths."
+        word_count: 20
+        source: "DataGraph-enriched example"
+        notes: |
+          'Single validated source' is the institutional consequence.
+          'Eliminating duplicate data paths' is the engineering consequence.
+          The sentence carries both.
+    negative_constraint: |
+      Do not open with an internal name undefined: "The Doorman routes..." → define first.
+      Do not open with architectural context: "As part of the three-ring architecture..."
+      → state what the service does before where it sits.
+      Do not open with a definition: "service-slm is a routing layer that..." → state
+      the behaviour, not the category.
+
+  - pattern_id: "DOC-LEAD-02"
+    type: "Architecture article — structural property and its institutional consequence"
+    template: "[The architecture / The platform] [structural property verb], [consequence clause that works for both engineering and institutional readers]."
+    word_target: 22
+    examples:
+      - text: "A request that resolves locally never leaves the customer's infrastructure — and never appears on a cloud billing statement."
+        word_count: 18
+        source: "register-documentation.yaml positive example"
+        notes: |
+          Engineering reader: 'resolves locally' → local compute tier.
+          Institutional reader: 'never appears on a cloud billing statement' → cost and sovereignty.
+          Two readers, one sentence.
+      - text: "The three-tier compute architecture routes every inference call to local hardware first, reaching external APIs only when local capacity is insufficient."
+        word_count: 22
+        source: "DataGraph-enriched example"
+        notes: |
+          'Routes to local hardware first' → engineering detail.
+          'Only when local capacity is insufficient' → the institutional reader learns
+          that external API cost is bounded, not unlimited.
+    negative_constraint: |
+      Do not open with implementation detail: "The Yo-Yo pool uses ephemeral nodes..."
+      → state the structural property first, then implementation.
+      Do not use only engineering vocabulary in the lead. The institutional reader
+      scanning section headers reads this sentence — it must communicate to them too.
+
+  - pattern_id: "DOC-LEAD-03"
+    type: "Design decision or principle — what was chosen and why"
+    template: "[The platform] [chose / uses / relies on] [specific choice] [because / instead of] [the alternative], [consequence]."
+    word_target: 20
+    examples:
+      - text: "The platform uses OLMo 2 1B Instruct as its local model — an Apache 2.0 foundation that operators can retrain without legal restriction."
+        word_count: 22
+        source: "DataGraph-enriched example — model choice rationale"
+        notes: |
+          Engineering reader: OLMo 2 1B, Apache 2.0, retrain → all meaningful.
+          Institutional reader: 'without legal restriction' → IP risk and operator control.
+          The licence is the institutional consequence.
+      - text: "The design token system follows the DTCG standard rather than a proprietary schema, so any contributor already familiar with Figma tokens can start immediately."
+        word_count: 24
+        source: "DataGraph-enriched example — design-system token choice"
+        notes: |
+          'DTCG standard' is the field standard. 'Rather than proprietary' → the
+          institutional reader understands 'no lock-in.' 'Any contributor... can
+          start immediately' → engineering consequence.
+    negative_constraint: |
+      Do not omit the reason for the choice. 'The platform uses X' without 'because'
+      or 'instead of Y' is an incomplete lead for this pattern.
+      Do not use comparative superlatives: "the best," "uniquely suited," "the only."
+      Frame as structural consequence, not competitive claim.
+
+  - pattern_id: "DOC-LEAD-04"
+    type: "GUIDE or operational article — what the operator does and what it achieves"
+    template: "[This guide / Running X] [verb: explains / walks through / covers] [what the reader will do], [outcome when complete]."
+    word_target: 18
+    examples:
+      - text: "This guide covers the monthly editorial content sweep — the five-step cycle that keeps wiki articles current, register-correct, and DataGraph-enriched."
+        word_count: 22
+        source: "guide-editorial-content-sweep.md lead (adapted)"
+        notes: |
+          States the subject (editorial content sweep), names the structure (five-step),
+          and states the outcome (current, register-correct, DataGraph-enriched).
+          Engineering reader and institutional reader both have the scope.
+      - text: "Running this procedure updates all Yo-Yo compute pool records and reconciles the inference audit log against the billing ledger."
+        word_count: 18
+        source: "DataGraph-enriched example"
+        notes: |
+          Engineering: Yo-Yo pool, inference audit log.
+          Institutional: 'billing ledger' → cost tracking is explicit.
+          States what running the procedure achieves, not what the procedure is.
+    negative_constraint: |
+      Do not use tutorial framing: "In this guide, we will learn about..."
+      → state what the operator does and what they get. Peer-level tone.
+      Do not include "you may want to consider" or hedged instructions.
+      Direct statements: "Run X." "The token resolver reads Y."
+
+  - pattern_id: "DOC-LEAD-05"
+    type: "Reference or vocabulary article — the term and its significance"
+    template: "[Term] [is / defines / specifies] [what it is in plain language], [consequence or scope for the reader]."
+    word_target: 18
+    examples:
+      - text: "Climate zone tokens map ASHRAE-standard climate classifications to the platform's property graph, letting the BIM specification enforce region-specific requirements automatically."
+        word_count: 22
+        source: "content-wiki-documentation/reference/climate-zone-tokens.md lead (adapted)"
+        notes: |
+          Engineering reader: ASHRAE, property graph, BIM specification.
+          Institutional reader: 'enforce region-specific requirements automatically' →
+          compliance is handled by the platform, not manually.
+      - text: "The editorial language register defines which vocabulary, sentence structure, and register rules apply to each wiki audience — corporate, projects, or documentation."
+        word_count: 22
+        source: "editorial-language-registers.md lead (adapted)"
+        notes: |
+          Plain-language lead: 'defines which... rules apply.'
+          Scope is clear: three audiences, three registers.
+          Both readers understand what the article will cover.
+    negative_constraint: |
+      Do not open a reference article with a definition that is also the term:
+      "Climate zone tokens are tokens that represent climate zones."
+      → State what they do and why they matter.
+      Do not bury the scope. The reader should know after the lead sentence
+      whether this article is relevant to them.
+
+accessibility_layer_note: |
+  The lead sentence is the primary accessibility layer for the institutional reader.
+  Every subsequent section also needs one sentence that works for that reader —
+  typically the first sentence after the section header. That sentence states the
+  consequence in plain language. The engineering content follows. Both readers
+  find what they need: the institutional reader in the section opener; the
+  engineering reader in the rest of the section.
+
+  Pattern for section openers (not leads):
+  "An AI request that resolves on the customer's own hardware never appears on
+  a cloud bill." — consequence statement, no jargon.
+  This is followed immediately by the engineering explanation of why and how.
