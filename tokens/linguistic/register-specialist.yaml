@@ -1,0 +1,53 @@
+title: "POINTSAV LINGUISTIC TOKEN: SPECIALIST SITE REGISTER"
+metadata:
+  status: "ACTIVE"
+  scope: "RIBA / IFC specification register for bim.woodfinegroup.com, gis.woodfinegroup.com, design.pointsav.com"
+  sites:
+    - bim.woodfinegroup.com
+    - gis.woodfinegroup.com
+    - design.pointsav.com
+  audience: "Architects, engineers, building code officials, GIS analysts, design system contributors"
+  note: |
+    This register does NOT apply to the three main wikis (content-wiki-corporate,
+    content-wiki-projects, content-wiki-documentation). Main wiki articles that
+    reference specialist content link to the specialist site rather than include
+    specification content inline. See crossref-specialist-sites.yaml.
+  sourced_from: "Corpus analysis 2026-05-08 — confirmed by absence in correct corporate articles"
+constitutional_rules:
+  - directive: "Prescriptive Shall / Shall Not for Requirements"
+    accepted_behavior: |
+      Use "shall" and "shall not" for normative requirements. Use "should" and
+      "should not" for recommendations. Use "may" for permissions.
+      "An IfcWall element in climate zone ASHRAE-5C shall carry a maximum U-value
+      of 0.104 Btu/h·ft²·°F per ASHRAE 90.1-2022 Table 5.5-5."
+    negative_constraint: |
+      Do not use "shall" language in main wiki articles. "Shall" signals a
+      compliance document, not an encyclopedic learning resource.
+
+  - directive: "Measurements With Units Always"
+    accepted_behavior: |
+      Every quantitative requirement carries the value, the unit, and the
+      source standard in the same clause.
+      "Maximum U-value: 0.104 Btu/h·ft²·°F (ASHRAE 90.1-2022 Table 5.5-5)."
+    negative_constraint: |
+      Do not state a quantitative requirement without the unit.
+      Do not state a unit without the source standard.
+
+  - directive: "Normative vs Informative Distinction"
+    accepted_behavior: |
+      Mark sections as normative (requirements the system enforces) or informative
+      (background that helps but does not constrain). Normative sections use
+      "shall" language. Informative sections use "is" and "provides."
+    negative_constraint: |
+      Do not mix normative and informative language in the same section without
+      marking the distinction.
+
+  - directive: "Standards Citations Are Load-Bearing"
+    accepted_behavior: |
+      Every normative requirement cites the specific clause of the specific standard.
+      "ASHRAE 90.1-2022 Table 5.5-5" not "per building code requirements."
+      IFC schema references cite the specific entity class: "IfcSpatialZone,
+      IfcConstraint, IfcRelAssociatesConstraint per ISO 16739-1:2024."
+    negative_constraint: |
+      Do not use vague standard references ("per code," "per standard practice").
+      Every requirement traces to a specific clause.

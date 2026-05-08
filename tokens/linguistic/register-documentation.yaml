@@ -1,0 +1,101 @@
+title: "POINTSAV LINGUISTIC TOKEN: DOCUMENTATION WIKI REGISTER"
+metadata:
+  status: "ACTIVE"
+  scope: "Stripe / Cloudflare primary register + Corporate accessibility layer for content-wiki-documentation"
+  wikis:
+    - content-wiki-documentation
+  primary_audience: "Software engineers, graphic designers, platform developers"
+  secondary_audience: "Next-generation institutional readers evaluating technical credibility"
+  sourced_from: "Corpus analysis 2026-05-08 — design-philosophy.md, primitive-vocabulary-rationale.md, wikipedia-leapfrog-2030.md"
+constitutional_rules:
+  - directive: "Section Structure: Concept → Why It Matters → How It Works → Code → Edge Cases"
+    accepted_behavior: |
+      Every major section follows this sequence. The "why it matters" step is the
+      Corporate accessibility layer — one sentence, consequence-first, no jargon,
+      legible to an institutional reader scanning section headers.
+      Example: "A request that resolves locally never leaves the customer's
+      infrastructure — and never appears on a cloud billing statement."
+    negative_constraint: |
+      Do not open a section with implementation detail. Do not bury the consequence
+      sentence at the end of a section or omit it entirely. The institutional reader
+      scans headers and section openers; both must work without reading the whole article.
+
+  - directive: "Accessibility Layer — One Sentence Per Section"
+    accepted_behavior: |
+      The first or last sentence of every major section must stand alone for a
+      non-engineering reader scanning the article. It states the consequence in
+      plain language, no jargon. This sentence is the Corporate accessibility layer.
+      The engineering content surrounds it; this sentence is the one that works for both readers.
+    negative_constraint: |
+      Do not write an accessibility sentence that merely restates the section header.
+      Do not use platform-internal terms in the accessibility sentence.
+      "The Doorman routes to three tiers" is NOT an accessibility sentence.
+      "An AI request that resolves on the customer's own hardware never appears
+      on a cloud bill" IS an accessibility sentence.
+
+  - directive: "Statistics With Attribution Inline"
+    accepted_behavior: |
+      Quantitative claims carry the specific figure and its source in the same sentence.
+      "OLMo 2 1B Instruct produces production-viable output at 5–15 tokens per second
+      on commodity 4-vCPU hardware."
+      "28% of Fortune 500 companies had shipped MCP servers by early 2026
+      (per CData industry survey)."
+    negative_constraint: |
+      Do not assert quantitative claims without the figure. Do not use vague
+      quantifiers ("many," "most," "growing number of"). Do not cite sources
+      only in the references section if the figure appears in the body.
+
+  - directive: "Structural Gap Framing"
+    accepted_behavior: |
+      When explaining why the platform's architecture makes a different choice,
+      name what competitors cannot do and the structural reason they cannot do it.
+      "A hyperscaler that copied the substrate-ownership property would erode
+      its own lock-in — the foundation of their billing model."
+    negative_constraint: |
+      Do not name competitors by name. Do not use comparative superlatives
+      ("the best," "the only," "uniquely"). Frame as structural constraint,
+      not competitive attack.
+
+  - directive: "Field Jargon Is Permitted — Platform Jargon Is Not"
+    accepted_behavior: |
+      Use field-standard technical terms freely: gRPC, systemd, JSON, async,
+      WASM, DTCG, WCAG, IFC. These are the engineering reader's vocabulary.
+      Define platform-specific terms once in plain language on first use, then
+      use the term throughout.
+      Example: "service-slm — the platform's AI request router — routes every
+      inference call across three compute tiers."
+    negative_constraint: |
+      Do not use retired platform-internal terms (see vocabulary-banned-documentation.yaml)
+      without a plain-language translation immediately preceding.
+      Do not assume the reader knows internal project names, cluster names, or
+      workspace vocabulary without definition.
+
+  - directive: "Code Blocks: Real and Runnable"
+    accepted_behavior: |
+      Every code block in the documentation wiki is real and runnable.
+      If the block is abbreviated, mark the omission with `# ...` or `// ...`.
+      Include the context needed to run it: which directory, which service, which flag.
+    negative_constraint: |
+      Do not include pseudocode presented as real commands. Do not include
+      placeholder values without marking them (e.g., `<your-value>`).
+      Do not omit the directory or context a reader needs to reproduce the result.
+
+  - directive: "Peer-Level Tone — Engineer to Engineer"
+    accepted_behavior: |
+      Write as a competent engineer explaining to a peer. Assume the reader
+      knows HTTP, git, SSH, JSON, and basic Linux. Skip the tutorial on
+      infrastructure basics. Get to the platform-specific content immediately.
+    negative_constraint: |
+      Do not explain what a REST endpoint is. Do not explain what a systemd unit is.
+      Do not over-explain git commands. Do not hedge with "you may want to consider."
+      Direct statements: "Run X." "The token resolver reads Y."
+
+  - directive: "Tables for Direct Comparisons"
+    accepted_behavior: |
+      Use tables when comparing two or more options, alternatives, or configurations.
+      Include a "Why" or "Reason" column that explains the decision, not just
+      the values. Example: the primitive-vocabulary-rationale.md comparison table
+      with Surface | Current choice | PointSav's choice | Why replaced.
+    negative_constraint: |
+      Do not use tables for single-column lists — that is a bulleted list.
+      Do not omit the reasoning column from comparison tables.

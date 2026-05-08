@@ -1,0 +1,112 @@
+title: "POINTSAV LINGUISTIC TOKEN: TOPIC LEAD TEMPLATES — CORPORATE + PROJECTS REGISTER"
+metadata:
+  status: "ACTIVE"
+  scope: "Opening sentence patterns for content-wiki-corporate and content-wiki-projects articles"
+  wikis:
+    - content-wiki-corporate
+    - content-wiki-projects
+  audience: "Bankers, family offices, institutional investors, Top-400 development market participants"
+  sourced_from: |
+    Corpus analysis 2026-05-08 — positive examples extracted from all five
+    content-wiki-corporate articles. Sentence length: 14–22 words. Lead type:
+    consequence-first structural fact. Voice: active.
+  usage: |
+    Select the pattern that matches the article type. Fill in the bracketed
+    fields with specific values — never leave placeholders in published articles.
+    Every quantitative claim carries the actual number.
+lead_patterns:
+  - pattern_id: "CORP-LEAD-01"
+    type: "Structural mechanism — what it issues or produces"
+    template: "The [mechanism name] [verb: issues / holds / routes / separates] [specific output] that [consequence for the investor / operator]."
+    word_target: 16
+    examples:
+      - text: "The Direct-Hold framework issues property-specific equity that corresponds to a single physical asset."
+        word_count: 14
+        source: "content-wiki-corporate/direct-hold-structures.md"
+        notes: "Structural fact first. 'Issues' is active. No definition of what equity is — the reader knows."
+      - text: "The co-location mandate requires every Woodfine property to sit within 1.0–3.0 km of a major commercial anchor."
+        word_count: 17
+        source: "content-wiki-projects/co-location-methodology.md (adapted)"
+        notes: "Structural requirement + specific number in lead. Audience knows what a mandate is."
+    negative_constraint: |
+      Do not open with a definition ("The Direct-Hold framework is a structure that...").
+      Do not open with historical context ("Historically, commercial real estate funds...").
+      Do not bury the structural fact in sentence two or three.
+
+  - pattern_id: "CORP-LEAD-02"
+    type: "Legal or structural isolation mechanism"
+    template: "Each [asset / entity / fund unit] is held in [specific legal vehicle], isolating [what is isolated] from [what it is isolated from]."
+    word_target: 18
+    examples:
+      - text: "Each property is held in a standalone corporate entity, isolating its liabilities from those of other assets in the portfolio."
+        word_count: 20
+        source: "content-wiki-corporate/legal-isolation.md (adapted)"
+        notes: "Isolation + consequence. The capital allocator reads 'isolation' and immediately understands the risk protection."
+      - text: "Each equity tranche attaches to a single address, keeping one property's debt obligations separate from every other asset."
+        word_count: 18
+        source: "content-wiki-corporate (adapted pattern)"
+        notes: "'Keeps separate' is the plain-language form of legal isolation. Correct for corporate register."
+    negative_constraint: |
+      Do not use passive: "Liabilities are isolated by..." → "The structure isolates..."
+      Do not use vague quantities: "some properties" → "each property" or the actual number.
+
+  - pattern_id: "CORP-LEAD-03"
+    type: "Capital protection or governance mechanism"
+    template: "The [mechanism] [requires / mandates / maintains] [specific threshold or requirement], protecting [what is protected] from [the risk]."
+    word_target: 17
+    examples:
+      - text: "The corporate entity mandates a minimum 1.2x interest coverage ratio, ensuring debt service is met before any distributions."
+        word_count: 17
+        source: "content-wiki-corporate (ICR article pattern)"
+        notes: "Specific number (1.2x) in lead. Consequence immediately follows. No passive."
+      - text: "The governance layer requires operator approval for equity transfers above $500,000, preventing unauthorized asset movement."
+        word_count: 16
+        source: "content-wiki-corporate (adapted)"
+        notes: "Threshold ($500,000) is specific. Consequence ('preventing unauthorized movement') is the investor's concern."
+    negative_constraint: |
+      Do not use vague thresholds: "a sufficiently high ratio" → "a 1.2x ratio."
+      Do not omit the consequence: stating the mechanism without explaining what it prevents
+      leaves the investor-consequence question unanswered.
+
+  - pattern_id: "CORP-LEAD-04"
+    type: "Market or geographic scope mechanism"
+    template: "[The programme / The strategy] [targets / operates in / covers] [specific market definition], [capturing / serving / addressing] [specific opportunity or consequence]."
+    word_target: 18
+    examples:
+      - text: "The co-location programme targets Top-400 Canadian census metropolitan areas, capturing development markets where transit and commercial anchors already converge."
+        word_count: 22
+        source: "content-wiki-projects/co-location-methodology.md (adapted)"
+        notes: "Specific market definition (Top-400 CMA). Consequence: 'where transit and commercial anchors already converge' explains why those markets."
+      - text: "The Woodfine acquisition strategy targets parcels within 1.0–3.0 km of a Tier-A commercial anchor in markets with minimum 250,000 catchment population."
+        word_count: 22
+        source: "content-wiki-projects (adapted)"
+        notes: "Three specific numbers: 1.0–3.0 km, Tier-A, 250,000. Each one replaces a vague qualifier."
+    negative_constraint: |
+      Do not use: "major markets," "large catchment areas," "significant opportunity."
+      Replace every vague descriptor with the actual number or the specific name.
+
+  - pattern_id: "CORP-LEAD-05"
+    type: "Platform capability — consequence for the institutional reader"
+    template: "The [platform / data system] [capability verb] [what it does], [delivering / eliminating / ensuring] [specific institutional consequence]."
+    word_target: 17
+    examples:
+      - text: "The platform aggregates property-level operating data in real time, giving the corporate entity a single view of cash flow across all assets."
+        word_count: 22
+        source: "content-wiki-corporate (adapted)"
+        notes: "Platform capability described in terms of institutional benefit ('single view of cash flow'), not technical mechanism."
+      - text: "The data system processes lease-event updates within 24 hours, ensuring the ICR calculation always reflects current obligations."
+        word_count: 18
+        source: "content-wiki-corporate (adapted)"
+        notes: "Specific time (24 hours) and specific financial metric (ICR). Corporate reader understands ICR."
+    negative_constraint: |
+      Do not describe platform capability in technical terms (no Doorman, no Ring 1,
+      no LadybugDB). The corporate reader evaluates institutional consequence —
+      what it delivers for governance, not how it works architecturally.
+      Do not include code blocks or terminal commands.
+
+structural_note: |
+  After the lead sentence, the second paragraph answers: "What does this replace,
+  and why did the prior approach fail?" This is the required second element per
+  register-corporate.yaml directive "What It Replaces — Required Second Section."
+  The lead opens with the consequence; the second paragraph establishes the problem
+  that made this mechanism necessary. Together, they complete the encyclopedic frame.
