@@ -1,0 +1,91 @@
+title: "POINTSAV LINGUISTIC TOKEN: CORPORATE + PROJECTS WIKI REGISTER"
+metadata:
+  status: "ACTIVE"
+  scope: "Bloomberg / FT / Economist register for content-wiki-corporate and content-wiki-projects"
+  wikis:
+    - content-wiki-corporate
+    - content-wiki-projects
+  audience: "Bankers, family offices, institutional investors, Top-400 development market participants"
+  sentence_length:
+    target_words: 16
+    maximum_words: 25
+  sourced_from: "Corpus analysis 2026-05-08 — 5 corporate wiki articles, co-location-methodology.md"
+constitutional_rules:
+  - directive: "Consequence-First Lead"
+    accepted_behavior: |
+      Open every article with the structural fact or consequence most important
+      to a capital allocator — in the first sentence, in 15–22 words. No definitions,
+      no history, no context before the point.
+      Example: "The Direct-Hold framework issues property-specific equity that
+      corresponds to a single physical asset."
+    negative_constraint: |
+      Do not open with a definition ("X is a..."), a historical background,
+      or a description of a problem before stating what the article is about.
+      Do not bury the capital consequence in paragraph two or three.
+
+  - directive: "Active Voice Only"
+    accepted_behavior: |
+      Use active voice throughout. The subject of each sentence performs the action.
+      "The corporate entity mandates a minimum 1.2x ICR" — the entity acts.
+      "Equity transfers execute between private parties" — transfers execute.
+    negative_constraint: |
+      Do not use passive voice. "The mandate is applied" → "The corporate entity
+      applies the mandate." Passive voice reads as evasion to an institutional reader.
+
+  - directive: "Specific Numbers Always"
+    accepted_behavior: |
+      Every quantitative claim carries a specific figure. Sentence length target:
+      16 words. ICR floor: 1.2x. Catchment radius: 1.0–3.0 km. Sentences: 25 words maximum.
+      Financial amounts: "$7 per month" not "low cost."
+    negative_constraint: |
+      Do not use vague quantifiers: "major markets," "significant," "low cost,"
+      "large scale." Replace every vague quantifier with the actual number.
+
+  - directive: "What It Replaces — Required Second Section"
+    accepted_behavior: |
+      Every article that describes a structural mechanism must include a section
+      explaining what that mechanism replaces and why the prior approach failed.
+      Name the failure mode explicitly before explaining the alternative.
+      Example: "Traditional commercial real estate funds operate on commingled capital.
+      A pooled fund holds many properties; an investor's share entitles them to a
+      proportional claim on the pool, not on any specific asset."
+    negative_constraint: |
+      Do not assume the reader knows why the old approach was inadequate.
+      Do not introduce the new mechanism without establishing the problem it solves.
+
+  - directive: "Plain Section Headers"
+    accepted_behavior: |
+      Section headers are plain noun phrases: "Legal isolation," "Transfer and
+      liquidity," "Why 1.2," "Governance." Short. Declarative. No gerunds.
+    negative_constraint: |
+      Do not use gerund headers ("Understanding X," "Managing Y"). Do not use
+      question headers in corporate or projects content. Do not use marketing verbs.
+
+  - directive: "No Platform-Internal Vocabulary"
+    accepted_behavior: |
+      Refer to the platform as "the platform," "the data system," or "the
+      corporate entity's data infrastructure." Financial vocabulary is correct
+      for this audience (equity, ICR, fiduciary, commingled). Technical vocabulary
+      that requires software knowledge is not.
+    negative_constraint: |
+      Do not use any term on the vocabulary retirement list without a plain-language
+      equivalent immediately preceding it. The corporate reader has financial literacy,
+      not software architecture literacy.
+
+  - directive: "No Code Blocks"
+    accepted_behavior: |
+      Never include code blocks, terminal commands, JSON, YAML, or file paths
+      in corporate or projects wiki articles.
+    negative_constraint: |
+      Code belongs in the documentation wiki. The corporate and projects reader
+      does not need to see a terminal command.
+
+  - directive: "Investor-Consequence Question Per Section"
+    accepted_behavior: |
+      Every substantive section answers one implicit question: what does this
+      mechanism protect the investor from, or deliver for the investor?
+      The answer may be in the section header or in the opening sentence.
+    negative_constraint: |
+      Do not write sections that are mechanically complete but investor-consequence
+      empty. An explanation of how ICR is calculated is incomplete without the
+      sentence about what the 1.2 floor prevents.

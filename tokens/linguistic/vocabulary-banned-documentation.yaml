@@ -1,0 +1,174 @@
+title: "POINTSAV LINGUISTIC TOKEN: VOCABULARY RETIREMENT — DOCUMENTATION WIKI"
+metadata:
+  status: "ACTIVE"
+  scope: "Terms retired from content-wiki-documentation"
+  wikis:
+    - content-wiki-documentation
+  exception: |
+    These terms may appear in documentation wiki content ONLY when being
+    explicitly defined — with a plain-language translation immediately
+    preceding the term on first use. After definition, the term may be
+    used throughout that article. The terms must never appear undefined.
+  sourced_from: "Corpus analysis 2026-05-08 — confirmed violations in architecture articles"
+vocabulary_rules:
+  - term: "substrate"
+    replacements:
+      - "the data layer"
+      - "the platform code"
+      - "the security foundation"
+      - "the platform"
+    exception: |
+      "Substrate" may appear in documentation wiki architecture articles where
+      it is being explicitly defined (e.g., the Compounding Substrate article).
+      On first use, precede with the plain-language translation:
+      "the data layer (the Compounding Substrate) routes every request..."
+      After definition, use the term freely within that article.
+    reason: "Internal architectural metaphor. Define before use; engineering readers can learn the term, but it must not appear undefined."
+
+  - term: "Compounding Substrate"
+    replacements:
+      - "the platform's compounding data layer"
+      - "the platform"
+    exception: |
+      May appear in documentation wiki where being defined. Use plain-language
+      equivalent in parentheses on first use. After that, use the term.
+    reason: "Compound internal metaphor. Define before use in documentation wiki."
+
+  - term: "Apprenticeship Substrate"
+    replacements:
+      - "the learning pipeline"
+      - "the training system"
+    exception: |
+      May appear in documentation wiki where being defined. Use plain-language
+      equivalent in parentheses on first use.
+    reason: "Internal metaphor. Translate before using."
+
+  - term: "doctrine"
+    replacements:
+      - "architectural principle"
+      - "design decision"
+      - "engineering policy"
+    exception: |
+      "DOCTRINE.md" as a specific filename reference is acceptable in documentation
+      wiki technical articles. Do not use "doctrine" as a general noun.
+    reason: "Reads as ideological outside its internal context. Engineering readers expect 'principle' or 'policy.'"
+
+  - term: "compounding"
+    replacements:
+      - "improving over time"
+      - "accumulating training signal"
+      - "getting better with each use"
+    exception: |
+      "Compounding" as a technical description of the platform's self-improvement
+      mechanism may appear in documentation wiki when the mechanism is being explained.
+      Define on first use: "The platform's compounding (self-improvement) mechanism..."
+      Do not use as unqualified shorthand. Financial compounding uses are always correct.
+    reason: "Ambiguous between platform jargon and standard financial term. Define context explicitly."
+
+  - term: "leapfrog"
+    replacements:
+      - "designed to exceed"
+      - "targeted to replace"
+      - "planned to surpass [specific target] by [specific date]"
+    exception: |
+      "Leapfrog-2030" as a specific project name or article title is acceptable.
+      Do not use "leapfrog" as a verb or informal descriptor.
+    reason: "Informal verb. Use specifics: exceed what, by when, by how much."
+
+  - term: "Doorman"
+    replacements:
+      - "access-control gateway"
+      - "AI request router"
+      - "the platform's request boundary"
+    exception: |
+      "Doorman" is acceptable in documentation wiki articles where it is being
+      explicitly defined as the internal service name:
+      "service-slm — the platform's AI request router (the Doorman) — routes..."
+      After that definition, use "Doorman" freely within the article.
+    reason: "Internal service name. Engineers can learn it, but it must be defined before use."
+
+  - term: "Ring 1"
+    replacements:
+      - "archive tier"
+      - "the data archive"
+    exception: |
+      May appear in documentation wiki architecture articles where the three-ring
+      architecture is being defined. Pair with plain-language name:
+      "Ring 1 (the archive tier) stores..."
+    reason: "Internal architecture layer name. Needs context for a documentation reader."
+
+  - term: "Ring 2"
+    replacements:
+      - "data tier"
+      - "the data processing layer"
+    exception: |
+      Same as Ring 1: pair with plain-language name on first use in architecture articles.
+    reason: "Internal architecture layer name."
+
+  - term: "Ring 3"
+    replacements:
+      - "inference gateway"
+      - "the AI routing layer"
+    exception: |
+      Same as Ring 1: pair with plain-language name on first use in architecture articles.
+    reason: "Internal architecture layer name."
+
+  - term: "Totebox"
+    replacements:
+      - "property archive"
+      - "data vault"
+      - "the operator's data system"
+    exception: |
+      May appear in documentation wiki where it is being defined as a product name.
+      Pair with plain-language description on first use.
+    reason: "Internal product name. Engineers using the documentation need the plain description to understand what it does."
+
+  - term: "Yo-Yo pool"
+    replacements:
+      - "on-demand GPU instances"
+      - "ephemeral inference nodes"
+    exception: |
+      "Yo-Yo pool" may appear in documentation wiki infrastructure articles where
+      the compute tier model is being explained. Define on first use:
+      "on-demand GPU instances (the Yo-Yo pool) scale..."
+    reason: "Internal infrastructure nickname. Acceptable after definition in technical articles."
+
+  - term: "sovereign"
+    replacements:
+      - "independently verifiable"
+      - "operator-controlled"
+      - "self-hosted"
+    exception: |
+      "Sovereign" in the political/legal sense (sovereign debt, sovereign guarantee)
+      is always correct. In documentation wiki, "sovereign data" and "sovereign compute"
+      may appear when the architecture article is defining these concepts — precede
+      with plain-language translation on first use.
+      "operator-controlled data (sovereign data in the platform's architecture)..."
+    reason: "Used internally to mean 'operator-controlled.' Define the usage explicitly in the documentation wiki."
+
+  - term: "LadybugDB"
+    replacements:
+      - "the property graph database"
+      - "the platform's knowledge graph"
+    exception: |
+      May appear in documentation wiki where it is being defined as the internal
+      product name. Pair with plain-language description on first use.
+    reason: "Internal product name. Engineers need the plain description to understand the system role."
+
+  - term: "Mooncake"
+    replacements:
+      - "the local inference model"
+      - "(omit — use the model family name)"
+    exception: null
+    reason: "Internal name for a local AI model. Even in documentation wiki, use the model-family name or 'local inference model.' No exception."
+
+  - term: "Foundry"
+    replacements:
+      - "the platform"
+      - "PointSav's development environment"
+    exception: |
+      "Foundry" as the name of the operator workspace may appear in documentation
+      wiki articles where it is being explicitly defined. After definition,
+      use the term within that article.
+      "The Foundry workspace (PointSav's development environment) hosts..."
+    reason: "Internal workspace name. Not a public product name. Define before use."

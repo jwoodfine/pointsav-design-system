@@ -1,0 +1,141 @@
+title: "POINTSAV LINGUISTIC TOKEN: VOCABULARY RETIREMENT — CORPORATE + PROJECTS WIKIS"
+metadata:
+  status: "ACTIVE"
+  scope: "Terms retired from content-wiki-corporate and content-wiki-projects"
+  wikis:
+    - content-wiki-corporate
+    - content-wiki-projects
+  exception: |
+    These terms may NOT appear in corporate or projects wiki content under any
+    circumstances. They are internal platform vocabulary that is meaningless
+    or misleading to the financial and development-market audience.
+  sourced_from: "Corpus analysis 2026-05-08 — confirmed violations in architecture articles"
+vocabulary_rules:
+  - term: "substrate"
+    replacements:
+      - "the data layer"
+      - "the platform code"
+      - "the security foundation"
+      - "the platform"
+    exception: null
+    reason: "Internal architectural metaphor with no meaning to a banker or investor."
+
+  - term: "Compounding Substrate"
+    replacements:
+      - "the platform"
+    exception: null
+    reason: "Internal compound metaphor. Use 'the platform' on first use; link to architecture article if depth is needed."
+
+  - term: "Apprenticeship Substrate"
+    replacements:
+      - "the learning pipeline"
+      - "the training system"
+    exception: null
+    reason: "Internal metaphor. Translate before using."
+
+  - term: "doctrine"
+    replacements:
+      - "architectural principle"
+      - "design decision"
+      - "engineering policy"
+    exception: null
+    reason: "Reads as religious or ideological to a financial reader."
+
+  - term: "compounding"
+    replacements:
+      - "improving over time"
+      - "accumulating training signal"
+      - "getting better with each use"
+    exception: |
+      "Compounding" in financial context (compound interest, compounding returns)
+      is correct and should NOT be replaced. Only retire the term when used to
+      describe AI model improvement.
+    reason: "Confuses the AI-model-improvement meaning with the financial meaning the audience expects."
+
+  - term: "leapfrog"
+    replacements:
+      - "designed to exceed"
+      - "targeted to replace"
+      - "planned to surpass [specific target] by [specific date]"
+    exception: null
+    reason: "Informal verb used internally. The corporate audience expects specifics: exceed what, by when."
+
+  - term: "Doorman"
+    replacements:
+      - "access-control gateway"
+      - "AI request router"
+      - "the platform's request boundary"
+    exception: null
+    reason: "Internal service name. Meaningless to a non-engineering reader."
+
+  - term: "Ring 1"
+    replacements:
+      - "archive tier"
+      - "the data archive"
+    exception: null
+    reason: "Internal architecture layer name."
+
+  - term: "Ring 2"
+    replacements:
+      - "data tier"
+      - "the data processing layer"
+    exception: null
+    reason: "Internal architecture layer name."
+
+  - term: "Ring 3"
+    replacements:
+      - "inference gateway"
+      - "the AI routing layer"
+    exception: null
+    reason: "Internal architecture layer name."
+
+  - term: "Totebox"
+    replacements:
+      - "property archive"
+      - "data vault"
+      - "the operator's data system"
+    exception: null
+    reason: "Internal product name. Use plain description."
+
+  - term: "Yo-Yo pool"
+    replacements:
+      - "on-demand GPU instances"
+      - "ephemeral inference nodes"
+    exception: null
+    reason: "Internal infrastructure nickname."
+
+  - term: "sovereign"
+    replacements:
+      - "independently verifiable"
+      - "operator-controlled"
+      - "self-hosted"
+    exception: |
+      "Sovereign" in the political/legal sense (sovereign debt, sovereign guarantee)
+      is correct for the corporate and projects audience and should NOT be replaced.
+      Only retire when used as an adjective to describe platform architecture
+      (e.g., "sovereign data," "sovereign compute").
+    reason: "Used internally to mean 'operator-controlled.' The financial audience uses 'sovereign' to mean 'government-backed' — the meanings conflict."
+
+  - term: "LadybugDB"
+    replacements:
+      - "the property graph database"
+      - "the platform's knowledge graph"
+    exception: null
+    reason: "Internal product name for the DataGraph store."
+
+  - term: "Mooncake"
+    replacements:
+      - "the local inference model"
+      - "(omit — use the model family name)"
+    exception: null
+    reason: "Internal name for a local AI model. Retire entirely in external content."
+
+  - term: "Foundry"
+    replacements:
+      - "the platform"
+      - "PointSav's development environment"
+    exception: |
+      "Foundry" as the name of the operator workspace may appear in technical
+      documentation wiki articles where it is being explicitly defined.
+      Do not use in corporate or projects content.
+    reason: "Internal workspace name. Not a public product name."

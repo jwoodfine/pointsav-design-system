@@ -1,0 +1,113 @@
+title: "POINTSAV LINGUISTIC TOKEN: SPECIALIST SITE CROSS-REFERENCE PATTERNS"
+metadata:
+  status: "ACTIVE"
+  scope: "Canonical link patterns from the three main wikis to specialist sites"
+  source_wikis:
+    - content-wiki-corporate
+    - content-wiki-projects
+    - content-wiki-documentation
+  destination_sites:
+    - bim.woodfinegroup.com
+    - gis.woodfinegroup.com
+    - design.pointsav.com
+  note: |
+    Main wiki articles reference specialist content but never include
+    specification-register language inline. The crossref links to the
+    specialist site. The specialist site carries the normative requirements,
+    measurements, and IFC/DTCG schemas.
+  sourced_from: "Corpus analysis 2026-05-08 — confirmed by absence in correct corporate articles"
+crossref_rules:
+  - specialist_site: "bim.woodfinegroup.com"
+    purpose: "RIBA / IFC specification content — normative requirements, U-value tables, IfcEntity schemas, climate zone constraints"
+    trigger_topics:
+      - "IFC schema references"
+      - "ASHRAE / building code compliance thresholds"
+      - "Climate zone tokens and mappings"
+      - "Normative BIM requirements"
+      - "Duct design, U-value, envelope performance"
+    canonical_patterns:
+      - text: "For full climate zone token specifications and IFC mappings, see bim.woodfinegroup.com."
+        use_when: "Main wiki article references climate zone tokens or IFC entity constraints"
+      - text: "Full normative requirements — including ASHRAE thresholds, IfcConstraint schema, and U-value tables — are published at bim.woodfinegroup.com."
+        use_when: "Main wiki article explains the envelope performance concept but cannot carry shall/shall-not language"
+      - text: "The BIM specification at bim.woodfinegroup.com defines the normative requirements architects use to model compliance."
+        use_when: "Corporate or projects wiki needs to establish credibility of the technical specification without including it inline"
+    negative_constraint: |
+      Do not include "shall" / "shall not" language, U-value tables, or specific ASHRAE
+      clause citations in main wiki articles. Link to bim.woodfinegroup.com instead.
+      Do not include IFC entity schemas (IfcWall, IfcSpatialZone, etc.) inline in
+      corporate or projects articles.
+
+  - specialist_site: "gis.woodfinegroup.com"
+    purpose: "Co-location scoring methodology, zoning criteria, GIS analysis, site selection map"
+    trigger_topics:
+      - "Co-location scoring"
+      - "1.0–3.0 km catchment radius criteria"
+      - "V2 scoring methodology"
+      - "Site selection intelligence"
+      - "Zoning classification and acquisition rules"
+    canonical_patterns:
+      - text: "For co-location scoring methodology and zoning criteria, see gis.woodfinegroup.com."
+        use_when: "Main wiki article references co-location logic but cannot carry scoring detail inline"
+      - text: "The site selection map and V2 scoring methodology are published at gis.woodfinegroup.com."
+        use_when: "Projects wiki article references the scoring system"
+      - text: "Catchment-radius thresholds and zoning classification criteria are defined at gis.woodfinegroup.com."
+        use_when: "Corporate or projects article references co-location criteria without needing the full scoring table"
+    negative_constraint: |
+      Do not include V2 scoring weights, zoning lookup tables, or GIS query
+      specifications in main wiki articles. Link to gis.woodfinegroup.com instead.
+      Do not include IPEDS or catchment-radius calculation methodology inline.
+
+  - specialist_site: "design.pointsav.com"
+    purpose: "Design token schemas, component specifications, DTCG token format, icon set, typography"
+    trigger_topics:
+      - "Design token format (DTCG)"
+      - "Component specifications"
+      - "Icon set"
+      - "Typography scales"
+      - "CSS scaffolding"
+      - "Brand signets"
+    canonical_patterns:
+      - text: "For design token schemas and component specifications, see design.pointsav.com."
+        use_when: "Documentation wiki article references the design system without needing inline token values"
+      - text: "The full token schema — including DTCG format, spacing variables, and typography scale — is published at design.pointsav.com."
+        use_when: "Documentation wiki article references the design system in an architecture context"
+      - text: "Component specifications and usage guidelines for contributors are at design.pointsav.com."
+        use_when: "Article references design contribution without carrying the spec inline"
+    negative_constraint: |
+      Do not include DTCG token schemas, CSS variable tables, or component
+      normative specs in main wiki articles. Link to design.pointsav.com instead.
+      Main wiki articles describe what the design system is and why it exists;
+      design.pointsav.com carries the normative specifications.
+
+placement_rules:
+  - directive: "Crossref at First Mention"
+    accepted_behavior: |
+      When a main wiki article first introduces a topic that requires specialist
+      specification depth, place the crossref link at that point in the article —
+      not only in the References section. The reader should be directed to the
+      specialist site the moment they need the detail.
+    negative_constraint: |
+      Do not defer the crossref to a trailing References section only. If the
+      article body references IFC mappings, include the crossref in the body.
+
+  - directive: "Plain-Language Framing Before the Crossref"
+    accepted_behavior: |
+      Before linking to the specialist site, state in one plain-language sentence
+      what the specialist site provides and who it is for.
+      "The BIM specification at bim.woodfinegroup.com defines the normative
+      requirements architects use to model compliance."
+    negative_constraint: |
+      Do not link to a specialist site without explaining what the reader will
+      find there. A bare URL or "[see link]" is not acceptable.
+
+  - directive: "Register Boundary Is Absolute"
+    accepted_behavior: |
+      The main wikis describe, explain, and contextualize. The specialist sites
+      specify and require. This boundary holds in all three main wikis — corporate,
+      projects, and documentation. A documentation wiki article may go deeper
+      technically, but it does not adopt "shall" language.
+    negative_constraint: |
+      Do not add normative content to a main wiki article because it "might help
+      the reader." Normative content belongs on specialist sites. The main wiki
+      article links there.
