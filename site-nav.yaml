@@ -1,0 +1,119 @@
+# site-nav.yaml — design.pointsav.com information architecture
+#
+# Five top-level sections mapping source directories to site structure.
+# The Rust app (app-privategit-design) reads this at startup to configure routing.
+# Language switcher: every public section has ES pairs via paired_with frontmatter.
+#
+# Slop rules (do not violate):
+#   - Foundation prose is NOT embedded in individual token entries.
+#   - Component guide.md IS the component page — not supplementary to a token view.
+#   - wiki-surface/* stays in App surfaces — never flatten into generic Components.
+#   - Accessibility docs belong in their own hub with bidirectional links, not co-located per component.
+
+schema: foundry-site-nav-v1
+site: design.pointsav.com
+last_updated: 2026-05-16
+
+sections:
+
+  - id: foundations
+    label_en: Foundations
+    label_es: Fundamentos
+    source_glob: docs/foundations/design-*.md
+    excludes: ["*.es.md"]
+    es_pairs: docs/foundations/design-*.es.md
+    description: |
+      Conceptual explanation of each design system foundation (color, typography, spacing,
+      motion). One page per foundation. Articulates the why, the three-layer model (primitive
+      → semantic → component), and WCAG floors. Tokens link UP to these pages; these pages
+      link DOWN via "appears in" component listings.
+    nav_order: 1
+
+  - id: tokens
+    label_en: Tokens
+    label_es: Tokens
+    source: tokens/dtcg-bundle.json
+    rendering: auto-generated
+    description: |
+      Auto-rendered from dtcg-bundle.json. One entry per token with: name, value,
+      semantic alias chain, contrast ratio (for color tokens), and "appears in" component
+      backlinks. Tokens do NOT embed foundation prose — they link up to Foundations.
+    nav_order: 2
+
+  - id: components
+    label_en: Components
+    label_es: Componentes
+    source_glob: components/*/guide.md
+    excludes: ["*.es.md"]
+    description: |
+      One page per component. guide.md IS the page. Each page has tabs or sections:
+      Overview · Recipe (HTML + CSS) · Accessibility · Tokens used · Research trail.
+      "Tokens used" sidebar is auto-parsed from CSS var() references in the recipe.
+      "Research trail" links to dtcg-vault/research/ entries.
+      Components tagged surface:spatial-gis or surface:wiki carry a surface badge.
+    nav_order: 3
+
+  - id: app-surfaces
+    label_en: App Surfaces
+    label_es: Superficies de Aplicación
+    subsections:
+      - id: pointsav-wiki
+        label_en: PointSav Wiki
+        label_es: Wiki de PointSav
+        source_glob: docs/wiki-surface/wiki-*.md
+        excludes: ["*.es.md"]
+        es_pairs: docs/wiki-surface/wiki-*.es.md
+        description: |
+          Surface-level overviews of how the substrate assembles into the PointSav wiki
+          product surface (wiki-component-library, wiki-dark-mode, wiki-typography-system).
+          These are COMPOSITIONAL documents — not per-component detail. Per-component detail
+          lives in Components. Cross-links to individual component pages with a
+          "used in: Wiki surface" badge.
+    description: |
+      Opinionated compositions showing how the substrate assembles into a real product.
+      Each subsection represents one deployed product surface. Cross-links bidirectionally
+      with Components and Accessibility sections.
+    nav_order: 4
+
+  - id: accessibility
+    label_en: Accessibility
+    label_es: Accesibilidad
+    source_glob: docs/accessibility/*.md
+    excludes: ["*.es.md"]
+    es_pairs: docs/accessibility/*.es.md
+    description: |
+      Cross-cutting WCAG + neurodiversity accessibility hub. Each doc governs multiple
+      components and tokens; co-locating with a single component would lose the cross-cutting
+      signal. Hub pages list every component they govern. Every Component page's Accessibility
+      tab links BACK to the relevant hub page(s). Bidirectional links are mandatory.
+    nav_order: 5
+
+# Intake rules for new content arriving from project-* archives
+# (enforced at session start sweep via .agent/rules/token-intake-checklist.md)
+intake:
+  DESIGN_COMPONENT:
+    required_files:
+      - "components/<name>/guide.md"
+      - "dtcg-vault/research/component-<name>.md"
+    required_frontmatter:
+      - language_protocol: DESIGN-COMPONENT
+      - research_trail_fields: 5
+      - paired_with  # ES pair required for public-audience content
+    site_section: components
+
+  DESIGN_TOKEN_CHANGE:
+    required_files:
+      - "tokens/dtcg-bundle.json"  # patch applied
+      - "dtcg-vault/research/<topic>.md"  # justification
+    required_frontmatter:
+      - language_protocol: DESIGN-TOKEN-CHANGE
+      - master_cosign  # mandatory for all token changes
+    site_section: tokens
+
+  DESIGN_RESEARCH:
+    required_files:
+      - "dtcg-vault/research/<topic>.md"
+    required_frontmatter:
+      - language_protocol: DESIGN-RESEARCH
+      - research_trail_fields: 5
+    site_section: null  # research backplane only; no direct site page
