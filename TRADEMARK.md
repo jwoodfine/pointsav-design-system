@@ -139,18 +139,22 @@ You may not:
 
 ## 6. Design System and Media Assets
 
-The pointsav-design-system and *-media-assets repositories are
-licensed under PointSav-ARR for their copyrightable elements (source
-code, documentation, image files as fixed expression). The trademark
-and trade-dress elements present in those repositories — including
-logos, brand colors acting as source identifiers, distinctive
-typography, and iconography acting as source identifiers — are
-governed by this Policy and not by the copyright license.
+The pointsav-design-system repository is licensed under Apache License,
+Version 2.0 for its copyrightable elements (source code, design tokens,
+component recipes, documentation). The pointsav-media-assets and
+woodfine-media-assets repositories are licensed under PointSav-ARR for
+their copyrightable elements (source code, documentation, image files
+as fixed expression). The trademark and trade-dress elements present
+in any of these repositories — including logos, brand colors acting as
+source identifiers, distinctive typography, and iconography acting as
+source identifiers — are governed by this Policy and not by the
+copyright license.
 
-A party who holds a right to view or clone design-system source
-under PointSav-ARR does not thereby acquire any right to use the
-trademark or trade-dress elements contained in that source. Any such
-use requires permission under Section 4.
+A party who exercises rights under Apache 2.0 in pointsav-design-system,
+or who holds a right to view or clone media-asset source under
+PointSav-ARR, does not thereby acquire any right to use the trademark
+or trade-dress elements contained in that source. Any such use requires
+permission under Section 4.
 
 ---
 
