@@ -1,0 +1,34 @@
+---
+schema: design-token-v1
+title: "Wikipedia Original Copy Structural Tokens"
+slug: wikipedia-layout
+owner: project-language
+created: 2026-05-04
+---
+
+# Wikipedia Layout Tokens
+
+These tokens formalize the "Original Copy" structural logic required to replicate Wikipedia's muscle memory across the three PointSav/Woodfine wikis.
+
+## Typography & Formatting
+heading_capitalization: "sentence-case" # Only the first word and proper nouns capitalized
+emoji_usage: "none"                   # Strict prohibition of emojis in structural headers
+link_style_article: "solid-blue"      # Canonical wikilink [[Target]] behavior
+link_style_glossary: "dashed-underline" # Glossary term {{gli|Term}} behavior
+
+## Header Architecture
+header_style: "flexbox-split"         # Flex layout: text left, logo right
+header_border_bottom: "1px solid #a2a9b1"
+header_margin_bottom: "1em"
+header_padding_bottom: "1em"
+
+## Footer Architecture
+footer_placement: "absolute-bottom"   # Decoupled from content grid
+footer_alignment: "center"
+footer_font_size: "0.85em"
+footer_border_top: "1px solid #eaecf0"
+footer_color: "#54595d"
+
+## Logo Specifications
+height: 50                            # Standardized header logo height
+placement: "top-right"
