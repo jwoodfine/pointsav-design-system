@@ -1,0 +1,60 @@
+cff-version: 1.2.0
+message: >-
+  If you use or reference the PointSav Design System, please cite it
+  using these metadata.
+type: software
+title: "PointSav Design System — DTCG Token Substrate"
+abstract: >-
+  PointSav's Apache 2.0-licensed design system substrate. Implements the
+  Design System Substrate pattern (Foundry Doctrine 2030 claim #38):
+  per-tenant DTCG design token ownership, IBM Carbon muscle-memory floor,
+  AI-readable research backplane, and editor-agnostic interoperability
+  (Figma, Penpot, Sketch) via the W3C Design Tokens Community Group format.
+  SMB customers self-host; no SaaS lock-in. Patent grant in §3 of
+  Apache 2.0 protects downstream forks.
+authors:
+  - given-names: System Administrator
+    name-particle: PointSav
+    family-names: Digital Systems
+    email: open.source@pointsav.com
+    affiliation: PointSav Digital Systems
+repository-code: "https://github.com/pointsav/pointsav-design-system"
+url: "https://github.com/pointsav/pointsav-design-system"
+license: Apache-2.0
+version: "0.1.133"
+date-released: "2026-05-18"
+keywords:
+  - design-tokens
+  - dtcg
+  - design-system
+  - sovereign-design
+  - carbon-baseline
+  - figma-interop
+  - penpot
+  - smb
+  - compounding-substrate
+identifiers:
+  - type: url
+    value: "https://github.com/pointsav/pointsav-design-system/blob/main/NOTICE"
+    description: Apache 2.0 NOTICE file — attribution requirements
+references:
+  - type: standard
+    title: "W3C Design Tokens Community Group Format (DTCG)"
+    url: "https://design-tokens.github.io/community-group/format/"
+    notes: Token format used by this design system
+  - type: software
+    title: "IBM Carbon Design System"
+    url: "https://carbondesignsystem.com/"
+    notes: Primitive and component vocabulary baseline imported as the floor layer
+preferred-citation:
+  type: software
+  title: "PointSav Design System — DTCG Token Substrate"
+  authors:
+    - given-names: System Administrator
+      name-particle: PointSav
+      family-names: Digital Systems
+      email: open.source@pointsav.com
+      affiliation: PointSav Digital Systems
+  version: "0.1.133"
+  date-released: "2026-05-18"
+  url: "https://github.com/pointsav/pointsav-design-system"
