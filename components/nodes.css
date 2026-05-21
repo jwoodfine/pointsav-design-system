@@ -7,6 +7,73 @@
 
 .footnote-marker { font-size: 1rem; font-weight: 700; color: var(--sys-text); }
 
+/* ORG-CHART TOKEN NODES
+ * Fixed-size rectangular nodes for corporate hierarchy charts.
+ * Color variants map to entity roles per token-chart-semantic.yaml.
+ * Size scale: base (Cat.1 structure) | sm (Cat.2 fund/flow) | compact (dense rows)
+ */
+.org-token {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 210px; height: 110px;
+    background: #FFFFFF; border: 2px solid var(--wf-ink); border-radius: 2px;
+    padding: 8px 12px; box-sizing: border-box; text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    position: absolute;
+}
+.org-token--sm      { width: 170px; height: 90px; }
+.org-token--compact { width: 170px; height: 60px; }
+
+/* Color variants — background + border pairs from token-chart-semantic.yaml */
+.org-token--green  { background: var(--wf-green-tint);  border-color: var(--wf-green); }
+.org-token--blue   { background: var(--wf-blue-tint);   border-color: var(--wf-blue); }
+.org-token--amber  { background: var(--wf-amber-tint);  border-color: var(--wf-amber); }
+.org-token--orange { background: var(--wf-orange-tint); border-color: var(--wf-orange); }
+.org-token--gold   { background: var(--wf-gold-tint);   border-color: var(--wf-gold); }
+.org-token--purple { background: var(--wf-purple-tint); border-color: var(--wf-purple); }
+.org-token--grey   { background: var(--wf-grey-tint);   border-color: var(--wf-grey); }
+
+/* Direct-hold solution pill — rounded dashed container (amber role) */
+.org-token-pill {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 210px; height: 110px;
+    background: var(--wf-amber-tint); border: 2px dashed var(--wf-amber);
+    border-radius: 110px; padding: 8px 16px; box-sizing: border-box; text-align: center;
+    position: absolute;
+}
+.org-token-pill--sm { width: 170px; height: 90px; border-radius: 90px; }
+
+/* Flow-through SPV ellipse — dotted or dashed ellipse border */
+.org-token-ellipse {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 210px; height: 90px;
+    background: var(--wf-blue-tint); border: 2px dotted var(--wf-blue);
+    border-radius: 50%; padding: 8px 20px; box-sizing: border-box; text-align: center;
+    position: absolute;
+}
+.org-token-ellipse--dashed { border-style: dashed; }
+.org-token-ellipse--orange { background: var(--wf-orange-tint); border-color: var(--wf-orange); }
+
+/* Inactive jurisdiction — applied to a wrapper element */
+.inactive-jurisdiction { opacity: 0.35; filter: grayscale(20%); }
+
+/* Token typography helpers */
+.org-token .t-kicker  { font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wf-ink-3); line-height: 1.2; }
+.org-token .t-name    { font-size: 10px; font-weight: 700; color: var(--wf-ink); line-height: 1.3; }
+.org-token .t-code    { font-size: 9px; font-family: ui-monospace, SFMono-Regular, monospace; color: var(--wf-ink-3); }
+.org-token .t-country { font-size: 9px; font-weight: 600; color: var(--wf-ink-2); }
+
+/* Marker label — floating percentage / role annotation */
+.org-marker {
+    position: absolute; background: #FFFFFF; border: 1px solid var(--wf-rule);
+    font-size: 8px; font-weight: 600; color: var(--wf-ink-2);
+    padding: 1px 4px; border-radius: 2px; white-space: nowrap;
+}
+
 @media print {
     .entity-node { border-color: #000; }
+    .org-token, .org-token-pill, .org-token-ellipse { border-color: #000 !important; }
+    .org-token--green, .org-token--blue, .org-token--amber,
+    .org-token--orange, .org-token--gold, .org-token--purple, .org-token--grey { background: #FFF !important; }
+    .org-token-pill, .org-token-ellipse { background: #FFF !important; }
+    .inactive-jurisdiction { opacity: 0.5; filter: grayscale(100%); }
 }

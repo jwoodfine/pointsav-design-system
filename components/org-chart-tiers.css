@@ -1,0 +1,84 @@
+/* org-chart-tiers.css — Consolidation Tier Bars & Entity Boxes
+ * Full-width tier labels + entity boxes for accounting/reporting scope charts.
+ * Extracted from Accounting Statements (JW9, JW10) — Cat.3 charts.
+ */
+
+/* TIER BAR — full-width consolidation scope label band */
+.tier-bar {
+    display: flex; align-items: center;
+    width: 100%; padding: 5px 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 8px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.09em; color: #FFFFFF;
+    background: var(--wf-ink); /* default; override with color variant */
+}
+.tier-bar__label { flex-shrink: 0; }
+
+/* Color variants — backgrounds per consolidation scope */
+.tier-bar--blue   { background: #164679; }
+.tier-bar--green  { background: #54924E; }
+.tier-bar--orange { background: #F15F22; }
+.tier-bar--gold   { background: #C89211; }
+.tier-bar--purple { background: #7C468C; }
+
+/* Tint variants — lighter background for secondary/sub-tier use */
+.tier-bar--blue-tint   { background: #E8EFF7; color: #164679; }
+.tier-bar--green-tint  { background: #EEF6EC; color: #54924E; }
+.tier-bar--orange-tint { background: #FDE8DD; color: #F15F22; }
+
+/* TIER EBOX — entity box positioned within a tier scope row */
+.tier-ebox {
+    display: inline-flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    border: 0.75px solid var(--wf-ink-3); background: #FFFFFF;
+    padding: 6px 12px; border-radius: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 9px; color: var(--wf-ink); text-align: center; line-height: 1.3;
+}
+.tier-ebox--accent {
+    border-color: var(--wf-blue); background: var(--wf-blue-tint);
+}
+.tier-ebox__kicker {
+    font-size: 7px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--wf-ink-3); margin-bottom: 2px;
+}
+.tier-ebox__name { font-weight: 700; }
+.tier-ebox__code {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 8px; color: var(--wf-ink-3); margin-top: 1px;
+}
+
+/* TIER SCOPE ROW — horizontal flex container for entities within one tier */
+.tier-scope-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 12px;
+}
+
+/* RECORD-KEEPING BAND — bottom-of-chart records row */
+.tier-rk-band {
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid var(--wf-rule); padding: 6px 12px;
+}
+.tier-rk-tag {
+    background: var(--wf-ink); color: #FFFFFF;
+    font-size: 7px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 3px 6px; border-radius: 2px; flex-shrink: 0;
+}
+.tier-rk-items {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    font-size: 8px; color: var(--wf-ink-2);
+}
+
+/* FOOTNOTE — below-chart citation in monospace */
+.tier-footnote {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 7.5px; color: var(--wf-ink-3); line-height: 1.5;
+    border-top: 1px solid var(--wf-rule); padding-top: 6px; margin-top: 8px;
+}
+
+@media print {
+    .tier-bar, .tier-bar--blue, .tier-bar--green,
+    .tier-bar--orange, .tier-bar--gold, .tier-bar--purple { background: #000 !important; }
+    .tier-ebox { border-color: #000 !important; }
+    .tier-rk-tag { background: #000 !important; }
+}

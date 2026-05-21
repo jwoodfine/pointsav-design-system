@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--
+  org-chart-structure.html — Corporate Structure / Ownership Chart Template
+
+  Category 1 template: token-network charts showing entity ownership chains
+  (parent → subsidiary → direct-hold solution). Uses absolute-positioned
+  org-token boxes on a fixed 1056×816px print canvas with an SVG overlay
+  for connectors.
+
+  TO USE:
+    1. Copy to working location.
+    2. Set page metadata (kicker, headline, subtitle, date, chart ID) below.
+    3. Position org-token boxes using inline style="top:Npx; left:Npx"
+       or layout helpers as needed.
+    4. Draw connectors in the .wires SVG using <path> + marker-end.
+    5. Add .org-ledger-block or .org-floater annotations if needed.
+    6. Print: File → Print → Landscape Letter, no margins.
+
+  TOKEN SIZES (per token-chart-semantic.yaml):
+    .org-token           210×110px   Cat.1 default
+    .org-token.org-token--sm  170×90px    Cat.1 dense / Cat.2
+    .org-token.org-token--compact  170×60px    tight rows
+
+  ENTITY ROLE COLOURS:
+    --green  holding-company (WCP, MCorp)
+    --blue   gp-admin (subsidiaries, GPs, administrators)
+    --amber  direct-hold (always pill shape .org-token-pill)
+    --orange broker-dealer / sales agreement
+    --purple advisory / external fund manager
+    --grey   neutral (trustee, titleco, debt)
+
+  CONNECTOR COLORS (use class on <path> + matching marker-end="url(#arrow-*)"):
+    .org-connector--green   ownership flow
+    .org-connector--blue    management flow
+    .org-connector--amber   distribution flow
+    .org-connector--orange  referral / commission flow
+    .org-connector--purple  advisory flow
+    .org-connector--grey    structural / debt
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title><!-- CHART TITLE --></title>
+
+<!-- Design System -->
+<link rel="stylesheet" href="../../tokens/theme-woodfine.css">
+<link rel="stylesheet" href="../../components/nodes.css">
+<link rel="stylesheet" href="../../components/connectors.css">
+<link rel="stylesheet" href="../../components/org-chart-panels.css">
+<link rel="stylesheet" href="../../components/typography.css">
+
+<style>
+  /* Canvas reset */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #E2E8F0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-feature-settings: "tnum";
+    -webkit-font-smoothing: antialiased;
+    display: flex; justify-content: center; padding: 40px;
+  }
+
+  /* Sheet — 1056×816px print canvas */
+  .sheet {
+    position: relative; width: 1056px; height: 816px; flex-shrink: 0;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    overflow: hidden;
+  }
+
+  /* Title block */
+  .chart-title-block {
+    position: absolute; top: 24px; left: 48px; right: 48px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-bottom: 12px; border-bottom: 1px solid var(--wf-rule);
+  }
+  .chart-title-block .t-kicker {
+    font-size: 8px; font-weight: 700; letter-spacing: 0.22em;
+    color: var(--wf-green); text-transform: uppercase; margin-bottom: 5px;
+  }
+  .chart-title-block .t-headline {
+    font-size: 20px; font-weight: 800; letter-spacing: -0.015em;
+    color: var(--wf-ink); line-height: 1.05;
+  }
+  .chart-title-block .t-subtitle {
+    font-size: 9px; color: var(--wf-ink-3); max-width: 280px;
+    text-align: right; line-height: 1.45; font-style: italic;
+  }
+
+  /* Connector SVG overlay — spans entire sheet */
+  .wires {
+    position: absolute; inset: 0; pointer-events: none;
+    width: 1056px; height: 816px;
+  }
+
+  /* Signature block */
+  .token-signature {
+    position: absolute; bottom: 22px; right: 48px;
+    font-size: 8.5px; line-height: 1.5; text-align: right;
+    color: var(--wf-ink-3); font-family: ui-monospace, SFMono-Regular, monospace;
+  }
+  .token-signature strong { color: var(--wf-ink-2); }
+
+  /* Print */
+  @media print {
+    @page { size: 1056px 816px; margin: 0; }
+    html, body { background: #fff; padding: 0; }
+    .sheet { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- TITLE BLOCK -->
+  <div class="chart-title-block">
+    <div>
+      <div class="t-kicker">INVESTOR RELATIONS — WOODFINE GROUP</div>
+      <h1 class="t-headline">CHART HEADLINE</h1>
+    </div>
+    <div class="t-subtitle">
+      One-sentence description of the structure depicted.
+    </div>
+  </div>
+
+  <!-- =========================================================
+       CONNECTOR SVG OVERLAY
+       Draw all path connectors here. Arrow markers defined in <defs>.
+       Example: <path class="org-connector org-connector--green"
+                       d="M 210 200 L 210 260" marker-end="url(#arrow-green)"/>
+       ========================================================= -->
+  <svg class="wires" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrow-green"  markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#54924E"/>
+      </marker>
+      <marker id="arrow-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#164679"/>
+      </marker>
+      <marker id="arrow-amber"  markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#F57F17"/>
+      </marker>
+      <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#F15F22"/>
+      </marker>
+      <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#7C468C"/>
+      </marker>
+      <marker id="arrow-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#6B7280"/>
+      </marker>
+      <!-- Example path: vertical drop, green ownership -->
+      <!-- <path class="org-connector org-connector--green"
+                d="M 300 200 L 300 280"
+                marker-end="url(#arrow-green)"/> -->
+    </defs>
+    <!-- Add connector <path> elements here -->
+  </svg>
+
+  <!-- =========================================================
+       TOKEN NODES
+       Position each node with style="top:Npx; left:Npx".
+       Use .org-token--green, --blue, --amber, --orange, --purple, --grey.
+       Use .org-token-pill for direct-hold solutions (amber, rounded dashed).
+       Use .org-token-ellipse for flow-through SPVs (blue, dotted).
+       ========================================================= -->
+
+  <!-- Example: Parent company (holding-company role → green) -->
+  <div class="org-token org-token--green" style="top: 110px; left: 423px;">
+    <span class="t-kicker">Parent</span>
+    <span class="t-name">Woodfine Capital Projects Inc.</span>
+    <span class="t-code">WCP · #16</span>
+  </div>
+
+  <!-- Example: Direct-hold solution (direct-hold role → amber pill) -->
+  <div class="org-token-pill" style="top: 280px; left: 190px;">
+    <span class="t-kicker">Direct-Hold Solution</span>
+    <span class="t-name">Woodfine Professional Centres<br>Canada LP</span>
+    <span class="t-code">PRO-CA-01-AST · #17</span>
+  </div>
+
+  <!-- Add further .org-token nodes here -->
+
+  <!-- SIGNATURE -->
+  <div class="token-signature">
+    <strong>[DATE]</strong><br>
+    Prepared by Woodfine Management Corp.
+  </div>
+
+</div>
+</body>
+</html>
