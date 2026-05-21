@@ -1,0 +1,89 @@
+/* org-chart-matrix.css — Comparison Matrix Table
+ * CSS Grid comparison table for structured SPV/structure analysis.
+ * Extracted from SPV Arrangements Slide 2 (JW1) — Cat.3 charts.
+ */
+
+/* MATRIX CONTAINER */
+.org-matrix {
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 8.5px; color: var(--wf-ink);
+    border: 1px solid var(--wf-rule);
+    font-feature-settings: "tnum";
+}
+
+/* Column header row */
+.org-matrix__col-row {
+    display: grid;
+    border-bottom: 1.5px solid var(--wf-ink);
+}
+
+/* Individual column head */
+.org-matrix__col-head {
+    padding: 6px 8px; font-weight: 700; text-align: center;
+    border-left: 1px solid var(--wf-rule);
+    font-size: 8px; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.org-matrix__col-head:first-child { border-left: none; }
+
+/* Coloured accent bar under each column header (maps to 3-column tri-tone) */
+.org-matrix__col-head::after {
+    content: ""; display: block; height: 3px; margin-top: 4px; border-radius: 1px;
+    background: var(--wf-grey); /* default; override with --col variant */
+}
+.org-matrix__col-head--col1::after { background: var(--wf-grey); }
+.org-matrix__col-head--col2::after { background: var(--wf-blue); }
+.org-matrix__col-head--col3::after { background: var(--wf-green); }
+
+/* Section super-band — spans all columns */
+.org-matrix__section-band {
+    display: grid;
+    background: var(--wf-ink); color: #FFFFFF;
+    font-size: 7px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.09em; padding: 4px 8px;
+    grid-column: 1 / -1;
+}
+
+/* Body row */
+.org-matrix__body-row {
+    display: grid;
+    border-bottom: 1px solid var(--wf-rule);
+}
+.org-matrix__body-row:nth-child(even) { background: rgba(0,0,0,0.025); }
+
+/* Row header */
+.org-matrix__row-head {
+    padding: 6px 8px; font-weight: 600; font-size: 8px; color: var(--wf-ink-2);
+    border-right: 1.5px solid var(--wf-ink); display: flex; align-items: center;
+}
+
+/* Cell */
+.org-matrix__cell {
+    padding: 6px 8px; font-size: 8px; color: var(--wf-ink-2);
+    border-left: 1px solid var(--wf-rule);
+    line-height: 1.45;
+}
+
+/* Cell column background tints */
+.org-matrix__cell--col1 { background: rgba(107, 114, 128, 0.04); }
+.org-matrix__cell--col2 { background: rgba(22, 70, 121, 0.03); }
+.org-matrix__cell--col3 { background: rgba(84, 146, 78, 0.04); }
+
+/* Semantic value display */
+.org-matrix__v--yes    { color: var(--wf-green); font-weight: 700; }
+.org-matrix__v--no     { color: var(--wf-ink); }
+.org-matrix__v--maybe  { color: var(--wf-grey); font-style: italic; }
+.org-matrix__v--pct    { font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* Footnote sub-text */
+.org-matrix__sub { font-size: 7px; color: var(--wf-grey); display: block; margin-top: 1px; }
+
+/* Orange asterisk footnote flag */
+.org-matrix__flag { color: var(--wf-orange); font-weight: 700; font-size: 9px; }
+
+@media print {
+    .org-matrix { border-color: #000; }
+    .org-matrix__col-row, .org-matrix__body-row { border-color: #000; }
+    .org-matrix__section-band { background: #000; }
+    .org-matrix__cell { border-color: #999; }
+}

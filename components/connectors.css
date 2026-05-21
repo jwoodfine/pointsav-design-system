@@ -6,6 +6,48 @@
 .lp-row { display: flex; gap: 20px; align-items: flex-start; justify-content: space-around; width: 100%; }
 .lp-cell { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
 
+/* SVG ORG-CHART CONNECTORS
+ * Use as <path> or <line> elements inside an absolutely-positioned <svg> overlay.
+ * Arrow markers are declared in the <defs> block in the chart template.
+ * Stroke-width 2px matches org-token border weight.
+ */
+
+/* Inline SVG connector — base class for <path> elements */
+.org-connector           { fill: none; stroke: var(--wf-ink); stroke-width: 2; }
+.org-connector--green    { stroke: var(--wf-green); }
+.org-connector--blue     { stroke: var(--wf-blue); }
+.org-connector--amber    { stroke: var(--wf-amber); }
+.org-connector--orange   { stroke: var(--wf-orange); }
+.org-connector--purple   { stroke: var(--wf-purple); }
+.org-connector--grey     { stroke: var(--wf-grey); }
+
+/* Stroke styles */
+.org-connector--dashed   { stroke-dasharray: 6 3; }
+.org-connector--dotted   { stroke-dasharray: 2 3; }
+
+/* Action label — small text badge floating alongside a connector path */
+.org-action-label {
+    position: absolute;
+    background: #FFFFFF; border: 1px solid var(--wf-rule);
+    font-size: 7.5px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--wf-ink-2);
+    padding: 1px 5px; border-radius: 2px; white-space: nowrap;
+}
+
+/* SVG DEFS FRAGMENT — paste into chart <svg> <defs> block.
+ * One arrowhead marker per connector color. marker-end="url(#arrow-green)" etc.
+ *
+ * <defs>
+ *   <marker id="arrow-green"  markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#54924E"/></marker>
+ *   <marker id="arrow-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#164679"/></marker>
+ *   <marker id="arrow-amber"  markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F57F17"/></marker>
+ *   <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F15F22"/></marker>
+ *   <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7C468C"/></marker>
+ *   <marker id="arrow-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#6B7280"/></marker>
+ * </defs>
+ */
+
 @media print {
     .connector-vertical, .lp-bus { background: #000; }
+    .org-connector { stroke: #000 !important; }
 }

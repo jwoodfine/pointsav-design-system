@@ -1,0 +1,106 @@
+/* org-chart-venn.css — Venn Diagram (SVG + foreignObject)
+ * Triple-overlap Venn diagrams for taxonomy and set-relationship charts.
+ * Extracted from Construction Venn Diagram (JW2) — Cat.3 charts.
+ * Rendered as SVG <ellipse> primitives with HTML foreignObject content regions.
+ */
+
+/* VENN CONTAINER — wraps the SVG element */
+.venn-diagram {
+    display: block; width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-feature-settings: "tnum";
+    -webkit-font-smoothing: antialiased;
+}
+
+/* SVG ELEMENT CLASSES — applied to <ellipse> and <rect> within SVG */
+
+/* Fill layer (background tint — drawn first, behind stroke) */
+.ven-fill { opacity: 1; }
+.ven-fill--col1 { fill: var(--wf-grey-tint); }
+.ven-fill--col2 { fill: var(--wf-blue-tint); }
+.ven-fill--col3 { fill: var(--wf-green-tint); }
+
+/* Stroke layer (border — drawn over fill) */
+.ven-stroke { fill: none; stroke-width: 0.75; }
+.ven-stroke--col1 { stroke: var(--wf-grey); }
+.ven-stroke--col2 { stroke: var(--wf-blue); }
+.ven-stroke--col3 { stroke: var(--wf-green); }
+
+/* Intersection region background (drawn last, covers overlap) */
+.ven-intersect { opacity: 0.7; }
+
+/* Region label marker (intersection number badge) */
+.ven-marker-bg { fill: #FFFFFF; }
+.ven-marker-num {
+    font-size: 9px; font-weight: 700; fill: var(--wf-ink);
+    text-anchor: middle; dominant-baseline: central;
+}
+
+/* FOREIGN OBJECT CONTENT REGIONS — HTML inside SVG */
+
+/* Content wrapper inside foreignObject */
+.ven-content {
+    display: flex; flex-direction: column; justify-content: center;
+    width: 100%; height: 100%;
+    padding: 8px 10px; box-sizing: border-box;
+}
+.ven-content--center { align-items: center; text-align: center; }
+.ven-content--left   { align-items: flex-start; text-align: left; }
+.ven-content--right  { align-items: flex-end; text-align: right; }
+
+/* Text density variants */
+.ven-content--tight  { font-size: 7.5px; line-height: 1.3; }
+.ven-content--loose  { font-size: 9px; line-height: 1.5; }
+
+/* Typography within Venn regions */
+.ven-micro {
+    font-size: 6.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--wf-ink-3); margin-bottom: 3px;
+}
+.ven-heading {
+    font-size: 9px; font-weight: 800; color: var(--wf-ink);
+    letter-spacing: -0.01em; margin-bottom: 4px; line-height: 1.2;
+}
+.ven-item {
+    font-size: 8px; color: var(--wf-ink-2); line-height: 1.4;
+    margin-bottom: 2px;
+}
+.ven-example {
+    font-size: 7.5px; font-style: italic; color: var(--wf-grey);
+    line-height: 1.3; margin-top: 2px;
+}
+
+/* VENN CHART TITLE BLOCK */
+.venn-title-block {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding: 16px 24px 12px;
+    border-bottom: 1px solid var(--wf-rule);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.venn-title-block__kicker {
+    font-size: 7.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--wf-ink-3); margin-bottom: 3px;
+}
+.venn-title-block__headline {
+    font-size: 16px; font-weight: 800; letter-spacing: -0.02em; color: var(--wf-ink);
+}
+
+/* VENN CHART CANVAS — full-page container for two stacked Venns */
+.venn-sheet {
+    width: 1056px; height: 816px;
+    background: #F7F9FA;
+    position: relative; overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.venn-sheet__section-label {
+    font-size: 7px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.09em; color: var(--wf-ink-3);
+    padding: 8px 24px 4px;
+}
+
+@media print {
+    .ven-fill--col1 { fill: #EEEEEE; }
+    .ven-fill--col2 { fill: #E0E8F0; }
+    .ven-fill--col3 { fill: #E0EDE0; }
+    .ven-stroke--col1, .ven-stroke--col2, .ven-stroke--col3 { stroke: #000; }
+}
