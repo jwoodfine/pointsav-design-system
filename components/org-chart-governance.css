@@ -1,0 +1,117 @@
+/* org-chart-governance.css — Governance & Board Layout
+ * Section-based grid for board structure, practice disciplines, duties.
+ * Extracted from Accounting (JW14), Counsel (JW14), SPV Slide 1 charts.
+ * Uses accent-based theming: set --gov-accent to --wf-green (accounting)
+ * or --wf-blue (counsel) in the per-chart <style> block.
+ */
+
+.gov-sheet {
+    width: 1056px; height: 816px;
+    background: #FFFFFF;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    overflow: hidden;
+    --gov-accent: var(--wf-green); /* override per-chart */
+}
+
+/* TITLE BLOCK */
+.gov-title-block {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding: 24px 32px 16px;
+    border-bottom: 1px solid var(--wf-rule);
+}
+.gov-title-block__kicker {
+    font-size: 8px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--wf-ink-3); margin-bottom: 4px;
+}
+.gov-title-block__headline {
+    font-size: 18px; font-weight: 800; letter-spacing: -0.02em; color: var(--wf-ink);
+}
+.gov-title-block__subtitle { font-size: 9px; color: var(--wf-ink-3); margin-top: 2px; }
+
+/* SECTION — absolutely-positioned zone on the governance canvas */
+.gov-section {
+    position: absolute;
+    display: flex; flex-direction: column; gap: 6px;
+}
+.gov-section__title {
+    font-size: 8px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--wf-ink-3);
+    border-bottom: 1px solid var(--wf-rule); padding-bottom: 4px; margin-bottom: 2px;
+}
+
+/* GOV NODE — board role box */
+.gov-node {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 0.75px solid var(--wf-ink-3); padding: 6px 10px;
+    font-size: 9px; color: var(--wf-ink); text-align: center; line-height: 1.3;
+    border-radius: 2px; background: #FFFFFF; min-height: 36px;
+}
+.gov-node--strong {
+    background: var(--gov-accent); color: #FFFFFF;
+    border-color: var(--gov-accent); font-weight: 700;
+}
+.gov-node--highlight {
+    background: var(--wf-orange-tint); border-color: var(--wf-orange);
+}
+
+/* PRACTICE DISCIPLINE COLUMN */
+.gov-disc {
+    display: flex; flex-direction: column;
+    border: 0.75px solid var(--wf-rule); overflow: hidden;
+}
+.gov-disc__head {
+    background: var(--gov-accent); color: #FFFFFF;
+    font-size: 8px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.07em; padding: 5px 8px; text-align: center;
+}
+.gov-disc__body {
+    font-size: 8.5px; color: var(--wf-ink-2); padding: 6px 8px;
+    line-height: 1.5; flex-grow: 1;
+}
+.gov-disc__body li {
+    list-style: none; padding-left: 10px; position: relative; margin-bottom: 2px;
+}
+.gov-disc__body li::before {
+    content: "–"; position: absolute; left: 0; color: var(--wf-grey);
+}
+
+/* DUTIES SIDEBAR */
+.gov-duties {
+    position: absolute;
+    font-size: 8px; color: var(--wf-ink-2); line-height: 1.5;
+    border-left: 2px solid var(--gov-accent); padding-left: 10px;
+}
+.gov-duties__title {
+    font-size: 7px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--wf-ink-3); margin-bottom: 4px;
+}
+.gov-duties li { list-style: none; margin-bottom: 2px; }
+.gov-duties li::before { content: "•"; margin-right: 4px; color: var(--gov-accent); }
+
+/* COMPARISON PANEL — column + header pattern (SPV Slide 1) */
+.gov-panel-grid {
+    display: grid;
+    gap: 0;
+}
+.gov-col-head {
+    font-size: 8px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.07em; text-align: center;
+    padding: 6px 4px; border-bottom: 2px solid var(--gov-accent);
+}
+.gov-col-head--col1 { border-color: var(--wf-grey); }
+.gov-col-head--col2 { border-color: var(--wf-blue); }
+.gov-col-head--col3 { border-color: var(--wf-green); }
+
+/* Legend chip (SPV Slide 1 footer) */
+.gov-legend-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    border: 0.75px solid var(--wf-rule); padding: 3px 8px;
+    font-size: 7.5px; color: var(--wf-ink-2); border-radius: 2px;
+}
+
+@media print {
+    .gov-sheet { page-break-inside: avoid; }
+    .gov-node, .gov-disc { border-color: #000 !important; }
+    .gov-node--strong, .gov-disc__head { background: #000 !important; color: #FFF !important; }
+}
