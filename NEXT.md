@@ -6,11 +6,18 @@
 > Read at session start when a Root Claude opens in this repo. Update
 > at session end when repo-scope open items change.
 
-Last updated: 2026-05-01.
+Last updated: 2026-05-23.
 
 ---
 
-## Currently open (as of 2026-05-01)
+## Currently open (as of 2026-05-23)
+
+- [ ] **Stage 6 — chart token commit** — `ebdd101` ("add org-chart component surface and Woodfine chart palette", v0.2.0) committed on `cluster/project-orgcharts` branch; Stage 6 to canonical `pointsav/pointsav-design-system` in-progress (Command Session, 2026-05-22). Confirm landed before project-design starts DTCG work. [2026-05-22 totebox@project-orgcharts]
+- [ ] **DTCG conversion** — `project-design` has been handed off (via inbox relay 2026-05-22) to convert `token-chart-semantic.yaml` → DTCG vault entries: `woodfine-chart.json` theme + three components (org-chart-node, org-chart-pill, org-chart-ellipse). Awaiting project-design action. [2026-05-22 totebox@project-orgcharts]
+- [ ] **`--gold` variant gap** — `nodes.css` has `.org-token--gold` but no matching entity-role in `token-chart-semantic.yaml`. Needs Master co-sign before DTCG entry: assign a role or remove the CSS variant. [2026-05-22 totebox@project-orgcharts]
+- [ ] **87 modified files in sub-clone working tree** — flagged to Command Session; root cause (drift from canonical?) unresolved. [2026-05-22 totebox@project-orgcharts]
+
+## Previously open (as of 2026-05-01)
 
 - **Cluster Tetrad upgrade** — completed 2026-05-01. Cluster manifest
   amended (`triad:` → `tetrad:` + `wiki:` leg). Two TOPIC skeletons
