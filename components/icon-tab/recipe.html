@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+  COMPONENT: wf-icon-tab
+  Target repo: pointsav-design-system
+  Carbon baseline: Button (icon-leading variant) — filled brand style, external link
+  Accessibility: WCAG 2.2 AA / aria-label-external / focus-visible / rel-noopener
+  Brand voice: confident · direct · institutional
+  DTCG tokens: wf.icon-tab.* — see recipe.css for current token references
+
+  Ratified: project-marketing → project-design gateway 2026-05-23
+
+  Originated from: home.woodfinegroup.com subnav
+  Use case: Manifest button beside BIM Library and Location Intelligence tabs
+
+  When to use:
+  - Subnav bar egress link to an external platform (GitHub, Figma, Notion, etc.)
+  - Needs to be visually consistent with sibling navigation tabs
+  - Link always opens in a new tab
+
+  When not to use:
+  - Internal navigation (use standard tab component)
+  - Toggle or state-change action (use button)
+  - When link does not open in a new tab (omit "(opens in new tab)" from label)
+
+  Open questions (pending project-design decision):
+  1. Inline SVG vs CSS background-image icon slot: current implementation uses inline SVG
+     for currentColor inheritance. Background-image approach removes HTML dependency on
+     icon content but loses colour inheritance.
+  2. Ghost variant: should template-agnostic-ui.html .btn (bordered, light background)
+     be registered as wf-icon-tab--ghost, or treated as a separate icon-btn component?
+
+  Icon asset: tokens/ASSET-ICON-GITHUB.svg (16×16, fill=currentColor, in registry)
+-->
+
+<!-- === GITHUB VARIANT (canonical first use) === -->
+<a class="wf-icon-tab wf-icon-tab--github"
+   href="{{HREF}}"
+   target="_blank"
+   rel="noopener"
+   aria-label="{{ARIA_LABEL}} (opens in new tab)">
+  <svg class="wf-icon-tab__icon"
+       xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 16 16"
+       fill="currentColor"
+       aria-hidden="true"
+       focusable="false">
+    <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
+  </svg>
+  <span class="wf-icon-tab__label">MANIFEST</span>
+</a>
+
+
+<!-- === GENERIC PATTERN (any platform icon) === -->
+<!--
+  Replace SVG path content for other platform icons.
+  Modifier class (--github, --figma, --notion, etc.) enables per-icon CSS overrides.
+  The base .wf-icon-tab class is platform-agnostic.
+-->
+<a class="wf-icon-tab wf-icon-tab--figma"
+   href="{{HREF}}"
+   target="_blank"
+   rel="noopener"
+   aria-label="{{ARIA_LABEL}} (opens in new tab)">
+  <svg class="wf-icon-tab__icon"
+       xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 16 16"
+       fill="currentColor"
+       aria-hidden="true"
+       focusable="false">
+    <!-- Substitute Figma icon path here -->
+  </svg>
+  <span class="wf-icon-tab__label">DESIGN</span>
+</a>
