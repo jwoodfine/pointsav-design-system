@@ -1,0 +1,75 @@
+/*
+  COMPONENT: wf-icon-tab
+  CSS recipe — Woodfine brand implementation
+
+  Token references:
+    --ps-interactive-primary    Filled background (#164679 via Woodfine theme)
+    --ps-ink-on-interactive     Text/icon colour on filled background (#fff)
+    --ps-font-display           Display/condensed typeface (Oswald or Barlow Condensed)
+    --ps-focus-ring             Focus outline colour (#234ed8)
+
+  Note: --ps-font-display token is not yet in dtcg-bundle.json. Currently
+  hardcoded in Woodfine theme as var(--display). DESIGN-TOKEN-CHANGE
+  needed to formalise this token. See aria.md open questions.
+*/
+
+.wf-icon-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+
+  background: var(--ps-interactive-primary, #164679);
+  color: var(--ps-ink-on-interactive, #fff);
+
+  font-family: var(--ps-font-display, "Oswald", "Barlow Condensed", Arial, sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+
+  padding: 8px 14px;
+  min-width: 130px;
+  min-height: 40px;
+  box-sizing: border-box;
+
+  cursor: pointer;
+}
+
+.wf-icon-tab:hover {
+  /* Open question: opacity 0.85 vs tone-step (#0f3560). See aria.md. */
+  opacity: 0.85;
+}
+
+.wf-icon-tab:focus-visible {
+  outline: 2px solid var(--ps-focus-ring, #234ed8);
+  outline-offset: 2px;
+}
+
+.wf-icon-tab__icon {
+  display: block;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  /* Inherits color via fill="currentColor" on the SVG element */
+}
+
+.wf-icon-tab__label {
+  display: block;
+  line-height: 1;
+}
+
+/* Platform-specific modifiers — reserved for per-icon adjustments */
+/* .wf-icon-tab--github  { } */
+/* .wf-icon-tab--figma   { } */
+/* .wf-icon-tab--notion  { } */
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-icon-tab:hover {
+    opacity: 1;
+  }
+}
