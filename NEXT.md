@@ -46,25 +46,51 @@ Last updated: 2026-05-23.
   the neutral scale (`--ink` through `--ink-4`, `--rule`,
   `--rule-strong`) and the per-chart accent rule (single `--accent`
   bound per chart per domain — blue for counsel/governance, green
-  for accounting/finance/ops). Backfilled from the Apr 15 JW14
-  Accounting / Counsel pair + Apr 6 JW9 Accounting Statements
-  consolidation chart authored in the project-orgcharts cluster.
+  for accounting/finance/ops). Backfilled from real production
+  chart authoring in the project-orgcharts cluster.
+  **Removed 2026-07-11** — file was too tightly bound to real internal
+  production history (chart iteration references, entity-specific
+  narrative) to keep in the public repo; recoverable via git history.
 - Org-chart printable template (`templates/html/org-chart-printable.html`).
   Single-template, accent-swappable chart skeleton — title block +
   4 sections (board / management / offices / disciplines) +
   signature, on a 1056×816 US Letter landscape canvas. Drives all
-  future Woodfine corporate org-chart authoring; replaces the
-  ad-hoc PowerPoint export pattern that the legacy charts used.
+  future corporate org-chart authoring; replaces the ad-hoc
+  PowerPoint export pattern the legacy charts used.
 
 ## Recently added (2026-04-27)
 
 - Chart component family — `components/chart.css`,
   `components/nodes.css`, `components/connectors.css`, plus
-  `guidelines/MEMO-05-Org-Chart-Patterns.md`. Backfilled from the
-  Woodfine SPV Arrangements chart authored in the project-orgcharts
+  `guidelines/MEMO-05-Org-Chart-Patterns.md`. Backfilled from a real
+  production SPV arrangements chart authored in the project-orgcharts
   cluster. Surface: chart canvas + panel + entity-node + role-badge
   + connector primitives, themed via existing `--sys-*` tokens. See
   the memo for composition rules and theming guidance.
+
+## Sanitization pass (2026-07-11)
+
+Full repo sweep for content tied to real corporate-entity names, confidential-
+document conventions, and internal production history (discovered during
+design.pointsav.com v3 work — this content had been committed to the public
+canonical repo with real entity names and a confidential-document watermark
+example). Removed entirely: `themes/MEMO-Woodfine-Color-Matrix.md`,
+`dtcg-vault/research/orgchart-token-system.md`,
+`dtcg-vault/research/research-orgchart-green-value-decision.md`,
+`dtcg-vault/research/component-org-chart-node-pill-teal-grey.md`,
+`assets/reference/woodfine-org-chart-color-sample.md`. Genericized in place
+(kept the reusable design substance, stripped real entity names/references):
+`tokens/dtcg-bundle.json` (primitive.color.orgchart + semantic.orgchart
+descriptions), `components/orgchart-canvas/guide.md` (removed the confidential
+signature-stamp recipe), `components/orgchart-node/guide.md` (real entity
+example names → `{{mustache}}` placeholders, matching this design system's own
+convention), `components/org-chart-node-pill/guide.md`, `guidelines/MEMO-05-Org-Chart-Patterns.md`,
+`tokens/charts/token-chart-semantic.yaml`. `audience`/`bcsc_class` frontmatter
+corrected from `internal`/`internal-only` to `public`/`public-disclosure-safe`
+on the kept component guides now that their content is genuinely generic.
+Flagged separately: this content carried `audience: internal` in its own
+frontmatter yet still reached the public canonical repo — a real intake-
+pipeline gap worth checking with whoever owns the DESIGN-* intake process.
 
 ## Recently closed (2026-04-22)
 
