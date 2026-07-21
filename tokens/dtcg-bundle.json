@@ -1513,78 +1513,8 @@
       "legal": {
         "$description": "Legal-document formatting tokens shared across subscription agreements, prospectuses, and regulatory filings.",
         "subscription": {
-          "$description": "LP Subscription Agreement — layout and typography tokens (NI 45-106 Form 45-106F3 compliant).",
-          "page": {
-            "width": {
-              "$type": "dimension",
-              "$value": "8.5in",
-              "$description": "US Letter portrait width"
-            },
-            "height": {
-              "$type": "dimension",
-              "$value": "11in"
-            },
-            "margin-top": {
-              "$type": "dimension",
-              "$value": "1in"
-            },
-            "margin-side": {
-              "$type": "dimension",
-              "$value": "1.25in",
-              "$description": "Wider side margins for binding allowance"
-            },
-            "margin-bottom": {
-              "$type": "dimension",
-              "$value": "1in"
-            }
-          },
-          "type": {
-            "body-size": {
-              "$type": "dimension",
-              "$value": "10pt",
-              "$description": "Minimum 10pt for NI 45-106 filing legibility"
-            },
-            "body-family": {
-              "$type": "fontFamily",
-              "$value": "Times New Roman, Georgia, serif",
-              "$description": "Serif required for legal register; sans-serif not accepted by OSC staff"
-            },
-            "body-line-height": {
-              "$type": "number",
-              "$value": 1.5
-            },
-            "heading-size": {
-              "$type": "dimension",
-              "$value": "12pt"
-            },
-            "heading-weight": {
-              "$type": "fontWeight",
-              "$value": 700
-            },
-            "caption-size": {
-              "$type": "dimension",
-              "$value": "8pt"
-            }
-          },
-          "color": {
-            "text": {
-              "$type": "color",
-              "$value": "#000000",
-              "$description": "Black on white — required for legal documents"
-            },
-            "background": {
-              "$type": "color",
-              "$value": "#ffffff"
-            },
-            "heading": {
-              "$type": "color",
-              "$value": "#1a1a1a"
-            },
-            "signature-line": {
-              "$type": "color",
-              "$value": "#000000"
-            }
-          }
+          "$description": "DEPRECATED 2026-07-21. Superseded by the fuller, actively-maintained dtcg-vault/components/legal-subscription-agreement/{recipe.json,usage.md} component recipe (6 variants, full ARIA/WCAG notes) — the actual promoted descendant of this archive's own .agent/drafts-outbound/DESIGN-TOKEN-legal-subscription-agreement.md draft. This flat entry (layout/typography leaves only) predates that consolidation and no active consumer of this specific path was found (root dtcg-bundle.json's other entries, e.g. component.orgchart.*, remain live for unrelated domains — this deprecation is scoped to the subscription subtree only). Flagged by project-documents 2026-07-21 (msg-id project-documents-20260721-subscription-agreement-design-token-dupl); resolved per the established root-canonical/vault-supersession pattern already used for the dtcg-bundle.json vault/root duplicate (see commit 8108bd1).",
+          "$superseded_by": "dtcg-vault/components/legal-subscription-agreement/recipe.json"
         },
         "prospectus": {
           "$description": "Prospectus formatting tokens — NI 41-101 Form 41-101F1 / NI 44-101 Short Form layout.",
