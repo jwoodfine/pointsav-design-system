@@ -36,6 +36,7 @@
         "$description": "Font stacks across all Paper sub-domains. No shared font family exists across legal/financial/pdf-nav — each sub-domain's register drives its own stack; grouped here as primitives so a family choice is never hand-typed twice.",
         "serif-legal": { "$value": ["Times New Roman", "Liberation Serif", "Times", "serif"], "$description": "Subscription-agreement and prospectus body/heading text (byte-identical stack)" },
         "serif-tinos": { "$value": ["Tinos", "Times New Roman", "Liberation Serif", "Times", "serif"], "$description": "Agency-suite — Tinos webfont-first" },
+        "serif-cim": { "$value": ["Times New Roman", "Times", "Georgia", "serif"], "$description": "CIM (Confidential Information Memorandum) body/heading text, from templates/cim.css :root --cim-font-body. Not aliased to serif-legal — close but not byte-identical (Georgia vs. Liberation Serif fallback); kept as its own primitive rather than forcing a false match." },
         "sans-fill": { "$value": ["Verdana", "Tahoma", "DejaVu Sans", "sans-serif"], "$description": "Subscription-agreement tier-2 fill zones (accessible completion register)" },
         "statutory-sans": { "$value": ["Calibri", "Carlito", "Liberation Sans", "Arial", "sans-serif"], "$description": "Financial-statement-yearend — Calibri source-theme font" },
         "proforma-sans": { "$value": ["system-ui", "sans-serif"], "$description": "Financial-report-layout dashboard theme" },
@@ -65,7 +66,9 @@
         "pdf-nav-on-navy": { "$value": "#ffffff", "$description": "Interactive PDF-binder — HOME button label" },
         "pdf-nav-grey-dark": { "$value": "#4d4d4d", "$description": "Interactive PDF-binder — subtitle, footer instruction" },
         "pdf-nav-grey-light": { "$value": "#f5f5f5", "$description": "Interactive PDF-binder — active-entry highlight fill (same value as legal/financial surface-tint)" },
-        "pdf-nav-grey-label": { "$value": "#737373", "$description": "Interactive PDF-binder — draft/version label" }
+        "pdf-nav-grey-label": { "$value": "#737373", "$description": "Interactive PDF-binder — draft/version label" },
+        "page-surface": { "$value": "#ffffff", "$description": "Explicit page-background white. First family to need this as its own token (prior Paper families assumed white implicitly in recipe CSS without a token); reusable by any future family that wants an explicit page-surface reference rather than a hardcoded #fff." },
+        "screen-surround-cim": { "$value": "#e8e8e8", "$description": "CIM — decorative screen-only chrome around the page edge (WeasyPrint print output ignores it entirely; not part of the reading surface). From templates/cim.css :root --cim-color-screen-bg." }
       },
       "type": {
         "$description": "Per-family typography composites. Ladders are genuinely distinct by document register, not by regulation (NI 41-101 prescribes no type sizes) — do not force a shared scale across legal families. text-transform/text-align are recipe CSS concerns, not part of the typography composite.",
@@ -85,6 +88,11 @@
           "$type": "typography",
           "body": { "$value": { "fontFamily": "{paper.primitive.font.serif-tinos}", "fontWeight": 400, "fontSize": "11.5pt", "lineHeight": 1.5, "letterSpacing": "0" } },
           "h1": { "$value": { "fontFamily": "{paper.primitive.font.serif-tinos}", "fontWeight": 700, "fontSize": "18pt", "lineHeight": 1.2, "letterSpacing": "0" } }
+        },
+        "legal-cim": {
+          "$type": "typography",
+          "$description": "CIM (Confidential Information Memorandum) — Club Deal / Private SPV / Bencal SPV document family. From templates/cim.css :root.",
+          "body": { "$value": { "fontFamily": "{paper.primitive.font.serif-cim}", "fontWeight": 400, "fontSize": "10.5pt", "lineHeight": 1.45, "letterSpacing": "0" } }
         },
         "financial-running-header": {
           "$type": "typography",

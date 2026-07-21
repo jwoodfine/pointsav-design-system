@@ -39,6 +39,20 @@
         "body-type": { "$value": "{paper.primitive.type.legal-agency.body}", "$type": "typography" },
         "heading-type": { "$value": "{paper.primitive.type.legal-agency.h1}", "$type": "typography" }
       },
+      "legal-cim": {
+        "$description": "CIM (Confidential Information Memorandum) — Club Deal / Private SPV / Bencal SPV document family, project-documents' templates/cim.css. Registered 2026-07-21, closing this component's own oq-4 (aspirational token paths, not yet registered). CSS token itself remains authoritative in project-documents' templates/cim.css per that draft's division-of-ownership (§5.2); these are the design-system-side registered paths its recipe.json references.",
+        "page-margin-top": { "$value": "0.55in", "$type": "dimension" },
+        "page-margin-right": { "$value": "0.5in", "$type": "dimension" },
+        "page-margin-bottom": { "$value": "0.6in", "$type": "dimension" },
+        "page-margin-left": { "$value": "0.5in", "$type": "dimension" },
+        "frame-width": { "$value": "{paper.primitive.rule.light}", "$type": "dimension", "$description": "0.75pt visible .page-wrapper frame" },
+        "table-header-rule": { "$value": "{paper.primitive.rule.light}", "$type": "dimension" },
+        "hairline": { "$value": "{paper.primitive.rule.hairline}", "$type": "dimension", "$description": "Group-header + footnote hairline, 0.5pt" },
+        "body-type": { "$value": "{paper.primitive.type.legal-cim.body}", "$type": "typography" },
+        "ink": { "$value": "{paper.primitive.color.ink}", "$type": "color" },
+        "screen-surround": { "$value": "{paper.primitive.color.screen-surround-cim}", "$type": "color" },
+        "page-surface": { "$value": "{paper.primitive.color.page-surface}", "$type": "color" }
+      },
       "financial-statement-yearend": {
         "$description": "Statutory year-end financial statements (Notice to Reader / compilation register). Portrait, symmetric 1in margins, pure black-on-white.",
         "page-margin": { "$value": "{paper.primitive.page.margin-wide}", "$type": "dimension" },
