@@ -4,6 +4,7 @@
 <span class="badge">5 slots</span>
 <span class="badge badge--brand">Tokens-backed</span>
 <span class="badge">WCAG 2.2 AA target</span>
+<span class="badge">Mandatory / recommended / site's-choice tiering</span>
 <span class="badge">Stub — pending verification</span>
 </div>
 <p class="doc-header__lead">Footer for customer/content-facing Woodfine and PointSav
@@ -23,13 +24,52 @@ whose audience is reading content, not operating a developer tool. It is distinc
 from [Machine Surface Footer](/components/machine-surface-footer/usage), which
 serves developer-facing tool sites such as design.pointsav.com itself. The two are
 not interchangeable: Site Footer carries the full corporate identity bar and an
-optional legal-disclosure block; Machine Surface Footer does not. Whether
-design.pointsav.com should adopt this component or deliberately stay on Machine
-Surface Footer alone is an open question in the recipe — a developer-tool site may
-legitimately not need the full customer-facing identity bar, though the recipe
-recommends adding at minimum the identity bar's trademark notice there regardless,
-since that specific omission was flagged in the 2026-07-10 research as a real gap,
-not a stylistic choice.
+optional legal-disclosure block; Machine Surface Footer does not.
+
+**Resolved 2026-07-16**: design.pointsav.com correctly stays on Machine Surface
+Footer alone, under a formal **audience exemption** (see tiering below) — a pure
+tooling/reference site with no customer/investor audience may declare this
+exemption rather than adopting the full identity bar. Confirmed correct, not a
+defect; this closes what was previously an open question in the recipe.
+
+## Mandatory / recommended / site's-choice tiering
+
+A live audit of all 8 Woodfine/PointSav sites (2026-07-16) found **5 distinct
+footer implementations**, not 2, plus external research into how real
+multi-property design systems (GOV.UK Design System, Wikimedia Foundation,
+Stripe) draw the "must match across independently-run properties" line.
+Consistently: lock the legal/trademark identity + structural contract only; leave
+typography, spacing, color, layout as site-adaptable. This component now follows
+that same tiering:
+
+- **Mandatory** — a customer/investor-facing footer must include a trademark/
+  copyright block sourced **byte-verbatim** from `legal-tokens-{brand}.yaml`
+  (`factory-release-engineering`, admin-tier), never embedded as a second copy —
+  a third copy is exactly the drift risk that produced a real 3-live-variant
+  trademark-statement bug (flagged separately, admin-tier fix). A site with no
+  customer/investor audience may formally declare an audience exemption instead
+  (see design.pointsav.com above).
+- **Recommended, not enforced** — a starter palette of 3 visual values already
+  verified in `app-mediakit-knowledge` (`--k-shadow-footer`,
+  `--k-text-footer-heading`, `--k-leading-relaxed`) any site may copy locally
+  (no cross-site token pipeline exists), plus a new named variant,
+  **`footer.high-risk-transaction`**: a persistent, always-visible one-line
+  disclaimer strip above a collapsed legal-disclosure accordion — a warning
+  gated behind a `<details>` toggle alone may never be seen. Origin:
+  software.pointsav.com's own live pattern for irreversible-transaction pages.
+- **Site's choice, explicitly** — typography scale, spacing rhythm, color,
+  elevation, column count/grouping, separator glyph, and disclosure UX (accordion
+  vs. persistent strip vs. none). **bim.woodfinegroup.com's richer editorial
+  columns, "Machine-readable surface" API-links column, pipe separator, and
+  implicit `<p>`-stacked base block are legitimate presentation choices for a
+  technical-catalog audience, not gaps against this recipe** — do not ask it to
+  converge to this recipe's exact structure. (This corrects an earlier framing
+  that implied otherwise.)
+
+project-knowledge has self-certified as content-steward of this component
+subtree per `conventions/token-stewardship-by-domain.md` — project-design
+retains sole commit authority; this only means footer-component proposals
+arriving here should already be vetted by project-knowledge first.
 
 ## Status — real content, not yet finalized
 
@@ -49,11 +89,16 @@ references were also corrected from the draft's invented `--pds-*` prefix and
 nonexistent token paths to this vault's real `--ps-*` prefix and real token names,
 verified against `tokens/primitive.json` and `themes/pointsav-brand.json`.
 
-Two questions remain open in the recipe: design.pointsav.com's adoption decision
-(above), and the templating notation — the recipe uses Handlebars-style
-placeholders for the design system's own documentation purposes, as existing
-recipes do, but the consuming code (app-mediakit-shell) is maud/Rust and
-translates the pattern rather than consuming this JSON literally.
+Revised again 2026-07-16 (project-knowledge) to the mandatory/recommended/
+site's-choice tiering above, folded into this recipe 2026-07-21.
+
+Two questions remain open in the recipe: whether the mandatory trademark-block
+reference mechanism should become a machine-checkable contract a site's own
+`build.rs` can validate against, or stay documentation-only guidance given how
+small this site family currently is; and the templating notation — the recipe
+uses Handlebars-style placeholders for the design system's own documentation
+purposes, as existing recipes do, but the consuming code (app-mediakit-shell) is
+maud/Rust and translates the pattern rather than consuming this JSON literally.
 
 ## Anatomy — five slots in three layers
 
