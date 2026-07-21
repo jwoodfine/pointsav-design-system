@@ -50,3 +50,41 @@ this initiative), since it is already more feature-complete and already properly
 licensed/committed within the monorepo; the project-jennifer template's design values
 were used for this token consolidation since it is the cleaner, generalized reference
 the design draft actually describes.
+
+## Addendum 2026-07-21 — geometry realigned to shipped production binders
+
+The 2026-07-13 consolidation above extracted values from the project-jennifer
+*template*'s Python constants. On 2026-07-16, project-jennifer aligned its own 3
+production binders (MX Prospectus, MOU, Agency Agreements) to the Bencal SPV1
+*reference* layout and extracted a reusable engine — the template's own geometry
+constants turned out to never have matched what any shipped binder actually renders.
+Cross-checked against all 36 pdf-nav/pdf-binder tokens in
+`dtcg-vault/exports/tokens.full.json`; colors and typography were already correct
+(navy #002e63 pinned exact against the live reportlab RGB constant, not a naive
+rounding), only geometry needed realignment:
+
+| Token | 2026-07-13 (template) | 2026-07-21 (aligned, current) |
+|---|---|---|
+| `toc-entry-first-y` | 565pt | 595pt |
+| `toc-entry-step` | 65pt | 48pt |
+| `toc-entry-width` | 530pt | 468pt |
+| `toc-num-x` | 64pt | 96pt |
+| `toc-title-x` | 82pt | 114pt |
+| `home-width` | 64pt | 54pt |
+| `home-height` | 20pt | 14pt |
+| `home-corner-radius` | 4pt | 3pt |
+
+New primitives added for the ADOPTED grouped-TOC pattern (`toc-group-header` /
+`toc-entry-child` variants, see recipe.json): `toc-child-dash-x` (120pt, itself amended
+same day from an initial 140pt — see the component's oq history), `toc-header-to-child-step`
+(26pt), `toc-parent-to-child-step` (36pt), `toc-active-marker-size` (7.2pt, a drawn rect
+replacing an earlier pinned-glyph recommendation — glyph substitution rendering is
+reader-dependent, not deterministic).
+
+Source: `project-jennifer-20260716-dtcg-interactive-pdf-binder-pdf-nav-geom` (geometry),
+`project-jennifer-20260717-adopted-interactive-pdf-binder-grouped-t` (grouped pattern +
+token audit), `project-jennifer-20260717-amendment-to-the-adopted-grouped-toc-spe`
+(child-dash correction + drawn-marker reversal). Two earlier messages in the same thread
+(`project-jennifer-20260717-design-component-interactive-pdf-binder-`,
+`project-jennifer-20260717-supersedes-msg-project-jennifer-20260717`) are superseded by
+the ADOPTED message and were not used as a source here.

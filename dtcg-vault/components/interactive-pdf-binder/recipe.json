@@ -7,10 +7,12 @@
   "registry_type": "component",
   "css_class": "paper-pdf-binder",
   "variants": [
-    { "name": "slip-sheet", "description": "Generated TOC cover page preceding each source document: header title, org subtitle, 1.5pt rule, optional right-aligned draft label (first sheet only), italic footer instruction. Holds up to 8 TOC entries per sheet." },
+    { "name": "slip-sheet", "description": "Generated TOC cover page preceding each source document: header title, org subtitle, 1.5pt rule, optional right-aligned draft label (first sheet only), italic footer instruction. Holds up to 8 TOC entries per sheet — see oq-2, this cap is under active reconsideration now that grouped rows exist at two different pitches." },
     { "name": "toc-entry-inactive", "description": "Navigable TOC row for a non-current document: navy number + title, invisible full-rect GoTo link to that document's slip sheet." },
-    { "name": "toc-entry-active", "description": "TOC row for the current document: grey-light highlight rect, black text, leading arrow indicator; no link (self)." },
-    { "name": "home-button", "description": "64x20pt navy rounded-rect (4pt radius) with white HOME label, lower-right placement. Stamped on every content page (never slip sheets); transparent GoTo link to page 0 top." }
+    { "name": "toc-entry-active", "description": "TOC row for the current document: grey-light highlight rect, black text; no link (self). Active marker (amended 2026-07-17): a DRAWN 7.2x7.2pt filled rect (paper.primitive.pdf-nav.toc-active-marker-size), not a glyph — positioned at rect_x+8, y-1.2 (rect_x = toc-num-x for a top-level row, toc-child-dash-x for a toc-entry-child row), filled with the same ink as the active row's text. Reverses an earlier 'pin the » character' recommendation: the original look was actually reader-dependent .notdef substitution (► U+25BA is absent from Helvetica's WinAnsi encoding) — undefined-and-inconsistent rendering, not a design, however good it happened to look. Measured off a rendered page to reproduce the original look deterministically." },
+    { "name": "toc-group-header", "description": "ADOPTED 2026-07-17 — non-navigable division label grouping several TOC rows under one document (e.g. 'Subscription Agreement' grouping Family/Friends and Accredited-Investor variants). 11pt Helvetica-Bold, TITLE CASE, ink (not navy — it doesn't navigate). Number (trailing stop, e.g. '4.') at toc-num-x, label at toc-title-x. No box, no marker, no link annotation, no slip sheet, NO rule — grouping is proximity, not a drawn separator. Pitch into/out of a header uses the general toc-entry-step (48pt); no extra lead-in air above a header." },
+    { "name": "toc-entry-child", "description": "ADOPTED 2026-07-17, amended same day — indented row nested under a toc-group-header OR under a clickable parent document row (see below). No number; an en-dash leads the title at paper.primitive.pdf-nav.toc-child-dash-x (120pt — amended from an initial 140pt inherited from the Bencal SPV1 reference, where 140 had to clear a numbered child our children don't carry; at 120pt the dash sits in the gutter and the title lands one 18pt step right of toc-title-x, matching the page's own toc-num-x-to-toc-title-x rhythm). Highlight/link rect: (98, y-7, 442, 22) — otherwise identical to toc-entry-inactive/-active (navy = navigable, ink = active/current, grey-light highlight). Pitch: paper.primitive.pdf-nav.toc-header-to-child-step (26pt) from a group-header or a preceding child; paper.primitive.pdf-nav.toc-parent-to-child-step (36pt) when the row immediately above is itself a clickable document row rather than a non-navigable group-header (see next). A group of one is not a group — a document with a single child stays a plain numbered row, not a header+child pair. A document row can itself be a parent (e.g. Schedules that are annexes TO the agreement they belong to, not siblings of it): its bookmarks nest under its OWN PDF outline item — no synthetic group node, or two bookmarks end up with the same name — and its LINK rect shrinks to (72, y-15, 468, 36), narrower than its drawn box (72, y-25, 468, 46), so the parent's own link target cannot overlap its first child's. This is why the parent-to-child pitch (36pt) differs from the header-to-child pitch (26pt) — it has to clear the shrunk link rect, not just visual proximity." },
+    { "name": "home-button", "description": "54x14pt navy rounded-rect (3pt radius) with white HOME label, lower-right placement. Stamped on every content page (never slip sheets); transparent GoTo link to page 0 top." }
   ],
   "tokens": [
     "{paper.semantic.pdf-binder.toc-entry-inactive}",
@@ -25,19 +27,31 @@
     "{paper.semantic.pdf-binder.home-label-type}",
     "{paper.primitive.pdf-nav.page-width}",
     "{paper.primitive.pdf-nav.page-height}",
+    "{paper.primitive.pdf-nav.toc-entry-first-y}",
     "{paper.primitive.pdf-nav.toc-entry-step}",
+    "{paper.primitive.pdf-nav.toc-entry-height}",
+    "{paper.primitive.pdf-nav.toc-entry-width}",
+    "{paper.primitive.pdf-nav.toc-num-x}",
+    "{paper.primitive.pdf-nav.toc-title-x}",
+    "{paper.primitive.pdf-nav.toc-child-dash-x}",
+    "{paper.primitive.pdf-nav.toc-header-to-child-step}",
+    "{paper.primitive.pdf-nav.toc-parent-to-child-step}",
+    "{paper.primitive.pdf-nav.toc-active-marker-size}",
     "{paper.primitive.pdf-nav.home-width}",
     "{paper.primitive.pdf-nav.home-height}",
-    "{paper.primitive.pdf-nav.home-corner-radius}"
+    "{paper.primitive.pdf-nav.home-corner-radius}",
+    "{paper.primitive.pdf-nav.rule-stroke}"
   ],
-  "aria": "PDF-native accessibility, not ARIA — navigation is /GoTo link annotations plus a PDF document outline (/PageMode /UseOutlines), with /DisplayDocTitle true. Source PDFs are not guaranteed to be tagged; Tagged-PDF reading-order conformance for assistive technology is an open accessibility question (see open_questions), not yet handled by the generator.",
+  "aria": "PDF-native accessibility, not ARIA — navigation is /GoTo link annotations plus a PDF document outline (/PageMode /UseOutlines), with /DisplayDocTitle true. Source PDFs are not guaranteed to be tagged; Tagged-PDF reading-order conformance for assistive technology is an open accessibility question (see oq-3), not yet handled by the generator. The active-row drawn-rect marker (see toc-entry-active, amended 2026-07-17) is graphics-only, not text-extractable — see oq-5 for the resulting WCAG 1.3.1 trade-off, not yet resolved.",
   "wcag": { "target": "2.2 AA", "note": "Print/PDF target. Contrast: navy #002e63 on white ~13:1 (AAA); white on navy ~13:1 (AAA). Keyboard/assistive-tech navigation depends entirely on source-PDF tagging, which the current generator does not add." },
   "motion": "Static print/PDF artifact — no motion.",
   "open_questions": [
-    "oq-1: an earlier draft spec listed a 7th color GREY_MID (#666680, 'inactive entry subtitles') that does not exist in the canonical Python source (no subtitle rows are generated) — dropped from this recipe; confirm no production instance actually relies on it before treating this as fully closed.",
-    "oq-2: max 8 TOC entries per slip sheet is currently a hard limit in the generator — should this become a token, and how should binders with more than 8 documents paginate across multiple slip sheets?",
+    "oq-1 (RESOLVED 2026-07-21): confirmed by project-jennifer's 2026-07-16 alignment session — no production instance renders subtitles. GREY_MID stays dropped.",
+    "oq-2: max 8 TOC entries per slip sheet is currently a hard limit in the generator. Evidence gathered 2026-07-16/17 (project-jennifer): a child row costs 26pt where a top-level costs 48pt, so a row COUNT cannot express the real constraint — MOU renders 8 rows (7 docs + 1 header) with ~4 rows of headroom against the aligned 48pt pitch. Re-expressing this as a vertical-space budget rather than a row count is recommended but NOT yet decided — the actual formula is project-design's own call, still open.",
     "oq-3: Tagged-PDF / reading-order conformance for assistive technology is currently unhandled — source PDFs pass through untagged.",
-    "oq-4: navy hex rounding — the RGB constant (0, 0.18, 0.39) computes to ~#002f63; the design draft and this recipe both state #002e63. Pin one value definitively against the live Python source constant."
+    "oq-4 (RESOLVED 2026-07-21): navy hex rounding confirmed by project-jennifer against the live reportlab source — RGB(0.0, 0.18, 0.39) = #002e63 exactly (not the ~#002f63 a naive computation suggested). #002e63 stays pinned, no change.",
+    "oq-5 (NEW 2026-07-17, WCAG 1.3.1 trade-off — project-design's call, not decided by the sender): the interim '»' glyph marker lived in the text layer, so the active row was text-extractable. The drawn-rect marker (toc-entry-active, amended) is graphics only — slip-sheet text is now byte-identical across every sheet, and 'which tab am I on' rests on shading + black-vs-navy alone for a screen-reader user. The active row is still machine-identifiable as the only row on its sheet with no link annotation, but that's an indirect signal. If addressed: a hidden text marker layered behind the drawn box is the suggested fix. Not implemented in this pass — flagged for a future refinement, matches oq-3's broader Tagged-PDF gap.",
+    "oq-6 (informational, not an action item here): the Bencal SPV1 *reference* binder and the bundle engine both carry a pre-existing child-rect bug — (98, y-25, 442, 24), entirely below the text baseline — distinct from and not corrected by this recipe's (98, y-7, 442, 22) toc-entry-child spec. All 3 of project-jennifer's rebuilt production binders (MOU, Agency Agreements, MX Prospectus) use the corrected value; the reference binder itself was not touched."
   ],
   "research_links": ["research/interactive-pdf-binder-token-map.md"],
   "registry_dependencies": []
